@@ -10,10 +10,11 @@ import { VariantData } from "@/hooks/use-poll-job";
 
 interface VariantCardProps {
   variant: VariantData;
+  jobMode?: string;
   onFeedbackSubmitted: () => void;
 }
 
-export function VariantCard({ variant, onFeedbackSubmitted }: VariantCardProps) {
+export function VariantCard({ variant, jobMode, onFeedbackSubmitted }: VariantCardProps) {
   const [rejectDialogOpen, setRejectDialogOpen] = useState(false);
 
   const latestFeedback = variant.feedback?.[0];
@@ -49,7 +50,7 @@ export function VariantCard({ variant, onFeedbackSubmitted }: VariantCardProps) 
           </div>
         </CardHeader>
         <CardContent className="p-6 space-y-5">
-          <ArtifactGrid artifacts={variant.artifacts} />
+          <ArtifactGrid artifacts={variant.artifacts} jobMode={jobMode} />
 
           {variant.status === "ready" && !hasAccepted && !hasRejected && (
             <div className="flex gap-3 pt-1">

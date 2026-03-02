@@ -78,15 +78,20 @@ export async function POST(
       data: { status: "generating" },
     });
 
+    const eventName = job.mode === "illustration"
+      ? "job/generate-illustration-images"
+      : "job/generate-images";
+
     await inngest.send({
-      name: "job/generate-images",
+      name: eventName,
       data: { jobId },
     });
 
     return NextResponse.json({ status: "generating", jobId });
   } catch (error) {
     if (error instanceof z.ZodError) {
-      return NextResponse.json({ error: error.issues }, { status: 400 });
+      const message = error.issues.map((i) => i.message).join("; ");
+      return NextResponse.json({ error: message }, { status: 400 });
     }
     console.error("Failed to approve job:", error);
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });

@@ -34,6 +34,11 @@ export async function GET(req: NextRequest) {
               take: 1,
               orderBy: { createdAt: "desc" },
             },
+            artifacts: {
+              where: { kind: "final_png" },
+              select: { id: true, url: true, width: true, height: true, channel: true },
+              take: 1,
+            },
           },
           orderBy: { label: "asc" },
         },

@@ -8,17 +8,20 @@ datasource db {
 }
 
 model Job {
-  id              String    @id @default(cuid())
-  description     String
-  channels        String[]
-  visualType      String    @default("background-only")
-  status          String    @default("queued")
-  errorMessage    String?
-  retrievalBundle Json?
-  rulesVersion    Int       @default(0)
-  createdAt       DateTime  @default(now())
-  updatedAt       DateTime  @updatedAt
-  variants        Variant[]
+  id                   String    @id @default(cuid())
+  description          String
+  channels             String[]
+  visualType           String    @default("background-only")
+  status               String    @default("queued")
+  errorMessage         String?
+  retrievalBundle      Json?
+  rulesVersion         Int       @default(0)
+  mode                 String    @default("socials")
+  subjectReferenceUrl  String?
+  subjectReferenceNote String?
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+  variants             Variant[]
 }
 
 model Variant {
@@ -72,6 +75,7 @@ model PromptRule {
   enabled     Boolean  @default(true)
   priority    Int      @default(3)
   sourceJobId String?
+  mode        String   @default("socials")
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
@@ -86,5 +90,6 @@ model AssetVaultItem {
   analysis       Json?
   analysisStatus String    @default("pending")
   analyzedAt     DateTime?
+  usageScore     Int       @default(0)
   createdAt      DateTime  @default(now())
 }

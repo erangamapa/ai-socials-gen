@@ -4,7 +4,7 @@ import * as path from "path";
 import { prisma } from "../db";
 
 let cachedIndex: VaultItem[] | null = null;
-let cachedAnalysis: Map<string, { subjects: string[]; description: string; styleNotes: string }> | null = null;
+let cachedAnalysis: Map<string, { subjects: string[]; description: string; styleNotes: string; usageScore: number }> | null = null;
 
 export function loadVaultIndex(): VaultItem[] {
   if (cachedIndex) return cachedIndex;
@@ -21,22 +21,22 @@ export function clearVaultCache(): void {
   cachedAnalysis = null;
 }
 
-async function loadAnalysisCache(): Promise<Map<string, { subjects: string[]; description: string; styleNotes: string }>> {
+async function loadAnalysisCache(): Promise<Map<string, { subjects: string[]; description: string; styleNotes: string; usageScore: number }>> {
   if (cachedAnalysis) return cachedAnalysis;
 
   const rows = await prisma.assetVaultItem.findMany({
-    where: { analysisStatus: "done" },
-    select: { id: true, analysis: true },
+    select: { id: true, analysis: true, analysisStatus: true, usageScore: true },
   });
 
   cachedAnalysis = new Map();
   for (const row of rows) {
     const a = row.analysis as Record<string, unknown> | null;
-    if (!a) continue;
+    const hasDoneAnalysis = row.analysisStatus === "done" && a;
     cachedAnalysis.set(row.id, {
-      subjects: Array.isArray(a.subjects) ? (a.subjects as string[]).map((s) => s.toLowerCase()) : [],
-      description: typeof a.description === "string" ? a.description.toLowerCase() : "",
-      styleNotes: typeof a.styleNotes === "string" ? a.styleNotes.toLowerCase() : "",
+      subjects: hasDoneAnalysis && Array.isArray(a.subjects) ? (a.subjects as string[]).map((s) => s.toLowerCase()) : [],
+      description: hasDoneAnalysis && typeof a.description === "string" ? a.description.toLowerCase() : "",
+      styleNotes: hasDoneAnalysis && typeof a.styleNotes === "string" ? a.styleNotes.toLowerCase() : "",
+      usageScore: row.usageScore ?? 0,
     });
   }
   return cachedAnalysis;
@@ -87,7 +87,7 @@ function scoreItem(
   queryTokens: string[],
   expandedTokens: string[],
   params: VaultSearchParams,
-  analysisData?: { subjects: string[]; description: string; styleNotes: string },
+  analysisData?: { subjects: string[]; description: string; styleNotes: string; usageScore: number },
 ): number {
   let score = 0;
 
@@ -114,6 +114,11 @@ function scoreItem(
       if (analysisData.description.includes(qt)) score += 2;
       if (analysisData.styleNotes.includes(qt)) score += 1;
     }
+
+    // usageScore bonus: accepted references rank higher; rejected ones rank lower
+    // Cap the influence to ±5 to avoid stale data dominating fresh signals
+    const usageBonus = Math.min(Math.max(analysisData.usageScore, -5), 5);
+    score += usageBonus;
   }
 
   if (params.visualType) {

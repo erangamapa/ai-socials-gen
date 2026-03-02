@@ -23,6 +23,10 @@ export async function GET() {
       feedbackByDecision,
       vaultDbCount,
       analysisStatusCounts,
+      jobsByMode,
+      rulesByMode,
+      lastSocialsJob,
+      lastIllustrationJob,
     ] = await Promise.all([
       prisma.job.count(),
       prisma.job.groupBy({ by: ["status"], _count: true }),
@@ -32,6 +36,22 @@ export async function GET() {
       prisma.feedback.groupBy({ by: ["decision"], _count: true }),
       prisma.assetVaultItem.groupBy({ by: ["type"], _count: true }),
       prisma.assetVaultItem.groupBy({ by: ["analysisStatus"], _count: true }),
+      prisma.job.groupBy({ by: ["mode"], _count: true }),
+      prisma.promptRule.groupBy({ by: ["mode", "enabled"], _count: true }),
+      prisma.job.findFirst({ where: { mode: "socials" }, orderBy: { createdAt: "desc" }, select: { createdAt: true } }),
+      prisma.job.findFirst({ where: { mode: "illustration" }, orderBy: { createdAt: "desc" }, select: { createdAt: true } }),
+    ]);
+
+    // Per-mode feedback: join through variants → jobs
+    const [socialsFeedback, illustrationFeedback] = await Promise.all([
+      prisma.feedback.findMany({
+        where: { variant: { job: { mode: "socials" } } },
+        select: { decision: true },
+      }),
+      prisma.feedback.findMany({
+        where: { variant: { job: { mode: "illustration" } } },
+        select: { decision: true },
+      }),
     ]);
 
     const analyzedItems = await prisma.assetVaultItem.findMany({
@@ -91,7 +111,41 @@ export async function GET() {
       analysisByStatus[row.analysisStatus] = row._count;
     }
 
+    // Build per-mode agent stats
+    function buildAgentStats(
+      mode: string,
+      feedbackRows: { decision: string }[],
+      lastJob: { createdAt: Date } | null
+    ) {
+      const jobRow = jobsByMode.find((r) => r.mode === mode);
+      const modeRules = rulesByMode.filter((r) => r.mode === mode);
+      const activeRulesRow = modeRules.find((r) => r.enabled === true);
+      const totalRulesCount = modeRules.reduce((s, r) => s + r._count, 0);
+      const activeRulesCount = activeRulesRow?._count ?? 0;
+
+      // Estimate tokens from active rule content lengths (rough)
+      // We skip full content fetch here; use 0 as placeholder (detailed on rules page)
+      return {
+        jobs: jobRow?._count ?? 0,
+        feedback: {
+          accept: feedbackRows.filter((f) => f.decision === "accept").length,
+          reject: feedbackRows.filter((f) => f.decision === "reject").length,
+        },
+        rules: {
+          active: activeRulesCount,
+          total: totalRulesCount,
+        },
+        lastJobAt: lastJob?.createdAt?.toISOString() ?? null,
+      };
+    }
+
+    const agents = {
+      socials: buildAgentStats("socials", socialsFeedback, lastSocialsJob),
+      illustration: buildAgentStats("illustration", illustrationFeedback, lastIllustrationJob),
+    };
+
     return NextResponse.json({
+      agents,
       vault: {
         totalFiles: vaultIndex.length,
         byType: vaultByType,

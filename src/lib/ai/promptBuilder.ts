@@ -10,9 +10,9 @@ interface RulesBlock {
   estimatedTokens: number;
 }
 
-export async function buildRulesBlock(): Promise<RulesBlock> {
+export async function buildRulesBlock(mode: string = "socials"): Promise<RulesBlock> {
   const rules = await prisma.promptRule.findMany({
-    where: { enabled: true },
+    where: { enabled: true, mode },
     orderBy: [{ priority: "desc" }, { createdAt: "desc" }],
     take: MAX_RULES,
   });
@@ -38,7 +38,10 @@ export async function buildRulesBlock(): Promise<RulesBlock> {
   }
 
   const recentRejects = await prisma.feedback.findMany({
-    where: { decision: "reject" },
+    where: {
+      decision: "reject",
+      variant: { job: { mode } },
+    },
     orderBy: { createdAt: "desc" },
     take: 5,
     select: { reasons: true, notes: true },
@@ -59,7 +62,10 @@ export async function buildRulesBlock(): Promise<RulesBlock> {
   }
 
   const recentAccepts = await prisma.feedback.findMany({
-    where: { decision: "accept" },
+    where: {
+      decision: "accept",
+      variant: { job: { mode } },
+    },
     orderBy: { createdAt: "desc" },
     take: 3,
     include: { variant: { select: { plannerSpec: true } } },

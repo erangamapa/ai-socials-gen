@@ -50,34 +50,89 @@ export class GeminiImageProvider implements ImageProvider {
   }
 
   async generateImage(request: ImageGenRequest): Promise<ImageGenResult> {
-    const { width, height, prompt, referenceImages } = request;
+    const { width, height, prompt, referenceImages, mode } = request;
     const aspectLabel = width > height ? "landscape" : height > width ? "portrait" : "square";
-
-    const mainPrompt = `You are editing a finished brand TEMPLATE image. The FIRST image you see is the exact background with logo, notch and layout already in place. 
-
-Your job: generate a NEW illustration element ON TOP of that existing template without changing the background, logo, or layout. Preserve the template exactly and just add the character/object in our house illustration style. Output a single, flattened RGB image (no transparency tricks, no alpha-only plates). ${aspectLabel} format (${width}x${height}).
-
-${prompt}
-
-FINAL INSTRUCTION — ABSOLUTE PRIORITY:
-Do NOT render ANY text, words, letters, numbers, headlines, logos, or watermarks anywhere in the image. The output must be a PURE ILLUSTRATION — zero typography. This graphic element gets composited onto a brand template where designers add text separately.`;
+    const isIllustration = mode === "illustration";
 
     const contentParts: { inlineData?: { mimeType: string; data: string }; text?: string }[] = [];
 
-    if (referenceImages?.length) {
-      const templateRef = referenceImages.find((r) => r.description.includes("BASE TEMPLATE"));
-      const styleRefs = referenceImages.filter((r) => !r.description.includes("BASE TEMPLATE"));
+    if (isIllustration) {
+      // ── ILLUSTRATION MODE ──────────────────────────────────────────────────
+      // No template canvas. We want a standalone flat-vector illustration on a
+      // solid background, ready for cutout. Subject reference (if any) comes
+      // first; then style references; then the generation prompt.
 
-      console.log(`[NanoBanana] Attaching ${referenceImages.length} reference(s): ${templateRef ? "1 template" : "no template"}, ${styleRefs.length} style refs`);
+      const subjectRef = referenceImages?.find((r) => r.description.startsWith("SUBJECT REFERENCE"));
+      const styleRefs = referenceImages?.filter((r) => !r.description.startsWith("SUBJECT REFERENCE")) ?? [];
+
+      console.log(
+        `[NanoBanana] ILLUSTRATION mode — subject=${!!subjectRef}, styleRefs=${styleRefs.length}, ${width}x${height}`
+      );
+
+      if (subjectRef) {
+        const resized = await sharp(subjectRef.buffer)
+          .resize(1024, 1024, { fit: "inside", withoutEnlargement: true })
+          .png()
+          .toBuffer();
+        contentParts.push({ inlineData: { mimeType: "image/png", data: resized.toString("base64") } });
+        contentParts.push({ text: `SUBJECT REFERENCE (HIGHEST PRIORITY): ${subjectRef.description}` });
+      }
+
+      for (let i = 0; i < styleRefs.length; i++) {
+        const ref = styleRefs[i];
+        const resized = await sharp(ref.buffer)
+          .resize(768, 768, { fit: "inside", withoutEnlargement: true })
+          .png()
+          .toBuffer();
+        contentParts.push({ inlineData: { mimeType: "image/png", data: resized.toString("base64") } });
+        contentParts.push({
+          text: `STYLE REFERENCE ${i + 1}: ${ref.description}`,
+        });
+      }
+
+      const illustrationSystemNote = subjectRef
+        ? "The subject reference above defines WHAT you draw. Style references define HOW it is rendered."
+        : "Style references above define the visual language to use.";
+
+      contentParts.push({
+        text: `${illustrationSystemNote}
+
+ILLUSTRATION BRIEF:
+${prompt}
+
+OUTPUT REQUIREMENTS — ABSOLUTE:
+- ${aspectLabel.toUpperCase()} format, exactly ${width}×${height} pixels, single flattened RGB image.
+- FLAT VECTOR illustration style — no 3D rendering, no volumetric shading, no photorealism.
+- ENTIRE subject must be FULLY CONTAINED within the frame — no cropping of limbs, head, or body.
+- BACKGROUND is a single solid flat colour only — no drop shadows, no glows, no halos, no backdrop effects.
+- ALL shading is internal to the character only — no shadows projected onto the background.
+- ZERO text, logos, watermarks, or typography anywhere in the image.`,
+      });
+    } else {
+      // ── SOCIALS / TEMPLATE MODE ────────────────────────────────────────────
+      // A brand template is the first image. We composite an illustration on top.
+
+      const templateRef = referenceImages?.find((r) => r.description.includes("BASE TEMPLATE"));
+      const styleRefs = referenceImages?.filter((r) => !r.description.includes("BASE TEMPLATE")) ?? [];
+
+      console.log(
+        `[NanoBanana] SOCIALS mode — template=${!!templateRef}, styleRefs=${styleRefs.length}, ${width}x${height}`
+      );
+
+      const mainPrompt = `You are editing a finished brand TEMPLATE image. The FIRST image you see is the exact background with logo, notch and layout already in place.
+
+Your job: generate a NEW illustration element ON TOP of that existing template without changing the background, logo, or layout. Preserve the template exactly and just add the character/object in our house illustration style. Output a single, flattened RGB image (no transparency). ${aspectLabel} format (${width}x${height}).
+
+${prompt}
+
+FINAL INSTRUCTION — ABSOLUTE PRIORITY: Do NOT render ANY text, words, letters, numbers, headlines, logos, or watermarks anywhere in the image. The output must be a PURE ILLUSTRATION — zero typography.`;
 
       if (templateRef) {
         const resized = await sharp(templateRef.buffer)
           .resize(1024, 1024, { fit: "inside", withoutEnlargement: true })
           .png()
           .toBuffer();
-        contentParts.push({
-          inlineData: { mimeType: "image/png", data: resized.toString("base64") },
-        });
+        contentParts.push({ inlineData: { mimeType: "image/png", data: resized.toString("base64") } });
         contentParts.push({
           text: "IMAGE 1 — BRAND TEMPLATE CANVAS: This is the background template with logo already placed. Generate the illustration element ON TOP of this layout. Do NOT modify the background, logo, or notch.",
         });
@@ -89,20 +144,17 @@ Do NOT render ANY text, words, letters, numbers, headlines, logos, or watermarks
           .resize(768, 768, { fit: "inside", withoutEnlargement: true })
           .png()
           .toBuffer();
-
-        contentParts.push({
-          inlineData: { mimeType: "image/png", data: resized.toString("base64") },
-        });
+        contentParts.push({ inlineData: { mimeType: "image/png", data: resized.toString("base64") } });
         contentParts.push({
           text: `STYLE REFERENCE ${i + 1}: ${ref.description}. Match this illustration's art style, color treatment, line work, and shading technique in the new image.`,
         });
       }
 
       contentParts.push({
-        text: `Using the template canvas and style reference images above, generate a NEW illustration element. ${mainPrompt}`,
+        text: templateRef
+          ? `Using the template canvas and style references above, generate a NEW illustration element. ${mainPrompt}`
+          : mainPrompt,
       });
-    } else {
-      contentParts.push({ text: mainPrompt });
     }
 
     for (let attempt = 1; attempt <= 2; attempt++) {

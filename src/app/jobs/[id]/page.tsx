@@ -48,14 +48,24 @@ export default function JobPage({ params }: { params: Promise<{ id: string }> })
         <div>
           <div className="flex items-center gap-3 mb-2">
             <h1 className="text-2xl font-bold">
-              {job.status === "planned" ? "Review Prompts" : "Job Review"}
+              {job.status === "planned" ? "Review Prompts" : job.mode === "illustration" ? "Illustration Review" : "Job Review"}
             </h1>
             <JobStatusBadge status={job.status} />
+            {job.mode === "illustration" && (
+              <span className="text-xs bg-violet-100 dark:bg-violet-950/40 text-violet-700 dark:text-violet-300 border border-violet-200 dark:border-violet-800 rounded-full px-2 py-0.5 font-medium">
+                Illustration Mode
+              </span>
+            )}
           </div>
           <p className="text-muted-foreground text-sm max-w-xl">{job.description}</p>
-          <div className="mt-2">
-            <ChannelBadges channels={job.channels} />
-          </div>
+          {job.mode !== "illustration" && (
+            <div className="mt-2">
+              <ChannelBadges channels={job.channels} />
+            </div>
+          )}
+          {job.mode === "illustration" && job.visualType && (
+            <p className="mt-1 text-xs text-muted-foreground">Size: {job.visualType}</p>
+          )}
         </div>
         <div className="flex gap-2">
           <Link href="/create">
@@ -107,6 +117,9 @@ export default function JobPage({ params }: { params: Promise<{ id: string }> })
         <SpecReview
           jobId={job.id}
           variants={job.variants}
+          jobMode={job.mode}
+          subjectReferenceUrl={job.subjectReferenceUrl}
+          subjectReferenceNote={job.subjectReferenceNote}
           onApproved={handleApproved}
         />
       )}
@@ -117,6 +130,7 @@ export default function JobPage({ params }: { params: Promise<{ id: string }> })
             <VariantCard
               key={variant.id}
               variant={variant}
+              jobMode={job.mode}
               onFeedbackSubmitted={() => mutate()}
             />
           ))}

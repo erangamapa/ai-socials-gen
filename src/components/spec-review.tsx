@@ -77,10 +77,14 @@ function extractSpec(variant: VariantData): VariantSpec {
 interface SpecReviewProps {
   jobId: string;
   variants: VariantData[];
+  jobMode?: string;
+  subjectReferenceUrl?: string | null;
+  subjectReferenceNote?: string | null;
   onApproved: () => void;
 }
 
-export function SpecReview({ jobId, variants, onApproved }: SpecReviewProps) {
+export function SpecReview({ jobId, variants, jobMode, subjectReferenceUrl, subjectReferenceNote, onApproved }: SpecReviewProps) {
+  const isIllustrationMode = jobMode === "illustration";
   const [specs, setSpecs] = useState<VariantSpec[]>(() =>
     variants.map(extractSpec)
   );
@@ -133,14 +137,41 @@ export function SpecReview({ jobId, variants, onApproved }: SpecReviewProps) {
     <div className="space-y-6">
       <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4">
         <p className="text-sm font-medium text-amber-800 dark:text-amber-200">
-          Review the planner output below. Edit any copy or image prompts, then approve to start image generation.
+          {isIllustrationMode
+            ? "Review the illustration spec below. Edit any prompts, then approve to generate your illustrations."
+            : "Review the planner output below. Edit any copy or image prompts, then approve to start image generation."}
         </p>
       </div>
+
+      {/* Subject reference (illustration mode) */}
+      {isIllustrationMode && subjectReferenceUrl && (
+        <div className="flex items-start gap-3 rounded-lg border bg-violet-50/50 dark:bg-violet-950/20 border-violet-200 dark:border-violet-800 p-3">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={subjectReferenceUrl}
+            alt="Subject reference"
+            className="w-16 h-16 object-cover rounded-md border shrink-0"
+          />
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-medium text-violet-800 dark:text-violet-200">Subject Reference</p>
+            {subjectReferenceNote ? (
+              <div className="mt-1.5 rounded-md bg-violet-100/70 dark:bg-violet-900/30 border border-violet-200 dark:border-violet-700 px-2.5 py-1.5">
+                <p className="text-xs font-medium text-violet-700 dark:text-violet-300 mb-0.5">Creator instructions</p>
+                <p className="text-xs text-violet-800 dark:text-violet-200 italic">&ldquo;{subjectReferenceNote}&rdquo;</p>
+              </div>
+            ) : (
+              <p className="text-xs text-muted-foreground mt-0.5">
+                Sent to the image generator as the first reference — anchors the subject&apos;s likeness before style references are applied.
+              </p>
+            )}
+          </div>
+        </div>
+      )}
 
       {specs.map((spec, idx) => (
         <Card key={spec.variantLabel}>
           <CardHeader className="pb-3">
-            <CardTitle className="flex items-center gap-3">
+            <CardTitle className="flex items-center gap-3 flex-wrap">
               <span>Variant {spec.variantLabel}</span>
               {spec.artDirection.palette.length > 0 && (
                 <div className="flex gap-1">
@@ -154,6 +185,19 @@ export function SpecReview({ jobId, variants, onApproved }: SpecReviewProps) {
                   ))}
                 </div>
               )}
+              {isIllustrationMode && (() => {
+                const raw = variants[idx]?.plannerSpec as Record<string, unknown> | null;
+                const art = raw?.artDirection as Record<string, unknown> | null;
+                const solidBg = art?.solidBackground as string | undefined;
+                if (!solidBg) return null;
+                return (
+                  <div className="flex items-center gap-1.5 ml-auto">
+                    <span className="text-xs text-muted-foreground">Background:</span>
+                    <div className="w-5 h-5 rounded-sm border shadow-sm" style={{ backgroundColor: solidBg }} title={solidBg} />
+                    <span className="text-xs font-mono text-muted-foreground">{solidBg}</span>
+                  </div>
+                );
+              })()}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -162,6 +206,53 @@ export function SpecReview({ jobId, variants, onApproved }: SpecReviewProps) {
               const templateId = (raw?.templateAssetId as string) || "";
               const refs = (raw?.referencesUsed as string[]) || [];
               if (!templateId && refs.length === 0) return null;
+
+              if (isIllustrationMode && refs.length > 0) {
+                // Illustration mode: show actual image thumbnails for the vault refs
+                const styleRefs = refs.filter((r) => r !== templateId);
+                // referencePaths maps DB id → public asset path (added by planner)
+                const refPaths = (raw?.referencePaths as Record<string, string>) ?? {};
+
+                return (
+                  <div className="space-y-1.5">
+                    <Label className="text-xs font-medium text-muted-foreground">
+                      Style References ({styleRefs.length})
+                    </Label>
+                    <div className="flex flex-wrap gap-2">
+                      {styleRefs.map((refId, ri) => {
+                        const assetPath = refPaths[refId];
+                        const src = assetPath
+                          ? `/api/vault/asset?path=${encodeURIComponent(assetPath)}`
+                          : null;
+                        return (
+                          <div key={refId} className="relative group">
+                            {src ? (
+                              // eslint-disable-next-line @next/next/no-img-element
+                              <img
+                                src={src}
+                                alt={`Style ref ${ri + 1}`}
+                                className="w-14 h-14 object-cover rounded border"
+                                onError={(e) => {
+                                  (e.target as HTMLImageElement).style.display = "none";
+                                }}
+                              />
+                            ) : (
+                              <span className="inline-flex items-center justify-center w-14 h-14 text-xs rounded border bg-muted text-muted-foreground">
+                                Ref {ri + 1}
+                              </span>
+                            )}
+                            <div className="absolute inset-0 flex items-center justify-center bg-black/60 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                              <span className="text-white text-xs font-mono">{refId.slice(0, 8)}</span>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              }
+
+              // Socials mode: show badges
               return (
                 <div className="flex flex-wrap gap-2 items-center text-xs">
                   {templateId && (
@@ -174,44 +265,48 @@ export function SpecReview({ jobId, variants, onApproved }: SpecReviewProps) {
               );
             })()}
 
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label className="text-xs font-medium text-muted-foreground">Headline</Label>
-                <Textarea
-                  value={spec.copy.headline}
-                  onChange={(e) => updateSpec(idx, "copy.headline", e.target.value)}
-                  rows={2}
-                  className="font-bold"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label className="text-xs font-medium text-muted-foreground">CTA</Label>
-                <Textarea
-                  value={spec.copy.cta}
-                  onChange={(e) => updateSpec(idx, "copy.cta", e.target.value)}
-                  rows={2}
-                />
-              </div>
-            </div>
+            {!isIllustrationMode && (
+              <>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label className="text-xs font-medium text-muted-foreground">Headline</Label>
+                    <Textarea
+                      value={spec.copy.headline}
+                      onChange={(e) => updateSpec(idx, "copy.headline", e.target.value)}
+                      rows={2}
+                      className="font-bold"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="text-xs font-medium text-muted-foreground">CTA</Label>
+                    <Textarea
+                      value={spec.copy.cta}
+                      onChange={(e) => updateSpec(idx, "copy.cta", e.target.value)}
+                      rows={2}
+                    />
+                  </div>
+                </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label className="text-xs font-medium text-muted-foreground">Subhead</Label>
-                <Textarea
-                  value={spec.copy.subhead || ""}
-                  onChange={(e) => updateSpec(idx, "copy.subhead", e.target.value)}
-                  rows={2}
-                />
-              </div>
-              <div className="space-y-2">
-                <Label className="text-xs font-medium text-muted-foreground">Disclaimer</Label>
-                <Textarea
-                  value={spec.copy.disclaimer || ""}
-                  onChange={(e) => updateSpec(idx, "copy.disclaimer", e.target.value)}
-                  rows={2}
-                />
-              </div>
-            </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label className="text-xs font-medium text-muted-foreground">Subhead</Label>
+                    <Textarea
+                      value={spec.copy.subhead || ""}
+                      onChange={(e) => updateSpec(idx, "copy.subhead", e.target.value)}
+                      rows={2}
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="text-xs font-medium text-muted-foreground">Disclaimer</Label>
+                    <Textarea
+                      value={spec.copy.disclaimer || ""}
+                      onChange={(e) => updateSpec(idx, "copy.disclaimer", e.target.value)}
+                      rows={2}
+                    />
+                  </div>
+                </div>
+              </>
+            )}
 
             <Separator />
 

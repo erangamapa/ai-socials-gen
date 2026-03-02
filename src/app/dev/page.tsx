@@ -6,7 +6,18 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
+interface AgentStats {
+  jobs: number;
+  feedback: { accept: number; reject: number };
+  rules: { active: number; total: number };
+  lastJobAt: string | null;
+}
+
 interface Stats {
+  agents?: {
+    socials: AgentStats;
+    illustration: AgentStats;
+  };
   vault: {
     totalFiles: number;
     byType: Record<string, number>;
@@ -161,6 +172,68 @@ export default function DevPage() {
         <h1 className="text-2xl font-bold">Dev Dashboard</h1>
         <p className="text-muted-foreground text-sm mt-1">System diagnostics, agent capabilities, and brand intelligence</p>
       </div>
+
+      {/* Agent Health */}
+      {stats.agents && (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {(["socials", "illustration"] as const).map((mode) => {
+            const agent = stats.agents![mode];
+            const label = mode === "socials" ? "Social Post Agent" : "Illustration Agent";
+            const accent = mode === "socials"
+              ? "border-blue-500/30 bg-blue-500/5"
+              : "border-violet-500/30 bg-violet-500/5";
+            const badgeColor = mode === "socials"
+              ? "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300"
+              : "bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300";
+            const lastUsed = agent.lastJobAt
+              ? new Date(agent.lastJobAt).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" })
+              : "never";
+            const trainedClass = (agent.feedback.accept + agent.feedback.reject) > 0 ? "" : "opacity-60";
+            return (
+              <div key={mode} className={`rounded-xl border p-5 space-y-4 ${accent}`}>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="font-semibold text-base">{label}</span>
+                    <div className="text-xs text-muted-foreground mt-0.5">Last used: {lastUsed}</div>
+                  </div>
+                  <span className={`text-xs px-2.5 py-1 rounded-full font-medium ${badgeColor} ${trainedClass}`}>
+                    {(agent.feedback.accept + agent.feedback.reject) > 0 ? "Trained" : "Untrained"}
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-3 gap-3 text-center">
+                  <div className="rounded-lg bg-background/60 border px-3 py-2">
+                    <div className="text-xl font-bold">{agent.jobs}</div>
+                    <div className="text-xs text-muted-foreground">Jobs</div>
+                  </div>
+                  <div className="rounded-lg bg-background/60 border px-3 py-2">
+                    <div className="text-xl font-bold text-green-600 dark:text-green-400">{agent.feedback.accept}</div>
+                    <div className="text-xs text-muted-foreground">Accepts</div>
+                  </div>
+                  <div className="rounded-lg bg-background/60 border px-3 py-2">
+                    <div className="text-xl font-bold text-red-500 dark:text-red-400">{agent.feedback.reject}</div>
+                    <div className="text-xs text-muted-foreground">Rejects</div>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between text-sm">
+                  <div>
+                    <span className="font-medium">{agent.rules.active}</span>
+                    <span className="text-muted-foreground ml-1">active rules</span>
+                    <span className="text-muted-foreground ml-2">({agent.rules.total} total)</span>
+                  </div>
+                  <a
+                    href={`/rules?mode=${mode}`}
+                    className="text-xs font-medium underline underline-offset-4 hover:opacity-80"
+                  >
+                    Configure Rules →
+                  </a>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
 
       {/* Top-level stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">

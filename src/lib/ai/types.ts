@@ -76,6 +76,7 @@ export interface ImageGenRequest {
   height: number;
   style?: string;
   referenceImages?: ReferenceImage[];
+  mode?: "socials" | "illustration";
 }
 
 export interface ImageGenResult {
