@@ -72,7 +72,7 @@ function VariantThumbs({
               {label}
             </span>
             {jobStatus === "generating" && (
-              <span className="w-3 h-3 rounded-full bg-purple-400 animate-pulse" />
+              <span className="w-3 h-3 rounded-full bg-secondary animate-pulse" />
             )}
           </div>
         ))}
@@ -87,9 +87,9 @@ function VariantThumbs({
         const decision = (v.feedback ?? [])[0]?.decision;
         const ringClass =
           decision === "accept"
-            ? "ring-2 ring-green-500"
+            ? "ring-2 ring-accent"
             : decision === "reject"
-            ? "ring-2 ring-red-400"
+            ? "ring-2 ring-destructive/60"
             : "";
 
         return (
@@ -120,12 +120,12 @@ function VariantThumbs({
               {v.label}
             </span>
             {decision === "accept" && (
-              <span className="absolute top-1.5 right-1.5 text-[10px] font-bold px-1 py-0.5 rounded bg-green-500 text-white">
+              <span className="absolute top-1.5 right-1.5 text-[10px] font-bold px-1 py-0.5 rounded bg-accent text-accent-foreground">
                 ✓
               </span>
             )}
             {decision === "reject" && (
-              <span className="absolute top-1.5 right-1.5 text-[10px] font-bold px-1 py-0.5 rounded bg-red-500 text-white">
+              <span className="absolute top-1.5 right-1.5 text-[10px] font-bold px-1 py-0.5 rounded bg-destructive text-white">
                 ✗
               </span>
             )}
@@ -170,10 +170,7 @@ function JobCard({ job }: { job: LibraryJob }) {
         <div className="flex items-center gap-2 flex-wrap">
           <JobStatusBadge status={job.status} />
           {isIllustration ? (
-            <Badge
-              variant="outline"
-              className="text-xs border-violet-300 dark:border-violet-700 text-violet-700 dark:text-violet-300"
-            >
+            <Badge variant="secondary" className="text-xs">
               Illustration
             </Badge>
           ) : (
@@ -194,19 +191,19 @@ function JobCard({ job }: { job: LibraryJob }) {
 
         {/* Subject reference */}
         {job.subjectReferenceUrl && (
-          <div className="flex items-start gap-2.5 rounded-lg bg-violet-50 dark:bg-violet-950/30 border border-violet-200 dark:border-violet-800/50 p-2">
+          <div className="flex items-start gap-2.5 rounded-lg bg-secondary/5 border border-secondary/20 p-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={job.subjectReferenceUrl}
               alt="Reference"
-              className="w-9 h-9 rounded object-cover shrink-0 border border-violet-200 dark:border-violet-700"
+              className="w-9 h-9 rounded object-cover shrink-0 border border-secondary/30"
             />
             <div className="min-w-0">
-              <p className="text-[10px] font-semibold text-violet-600 dark:text-violet-400 uppercase tracking-wide mb-0.5">
+              <p className="text-[10px] font-semibold text-secondary uppercase tracking-wide mb-0.5">
                 Subject reference
               </p>
               {job.subjectReferenceNote ? (
-                <p className="text-xs text-violet-700 dark:text-violet-300 italic line-clamp-2">
+                <p className="text-xs text-muted-foreground italic line-clamp-2">
                   &ldquo;{job.subjectReferenceNote}&rdquo;
                 </p>
               ) : (

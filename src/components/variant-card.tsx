@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/dialog";
 import { FeedbackDialog } from "./feedback-dialog";
 import { VariantData, ArtifactData } from "@/hooks/use-poll-job";
-import { Download, Expand, ArrowRight, Loader2, CheckCircle2, XCircle, Eye, EyeOff } from "lucide-react";
+import { Download, Expand, ArrowRight, Loader2, CheckCircle2, XCircle, Eye, EyeOff, Scissors, FileCode, Check } from "lucide-react";
 
 const CHANNEL_LABELS: Record<string, string> = {
   twitter: "Twitter / X",
@@ -40,6 +40,10 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
   const [isAccepting, setIsAccepting] = useState(false);
   const [isExpanding, setIsExpanding] = useState(false);
   const [expandError, setExpandError] = useState<string | null>(null);
+  const [isRemovingBg, setIsRemovingBg] = useState(false);
+  const [removeBgError, setRemoveBgError] = useState<string | null>(null);
+  const [isVectorizing, setIsVectorizing] = useState(false);
+  const [vectorizeError, setVectorizeError] = useState<string | null>(null);
   const [showOriginal, setShowOriginal] = useState(false);
   const [justExpanded, setJustExpanded] = useState(false);
   const expandPollRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -52,6 +56,8 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
 
   const finals = variant.artifacts.filter((a) => a.kind === "final_png");
   const expanded = variant.artifacts.find((a) => a.kind === "expanded_png");
+  const nobg = variant.artifacts.find((a) => a.kind === "nobg_png");
+  const vector = variant.artifacts.find((a) => a.kind === "vector_svg");
   const heroArtifact: ArtifactData | undefined =
     (expanded && !showOriginal) ? expanded : finals[0];
   const secondaryArtifacts = finals.slice(1);
@@ -148,6 +154,66 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
     }
   };
 
+  const handleRemoveBg = async () => {
+    const sourceArtifact = expanded || finals[0];
+    if (!sourceArtifact) return;
+    setRemoveBgError(null);
+    setIsRemovingBg(true);
+
+    try {
+      const res = await fetch(`/api/artifacts/${sourceArtifact.id}/remove-bg`, {
+        method: "POST",
+      });
+
+      if (res.status === 409) {
+        onFeedbackSubmitted();
+        setIsRemovingBg(false);
+        return;
+      }
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Remove background failed");
+      }
+
+      onFeedbackSubmitted();
+    } catch (err) {
+      setRemoveBgError(err instanceof Error ? err.message : "Remove background failed");
+    } finally {
+      setIsRemovingBg(false);
+    }
+  };
+
+  const handleVectorize = async () => {
+    const sourceArtifact = nobg || expanded || finals[0];
+    if (!sourceArtifact) return;
+    setVectorizeError(null);
+    setIsVectorizing(true);
+
+    try {
+      const res = await fetch(`/api/artifacts/${sourceArtifact.id}/vectorize`, {
+        method: "POST",
+      });
+
+      if (res.status === 409) {
+        onFeedbackSubmitted();
+        setIsVectorizing(false);
+        return;
+      }
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Vectorize failed");
+      }
+
+      onFeedbackSubmitted();
+    } catch (err) {
+      setVectorizeError(err instanceof Error ? err.message : "Vectorize failed");
+    } finally {
+      setIsVectorizing(false);
+    }
+  };
+
   const handleUseInSocial = () => {
     router.push(`/create?fromVariant=${variant.id}`);
   };
@@ -157,8 +223,8 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
   // ── Card border styling ──────────────────────────────────────────────────
   const cardClass = [
     "rounded-xl border overflow-hidden flex flex-col transition-all",
-    hasAccepted ? "border-green-500 shadow-[0_0_0_1px_rgba(34,197,94,0.2)]" : "",
-    hasRejected ? "border-red-300 opacity-60" : "",
+    hasAccepted ? "border-accent/60 ring-1 ring-accent/15" : "",
+    hasRejected ? "border-destructive/40 opacity-60" : "",
     !hasAccepted && !hasRejected ? "border-border" : "",
   ].join(" ");
 
@@ -202,8 +268,8 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
                 className={[
                   "absolute bottom-2 right-2 text-[10px] font-semibold px-2 py-1 rounded-md text-white transition-all duration-700",
                   justExpanded
-                    ? "bg-violet-500 shadow-[0_0_12px_rgba(139,92,246,0.6)] scale-110"
-                    : "bg-violet-600",
+                    ? "bg-secondary ring-4 ring-secondary/30 scale-110"
+                    : "bg-secondary/80",
                 ].join(" ")}
               >
                 {justExpanded ? "Expanded!" : "Expanded"} ✦
@@ -219,14 +285,14 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
 
             {/* Accepted indicator */}
             {hasAccepted && (
-              <div className="absolute top-2 right-2 flex items-center gap-1 bg-green-500/90 text-white text-xs font-semibold px-2 py-1 rounded-full backdrop-blur-sm">
+              <div className="absolute top-2 right-2 flex items-center gap-1 bg-accent/90 text-accent-foreground text-xs font-semibold px-2 py-1 rounded-full backdrop-blur-sm">
                 <CheckCircle2 className="h-3.5 w-3.5" />
                 Accepted
               </div>
             )}
             {/* Rejected indicator */}
             {hasRejected && (
-              <div className="absolute top-2 right-2 flex items-center gap-1 bg-red-500/90 text-white text-xs font-semibold px-2 py-1 rounded-full backdrop-blur-sm">
+              <div className="absolute top-2 right-2 flex items-center gap-1 bg-destructive/90 text-white text-xs font-semibold px-2 py-1 rounded-full backdrop-blur-sm">
                 <XCircle className="h-3.5 w-3.5" />
                 Rejected
               </div>
@@ -271,7 +337,7 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
                   <>
                     <span className="line-through opacity-50">{finals[0].width}×{finals[0].height}</span>
                     {" → "}
-                    <span className="text-violet-600 dark:text-violet-400 font-medium">{expanded.width}×{expanded.height}</span>
+                    <span className="text-secondary font-medium">{expanded.width}×{expanded.height}</span>
                   </>
                 )
               ) : (
@@ -285,7 +351,7 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
             </Badge>
           )}
           {isIllustration && (
-            <Badge variant="outline" className="text-xs border-violet-300 dark:border-violet-700 text-violet-700 dark:text-violet-300">
+            <Badge variant="secondary" className="text-xs">
               Illustration
             </Badge>
           )}
@@ -318,7 +384,7 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
 
           {/* After accept: post-accept action bar */}
           {hasAccepted && (finals[0] || expanded) && (
-            <div className="space-y-2">
+            <div className="space-y-3">
               {/* Before/after toggle (only when expanded exists) */}
               {isIllustration && expanded && finals[0] && (
                 <button
@@ -340,63 +406,149 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
                 </button>
               )}
 
-              {/* Primary actions */}
-              <div className="flex gap-2">
-                {/* Download (whichever is currently displayed) */}
-                <a
-                  href={downloadUrl(expanded && !showOriginal ? expanded : finals[0]!)}
-                  download={`variant-${variant.label}${expanded && !showOriginal ? "-expanded" : ""}.png`}
-                  className="flex-1"
-                >
-                  <Button variant="outline" size="sm" className="w-full gap-1.5">
-                    <Download className="h-3.5 w-3.5" />
-                    {expanded && !showOriginal ? "Download Expanded" : "Download"}
-                  </Button>
-                </a>
-
-                {/* Expand (illustration only, not yet expanded) */}
-                {isIllustration && !expanded && (
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={handleExpand}
-                    disabled={isExpanding}
-                    className="flex-1 gap-1.5"
-                    title="Expand canvas by ~28% to recover any cropped edges"
-                  >
-                    {isExpanding ? (
-                      <>
-                        <Loader2 className="h-3.5 w-3.5 animate-spin" />
-                        Expanding...
-                      </>
+              {/* ── Output Tools ── */}
+              {isIllustration && (
+                <div className="space-y-2">
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                    Tools
+                  </p>
+                  <div className="grid grid-cols-3 gap-1.5">
+                    {/* Expand tool */}
+                    {!expanded ? (
+                      <button
+                        type="button"
+                        onClick={handleExpand}
+                        disabled={isExpanding}
+                        className="flex flex-col items-center gap-1 py-2 px-1 rounded-lg border border-border/60 hover:border-secondary/50 hover:bg-secondary/5 transition-all text-muted-foreground hover:text-foreground disabled:opacity-50"
+                        title="Expand canvas by ~28%"
+                      >
+                        {isExpanding ? (
+                          <Loader2 className="h-4 w-4 animate-spin text-secondary" />
+                        ) : (
+                          <Expand className="h-4 w-4" />
+                        )}
+                        <span className="text-[10px] font-medium">
+                          {isExpanding ? "Expanding" : "Expand"}
+                        </span>
+                      </button>
                     ) : (
-                      <>
-                        <Expand className="h-3.5 w-3.5" />
-                        Expand
-                      </>
+                      <div className="flex flex-col items-center gap-1 py-2 px-1 rounded-lg border border-secondary/30 bg-secondary/5 text-secondary">
+                        <Check className="h-4 w-4" />
+                        <span className="text-[10px] font-medium">Expanded</span>
+                      </div>
                     )}
-                  </Button>
-                )}
 
-                {/* Download the other version when expanded exists */}
-                {isIllustration && expanded && finals[0] && (
-                  <a
-                    href={downloadUrl(showOriginal ? expanded : finals[0])}
-                    download={`variant-${variant.label}${showOriginal ? "-expanded" : "-original"}.png`}
-                    className="flex-1"
-                  >
-                    <Button variant="ghost" size="sm" className="w-full gap-1.5 text-muted-foreground text-xs">
-                      <Download className="h-3 w-3" />
-                      {showOriginal ? "Expanded" : "Original"}
-                    </Button>
-                  </a>
-                )}
-              </div>
+                    {/* Remove BG tool */}
+                    {!nobg ? (
+                      <button
+                        type="button"
+                        onClick={handleRemoveBg}
+                        disabled={isRemovingBg}
+                        className="flex flex-col items-center gap-1 py-2 px-1 rounded-lg border border-border/60 hover:border-secondary/50 hover:bg-secondary/5 transition-all text-muted-foreground hover:text-foreground disabled:opacity-50"
+                        title="Remove background"
+                      >
+                        {isRemovingBg ? (
+                          <Loader2 className="h-4 w-4 animate-spin text-secondary" />
+                        ) : (
+                          <Scissors className="h-4 w-4" />
+                        )}
+                        <span className="text-[10px] font-medium">
+                          {isRemovingBg ? "Removing" : "Remove BG"}
+                        </span>
+                      </button>
+                    ) : (
+                      <div className="flex flex-col items-center gap-1 py-2 px-1 rounded-lg border border-secondary/30 bg-secondary/5 text-secondary">
+                        <Check className="h-4 w-4" />
+                        <span className="text-[10px] font-medium">No BG</span>
+                      </div>
+                    )}
 
-              {/* Expand error */}
-              {expandError && (
-                <p className="text-xs text-red-500">{expandError}</p>
+                    {/* Make SVG tool */}
+                    {!vector ? (
+                      <button
+                        type="button"
+                        onClick={handleVectorize}
+                        disabled={isVectorizing}
+                        className="flex flex-col items-center gap-1 py-2 px-1 rounded-lg border border-border/60 hover:border-primary/50 hover:bg-primary/5 transition-all text-muted-foreground hover:text-foreground disabled:opacity-50"
+                        title={nobg ? "Vectorize from transparent PNG" : "Vectorize to SVG"}
+                      >
+                        {isVectorizing ? (
+                          <Loader2 className="h-4 w-4 animate-spin text-primary" />
+                        ) : (
+                          <FileCode className="h-4 w-4" />
+                        )}
+                        <span className="text-[10px] font-medium">
+                          {isVectorizing ? "Converting" : "Make SVG"}
+                        </span>
+                      </button>
+                    ) : (
+                      <div className="flex flex-col items-center gap-1 py-2 px-1 rounded-lg border border-primary/30 bg-primary/5 text-primary">
+                        <Check className="h-4 w-4" />
+                        <span className="text-[10px] font-medium">SVG</span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Error messages */}
+                  {expandError && <p className="text-xs text-destructive">{expandError}</p>}
+                  {removeBgError && <p className="text-xs text-destructive">{removeBgError}</p>}
+                  {vectorizeError && <p className="text-xs text-destructive">{vectorizeError}</p>}
+                </div>
               )}
+
+              {/* ── Downloads ── */}
+              {(() => {
+                const downloads: { label: string; href: string; filename: string }[] = [];
+
+                const displayArtifact = expanded && !showOriginal ? expanded : finals[0]!;
+                downloads.push({
+                  label: expanded && !showOriginal ? "PNG (Expanded)" : "PNG",
+                  href: downloadUrl(displayArtifact),
+                  filename: `variant-${variant.label}.png`,
+                });
+
+                if (isIllustration && expanded && finals[0]) {
+                  downloads.push({
+                    label: showOriginal ? "PNG (Expanded)" : "PNG (Original)",
+                    href: downloadUrl(showOriginal ? expanded : finals[0]),
+                    filename: `variant-${variant.label}-${showOriginal ? "expanded" : "original"}.png`,
+                  });
+                }
+
+                if (nobg) {
+                  downloads.push({
+                    label: "PNG (No BG)",
+                    href: nobg.url,
+                    filename: `variant-${variant.label}-nobg.png`,
+                  });
+                }
+
+                if (vector) {
+                  downloads.push({
+                    label: "SVG",
+                    href: vector.url,
+                    filename: `variant-${variant.label}.svg`,
+                  });
+                }
+
+                return (
+                  <div className="space-y-1.5">
+                    <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                      Downloads
+                    </p>
+                    <div className="grid grid-cols-2 gap-1.5">
+                      {downloads.map((dl) => (
+                        <a key={dl.label} href={dl.href} download={dl.filename}>
+                          <Button variant="outline" size="sm" className="w-full gap-1.5 text-xs h-8">
+                            <Download className="h-3 w-3" />
+                            {dl.label}
+                          </Button>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })()}
 
               {/* Use in Social — illustration only */}
               {isIllustration && (
@@ -404,7 +556,7 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
                   onClick={handleUseInSocial}
                   size="sm"
                   variant="default"
-                  className="w-full gap-2 bg-linear-to-r from-violet-600 to-blue-600 hover:from-violet-700 hover:to-blue-700 text-white border-0"
+                  className="w-full gap-2 bg-linear-to-r from-secondary to-primary hover:from-secondary/90 hover:to-primary/90 text-primary-foreground border-0"
                 >
                   Use in Social Post
                   <ArrowRight className="h-3.5 w-3.5" />

@@ -8,6 +8,7 @@ import { ChannelBadges } from "@/components/channel-badges";
 import { VariantCard } from "@/components/variant-card";
 import { SpecReview } from "@/components/spec-review";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 export default function JobPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
@@ -24,7 +25,7 @@ export default function JobPage({ params }: { params: Promise<{ id: string }> })
   if (error || !job) {
     return (
       <main className="min-h-screen flex flex-col items-center justify-center gap-4">
-        <div className="text-red-500">Failed to load job</div>
+        <div className="text-destructive">Failed to load job</div>
         <Link href="/create">
           <Button variant="outline">Back to Create</Button>
         </Link>
@@ -52,9 +53,7 @@ export default function JobPage({ params }: { params: Promise<{ id: string }> })
             </h1>
             <JobStatusBadge status={job.status} />
             {job.mode === "illustration" && (
-              <span className="text-xs bg-violet-100 dark:bg-violet-950/40 text-violet-700 dark:text-violet-300 border border-violet-200 dark:border-violet-800 rounded-full px-2 py-0.5 font-medium">
-                Illustration Mode
-              </span>
+              <Badge variant="secondary">Illustration</Badge>
             )}
           </div>
           <p className="text-muted-foreground text-sm max-w-xl">{job.description}</p>
@@ -82,8 +81,8 @@ export default function JobPage({ params }: { params: Promise<{ id: string }> })
       </div>
 
       {job.status === "failed" && job.errorMessage && (
-        <div className="mb-6 p-4 bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-900 rounded-lg">
-          <p className="text-sm text-red-600 dark:text-red-400">
+        <div className="mb-6 p-4 bg-destructive/10 border border-destructive/20 rounded-lg">
+          <p className="text-sm text-destructive">
             <span className="font-medium">Error:</span> {job.errorMessage}
           </p>
         </div>
@@ -92,7 +91,7 @@ export default function JobPage({ params }: { params: Promise<{ id: string }> })
       {(job.status === "queued" || job.status === "running") && (
         <div className="mb-6 p-6 border rounded-lg text-center">
           <div className="animate-pulse mb-2">
-            <div className="h-4 w-4 rounded-full bg-blue-500 mx-auto" />
+            <div className="h-4 w-4 rounded-full bg-secondary mx-auto" />
           </div>
           <p className="text-sm text-muted-foreground">
             {job.status === "queued"
@@ -105,7 +104,7 @@ export default function JobPage({ params }: { params: Promise<{ id: string }> })
       {job.status === "generating" && (
         <div className="mb-6 p-6 border rounded-lg text-center">
           <div className="animate-pulse mb-2">
-            <div className="h-4 w-4 rounded-full bg-purple-500 mx-auto" />
+            <div className="h-4 w-4 rounded-full bg-secondary mx-auto" />
           </div>
           <p className="text-sm text-muted-foreground">
             Generating images with Nano Banana — this may take a minute...
@@ -120,12 +119,13 @@ export default function JobPage({ params }: { params: Promise<{ id: string }> })
           jobMode={job.mode}
           subjectReferenceUrl={job.subjectReferenceUrl}
           subjectReferenceNote={job.subjectReferenceNote}
+          retrievalBundle={job.retrievalBundle}
           onApproved={handleApproved}
         />
       )}
 
       {job.status === "ready" && (
-        <div className="flex flex-col gap-10 md:grid md:grid-cols-3">
+        <div className="flex flex-col gap-4 md:grid md:grid-cols-3">
           {job.variants.map((variant) => (
             <VariantCard
               key={variant.id}

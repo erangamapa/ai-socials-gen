@@ -139,7 +139,7 @@ export default function DevPage() {
   if (error) {
     return (
       <main className="max-w-6xl mx-auto px-4 py-8">
-        <div className="text-red-500">{error}</div>
+        <div className="text-destructive">{error}</div>
       </main>
     );
   }
@@ -179,26 +179,20 @@ export default function DevPage() {
           {(["socials", "illustration"] as const).map((mode) => {
             const agent = stats.agents![mode];
             const label = mode === "socials" ? "Social Post Agent" : "Illustration Agent";
-            const accent = mode === "socials"
-              ? "border-blue-500/30 bg-blue-500/5"
-              : "border-violet-500/30 bg-violet-500/5";
-            const badgeColor = mode === "socials"
-              ? "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300"
-              : "bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300";
             const lastUsed = agent.lastJobAt
               ? new Date(agent.lastJobAt).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" })
               : "never";
-            const trainedClass = (agent.feedback.accept + agent.feedback.reject) > 0 ? "" : "opacity-60";
+            const isTrained = (agent.feedback.accept + agent.feedback.reject) > 0;
             return (
-              <div key={mode} className={`rounded-xl border p-5 space-y-4 ${accent}`}>
+              <div key={mode} className="rounded-xl border border-border bg-card p-5 space-y-4">
                 <div className="flex items-center justify-between">
                   <div>
                     <span className="font-semibold text-base">{label}</span>
                     <div className="text-xs text-muted-foreground mt-0.5">Last used: {lastUsed}</div>
                   </div>
-                  <span className={`text-xs px-2.5 py-1 rounded-full font-medium ${badgeColor} ${trainedClass}`}>
-                    {(agent.feedback.accept + agent.feedback.reject) > 0 ? "Trained" : "Untrained"}
-                  </span>
+                  <Badge variant={isTrained ? "success" : "outline"}>
+                    {isTrained ? "Trained" : "Untrained"}
+                  </Badge>
                 </div>
 
                 <div className="grid grid-cols-3 gap-3 text-center">
@@ -207,11 +201,11 @@ export default function DevPage() {
                     <div className="text-xs text-muted-foreground">Jobs</div>
                   </div>
                   <div className="rounded-lg bg-background/60 border px-3 py-2">
-                    <div className="text-xl font-bold text-green-600 dark:text-green-400">{agent.feedback.accept}</div>
+                    <div className="text-xl font-bold text-accent">{agent.feedback.accept}</div>
                     <div className="text-xs text-muted-foreground">Accepts</div>
                   </div>
                   <div className="rounded-lg bg-background/60 border px-3 py-2">
-                    <div className="text-xl font-bold text-red-500 dark:text-red-400">{agent.feedback.reject}</div>
+                    <div className="text-xl font-bold text-destructive">{agent.feedback.reject}</div>
                     <div className="text-xs text-muted-foreground">Rejects</div>
                   </div>
                 </div>
@@ -345,7 +339,7 @@ export default function DevPage() {
               <span>Done: {analysis.done}</span>
               <span>Pending: {analysis.pending}</span>
               {analysis.analyzing > 0 && <span>Analyzing: {analysis.analyzing}</span>}
-              {analysis.failed > 0 && <span className="text-red-500">Failed: {analysis.failed}</span>}
+              {analysis.failed > 0 && <span className="text-destructive">Failed: {analysis.failed}</span>}
             </div>
           </div>
 
@@ -426,7 +420,7 @@ export default function DevPage() {
                   <div className="text-xs text-muted-foreground">{step.desc}</div>
                 </div>
                 <Badge
-                  variant={step.status === "active" ? "default" : step.status === "mock" ? "secondary" : "destructive"}
+                  variant={step.status === "active" ? "success" : step.status === "mock" ? "secondary" : "destructive"}
                 >
                   {step.status === "active" ? "Active" : step.status === "mock" ? "Mock" : "No Key"}
                 </Badge>
@@ -540,8 +534,8 @@ export default function DevPage() {
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
                 <span className="text-muted-foreground">Mock Providers</span>
-                <Badge variant={sys.mockProviders ? "secondary" : "default"}>
-                  {sys.mockProviders ? "Enabled" : "Disabled"}
+                <Badge variant={sys.mockProviders ? "default" : "success"}>
+                  {sys.mockProviders ? "Mock" : "Production"}
                 </Badge>
               </div>
               <div className="flex justify-between">
@@ -550,13 +544,13 @@ export default function DevPage() {
               </div>
               <div className="flex justify-between">
                 <span className="text-muted-foreground">Anthropic Key</span>
-                <Badge variant={sys.hasAnthropicKey ? "default" : "outline"}>
+                <Badge variant={sys.hasAnthropicKey ? "success" : "destructive"}>
                   {sys.hasAnthropicKey ? "Set" : "Missing"}
                 </Badge>
               </div>
               <div className="flex justify-between">
                 <span className="text-muted-foreground">Gemini Key</span>
-                <Badge variant={sys.hasNanoBananaKey ? "default" : "outline"}>
+                <Badge variant={sys.hasNanoBananaKey ? "success" : "destructive"}>
                   {sys.hasNanoBananaKey ? "Set" : "Missing"}
                 </Badge>
               </div>

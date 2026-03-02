@@ -74,16 +74,30 @@ function extractSpec(variant: VariantData): VariantSpec {
   };
 }
 
+interface VaultRefItem {
+  id: string;
+  type: string;
+  tags: string[];
+  pathOrUrl: string;
+  notes?: string;
+}
+
+interface RetrievalBundle {
+  items: VaultRefItem[];
+  totalMatched: number;
+}
+
 interface SpecReviewProps {
   jobId: string;
   variants: VariantData[];
   jobMode?: string;
   subjectReferenceUrl?: string | null;
   subjectReferenceNote?: string | null;
+  retrievalBundle?: unknown;
   onApproved: () => void;
 }
 
-export function SpecReview({ jobId, variants, jobMode, subjectReferenceUrl, subjectReferenceNote, onApproved }: SpecReviewProps) {
+export function SpecReview({ jobId, variants, jobMode, subjectReferenceUrl, subjectReferenceNote, retrievalBundle, onApproved }: SpecReviewProps) {
   const isIllustrationMode = jobMode === "illustration";
   const [specs, setSpecs] = useState<VariantSpec[]>(() =>
     variants.map(extractSpec)
@@ -135,8 +149,8 @@ export function SpecReview({ jobId, variants, jobMode, subjectReferenceUrl, subj
 
   return (
     <div className="space-y-6">
-      <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4">
-        <p className="text-sm font-medium text-amber-800 dark:text-amber-200">
+      <div className="bg-primary/10 border border-primary/20 rounded-lg p-4">
+        <p className="text-sm font-medium text-primary">
           {isIllustrationMode
             ? "Review the illustration spec below. Edit any prompts, then approve to generate your illustrations."
             : "Review the planner output below. Edit any copy or image prompts, then approve to start image generation."}
@@ -152,7 +166,7 @@ export function SpecReview({ jobId, variants, jobMode, subjectReferenceUrl, subj
           : "Sent to the image generator as the first reference — anchors the subject\u2019s likeness before style references are applied.";
 
         return (
-          <div className="flex items-start gap-3 rounded-lg border bg-violet-50/50 dark:bg-violet-950/20 border-violet-200 dark:border-violet-800 p-3">
+          <div className="flex items-start gap-3 rounded-lg border bg-secondary/5 border-secondary/20 p-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={subjectReferenceUrl}
@@ -161,22 +175,95 @@ export function SpecReview({ jobId, variants, jobMode, subjectReferenceUrl, subj
             />
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2">
-                <p className="text-sm font-medium text-violet-800 dark:text-violet-200">{label}</p>
+                <p className="text-sm font-medium text-foreground">{label}</p>
                 {isHeroIllustration && (
-                  <Badge variant="outline" className="text-[10px] border-violet-300 dark:border-violet-700 text-violet-600 dark:text-violet-400">
+                  <Badge variant="secondary" className="text-[10px]">
                     Compositing mode
                   </Badge>
                 )}
               </div>
               <p className="text-xs text-muted-foreground mt-0.5">{sublabel}</p>
               {subjectReferenceNote && (
-                <div className="mt-1.5 rounded-md bg-violet-100/70 dark:bg-violet-900/30 border border-violet-200 dark:border-violet-700 px-2.5 py-1.5">
-                  <p className="text-xs font-medium text-violet-700 dark:text-violet-300 mb-0.5">
+                <div className="mt-1.5 rounded-md bg-secondary/10 border border-secondary/20 px-2.5 py-1.5">
+                  <p className="text-xs font-medium text-secondary mb-0.5">
                     {isHeroIllustration ? "Context passed to generator" : "Creator instructions"}
                   </p>
-                  <p className="text-xs text-violet-800 dark:text-violet-200 italic line-clamp-3">&ldquo;{subjectReferenceNote}&rdquo;</p>
+                  <p className="text-xs text-foreground/80 italic line-clamp-3">&ldquo;{subjectReferenceNote}&rdquo;</p>
                 </div>
               )}
+            </div>
+          </div>
+        );
+      })()}
+
+      {/* Vault style references */}
+      {(() => {
+        const bundle = retrievalBundle as RetrievalBundle | null;
+        const items = bundle?.items ?? [];
+        if (items.length === 0) return null;
+
+        const allSelectedIds = new Set(
+          variants.flatMap((v) => {
+            const raw = v.plannerSpec as Record<string, unknown> | null;
+            return (raw?.referencesUsed as string[]) ?? [];
+          })
+        );
+
+        return (
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <p className="text-sm font-medium">Vault Style References</p>
+              <Badge variant="outline" className="text-[10px]">
+                {items.length} retrieved{bundle!.totalMatched > items.length ? ` of ${bundle!.totalMatched}` : ""}
+              </Badge>
+            </div>
+            <p className="text-xs text-muted-foreground">
+              These illustrations from the brand vault are sent as style references to guide the AI&apos;s rendering approach.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {items.map((item) => {
+                const src = item.pathOrUrl
+                  ? `/api/vault/asset?path=${encodeURIComponent(item.pathOrUrl)}`
+                  : null;
+                const isSelected = allSelectedIds.has(item.id);
+                return (
+                  <div
+                    key={item.id}
+                    className={`relative group rounded-lg overflow-hidden border-2 transition-all ${
+                      isSelected
+                        ? "border-primary/60 ring-1 ring-primary/20"
+                        : "border-border/50 opacity-60"
+                    }`}
+                    title={`${item.type} — ${item.tags.join(", ")}${isSelected ? " (selected by planner)" : ""}`}
+                  >
+                    {src ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={src}
+                        alt={item.tags.join(", ")}
+                        className="w-16 h-16 object-cover"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).style.display = "none";
+                        }}
+                      />
+                    ) : (
+                      <span className="inline-flex items-center justify-center w-16 h-16 text-[10px] bg-muted text-muted-foreground">
+                        {item.type}
+                      </span>
+                    )}
+                    {isSelected && (
+                      <div className="absolute top-0.5 right-0.5 w-3.5 h-3.5 rounded-full bg-primary flex items-center justify-center">
+                        <span className="text-[8px] text-primary-foreground font-bold">✓</span>
+                      </div>
+                    )}
+                    <div className="absolute inset-0 flex items-end bg-linear-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-1">
+                      <span className="text-[9px] text-white leading-tight line-clamp-2">
+                        {item.tags.slice(0, 3).join(", ")}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         );
@@ -371,7 +458,7 @@ export function SpecReview({ jobId, variants, jobMode, subjectReferenceUrl, subj
       ))}
 
       {error && (
-        <div className="text-sm text-red-500 bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-900 rounded-md p-3">
+        <div className="text-sm text-destructive bg-destructive/10 border border-destructive/20 rounded-md p-3">
           {error}
         </div>
       )}

@@ -73,16 +73,14 @@ const SOURCE_LABELS: Record<string, string> = {
   default: "default",
 };
 
-const MODE_CONFIG: Record<AgentMode, { label: string; description: string; color: string }> = {
+const MODE_CONFIG: Record<AgentMode, { label: string; description: string }> = {
   socials: {
     label: "Social Post Agent",
     description: "Rules for generating social media posts with templates, brand backgrounds, and compositions",
-    color: "bg-blue-500/10 border-blue-500/30 text-blue-600 dark:text-blue-400",
   },
   illustration: {
     label: "Illustration Agent",
     description: "Rules for generating standalone character illustrations with solid backgrounds and cutout-ready output",
-    color: "bg-violet-500/10 border-violet-500/30 text-violet-600 dark:text-violet-400",
   },
 };
 
@@ -209,14 +207,14 @@ function RulesPageInner() {
               onClick={() => switchMode(mode)}
               className={`rounded-xl border p-4 text-left transition-all ${
                 isActive
-                  ? "border-primary bg-primary/5 ring-1 ring-primary/20"
+                  ? "border-secondary/50 bg-secondary/10 ring-1 ring-secondary/30"
                   : "border-border hover:bg-muted/40"
               }`}
             >
               <div className="flex items-center justify-between mb-1">
                 <span className="font-semibold text-sm">{cfg.label}</span>
                 {stats && (
-                  <span className={`text-xs px-2 py-0.5 rounded-full border font-medium ${cfg.color}`}>
+                  <span className="text-xs px-2 py-0.5 rounded-full border font-medium bg-accent/15 text-accent border-accent/30">
                     {stats.active} active
                   </span>
                 )}
@@ -250,7 +248,7 @@ function RulesPageInner() {
                 <span className="text-muted-foreground ml-1.5">Total</span>
               </div>
               <div>
-                <span className={`text-2xl font-bold ${tokenWarning ? "text-amber-500" : ""}`}>
+                <span className={`text-2xl font-bold ${tokenWarning ? "text-primary" : ""}`}>
                   ~{currentModeStats?.estimatedTokens ?? 0}
                 </span>
                 <span className="text-muted-foreground ml-1.5">Tokens</span>
@@ -276,15 +274,15 @@ function RulesPageInner() {
           {synthesisResult && (
             <div className={`rounded-lg border p-3 text-sm ${
               synthesisResult.startsWith("Error")
-                ? "bg-red-50 dark:bg-red-950/20 border-red-200 dark:border-red-800 text-red-800 dark:text-red-200"
-                : "bg-green-50 dark:bg-green-950/20 border-green-200 dark:border-green-800 text-green-800 dark:text-green-200"
+                ? "bg-destructive/10 border-destructive/20 text-destructive"
+                : "bg-accent/10 border-accent/20 text-foreground"
             }`}>
               {synthesisResult}
             </div>
           )}
 
           {tokenWarning && (
-            <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-lg p-3 text-sm text-amber-800 dark:text-amber-200">
+            <div className="bg-primary/10 border border-primary/20 rounded-lg p-3 text-sm text-primary">
               Token count is high ({currentModeStats?.estimatedTokens}). Consider disabling low-priority rules to prevent prompt bloat.
             </div>
           )}
@@ -349,7 +347,7 @@ function RulesPageInner() {
                 <button
                   onClick={() => toggleRule(rule.id, rule.enabled)}
                   className={`mt-0.5 w-5 h-5 rounded border-2 shrink-0 transition-colors ${
-                    rule.enabled ? "bg-primary border-primary" : "border-muted-foreground"
+                    rule.enabled ? "bg-accent border-accent" : "border-muted-foreground"
                   }`}
                 />
                 <div className="flex-1 min-w-0">
@@ -368,10 +366,10 @@ function RulesPageInner() {
                     <span
                       className={`text-xs font-medium ${
                         rule.confidence >= 70
-                          ? "text-green-600 dark:text-green-400"
+                          ? "text-accent"
                           : rule.confidence >= 40
-                          ? "text-amber-600 dark:text-amber-400"
-                          : "text-red-600 dark:text-red-400"
+                          ? "text-primary"
+                          : "text-destructive"
                       }`}
                       title="Confidence score (0-100)"
                     >
@@ -385,7 +383,7 @@ function RulesPageInner() {
                     {rule.sourceJobId && (
                       <a
                         href={`/jobs/${rule.sourceJobId}`}
-                        className="text-xs text-blue-500 hover:underline"
+                        className="text-xs text-secondary hover:underline"
                       >
                         from job
                       </a>
@@ -407,7 +405,7 @@ function RulesPageInner() {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="h-8 text-xs text-red-500 hover:text-red-600"
+                    className="h-8 text-xs text-destructive hover:text-destructive/80"
                     onClick={() => deleteRule(rule.id)}
                   >
                     Del
