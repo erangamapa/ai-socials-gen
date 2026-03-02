@@ -1,0 +1,2252 @@
+[
+  {
+    "id": "vault-backgrounds-slide-1-ig-new-a",
+    "type": "background",
+    "pathOrUrl": "assets/vault/backgrounds/Slide 1 IG_New A.png",
+    "tags": [
+      "backgrounds",
+      "slide",
+      "ig"
+    ],
+    "channelHints": [
+      "ig_feed"
+    ],
+    "notes": "background: Slide 1 IG_New A [PNG]"
+  },
+  {
+    "id": "vault-backgrounds-slide-1-twitter-new-a",
+    "type": "background",
+    "pathOrUrl": "assets/vault/backgrounds/Slide 1 Twitter_New A.png",
+    "tags": [
+      "backgrounds",
+      "slide",
+      "twitter"
+    ],
+    "channelHints": [
+      "twitter"
+    ],
+    "notes": "background: Slide 1 Twitter_New A [PNG]"
+  },
+  {
+    "id": "vault-backgrounds-slide-3-ig-new",
+    "type": "background",
+    "pathOrUrl": "assets/vault/backgrounds/Slide 3 IG_New.png",
+    "tags": [
+      "backgrounds",
+      "slide",
+      "ig"
+    ],
+    "channelHints": [
+      "ig_feed"
+    ],
+    "notes": "background: Slide 3 IG_New [PNG]"
+  },
+  {
+    "id": "vault-backgrounds-slide-3-twitter-new",
+    "type": "background",
+    "pathOrUrl": "assets/vault/backgrounds/Slide 3 Twitter_New.png",
+    "tags": [
+      "backgrounds",
+      "slide",
+      "twitter"
+    ],
+    "channelHints": [
+      "twitter"
+    ],
+    "notes": "background: Slide 3 Twitter_New [PNG]"
+  },
+  {
+    "id": "vault-backgrounds-slide-4-ig-new",
+    "type": "background",
+    "pathOrUrl": "assets/vault/backgrounds/Slide 4 IG_New.png",
+    "tags": [
+      "backgrounds",
+      "slide",
+      "ig"
+    ],
+    "channelHints": [
+      "ig_feed"
+    ],
+    "notes": "background: Slide 4 IG_New [PNG]"
+  },
+  {
+    "id": "vault-backgrounds-slide-4twitter-new",
+    "type": "background",
+    "pathOrUrl": "assets/vault/backgrounds/Slide 4Twitter_New.png",
+    "tags": [
+      "backgrounds",
+      "slide",
+      "4twitter"
+    ],
+    "channelHints": [
+      "twitter"
+    ],
+    "notes": "background: Slide 4Twitter_New [PNG]"
+  },
+  {
+    "id": "vault-backgrounds-slide-8-ig-new",
+    "type": "background",
+    "pathOrUrl": "assets/vault/backgrounds/Slide 8 IG_New.png",
+    "tags": [
+      "backgrounds",
+      "slide",
+      "ig"
+    ],
+    "channelHints": [
+      "ig_feed"
+    ],
+    "notes": "background: Slide 8 IG_New [PNG]"
+  },
+  {
+    "id": "vault-backgrounds-slide-8-twitter-new",
+    "type": "background",
+    "pathOrUrl": "assets/vault/backgrounds/Slide 8 Twitter_New.png",
+    "tags": [
+      "backgrounds",
+      "slide",
+      "twitter"
+    ],
+    "channelHints": [
+      "twitter"
+    ],
+    "notes": "background: Slide 8 Twitter_New [PNG]"
+  },
+  {
+    "id": "vault-brand-brandmark-element-brandmark",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/brandmark/Element=Brandmark.svg",
+    "tags": [
+      "brand_elements",
+      "brandmark",
+      "element",
+      "branding"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (brandmark): Element=Brandmark [SVG]"
+  },
+  {
+    "id": "vault-brand-brandmark-element-framing",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/brandmark/Element=Framing.svg",
+    "tags": [
+      "brand_elements",
+      "brandmark",
+      "element",
+      "framing",
+      "composition"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (brandmark): Element=Framing [SVG]"
+  },
+  {
+    "id": "vault-brand-brandmark-element-perspective-right",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/brandmark/Element=Perspective right.svg",
+    "tags": [
+      "brand_elements",
+      "brandmark",
+      "element",
+      "perspective",
+      "right",
+      "3d"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (brandmark): Element=Perspective right [SVG]"
+  },
+  {
+    "id": "vault-brand-brandmark-element-perspertive-left",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/brandmark/Element=Perspertive left.svg",
+    "tags": [
+      "brand_elements",
+      "brandmark",
+      "element",
+      "perspertive",
+      "left"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (brandmark): Element=Perspertive left [SVG]"
+  },
+  {
+    "id": "vault-brand-brandmark-element-slots-1",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/brandmark/Element=Slots 1.svg",
+    "tags": [
+      "brand_elements",
+      "brandmark",
+      "element",
+      "slots",
+      "casino"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (brandmark): Element=Slots 1 [SVG]"
+  },
+  {
+    "id": "vault-brand-brandmark-element-slots-2",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/brandmark/Element=Slots 2.svg",
+    "tags": [
+      "brand_elements",
+      "brandmark",
+      "element",
+      "slots",
+      "casino"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (brandmark): Element=Slots 2 [SVG]"
+  },
+  {
+    "id": "vault-brand-brandmark-element-slots-3",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/brandmark/Element=Slots 3.svg",
+    "tags": [
+      "brand_elements",
+      "brandmark",
+      "element",
+      "slots",
+      "casino"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (brandmark): Element=Slots 3 [SVG]"
+  },
+  {
+    "id": "vault-brand-brandmark-glow-1",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/brandmark/glow-1.svg",
+    "tags": [
+      "brand_elements",
+      "brandmark",
+      "glow",
+      "effect"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (brandmark): glow-1 [SVG]"
+  },
+  {
+    "id": "vault-brand-brandmark-glow-2",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/brandmark/glow-2.svg",
+    "tags": [
+      "brand_elements",
+      "brandmark",
+      "glow",
+      "effect"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (brandmark): glow-2 [SVG]"
+  },
+  {
+    "id": "vault-brand-brandmark-glow-3",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/brandmark/glow-3.svg",
+    "tags": [
+      "brand_elements",
+      "brandmark",
+      "glow",
+      "effect"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (brandmark): glow-3 [SVG]"
+  },
+  {
+    "id": "vault-brand-brandmark-glow-4",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/brandmark/glow-4.svg",
+    "tags": [
+      "brand_elements",
+      "brandmark",
+      "glow",
+      "effect"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (brandmark): glow-4 [SVG]"
+  },
+  {
+    "id": "vault-brand-brandmark-glow-5",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/brandmark/glow-5.svg",
+    "tags": [
+      "brand_elements",
+      "brandmark",
+      "glow",
+      "effect"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (brandmark): glow-5 [SVG]"
+  },
+  {
+    "id": "vault-brand-brandmark-glow-6",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/brandmark/glow-6.svg",
+    "tags": [
+      "brand_elements",
+      "brandmark",
+      "glow",
+      "effect"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (brandmark): glow-6 [SVG]"
+  },
+  {
+    "id": "vault-brand-brandmark-glow",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/brandmark/glow.svg",
+    "tags": [
+      "brand_elements",
+      "brandmark",
+      "glow",
+      "effect"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (brandmark): glow [SVG]"
+  },
+  {
+    "id": "vault-brand-logo-variant-brandmark",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/logo/Variant=Brandmark.png",
+    "tags": [
+      "brand_elements",
+      "logo",
+      "variant",
+      "brandmark",
+      "branding"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (logo): Variant=Brandmark [PNG]"
+  },
+  {
+    "id": "vault-brand-logo-variant-brandmark",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/logo/Variant=Brandmark.svg",
+    "tags": [
+      "brand_elements",
+      "logo",
+      "variant",
+      "brandmark",
+      "branding"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (logo): Variant=Brandmark [SVG]"
+  },
+  {
+    "id": "vault-brand-logo-variant-core",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/logo/Variant=Core.png",
+    "tags": [
+      "brand_elements",
+      "logo",
+      "variant",
+      "core",
+      "primary"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (logo): Variant=Core [PNG]"
+  },
+  {
+    "id": "vault-brand-logo-variant-core",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/logo/Variant=Core.svg",
+    "tags": [
+      "brand_elements",
+      "logo",
+      "variant",
+      "core",
+      "primary"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (logo): Variant=Core [SVG]"
+  },
+  {
+    "id": "vault-brand-logo-variant-expressive",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/logo/Variant=Expressive.png",
+    "tags": [
+      "brand_elements",
+      "logo",
+      "variant",
+      "expressive",
+      "dynamic"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (logo): Variant=Expressive [PNG]"
+  },
+  {
+    "id": "vault-brand-logo-variant-expressive",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/logo/Variant=Expressive.svg",
+    "tags": [
+      "brand_elements",
+      "logo",
+      "variant",
+      "expressive",
+      "dynamic"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (logo): Variant=Expressive [SVG]"
+  },
+  {
+    "id": "vault-brand-logo-variant-stacked-aligned",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/logo/Variant=Stacked Aligned.png",
+    "tags": [
+      "brand_elements",
+      "logo",
+      "variant",
+      "stacked",
+      "aligned",
+      "vertical"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (logo): Variant=Stacked Aligned [PNG]"
+  },
+  {
+    "id": "vault-brand-logo-variant-stacked-aligned",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/logo/Variant=Stacked Aligned.svg",
+    "tags": [
+      "brand_elements",
+      "logo",
+      "variant",
+      "stacked",
+      "aligned",
+      "vertical"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (logo): Variant=Stacked Aligned [SVG]"
+  },
+  {
+    "id": "vault-brand-logo-variant-stacked",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/logo/Variant=Stacked.png",
+    "tags": [
+      "brand_elements",
+      "logo",
+      "variant",
+      "stacked",
+      "vertical"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (logo): Variant=Stacked [PNG]"
+  },
+  {
+    "id": "vault-brand-logo-variant-stacked",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/logo/Variant=Stacked.svg",
+    "tags": [
+      "brand_elements",
+      "logo",
+      "variant",
+      "stacked",
+      "vertical"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (logo): Variant=Stacked [SVG]"
+  },
+  {
+    "id": "vault-brand-notch-notch-1",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/notch/Notch-1.svg",
+    "tags": [
+      "brand_elements",
+      "notch",
+      "overlay"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (notch): Notch-1 [SVG]"
+  },
+  {
+    "id": "vault-brand-notch-notch-1-3x",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/notch/Notch-1@3x.png",
+    "tags": [
+      "brand_elements",
+      "notch",
+      "overlay"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (notch): Notch-1@3x [PNG]"
+  },
+  {
+    "id": "vault-brand-notch-notch-2",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/notch/Notch-2.svg",
+    "tags": [
+      "brand_elements",
+      "notch",
+      "overlay"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (notch): Notch-2 [SVG]"
+  },
+  {
+    "id": "vault-brand-notch-notch-2-3x",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/notch/Notch-2@3x.png",
+    "tags": [
+      "brand_elements",
+      "notch",
+      "overlay"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (notch): Notch-2@3x [PNG]"
+  },
+  {
+    "id": "vault-brand-notch-notch-3",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/notch/Notch-3.svg",
+    "tags": [
+      "brand_elements",
+      "notch",
+      "overlay"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (notch): Notch-3 [SVG]"
+  },
+  {
+    "id": "vault-brand-notch-notch-3-3x",
+    "type": "brand_element",
+    "pathOrUrl": "assets/vault/brand-elements/notch/Notch-3@3x.png",
+    "tags": [
+      "brand_elements",
+      "notch",
+      "overlay"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "brand_element (notch): Notch-3@3x [PNG]"
+  },
+  {
+    "id": "vault-fonts-inter-regular",
+    "type": "font",
+    "pathOrUrl": "assets/vault/fonts/Inter-Regular.ttf",
+    "tags": [
+      "fonts",
+      "inter",
+      "regular"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "font: Inter-Regular [TTF]"
+  },
+  {
+    "id": "vault-fonts-inter-regular",
+    "type": "font",
+    "pathOrUrl": "assets/vault/fonts/Inter-Regular.woff2",
+    "tags": [
+      "fonts",
+      "inter",
+      "regular"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "font: Inter-Regular [WOFF2]"
+  },
+  {
+    "id": "vault-fonts-midnight-sans-st-24-heavy-pro",
+    "type": "font",
+    "pathOrUrl": "assets/vault/fonts/midnight-sans-st-24-heavy-pro.woff2",
+    "tags": [
+      "fonts",
+      "midnight",
+      "sans",
+      "st",
+      "24",
+      "heavy",
+      "pro"
+    ],
+    "channelHints": [
+      "ig_feed"
+    ],
+    "notes": "font: midnight-sans-st-24-heavy-pro [WOFF2]"
+  },
+  {
+    "id": "vault-fonts-midnight-sans-st-48-heavy-pro",
+    "type": "font",
+    "pathOrUrl": "assets/vault/fonts/midnight-sans-st-48-heavy-pro.ttf",
+    "tags": [
+      "fonts",
+      "midnight",
+      "sans",
+      "st",
+      "48",
+      "heavy",
+      "pro"
+    ],
+    "channelHints": [
+      "ig_feed"
+    ],
+    "notes": "font: midnight-sans-st-48-heavy-pro [TTF]"
+  },
+  {
+    "id": "vault-fonts-midnight-sans-st-48-heavy-pro",
+    "type": "font",
+    "pathOrUrl": "assets/vault/fonts/midnight-sans-st-48-heavy-pro.woff2",
+    "tags": [
+      "fonts",
+      "midnight",
+      "sans",
+      "st",
+      "48",
+      "heavy",
+      "pro"
+    ],
+    "channelHints": [
+      "ig_feed"
+    ],
+    "notes": "font: midnight-sans-st-48-heavy-pro [WOFF2]"
+  },
+  {
+    "id": "vault-illustrations-illustration-01",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-01.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "01"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-01 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-02",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-02.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "02"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-02 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-03",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-03.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "03"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-03 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-04",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-04.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "04"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-04 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-05",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-05.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "05"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-05 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-06",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-06.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "06"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-06 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-07",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-07.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "07"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-07 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-08",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-08.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "08"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-08 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-09",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-09.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "09"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-09 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-10",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-10.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "10"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-10 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-11",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-11.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "11"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-11 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-12",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-12.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "12"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-12 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-13",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-13.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "13"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-13 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-14",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-14.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "14"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-14 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-15",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-15.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "15"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-15 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-16",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-16.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "16"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-16 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-17",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-17.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "17"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-17 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-18",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-18.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "18"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-18 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-19",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-19.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "19"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-19 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-20",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-20.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "20"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-20 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-21",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-21.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "21"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-21 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-22",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-22.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "22"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-22 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-23",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-23.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "23"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-23 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-24",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-24.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "24"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-24 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-25",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-25.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "25"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-25 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-26",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-26.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "26"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-26 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-27",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-27.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "27"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-27 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-28",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-28.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "28"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-28 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-29",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-29.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "29"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-29 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-30",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-30.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "30"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-30 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-31",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-31.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "31"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-31 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-32",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-32.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "32"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-32 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-33",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-33.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "33"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-33 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-34",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-34.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "34"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-34 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-35",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-35.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "35"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-35 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-36",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-36.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "36"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-36 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-37",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-37.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "37"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-37 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-38",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-38.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "38"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-38 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-39",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-39.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "39"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-39 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-40",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-40.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "40"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-40 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-41",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-41.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "41"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-41 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-42",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-42.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "42"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-42 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-43",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-43.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "43"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-43 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-44",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-44.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "44"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-44 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-45",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-45.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "45"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-45 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-46",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-46.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "46"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-46 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-47",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-47.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "47"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-47 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-48",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-48.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "48"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-48 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-49",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-49.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "49"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-49 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-50",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-50.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "50"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-50 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-51",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-51.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "51"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-51 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-52",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-52.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "52"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-52 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-53",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-53.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "53"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-53 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-54",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-54.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "54"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-54 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-55",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-55.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "55"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-55 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-56",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-56.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "56"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-56 [PNG]"
+  },
+  {
+    "id": "vault-illustrations-illustration-57",
+    "type": "illustration",
+    "pathOrUrl": "assets/vault/illustrations/illustration-57.png",
+    "tags": [
+      "illustrations",
+      "illustration",
+      "57"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "illustration: illustration-57 [PNG]"
+  },
+  {
+    "id": "vault-previous-posts-0101",
+    "type": "previous_post",
+    "pathOrUrl": "assets/vault/previous-posts/0101.png",
+    "tags": [
+      "previous_posts",
+      "0101"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "previous_post: 0101 [PNG]"
+  },
+  {
+    "id": "vault-previous-posts-0202",
+    "type": "previous_post",
+    "pathOrUrl": "assets/vault/previous-posts/0202.png",
+    "tags": [
+      "previous_posts",
+      "0202"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "previous_post: 0202 [PNG]"
+  },
+  {
+    "id": "vault-previous-posts-slide-1-ig-new-a",
+    "type": "previous_post",
+    "pathOrUrl": "assets/vault/previous-posts/Slide 1 IG_New A.png",
+    "tags": [
+      "previous_posts",
+      "slide",
+      "ig"
+    ],
+    "channelHints": [
+      "ig_feed"
+    ],
+    "notes": "previous_post: Slide 1 IG_New A [PNG]"
+  },
+  {
+    "id": "vault-previous-posts-slide-1-ig-new-b",
+    "type": "previous_post",
+    "pathOrUrl": "assets/vault/previous-posts/Slide 1 IG_New B.png",
+    "tags": [
+      "previous_posts",
+      "slide",
+      "ig"
+    ],
+    "channelHints": [
+      "ig_feed"
+    ],
+    "notes": "previous_post: Slide 1 IG_New B [PNG]"
+  },
+  {
+    "id": "vault-previous-posts-slide-1-ig-new",
+    "type": "previous_post",
+    "pathOrUrl": "assets/vault/previous-posts/Slide 1 IG_New.png",
+    "tags": [
+      "previous_posts",
+      "slide",
+      "ig"
+    ],
+    "channelHints": [
+      "ig_feed"
+    ],
+    "notes": "previous_post: Slide 1 IG_New [PNG]"
+  },
+  {
+    "id": "vault-previous-posts-slide-1-twitter-new-a",
+    "type": "previous_post",
+    "pathOrUrl": "assets/vault/previous-posts/Slide 1 Twitter_New A.png",
+    "tags": [
+      "previous_posts",
+      "slide",
+      "twitter"
+    ],
+    "channelHints": [
+      "twitter"
+    ],
+    "notes": "previous_post: Slide 1 Twitter_New A [PNG]"
+  },
+  {
+    "id": "vault-previous-posts-slide-1-twitter-new-b",
+    "type": "previous_post",
+    "pathOrUrl": "assets/vault/previous-posts/Slide 1 Twitter_New B.png",
+    "tags": [
+      "previous_posts",
+      "slide",
+      "twitter"
+    ],
+    "channelHints": [
+      "twitter"
+    ],
+    "notes": "previous_post: Slide 1 Twitter_New B [PNG]"
+  },
+  {
+    "id": "vault-previous-posts-slide-1-twitter-new",
+    "type": "previous_post",
+    "pathOrUrl": "assets/vault/previous-posts/Slide 1 Twitter_New.png",
+    "tags": [
+      "previous_posts",
+      "slide",
+      "twitter"
+    ],
+    "channelHints": [
+      "twitter"
+    ],
+    "notes": "previous_post: Slide 1 Twitter_New [PNG]"
+  },
+  {
+    "id": "vault-previous-posts-slide-2-ig-new",
+    "type": "previous_post",
+    "pathOrUrl": "assets/vault/previous-posts/Slide 2 IG_New.png",
+    "tags": [
+      "previous_posts",
+      "slide",
+      "ig"
+    ],
+    "channelHints": [
+      "ig_feed"
+    ],
+    "notes": "previous_post: Slide 2 IG_New [PNG]"
+  },
+  {
+    "id": "vault-previous-posts-slide-2-twitter-new",
+    "type": "previous_post",
+    "pathOrUrl": "assets/vault/previous-posts/Slide 2 Twitter_New.png",
+    "tags": [
+      "previous_posts",
+      "slide",
+      "twitter"
+    ],
+    "channelHints": [
+      "twitter"
+    ],
+    "notes": "previous_post: Slide 2 Twitter_New [PNG]"
+  },
+  {
+    "id": "vault-previous-posts-slide-3-ig-new",
+    "type": "previous_post",
+    "pathOrUrl": "assets/vault/previous-posts/Slide 3 IG_New.png",
+    "tags": [
+      "previous_posts",
+      "slide",
+      "ig"
+    ],
+    "channelHints": [
+      "ig_feed"
+    ],
+    "notes": "previous_post: Slide 3 IG_New [PNG]"
+  },
+  {
+    "id": "vault-previous-posts-slide-3-ig-new02",
+    "type": "previous_post",
+    "pathOrUrl": "assets/vault/previous-posts/Slide 3 IG_New02.png",
+    "tags": [
+      "previous_posts",
+      "slide",
+      "ig",
+      "new02"
+    ],
+    "channelHints": [
+      "ig_feed"
+    ],
+    "notes": "previous_post: Slide 3 IG_New02 [PNG]"
+  },
+  {
+    "id": "vault-previous-posts-slide-3-twitter-new",
+    "type": "previous_post",
+    "pathOrUrl": "assets/vault/previous-posts/Slide 3 Twitter_New.png",
+    "tags": [
+      "previous_posts",
+      "slide",
+      "twitter"
+    ],
+    "channelHints": [
+      "twitter"
+    ],
+    "notes": "previous_post: Slide 3 Twitter_New [PNG]"
+  },
+  {
+    "id": "vault-previous-posts-slide-3-twitter-new01",
+    "type": "previous_post",
+    "pathOrUrl": "assets/vault/previous-posts/Slide 3 Twitter_New01.png",
+    "tags": [
+      "previous_posts",
+      "slide",
+      "twitter",
+      "new01"
+    ],
+    "channelHints": [
+      "twitter"
+    ],
+    "notes": "previous_post: Slide 3 Twitter_New01 [PNG]"
+  },
+  {
+    "id": "vault-previous-posts-slide-4-ig-new",
+    "type": "previous_post",
+    "pathOrUrl": "assets/vault/previous-posts/Slide 4 IG_New.png",
+    "tags": [
+      "previous_posts",
+      "slide",
+      "ig"
+    ],
+    "channelHints": [
+      "ig_feed"
+    ],
+    "notes": "previous_post: Slide 4 IG_New [PNG]"
+  },
+  {
+    "id": "vault-previous-posts-slide-4-twitter-new",
+    "type": "previous_post",
+    "pathOrUrl": "assets/vault/previous-posts/Slide 4 Twitter_New.png",
+    "tags": [
+      "previous_posts",
+      "slide",
+      "twitter"
+    ],
+    "channelHints": [
+      "twitter"
+    ],
+    "notes": "previous_post: Slide 4 Twitter_New [PNG]"
+  },
+  {
+    "id": "vault-previous-posts-slide-5-ig-new",
+    "type": "previous_post",
+    "pathOrUrl": "assets/vault/previous-posts/Slide 5 IG_New.png",
+    "tags": [
+      "previous_posts",
+      "slide",
+      "ig"
+    ],
+    "channelHints": [
+      "ig_feed"
+    ],
+    "notes": "previous_post: Slide 5 IG_New [PNG]"
+  },
+  {
+    "id": "vault-previous-posts-slide-5-twitter-new",
+    "type": "previous_post",
+    "pathOrUrl": "assets/vault/previous-posts/Slide 5 Twitter_New.png",
+    "tags": [
+      "previous_posts",
+      "slide",
+      "twitter"
+    ],
+    "channelHints": [
+      "twitter"
+    ],
+    "notes": "previous_post: Slide 5 Twitter_New [PNG]"
+  },
+  {
+    "id": "vault-template-ig_feed-ig-01",
+    "type": "template",
+    "pathOrUrl": "assets/vault/templates/ig_feed/IG-01.png",
+    "tags": [
+      "template",
+      "ig_feed",
+      "ig",
+      "01"
+    ],
+    "channelHints": [
+      "ig_feed"
+    ],
+    "notes": "Template for ig_feed: IG-01"
+  },
+  {
+    "id": "vault-template-ig_feed-ig-02",
+    "type": "template",
+    "pathOrUrl": "assets/vault/templates/ig_feed/IG-02.png",
+    "tags": [
+      "template",
+      "ig_feed",
+      "ig",
+      "02"
+    ],
+    "channelHints": [
+      "ig_feed"
+    ],
+    "notes": "Template for ig_feed: IG-02"
+  },
+  {
+    "id": "vault-template-ig_feed-ig-03",
+    "type": "template",
+    "pathOrUrl": "assets/vault/templates/ig_feed/IG-03.png",
+    "tags": [
+      "template",
+      "ig_feed",
+      "ig",
+      "03"
+    ],
+    "channelHints": [
+      "ig_feed"
+    ],
+    "notes": "Template for ig_feed: IG-03"
+  },
+  {
+    "id": "vault-template-ig_feed-ig-04",
+    "type": "template",
+    "pathOrUrl": "assets/vault/templates/ig_feed/IG-04.png",
+    "tags": [
+      "template",
+      "ig_feed",
+      "ig",
+      "04"
+    ],
+    "channelHints": [
+      "ig_feed"
+    ],
+    "notes": "Template for ig_feed: IG-04"
+  },
+  {
+    "id": "vault-template-ig_feed-ig-05",
+    "type": "template",
+    "pathOrUrl": "assets/vault/templates/ig_feed/IG-05.png",
+    "tags": [
+      "template",
+      "ig_feed",
+      "ig",
+      "05"
+    ],
+    "channelHints": [
+      "ig_feed"
+    ],
+    "notes": "Template for ig_feed: IG-05"
+  },
+  {
+    "id": "vault-template-ig_feed-ig-06",
+    "type": "template",
+    "pathOrUrl": "assets/vault/templates/ig_feed/IG-06.png",
+    "tags": [
+      "template",
+      "ig_feed",
+      "ig",
+      "06"
+    ],
+    "channelHints": [
+      "ig_feed"
+    ],
+    "notes": "Template for ig_feed: IG-06"
+  },
+  {
+    "id": "vault-template-ig_feed-ig-07",
+    "type": "template",
+    "pathOrUrl": "assets/vault/templates/ig_feed/IG-07.png",
+    "tags": [
+      "template",
+      "ig_feed",
+      "ig",
+      "07"
+    ],
+    "channelHints": [
+      "ig_feed"
+    ],
+    "notes": "Template for ig_feed: IG-07"
+  },
+  {
+    "id": "vault-template-ig_feed-ig-08",
+    "type": "template",
+    "pathOrUrl": "assets/vault/templates/ig_feed/IG-08.png",
+    "tags": [
+      "template",
+      "ig_feed",
+      "ig",
+      "08"
+    ],
+    "channelHints": [
+      "ig_feed"
+    ],
+    "notes": "Template for ig_feed: IG-08"
+  },
+  {
+    "id": "vault-template-ig_feed-ig-09",
+    "type": "template",
+    "pathOrUrl": "assets/vault/templates/ig_feed/IG-09.png",
+    "tags": [
+      "template",
+      "ig_feed",
+      "ig",
+      "09"
+    ],
+    "channelHints": [
+      "ig_feed"
+    ],
+    "notes": "Template for ig_feed: IG-09"
+  },
+  {
+    "id": "vault-template-twitter-twitter-01",
+    "type": "template",
+    "pathOrUrl": "assets/vault/templates/twitter/TWITTER-01.png",
+    "tags": [
+      "template",
+      "twitter",
+      "twitter",
+      "01"
+    ],
+    "channelHints": [
+      "twitter"
+    ],
+    "notes": "Template for twitter: TWITTER-01"
+  },
+  {
+    "id": "vault-template-twitter-twitter-02",
+    "type": "template",
+    "pathOrUrl": "assets/vault/templates/twitter/TWITTER-02.png",
+    "tags": [
+      "template",
+      "twitter",
+      "twitter",
+      "02"
+    ],
+    "channelHints": [
+      "twitter"
+    ],
+    "notes": "Template for twitter: TWITTER-02"
+  },
+  {
+    "id": "vault-template-twitter-twitter-03",
+    "type": "template",
+    "pathOrUrl": "assets/vault/templates/twitter/TWITTER-03.png",
+    "tags": [
+      "template",
+      "twitter",
+      "twitter",
+      "03"
+    ],
+    "channelHints": [
+      "twitter"
+    ],
+    "notes": "Template for twitter: TWITTER-03"
+  },
+  {
+    "id": "vault-template-twitter-twitter-04",
+    "type": "template",
+    "pathOrUrl": "assets/vault/templates/twitter/TWITTER-04.png",
+    "tags": [
+      "template",
+      "twitter",
+      "twitter",
+      "04"
+    ],
+    "channelHints": [
+      "twitter"
+    ],
+    "notes": "Template for twitter: TWITTER-04"
+  },
+  {
+    "id": "vault-template-twitter-twitter-05",
+    "type": "template",
+    "pathOrUrl": "assets/vault/templates/twitter/TWITTER-05.png",
+    "tags": [
+      "template",
+      "twitter",
+      "twitter",
+      "05"
+    ],
+    "channelHints": [
+      "twitter"
+    ],
+    "notes": "Template for twitter: TWITTER-05"
+  },
+  {
+    "id": "vault-template-twitter-twitter-06",
+    "type": "template",
+    "pathOrUrl": "assets/vault/templates/twitter/TWITTER-06.png",
+    "tags": [
+      "template",
+      "twitter",
+      "twitter",
+      "06"
+    ],
+    "channelHints": [
+      "twitter"
+    ],
+    "notes": "Template for twitter: TWITTER-06"
+  },
+  {
+    "id": "vault-template-twitter-twitter-07",
+    "type": "template",
+    "pathOrUrl": "assets/vault/templates/twitter/TWITTER-07.png",
+    "tags": [
+      "template",
+      "twitter",
+      "twitter",
+      "07"
+    ],
+    "channelHints": [
+      "twitter"
+    ],
+    "notes": "Template for twitter: TWITTER-07"
+  },
+  {
+    "id": "vault-template-twitter-twitter-08",
+    "type": "template",
+    "pathOrUrl": "assets/vault/templates/twitter/TWITTER-08.png",
+    "tags": [
+      "template",
+      "twitter",
+      "twitter",
+      "08"
+    ],
+    "channelHints": [
+      "twitter"
+    ],
+    "notes": "Template for twitter: TWITTER-08"
+  },
+  {
+    "id": "vault-template-twitter-twitter-09",
+    "type": "template",
+    "pathOrUrl": "assets/vault/templates/twitter/TWITTER-09.png",
+    "tags": [
+      "template",
+      "twitter",
+      "twitter",
+      "09"
+    ],
+    "channelHints": [
+      "twitter"
+    ],
+    "notes": "Template for twitter: TWITTER-09"
+  }
+]

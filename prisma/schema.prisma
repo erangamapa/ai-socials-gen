@@ -1,0 +1,90 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Job {
+  id              String    @id @default(cuid())
+  description     String
+  channels        String[]
+  visualType      String    @default("background-only")
+  status          String    @default("queued")
+  errorMessage    String?
+  retrievalBundle Json?
+  rulesVersion    Int       @default(0)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  variants        Variant[]
+}
+
+model Variant {
+  id           String     @id @default(cuid())
+  jobId        String
+  label        String
+  plannerSpec  Json?
+  status       String     @default("pending")
+  errorMessage String?
+  createdAt    DateTime   @default(now())
+  job          Job        @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  artifacts    Artifact[]
+  feedback     Feedback[]
+}
+
+model Artifact {
+  id        String   @id @default(cuid())
+  variantId String
+  channel   String
+  kind      String
+  url       String
+  width     Int
+  height    Int
+  mimeType  String   @default("image/png")
+  createdAt DateTime @default(now())
+  variant   Variant  @relation(fields: [variantId], references: [id], onDelete: Cascade)
+}
+
+model Feedback {
+  id        String   @id @default(cuid())
+  variantId String
+  decision  String
+  reasons   String[]
+  notes     String?
+  createdAt DateTime @default(now())
+  variant   Variant  @relation(fields: [variantId], references: [id], onDelete: Cascade)
+}
+
+model Template {
+  id        String   @id @default(cuid())
+  name      String
+  spec      Json
+  createdAt DateTime @default(now())
+}
+
+model PromptRule {
+  id          String   @id @default(cuid())
+  content     String
+  category    String   @default("general")
+  source      String   @default("manual")
+  enabled     Boolean  @default(true)
+  priority    Int      @default(3)
+  sourceJobId String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model AssetVaultItem {
+  id             String    @id @default(cuid())
+  type           String
+  pathOrUrl      String
+  tags           String[]
+  channelHints   String[]
+  notes          String?
+  analysis       Json?
+  analysisStatus String    @default("pending")
+  analyzedAt     DateTime?
+  createdAt      DateTime  @default(now())
+}

@@ -1,0 +1,165 @@
+import { NextResponse } from "next/server";
+import { getPrisma, resetPrisma } from "@/lib/db";
+import { TEMPLATE_REGISTRY } from "@/lib/templates/registry";
+import { loadVaultIndex } from "@/lib/vault/vaultIndex";
+import { BRAND, getBrandColorList } from "@/lib/brand/guidelines";
+
+interface AnalysisJson {
+  description?: string;
+  colorPalette?: string[];
+  mood?: string;
+  subjects?: string[];
+}
+
+export async function GET() {
+  let prisma = getPrisma();
+  try {
+    const [
+      jobCount,
+      jobsByStatus,
+      variantCount,
+      artifactCount,
+      feedbackCount,
+      feedbackByDecision,
+      vaultDbCount,
+      analysisStatusCounts,
+    ] = await Promise.all([
+      prisma.job.count(),
+      prisma.job.groupBy({ by: ["status"], _count: true }),
+      prisma.variant.count(),
+      prisma.artifact.count(),
+      prisma.feedback.count(),
+      prisma.feedback.groupBy({ by: ["decision"], _count: true }),
+      prisma.assetVaultItem.groupBy({ by: ["type"], _count: true }),
+      prisma.assetVaultItem.groupBy({ by: ["analysisStatus"], _count: true }),
+    ]);
+
+    const analyzedItems = await prisma.assetVaultItem.findMany({
+      where: { analysisStatus: "done" },
+      select: { id: true, type: true, analysis: true },
+    });
+
+    const allColors: Record<string, number> = {};
+    const allMoods: Record<string, number> = {};
+    const allSubjects: Record<string, number> = {};
+
+    for (const item of analyzedItems) {
+      const a = item.analysis as AnalysisJson | null;
+      if (!a) continue;
+
+      if (a.colorPalette) {
+        for (const c of a.colorPalette) {
+          allColors[c] = (allColors[c] || 0) + 1;
+        }
+      }
+      if (a.mood) {
+        for (const m of a.mood.split(",").map((s: string) => s.trim()).filter(Boolean)) {
+          allMoods[m] = (allMoods[m] || 0) + 1;
+        }
+      }
+      if (a.subjects) {
+        for (const s of a.subjects) {
+          allSubjects[s] = (allSubjects[s] || 0) + 1;
+        }
+      }
+    }
+
+    const topColors = Object.entries(allColors).sort((a, b) => b[1] - a[1]).slice(0, 20).map(([hex, count]) => ({ hex, count }));
+    const topMoods = Object.entries(allMoods).sort((a, b) => b[1] - a[1]).slice(0, 15).map(([mood, count]) => ({ mood, count }));
+    const topSubjects = Object.entries(allSubjects).sort((a, b) => b[1] - a[1]).slice(0, 20).map(([subject, count]) => ({ subject, count }));
+
+    const vaultIndex = loadVaultIndex();
+    const vaultByType: Record<string, number> = {};
+    for (const item of vaultIndex) {
+      vaultByType[item.type] = (vaultByType[item.type] || 0) + 1;
+    }
+
+    const allTags: Record<string, number> = {};
+    for (const item of vaultIndex) {
+      for (const tag of item.tags) {
+        allTags[tag] = (allTags[tag] || 0) + 1;
+      }
+    }
+    const topTags = Object.entries(allTags)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 30)
+      .map(([tag, count]) => ({ tag, count }));
+
+    const totalAssets = await prisma.assetVaultItem.count();
+    const analysisByStatus: Record<string, number> = {};
+    for (const row of analysisStatusCounts) {
+      analysisByStatus[row.analysisStatus] = row._count;
+    }
+
+    return NextResponse.json({
+      vault: {
+        totalFiles: vaultIndex.length,
+        byType: vaultByType,
+        dbRows: vaultDbCount.map((r) => ({ type: r.type, count: r._count })),
+        topTags,
+      },
+      analysis: {
+        total: totalAssets,
+        done: analysisByStatus["done"] || 0,
+        pending: analysisByStatus["pending"] || 0,
+        analyzing: analysisByStatus["analyzing"] || 0,
+        failed: analysisByStatus["failed"] || 0,
+        percent: totalAssets > 0 ? Math.round(((analysisByStatus["done"] || 0) / totalAssets) * 100) : 0,
+        brandIntelligence: {
+          topColors,
+          topMoods,
+          topSubjects,
+        },
+      },
+      templates: {
+        count: TEMPLATE_REGISTRY.length,
+        ids: TEMPLATE_REGISTRY.map((t) => ({ id: t.id, name: t.name, channels: t.spec.channels })),
+      },
+      jobs: {
+        total: jobCount,
+        byStatus: jobsByStatus.map((r) => ({ status: r.status, count: r._count })),
+      },
+      variants: { total: variantCount },
+      artifacts: { total: artifactCount },
+      feedback: {
+        total: feedbackCount,
+        byDecision: feedbackByDecision.map((r) => ({ decision: r.decision, count: r._count })),
+      },
+      system: {
+        mockProviders: process.env.USE_MOCK_PROVIDERS === "true",
+        storageProvider: process.env.BLOB_STORAGE_PROVIDER || "local",
+        hasAnthropicKey: !!process.env.ANTHROPIC_API_KEY,
+        hasNanoBananaKey: !!process.env.NANO_BANANA_API_KEY,
+        nodeVersion: process.version,
+      },
+      brand: {
+        name: BRAND.name,
+        tagline: BRAND.tagline,
+        brandIdea: BRAND.brandIdea,
+        colors: getBrandColorList(),
+        launchPrimaries: BRAND.colors.launchPrimaries,
+        typography: {
+          primary: { family: BRAND.typography.primary.family, weights: BRAND.typography.primary.weights, style: BRAND.typography.primary.style },
+          secondary: { family: BRAND.typography.secondary.family, weights: BRAND.typography.secondary.weights, style: BRAND.typography.secondary.style },
+        },
+        tov: BRAND.toneOfVoice.principles.map((p) => ({ name: p.name, description: p.description })),
+        behaviors: BRAND.brandBehaviors,
+        messaging: BRAND.messaging,
+      },
+    });
+  } catch (error: unknown) {
+    const msg = error instanceof Error ? error.message : String(error);
+    if (msg.includes("terminated") || msg.includes("SASL") || msg.includes("reach")) {
+      console.warn("DB connection failed, resetting pool and retrying...");
+      prisma = resetPrisma();
+      try {
+        const total = await prisma.assetVaultItem.count();
+        return NextResponse.json({ retry: true, dbConnected: true, assetCount: total });
+      } catch (retryErr) {
+        console.error("Retry also failed:", retryErr);
+      }
+    }
+    console.error("Dev stats error:", msg);
+    return NextResponse.json({ error: "Failed to load stats: " + msg }, { status: 500 });
+  }
+}
