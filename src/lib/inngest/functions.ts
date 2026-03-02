@@ -192,7 +192,7 @@ export const generateImagesJob = inngest.createFunction(
       const job = await prisma.job.findUniqueOrThrow({ where: { id: jobId }, select: { mode: true } });
       const rules = await prisma.promptRule.findMany({
         where: { enabled: true, mode: job.mode || "socials" },
-        orderBy: [{ priority: "desc" }, { createdAt: "desc" }],
+        orderBy: [{ confidence: "desc" }, { priority: "desc" }, { createdAt: "desc" }],
         take: 15,
       });
       if (rules.length === 0) return "";
@@ -668,6 +668,29 @@ export const generateIllustrationImagesJob = inngest.createFunction(
       await prisma.job.update({ where: { id: jobId }, data: { status: "generating" } });
     });
 
+    const illustrationStyleRules = await step.run("load-style-rules", async () => {
+      const job = await prisma.job.findUniqueOrThrow({ where: { id: jobId }, select: { mode: true } });
+      const rules = await prisma.promptRule.findMany({
+        where: { enabled: true, mode: job.mode || "illustration" },
+        orderBy: [{ confidence: "desc" }, { priority: "desc" }, { createdAt: "desc" }],
+        take: 15,
+      });
+      if (rules.length === 0) return "";
+
+      const doRules = rules
+        .filter((r) => ["do", "style", "positive"].includes(r.category))
+        .map((r) => r.content);
+      const dontRules = rules
+        .filter((r) => ["dont", "color", "composition", "typography"].includes(r.category))
+        .map((r) => r.content);
+
+      const parts: string[] = [];
+      if (doRules.length > 0) parts.push("STYLE RULES — FOLLOW THESE:\n" + doRules.map((r) => `• ${r}`).join("\n"));
+      if (dontRules.length > 0) parts.push("AVOID:\n" + dontRules.map((r) => `• ${r}`).join("\n"));
+      console.log(`[Rules→Gemini] Injecting ${rules.length} style rules into illustration prompt`);
+      return parts.join("\n\n");
+    });
+
     await step.run("generate-illustration-images", async () => {
       const job = await prisma.job.findUniqueOrThrow({
         where: { id: jobId },
@@ -770,6 +793,7 @@ export const generateIllustrationImagesJob = inngest.createFunction(
         imagePrompt += `\n\nBACKGROUND: Solid single flat color ${solidBg} — no gradients, no patterns, no textures. Pure flat fill.`;
         imagePrompt += `\n\nCRITICAL: NO text, NO logos, NO brand marks anywhere in the image. Pure standalone illustration only.`;
         if (refInstructions) imagePrompt += `\n\n${refInstructions}`;
+        if (illustrationStyleRules) imagePrompt += `\n\n${illustrationStyleRules}`;
 
         const result = await imageProvider.generateImage({
           prompt: imagePrompt,

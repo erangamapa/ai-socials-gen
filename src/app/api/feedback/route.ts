@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { prisma } from "@/lib/db";
-import { reasonToRule } from "@/lib/ai/promptBuilder";
+import { reasonToRule, decayRules } from "@/lib/ai/promptBuilder";
 
 const FeedbackSchema = z.object({
   variantId: z.string().min(1),
@@ -66,6 +66,37 @@ export async function POST(req: NextRequest) {
     const jobMode = variant.job?.mode || "socials";
     const referencesUsed = Array.isArray(spec?.referencesUsed) ? (spec.referencesUsed as string[]) : [];
 
+    // ─── RULE COUNTERS — track effectiveness ────────────────────────────────
+    const enabledRuleIds = (
+      await prisma.promptRule.findMany({
+        where: { enabled: true, mode: jobMode },
+        select: { id: true },
+      })
+    ).map((r) => r.id);
+
+    if (enabledRuleIds.length > 0) {
+      await prisma.promptRule.updateMany({
+        where: { id: { in: enabledRuleIds } },
+        data: { hitCount: { increment: 1 } },
+      });
+
+      if (input.decision === "accept") {
+        await prisma.promptRule.updateMany({
+          where: { id: { in: enabledRuleIds } },
+          data: {
+            successCount: { increment: 1 },
+            confidence: { increment: 2 },
+          },
+        });
+      }
+
+      // Cap confidence at 100
+      await prisma.promptRule.updateMany({
+        where: { id: { in: enabledRuleIds }, confidence: { gt: 100 } },
+        data: { confidence: 100 },
+      });
+    }
+
     // ─── REJECT ────────────────────────────────────────────────────────────────
     if (input.decision === "reject") {
       // 1. Map structured reasons → specific don't-rules (mode-scoped)
@@ -111,7 +142,36 @@ export async function POST(req: NextRequest) {
         if (added) rulesCreated.push(added);
       }
 
-      // 4. Decrement usageScore for references if "Bad subject quality" was a reason
+      // 4. Rejected palette → specific color rule
+      const rejPalette = Array.isArray(art?.palette) ? (art.palette as string[]) : [];
+      if (rejPalette.length > 0 && input.reasons.includes("Off-brand palette")) {
+        const added = await upsertRule({
+          content: `Avoid palette: ${rejPalette.join(", ")}`,
+          category: "color",
+          source: "feedback",
+          priority: 4,
+          sourceJobId: jobId,
+          mode: jobMode,
+        });
+        if (added) rulesCreated.push(added);
+      }
+
+      // 5. Template + reason combination for socials
+      const templateAssetId = spec?.templateAssetId as string | undefined;
+      if (templateAssetId && input.reasons.length > 0) {
+        const reasonList = input.reasons.join(", ");
+        const added = await upsertRule({
+          content: `Template ${templateAssetId} had issues: ${reasonList}`,
+          category: "dont",
+          source: "feedback",
+          priority: 3,
+          sourceJobId: jobId,
+          mode: jobMode,
+        });
+        if (added) rulesCreated.push(added);
+      }
+
+      // 6. Decrement usageScore for references if "Bad subject quality" was a reason
       if (input.reasons.includes("Bad subject quality") && referencesUsed.length > 0) {
         for (const refId of referencesUsed) {
           await prisma.assetVaultItem.updateMany({
@@ -181,7 +241,37 @@ export async function POST(req: NextRequest) {
         if (added) rulesCreated.push(added);
       }
 
-      // 5. Increment usageScore for all accepted references
+      // 5. Template that worked well
+      const acceptedTemplateId = spec?.templateAssetId as string | undefined;
+      const channel = (spec as Record<string, unknown> | null)?.channel as string | undefined;
+      if (acceptedTemplateId) {
+        const added = await upsertRule({
+          content: `Template ${acceptedTemplateId} works well${channel ? ` for ${channel}` : ""} — reuse it`,
+          category: "do",
+          source: "positive",
+          priority: 2,
+          sourceJobId: jobId,
+          mode: jobMode,
+        });
+        if (added) rulesCreated.push(added);
+      }
+
+      // 6. Extract composition pattern from backgroundPrompt
+      const bgPromptComp = typeof art?.backgroundPrompt === "string" ? art.backgroundPrompt : "";
+      const positionMatch = bgPromptComp.match(/(center-right|center-left|low-angle|high-angle|top-down|birds-eye|centered|off-center)/i);
+      if (positionMatch) {
+        const added = await upsertRule({
+          content: `Composition pattern that worked: ${positionMatch[1]} positioning`,
+          category: "composition",
+          source: "positive",
+          priority: 2,
+          sourceJobId: jobId,
+          mode: jobMode,
+        });
+        if (added) rulesCreated.push(added);
+      }
+
+      // 7. Increment usageScore for all accepted references
       if (referencesUsed.length > 0) {
         for (const refId of referencesUsed) {
           await prisma.assetVaultItem.updateMany({
@@ -194,6 +284,30 @@ export async function POST(req: NextRequest) {
     }
 
     console.log(`[Feedback] ${input.decision.toUpperCase()} on variant ${input.variantId} → ${rulesCreated.length} rule(s) created/updated`);
+
+    // ─── PERIODIC DECAY — lightweight check on every feedback ──────────────
+    try {
+      const decayed = await decayRules();
+      if (decayed.length > 0) {
+        console.log(`[Feedback] Rule decay disabled ${decayed.length} rules`);
+      }
+    } catch (err) {
+      console.warn("[Feedback] Rule decay failed:", err);
+    }
+
+    // ─── SYNTHESIS TRIGGER — every 5th feedback per mode ───────────────────
+    try {
+      const feedbackCount = await prisma.feedback.count({
+        where: { variant: { job: { mode: jobMode } } },
+      });
+      if (feedbackCount > 0 && feedbackCount % 5 === 0) {
+        const { synthesizeRules } = await import("@/lib/ai/ruleSynthesis");
+        const result = await synthesizeRules(jobMode);
+        console.log(`[Feedback] Auto-synthesis triggered (feedback #${feedbackCount}): ${result.created} created, ${result.disabled} disabled`);
+      }
+    } catch (err) {
+      console.warn("[Feedback] Auto-synthesis failed:", err);
+    }
 
     return NextResponse.json({ feedback, rulesCreated }, { status: 201 });
   } catch (error) {

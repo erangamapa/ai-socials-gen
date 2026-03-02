@@ -91,6 +91,10 @@ export function JobForm({ fromVariantId }: { fromVariantId?: string }) {
   const [isDragOver, setIsDragOver] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  // Enhance prompt state
+  const [isEnhancingBrief, setIsEnhancingBrief] = useState(false);
+  const [isEnhancingRef, setIsEnhancingRef] = useState(false);
+
   // "From illustration" pre-fill state
   const [socialContext, setSocialContext] = useState<SocialContext | null>(null);
   const [isContextLocked, setIsContextLocked] = useState(false); // subject ref is locked (from illustration)
@@ -110,7 +114,7 @@ export function JobForm({ fromVariantId }: { fromVariantId?: string }) {
         setDescription(ctx.description);
         setSubjectReferenceUrl(ctx.subjectReferenceUrl);
         setSubjectPreview(ctx.subjectReferenceUrl);
-        setSubjectReferenceNote(ctx.subjectReferenceNote.slice(0, 500));
+        setSubjectReferenceNote(ctx.subjectReferenceNote.slice(0, 2000));
         setIsContextLocked(true);
       } catch {
         // Silently fail — user can fill manually
@@ -125,6 +129,33 @@ export function JobForm({ fromVariantId }: { fromVariantId?: string }) {
     setIsShuffle(true);
     setDescription(next);
     setTimeout(() => setIsShuffle(false), 400);
+  };
+
+  const enhancePrompt = async (field: "brief" | "reference") => {
+    const text = field === "brief" ? description : subjectReferenceNote;
+    if (!text.trim()) return;
+
+    const setLoading = field === "brief" ? setIsEnhancingBrief : setIsEnhancingRef;
+    setLoading(true);
+    try {
+      const res = await fetch("/api/enhance-prompt", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: text.trim(), mode, field }),
+      });
+      if (!res.ok) throw new Error("Enhancement failed");
+      const data = await res.json();
+      if (data.enhanced) {
+        if (field === "brief") {
+          setDescription(data.enhanced);
+        } else {
+          setSubjectReferenceNote(data.enhanced.slice(0, 2000));
+        }
+      }
+    } catch {
+      // Silently fail — user keeps their original text
+    }
+    setLoading(false);
   };
 
   const toggleChannel = (channelId: string) => {
@@ -334,15 +365,31 @@ export function JobForm({ fromVariantId }: { fromVariantId?: string }) {
             <Label htmlFor="description">
               {mode === "illustration" ? "Illustration Brief" : "Description / Brief"}
             </Label>
-            <button
-              type="button"
-              onClick={handleShuffle}
-              className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors rounded-md px-2 py-1 hover:bg-muted/60"
-              title="Generate a random brief"
-            >
-              <Shuffle className={`h-3.5 w-3.5 transition-transform duration-300 ${isShuffle ? "rotate-180" : ""}`} />
-              Random brief
-            </button>
+            <div className="flex items-center gap-1">
+              <button
+                type="button"
+                onClick={() => enhancePrompt("brief")}
+                disabled={!description.trim() || isEnhancingBrief}
+                className="flex items-center gap-1.5 text-xs text-violet-600 dark:text-violet-400 hover:text-violet-800 dark:hover:text-violet-300 transition-colors rounded-md px-2 py-1 hover:bg-violet-50 dark:hover:bg-violet-950/30 disabled:opacity-40 disabled:pointer-events-none"
+                title="Enhance with CB brand energy"
+              >
+                {isEnhancingBrief ? (
+                  <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                ) : (
+                  <Sparkles className="h-3.5 w-3.5" />
+                )}
+                {isEnhancingBrief ? "Enhancing..." : "Enhance"}
+              </button>
+              <button
+                type="button"
+                onClick={handleShuffle}
+                className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors rounded-md px-2 py-1 hover:bg-muted/60"
+                title="Generate a random brief"
+              >
+                <Shuffle className={`h-3.5 w-3.5 transition-transform duration-300 ${isShuffle ? "rotate-180" : ""}`} />
+                Random brief
+              </button>
+            </div>
           </div>
           <Textarea
             id="description"
@@ -465,12 +512,28 @@ export function JobForm({ fromVariantId }: { fromVariantId?: string }) {
                         Reference instructions
                         <span className="ml-1.5 font-normal text-muted-foreground">(optional)</span>
                       </Label>
-                      <span className="text-xs text-muted-foreground">{subjectReferenceNote.length}/500</span>
+                      <div className="flex items-center gap-1.5">
+                        <button
+                          type="button"
+                          onClick={() => enhancePrompt("reference")}
+                          disabled={!subjectReferenceNote.trim() || isEnhancingRef}
+                          className="flex items-center gap-1 text-xs text-violet-600 dark:text-violet-400 hover:text-violet-800 dark:hover:text-violet-300 transition-colors rounded-md px-1.5 py-0.5 hover:bg-violet-50 dark:hover:bg-violet-950/30 disabled:opacity-40 disabled:pointer-events-none"
+                          title="Enhance with CB brand energy"
+                        >
+                          {isEnhancingRef ? (
+                            <Loader2 className="h-3 w-3 animate-spin" />
+                          ) : (
+                            <Sparkles className="h-3 w-3" />
+                          )}
+                          {isEnhancingRef ? "Enhancing..." : "Enhance"}
+                        </button>
+                        <span className="text-xs text-muted-foreground">{subjectReferenceNote.length}/2000</span>
+                      </div>
                     </div>
                     <Textarea
                       id="subject-note"
                       value={subjectReferenceNote}
-                      onChange={(e) => setSubjectReferenceNote(e.target.value.slice(0, 500))}
+                      onChange={(e) => setSubjectReferenceNote(e.target.value.slice(0, 2000))}
                       placeholder={`What should the AI do with this reference?\ne.g. "Use the face and stance but dress him in CB orange"\nor "Keep the fighting pose, make it more aggressive, purple palette"\nor "Capture the athlete's build, dramatic low-angle, ignore background"`}
                       rows={3}
                       className="resize-none text-sm"

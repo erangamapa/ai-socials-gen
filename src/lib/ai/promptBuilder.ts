@@ -13,9 +13,16 @@ interface RulesBlock {
 export async function buildRulesBlock(mode: string = "socials"): Promise<RulesBlock> {
   const rules = await prisma.promptRule.findMany({
     where: { enabled: true, mode },
-    orderBy: [{ priority: "desc" }, { createdAt: "desc" }],
+    orderBy: [{ confidence: "desc" }, { priority: "desc" }, { createdAt: "desc" }],
     take: MAX_RULES,
   });
+
+  if (rules.length > 0) {
+    await prisma.promptRule.updateMany({
+      where: { id: { in: rules.map((r) => r.id) } },
+      data: { lastUsedAt: new Date() },
+    });
+  }
 
   if (rules.length === 0) {
     return { text: "", version: 0, ruleCount: 0, estimatedTokens: 0 };
@@ -113,4 +120,54 @@ const REASON_TO_RULE: Record<string, { content: string; category: string }> = {
 
 export function reasonToRule(reason: string): { content: string; category: string } | null {
   return REASON_TO_RULE[reason] || null;
+}
+
+const DECAY_STALE_DAYS = 14;
+const DECAY_MIN_CONFIDENCE = 20;
+const DECAY_MIN_HITS_FOR_RATE_CHECK = 5;
+const DECAY_MIN_SUCCESS_RATE = 0.2;
+
+/**
+ * Auto-disable rules that are stale, ineffective, or low-confidence.
+ * Returns the IDs of rules that were decayed.
+ */
+export async function decayRules(): Promise<string[]> {
+  const staleDate = new Date(Date.now() - DECAY_STALE_DAYS * 24 * 60 * 60 * 1000);
+
+  const staleRules = await prisma.promptRule.findMany({
+    where: {
+      enabled: true,
+      source: { not: "manual" },
+      OR: [
+        { lastUsedAt: { lt: staleDate } },
+        { confidence: { lt: DECAY_MIN_CONFIDENCE } },
+      ],
+    },
+    select: { id: true, content: true, confidence: true, lastUsedAt: true },
+  });
+
+  const ineffectiveRules = await prisma.promptRule.findMany({
+    where: {
+      enabled: true,
+      source: { not: "manual" },
+      hitCount: { gte: DECAY_MIN_HITS_FOR_RATE_CHECK },
+    },
+    select: { id: true, content: true, hitCount: true, successCount: true },
+  });
+
+  const ineffectiveIds = ineffectiveRules
+    .filter((r) => r.successCount / r.hitCount < DECAY_MIN_SUCCESS_RATE)
+    .map((r) => r.id);
+
+  const allIds = [...new Set([...staleRules.map((r) => r.id), ...ineffectiveIds])];
+
+  if (allIds.length === 0) return [];
+
+  await prisma.promptRule.updateMany({
+    where: { id: { in: allIds } },
+    data: { enabled: false },
+  });
+
+  console.log(`[RuleDecay] Disabled ${allIds.length} rules: ${allIds.join(", ")}`);
+  return allIds;
 }

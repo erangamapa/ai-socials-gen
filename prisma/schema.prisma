@@ -68,16 +68,20 @@ model Template {
 }
 
 model PromptRule {
-  id          String   @id @default(cuid())
-  content     String
-  category    String   @default("general")
-  source      String   @default("manual")
-  enabled     Boolean  @default(true)
-  priority    Int      @default(3)
-  sourceJobId String?
-  mode        String   @default("socials")
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id           String    @id @default(cuid())
+  content      String
+  category     String    @default("general")
+  source       String    @default("manual")
+  enabled      Boolean   @default(true)
+  priority     Int       @default(3)
+  sourceJobId  String?
+  mode         String    @default("socials")
+  hitCount     Int       @default(0)
+  successCount Int       @default(0)
+  confidence   Int       @default(80)
+  lastUsedAt   DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
 }
 
 model AssetVaultItem {

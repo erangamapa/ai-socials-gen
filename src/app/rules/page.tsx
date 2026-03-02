@@ -25,6 +25,10 @@ interface Rule {
   mode: string;
   enabled: boolean;
   priority: number;
+  hitCount: number;
+  successCount: number;
+  confidence: number;
+  lastUsedAt: string | null;
   sourceJobId: string | null;
   createdAt: string;
 }
@@ -65,6 +69,7 @@ const SOURCE_LABELS: Record<string, string> = {
   manual: "manual",
   feedback: "feedback",
   positive: "positive",
+  synthesis: "AI synthesis",
   default: "default",
 };
 
@@ -94,6 +99,32 @@ function RulesPageInner() {
   const [newCategory, setNewCategory] = useState("general");
   const [newPriority, setNewPriority] = useState(3);
   const [isAdding, setIsAdding] = useState(false);
+  const [isSynthesizing, setIsSynthesizing] = useState(false);
+  const [synthesisResult, setSynthesisResult] = useState<string | null>(null);
+
+  const synthesize = async () => {
+    setIsSynthesizing(true);
+    setSynthesisResult(null);
+    try {
+      const res = await fetch("/api/rules/synthesize", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mode: activeMode }),
+      });
+      const result = await res.json();
+      if (!res.ok) {
+        setSynthesisResult(`Error: ${result.error || "Synthesis failed"}`);
+      } else {
+        setSynthesisResult(
+          `${result.created} rules created, ${result.disabled} superseded. ${result.reasoning}`
+        );
+        load(activeMode);
+      }
+    } catch {
+      setSynthesisResult("Network error during synthesis");
+    }
+    setIsSynthesizing(false);
+  };
 
   const load = useCallback((mode: AgentMode) => {
     fetch(`/api/rules?mode=${mode}`)
@@ -225,7 +256,32 @@ function RulesPageInner() {
                 <span className="text-muted-foreground ml-1.5">Tokens</span>
               </div>
             </div>
+            <Button
+              onClick={synthesize}
+              disabled={isSynthesizing}
+              variant="outline"
+              className="gap-2"
+            >
+              {isSynthesizing ? (
+                <>
+                  <span className="animate-spin h-4 w-4 border-2 border-current border-t-transparent rounded-full" />
+                  Synthesizing...
+                </>
+              ) : (
+                "Synthesize Rules"
+              )}
+            </Button>
           </div>
+
+          {synthesisResult && (
+            <div className={`rounded-lg border p-3 text-sm ${
+              synthesisResult.startsWith("Error")
+                ? "bg-red-50 dark:bg-red-950/20 border-red-200 dark:border-red-800 text-red-800 dark:text-red-200"
+                : "bg-green-50 dark:bg-green-950/20 border-green-200 dark:border-green-800 text-green-800 dark:text-green-200"
+            }`}>
+              {synthesisResult}
+            </div>
+          )}
 
           {tokenWarning && (
             <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-lg p-3 text-sm text-amber-800 dark:text-amber-200">
@@ -309,6 +365,23 @@ function RulesPageInner() {
                     <Badge variant="outline" className="text-xs">
                       {SOURCE_LABELS[rule.source] || rule.source}
                     </Badge>
+                    <span
+                      className={`text-xs font-medium ${
+                        rule.confidence >= 70
+                          ? "text-green-600 dark:text-green-400"
+                          : rule.confidence >= 40
+                          ? "text-amber-600 dark:text-amber-400"
+                          : "text-red-600 dark:text-red-400"
+                      }`}
+                      title="Confidence score (0-100)"
+                    >
+                      {rule.confidence}%
+                    </span>
+                    {rule.hitCount > 0 && (
+                      <span className="text-xs text-muted-foreground" title={`${rule.successCount} successes / ${rule.hitCount} hits`}>
+                        {rule.successCount}/{rule.hitCount} hits
+                      </span>
+                    )}
                     {rule.sourceJobId && (
                       <a
                         href={`/jobs/${rule.sourceJobId}`}

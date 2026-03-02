@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE "PromptRule" ADD COLUMN     "confidence" INTEGER NOT NULL DEFAULT 80,
+ADD COLUMN     "hitCount" INTEGER NOT NULL DEFAULT 0,
+ADD COLUMN     "lastUsedAt" TIMESTAMP(3),
+ADD COLUMN     "successCount" INTEGER NOT NULL DEFAULT 0;
