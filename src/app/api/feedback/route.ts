@@ -198,9 +198,47 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ feedback, rulesCreated }, { status: 201 });
   } catch (error) {
     if (error instanceof z.ZodError) {
-      return NextResponse.json({ error: error.issues }, { status: 400 });
+      const message = error.issues.map((i) => i.message).join("; ");
+      return NextResponse.json({ error: message }, { status: 400 });
     }
     console.error("Failed to save feedback:", error);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+  }
+}
+
+const ReconsiderSchema = z.object({
+  variantId: z.string().min(1),
+});
+
+/**
+ * DELETE /api/feedback — remove latest feedback for a variant (reconsider).
+ * Resets the variant back to "ready" (un-reviewed) state.
+ */
+export async function DELETE(req: NextRequest) {
+  try {
+    const body = await req.json();
+    const input = ReconsiderSchema.parse(body);
+
+    const latest = await prisma.feedback.findFirst({
+      where: { variantId: input.variantId },
+      orderBy: { createdAt: "desc" },
+    });
+
+    if (!latest) {
+      return NextResponse.json({ error: "No feedback found for this variant" }, { status: 404 });
+    }
+
+    await prisma.feedback.delete({ where: { id: latest.id } });
+
+    console.log(`[Feedback] RECONSIDER on variant ${input.variantId} — deleted feedback ${latest.id}`);
+
+    return NextResponse.json({ deleted: latest.id }, { status: 200 });
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      const message = error.issues.map((i) => i.message).join("; ");
+      return NextResponse.json({ error: message }, { status: 400 });
+    }
+    console.error("Failed to delete feedback:", error);
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }

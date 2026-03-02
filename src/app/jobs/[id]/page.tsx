@@ -131,6 +131,7 @@ export default function JobPage({ params }: { params: Promise<{ id: string }> })
               key={variant.id}
               variant={variant}
               jobMode={job.mode}
+              jobId={job.id}
               onFeedbackSubmitted={() => mutate()}
             />
           ))}

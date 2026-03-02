@@ -5,6 +5,7 @@ import {
   generateImagesJob,
   generateIllustrationJob,
   generateIllustrationImagesJob,
+  expandIllustrationJob,
 } from "@/lib/inngest/functions";
 
 export const { GET, POST, PUT } = serve({
@@ -14,5 +15,6 @@ export const { GET, POST, PUT } = serve({
     generateImagesJob,
     generateIllustrationJob,
     generateIllustrationImagesJob,
+    expandIllustrationJob,
   ],
 });

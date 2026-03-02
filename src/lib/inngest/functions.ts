@@ -1,5 +1,6 @@
 import * as fs from "fs";
 import * as path from "path";
+import sharp from "sharp";
 import Anthropic from "@anthropic-ai/sdk";
 import { inngest } from "./client";
 import { prisma } from "../db";
@@ -94,9 +95,22 @@ export const generateSocialPostJob = inngest.createFunction(
         data: { rulesVersion: rules.version },
       });
 
+      const isPreStyledIllustration =
+        job.subjectReferenceUrl &&
+        (job as { subjectReferenceNote?: string | null }).subjectReferenceNote?.includes("GENERATED CB FLAT-VECTOR ILLUSTRATION");
+
+      let enrichedDescription = job.description;
+      if (isPreStyledIllustration) {
+        enrichedDescription += `\n\n[IMPORTANT — PRE-STYLED ILLUSTRATION SUBJECT]
+The subject reference is a pre-styled CB brand illustration, NOT a photo. Do NOT re-stylize it. The image generator will receive this illustration as a separate hero asset and composite it onto the template AS-IS. The illustration is the hero element — choose a template that gives it centre-stage prominence.
+
+Your backgroundPrompt for each variant should describe HOW TO COMPOSITE the provided hero illustration onto the chosen template — positioning (centre, centre-right, etc.), scale relative to the canvas, negative space for copy overlay, and any subtle atmospheric effects or design flourishes around the hero. Do NOT describe a new character to generate — the character already exists. Focus on placement, composition, and surrounding design elements only.`;
+        console.log(`[Planner] Detected pre-styled illustration subject — injecting compositing instructions`);
+      }
+
       const planner = getPlanner();
       const output = await planner.plan({
-        description: job.description,
+        description: enrichedDescription,
         channels: job.channels,
         visualType: job.visualType,
         templateIds: TEMPLATE_REGISTRY.map((t) => t.id),
@@ -244,6 +258,32 @@ export const generateImagesJob = inngest.createFunction(
           }
         }
 
+        if (job.subjectReferenceUrl) {
+          try {
+            let subjectBuffer: Buffer | null = null;
+            if (job.subjectReferenceUrl.startsWith("/uploads/")) {
+              const filePath = path.resolve(process.cwd(), "public" + job.subjectReferenceUrl);
+              if (fs.existsSync(filePath)) subjectBuffer = fs.readFileSync(filePath);
+            } else if (job.subjectReferenceUrl.startsWith("http")) {
+              const res = await fetch(job.subjectReferenceUrl);
+              if (res.ok) subjectBuffer = Buffer.from(await res.arrayBuffer());
+            }
+
+            if (subjectBuffer) {
+              const note = (job as { subjectReferenceNote?: string | null }).subjectReferenceNote?.trim() || "";
+              const isPreStyled = note.includes("GENERATED CB FLAT-VECTOR ILLUSTRATION");
+              const description = isPreStyled
+                ? `HERO ILLUSTRATION — this is a pre-styled CB brand illustration. Place it AS-IS on the template as the hero element. Do NOT modify, re-draw, or re-stylize it. Preserve it exactly.${note ? `\n\nContext: ${note}` : ""}`
+                : `SUBJECT REFERENCE — use this to capture likeness, pose, and energy. Translate into the brand visual style.${note ? `\n\nCREATOR INSTRUCTIONS: "${note}"` : ""}`;
+
+              referenceImages.push({ buffer: subjectBuffer, description });
+              console.log(`[ImageGen] Loaded subject reference (${subjectBuffer.length} bytes, preStyled=${isPreStyled})`);
+            }
+          } catch {
+            console.warn(`[ImageGen] Failed to load subject reference: ${job.subjectReferenceUrl}`);
+          }
+        }
+
         const refIds = (spec.referencesUsed || []).filter((id) => id !== spec.templateAssetId);
         if (refIds.length > 0) {
           const vaultItems = await prisma.assetVaultItem.findMany({
@@ -277,7 +317,7 @@ export const generateImagesJob = inngest.createFunction(
           }
         }
 
-        console.log(`[ImageGen] Variant ${spec.variantLabel}: template=${spec.templateAssetId || "none"}, refs=${referenceImages.length} (1 tpl + ${referenceImages.length - 1} style)`);
+        console.log(`[ImageGen] Variant ${spec.variantLabel}: template=${spec.templateAssetId || "none"}, subject=${!!job.subjectReferenceUrl}, refs=${referenceImages.length}`);
 
         const refInstructions = spec.artDirection.referenceInstructions || "";
         let imagePrompt = spec.artDirection.backgroundPrompt!;
@@ -789,5 +829,113 @@ export const generateIllustrationImagesJob = inngest.createFunction(
     });
 
     return { jobId, status: "ready" };
+  }
+);
+
+/**
+ * Expand an accepted illustration by ~28% on all sides using Gemini outpainting.
+ * Triggered by POST /api/artifacts/:id/expand.
+ * Saves a new Artifact with kind="expanded_png" on the same variant.
+ */
+export const expandIllustrationJob = inngest.createFunction(
+  {
+    id: "expand-illustration-job",
+    retries: 1,
+  },
+  { event: "artifact/expand" },
+  async ({ event, step }) => {
+    const { artifactId, variantId } = event.data as { artifactId: string; variantId: string };
+
+    await step.run("expand-illustration", async () => {
+      const artifact = await prisma.artifact.findUniqueOrThrow({ where: { id: artifactId } });
+
+      const variant = await prisma.variant.findUniqueOrThrow({
+        where: { id: variantId },
+        select: { id: true, jobId: true, plannerSpec: true },
+      });
+
+      // Resolve the original image from local storage
+      const localPath = path.resolve(process.cwd(), "public" + artifact.url);
+      if (!fs.existsSync(localPath)) {
+        throw new Error(`Artifact file not found: ${localPath}`);
+      }
+      const originalBuffer = fs.readFileSync(localPath);
+
+      const spec = variant.plannerSpec as Record<string, unknown> | null;
+      const artDir = spec?.artDirection as Record<string, unknown> | null;
+      const solidBg = (artDir?.solidBackground as string) || "#1A0B2E";
+      const bgPrompt = typeof artDir?.backgroundPrompt === "string" ? artDir.backgroundPrompt : "";
+      const contextExcerpt = bgPrompt.length > 30
+        ? bgPrompt.slice(0, 200).replace(/\s+/g, " ").trim()
+        : "";
+
+      const hex = solidBg.replace("#", "");
+      const r = parseInt(hex.slice(0, 2), 16) || 26;
+      const g = parseInt(hex.slice(2, 4), 16) || 11;
+      const b = parseInt(hex.slice(4, 6), 16) || 46;
+
+      const metadata = await sharp(originalBuffer).metadata();
+      const origW = metadata.width ?? artifact.width;
+      const origH = metadata.height ?? artifact.height;
+      const padX = Math.round(origW * 0.14);
+      const padY = Math.round(origH * 0.14);
+      const newW = origW + padX * 2;
+      const newH = origH + padY * 2;
+
+      const expandedCanvas = await sharp({
+        create: { width: newW, height: newH, channels: 3, background: { r, g, b } },
+      })
+        .composite([{ input: originalBuffer, left: padX, top: padY }])
+        .png()
+        .toBuffer();
+
+      console.log(`[Expand] Canvas ${origW}×${origH} → ${newW}×${newH}, bg=${solidBg}`);
+
+      const contextClause = contextExcerpt
+        ? `\nOriginal illustration context: "${contextExcerpt}..." — use this to inform what the missing body parts should look like (sport, pose, attire, energy).`
+        : "";
+
+      const imageProvider = getImageProvider();
+      const result = await imageProvider.generateImage({
+        prompt: `This flat-vector character illustration has been placed on a larger canvas.
+The border area around the character is filled with solid colour ${solidBg}.${contextClause}
+Your task: EXTEND the illustration into the new border space.
+- Add any missing parts of the character that were previously cropped (feet, hands, top of head, etc.)
+- Maintain the EXACT same flat-vector art style, colour palette, and line weight as in the reference
+- Keep the background as solid colour ${solidBg} only — no gradients, no patterns, no textures
+- The character must remain centred and fully contained
+- Zero text, logos, or new graphic elements
+Output a single clean flattened RGB image at exactly ${newW}×${newH} pixels.`,
+        width: newW,
+        height: newH,
+        mode: "illustration",
+        referenceImages: [
+          {
+            buffer: expandedCanvas,
+            description: `SUBJECT REFERENCE — original illustration centred on an expanded ${newW}×${newH} canvas. The solid-colour border is the area to fill in by extending the character naturally.`,
+          },
+        ],
+      });
+
+      const storage = getStorageProvider();
+      const expandedPath = `jobs/${variant.jobId}/illustrations/${artifactId}_expanded.png`;
+      const url = await storage.upload(result.buffer, expandedPath, result.mimeType);
+
+      await prisma.artifact.create({
+        data: {
+          variantId,
+          channel: "illustration",
+          kind: "expanded_png",
+          url,
+          width: newW,
+          height: newH,
+          mimeType: result.mimeType,
+        },
+      });
+
+      console.log(`[Expand] Done → ${url} (${newW}×${newH})`);
+    });
+
+    return { artifactId, status: "expanded" };
   }
 );

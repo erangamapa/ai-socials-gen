@@ -58,7 +58,7 @@ function VariantThumbs({
   variants: LibraryVariant[];
   jobStatus: string;
 }) {
-  const hasImages = variants.some((v) => v.artifacts.length > 0);
+  const hasImages = variants.some((v) => (v.artifacts ?? []).length > 0);
 
   if (!hasImages) {
     return (
@@ -83,8 +83,8 @@ function VariantThumbs({
   return (
     <div className="flex gap-1.5">
       {variants.map((v) => {
-        const art = v.artifacts[0];
-        const decision = v.feedback[0]?.decision;
+        const art = (v.artifacts ?? [])[0];
+        const decision = (v.feedback ?? [])[0]?.decision;
         const ringClass =
           decision === "accept"
             ? "ring-2 ring-green-500"
@@ -244,15 +244,20 @@ export function LibraryTable() {
       if (cursor) params.set("cursor", cursor);
 
       const res = await fetch(`/api/library?${params}`);
+      if (!res.ok) {
+        console.error(`Library API error: ${res.status}`);
+        setIsLoading(false);
+        return;
+      }
       const data: LibraryResponse = await res.json();
 
       if (cursor) {
-        setJobs((prev) => [...prev, ...data.items]);
+        setJobs((prev) => [...prev, ...(data.items ?? [])]);
       } else {
-        setJobs(data.items);
+        setJobs(data.items ?? []);
       }
-      setNextCursor(data.nextCursor);
-      setHasMore(data.hasMore);
+      setNextCursor(data.nextCursor ?? null);
+      setHasMore(data.hasMore ?? false);
       setIsLoading(false);
     },
     [statusFilter, channelFilter]

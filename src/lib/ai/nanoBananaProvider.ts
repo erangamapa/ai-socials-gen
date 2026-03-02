@@ -110,16 +110,34 @@ OUTPUT REQUIREMENTS — ABSOLUTE:
       });
     } else {
       // ── SOCIALS / TEMPLATE MODE ────────────────────────────────────────────
-      // A brand template is the first image. We composite an illustration on top.
+      // A brand template is the first image. If a hero illustration is provided,
+      // we composite it onto the template AS-IS. Otherwise we generate a new element.
 
       const templateRef = referenceImages?.find((r) => r.description.includes("BASE TEMPLATE"));
-      const styleRefs = referenceImages?.filter((r) => !r.description.includes("BASE TEMPLATE")) ?? [];
+      const heroRef = referenceImages?.find((r) => r.description.includes("HERO ILLUSTRATION"));
+      const styleRefs = referenceImages?.filter(
+        (r) => !r.description.includes("BASE TEMPLATE") && !r.description.includes("HERO ILLUSTRATION")
+      ) ?? [];
 
       console.log(
-        `[NanoBanana] SOCIALS mode — template=${!!templateRef}, styleRefs=${styleRefs.length}, ${width}x${height}`
+        `[NanoBanana] SOCIALS mode — template=${!!templateRef}, hero=${!!heroRef}, styleRefs=${styleRefs.length}, ${width}x${height}`
       );
 
-      const mainPrompt = `You are editing a finished brand TEMPLATE image. The FIRST image you see is the exact background with logo, notch and layout already in place.
+      // Build the main prompt: compositing mode when hero exists, generation mode otherwise
+      const mainPrompt = heroRef
+        ? `You are editing a finished brand TEMPLATE image. The FIRST image is the exact background template with logo, notch and layout already in place. The SECOND image is the HERO ILLUSTRATION — a finished, pre-styled character asset.
+
+Your job: COMPOSITE the hero illustration onto the template. Place the character prominently on the template — it is the centrepiece. Do NOT redraw, re-stylize, re-interpret, or modify the hero illustration in any way. Preserve its exact art style, colours, line work, and proportions. Only generate supplementary background effects, atmospheric elements, or subtle design flourishes around the hero if the prompt calls for it. Output a single, flattened RGB image (no transparency). ${aspectLabel} format (${width}x${height}).
+
+${prompt}
+
+CRITICAL COMPOSITING RULES:
+- The hero illustration is the FINISHED character — do NOT generate a new character.
+- Preserve the hero illustration EXACTLY: same colours, line weight, proportions, pose.
+- Preserve the template EXACTLY: same background, logo, notch, layout.
+- Place the hero character prominently — it should dominate the composition.
+- Do NOT render ANY text, words, letters, numbers, headlines, logos, or watermarks anywhere in the image. Zero typography.`
+        : `You are editing a finished brand TEMPLATE image. The FIRST image you see is the exact background with logo, notch and layout already in place.
 
 Your job: generate a NEW illustration element ON TOP of that existing template without changing the background, logo, or layout. Preserve the template exactly and just add the character/object in our house illustration style. Output a single, flattened RGB image (no transparency). ${aspectLabel} format (${width}x${height}).
 
@@ -127,6 +145,7 @@ ${prompt}
 
 FINAL INSTRUCTION — ABSOLUTE PRIORITY: Do NOT render ANY text, words, letters, numbers, headlines, logos, or watermarks anywhere in the image. The output must be a PURE ILLUSTRATION — zero typography.`;
 
+      // IMAGE 1: Brand template canvas
       if (templateRef) {
         const resized = await sharp(templateRef.buffer)
           .resize(1024, 1024, { fit: "inside", withoutEnlargement: true })
@@ -134,10 +153,25 @@ FINAL INSTRUCTION — ABSOLUTE PRIORITY: Do NOT render ANY text, words, letters,
           .toBuffer();
         contentParts.push({ inlineData: { mimeType: "image/png", data: resized.toString("base64") } });
         contentParts.push({
-          text: "IMAGE 1 — BRAND TEMPLATE CANVAS: This is the background template with logo already placed. Generate the illustration element ON TOP of this layout. Do NOT modify the background, logo, or notch.",
+          text: heroRef
+            ? "IMAGE 1 — BRAND TEMPLATE CANVAS: This is the background template with logo already placed. The hero illustration will be composited ON TOP of this layout. Do NOT modify the background, logo, or notch."
+            : "IMAGE 1 — BRAND TEMPLATE CANVAS: This is the background template with logo already placed. Generate the illustration element ON TOP of this layout. Do NOT modify the background, logo, or notch.",
         });
       }
 
+      // IMAGE 2: Hero illustration (pre-styled, highest priority — composite AS-IS)
+      if (heroRef) {
+        const resized = await sharp(heroRef.buffer)
+          .resize(1024, 1024, { fit: "inside", withoutEnlargement: true })
+          .png()
+          .toBuffer();
+        contentParts.push({ inlineData: { mimeType: "image/png", data: resized.toString("base64") } });
+        contentParts.push({
+          text: `IMAGE 2 — HERO ILLUSTRATION (HIGHEST PRIORITY): ${heroRef.description}. This is the finished character asset. Composite it onto the template AS-IS — do not redraw, re-stylize, or reinterpret it.`,
+        });
+      }
+
+      // IMAGE 3+: Vault style references (supplementary only when hero exists)
       for (let i = 0; i < styleRefs.length; i++) {
         const ref = styleRefs[i];
         const resized = await sharp(ref.buffer)
@@ -146,13 +180,17 @@ FINAL INSTRUCTION — ABSOLUTE PRIORITY: Do NOT render ANY text, words, letters,
           .toBuffer();
         contentParts.push({ inlineData: { mimeType: "image/png", data: resized.toString("base64") } });
         contentParts.push({
-          text: `STYLE REFERENCE ${i + 1}: ${ref.description}. Match this illustration's art style, color treatment, line work, and shading technique in the new image.`,
+          text: heroRef
+            ? `STYLE REFERENCE ${i + 1}: ${ref.description}. Use for supplementary style guidance only — the hero illustration takes priority.`
+            : `STYLE REFERENCE ${i + 1}: ${ref.description}. Match this illustration's art style, color treatment, line work, and shading technique in the new image.`,
         });
       }
 
       contentParts.push({
         text: templateRef
-          ? `Using the template canvas and style references above, generate a NEW illustration element. ${mainPrompt}`
+          ? (heroRef
+              ? `Using the template canvas and the hero illustration above, composite the hero onto the template. ${mainPrompt}`
+              : `Using the template canvas and style references above, generate a NEW illustration element. ${mainPrompt}`)
           : mainPrompt,
       });
     }

@@ -143,30 +143,44 @@ export function SpecReview({ jobId, variants, jobMode, subjectReferenceUrl, subj
         </p>
       </div>
 
-      {/* Subject reference (illustration mode) */}
-      {isIllustrationMode && subjectReferenceUrl && (
-        <div className="flex items-start gap-3 rounded-lg border bg-violet-50/50 dark:bg-violet-950/20 border-violet-200 dark:border-violet-800 p-3">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={subjectReferenceUrl}
-            alt="Subject reference"
-            className="w-16 h-16 object-cover rounded-md border shrink-0"
-          />
-          <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium text-violet-800 dark:text-violet-200">Subject Reference</p>
-            {subjectReferenceNote ? (
-              <div className="mt-1.5 rounded-md bg-violet-100/70 dark:bg-violet-900/30 border border-violet-200 dark:border-violet-700 px-2.5 py-1.5">
-                <p className="text-xs font-medium text-violet-700 dark:text-violet-300 mb-0.5">Creator instructions</p>
-                <p className="text-xs text-violet-800 dark:text-violet-200 italic">&ldquo;{subjectReferenceNote}&rdquo;</p>
+      {/* Subject / hero illustration reference */}
+      {subjectReferenceUrl && (() => {
+        const isHeroIllustration = subjectReferenceNote?.includes("GENERATED CB FLAT-VECTOR ILLUSTRATION");
+        const label = isHeroIllustration ? "Hero Illustration" : "Subject Reference";
+        const sublabel = isHeroIllustration
+          ? "This pre-styled illustration will be composited AS-IS onto the chosen template as the hero element."
+          : "Sent to the image generator as the first reference — anchors the subject\u2019s likeness before style references are applied.";
+
+        return (
+          <div className="flex items-start gap-3 rounded-lg border bg-violet-50/50 dark:bg-violet-950/20 border-violet-200 dark:border-violet-800 p-3">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={subjectReferenceUrl}
+              alt={label}
+              className="w-20 h-20 object-cover rounded-md border shrink-0"
+            />
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2">
+                <p className="text-sm font-medium text-violet-800 dark:text-violet-200">{label}</p>
+                {isHeroIllustration && (
+                  <Badge variant="outline" className="text-[10px] border-violet-300 dark:border-violet-700 text-violet-600 dark:text-violet-400">
+                    Compositing mode
+                  </Badge>
+                )}
               </div>
-            ) : (
-              <p className="text-xs text-muted-foreground mt-0.5">
-                Sent to the image generator as the first reference — anchors the subject&apos;s likeness before style references are applied.
-              </p>
-            )}
+              <p className="text-xs text-muted-foreground mt-0.5">{sublabel}</p>
+              {subjectReferenceNote && (
+                <div className="mt-1.5 rounded-md bg-violet-100/70 dark:bg-violet-900/30 border border-violet-200 dark:border-violet-700 px-2.5 py-1.5">
+                  <p className="text-xs font-medium text-violet-700 dark:text-violet-300 mb-0.5">
+                    {isHeroIllustration ? "Context passed to generator" : "Creator instructions"}
+                  </p>
+                  <p className="text-xs text-violet-800 dark:text-violet-200 italic line-clamp-3">&ldquo;{subjectReferenceNote}&rdquo;</p>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
-      )}
+        );
+      })()}
 
       {specs.map((spec, idx) => (
         <Card key={spec.variantLabel}>

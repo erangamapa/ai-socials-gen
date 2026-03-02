@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shuffle, Upload, X, ImageIcon, Loader2 } from "lucide-react";
+import { Shuffle, Upload, X, ImageIcon, Loader2, Sparkles } from "lucide-react";
 
 const CHANNEL_OPTIONS = [
   { id: "twitter", label: "Twitter / X", size: "1600×900" },
@@ -62,7 +62,17 @@ function pickRandom(arr: string[]): string {
 
 type Mode = "socials" | "illustration";
 
-export function JobForm() {
+interface SocialContext {
+  subjectReferenceUrl: string;
+  subjectReferenceNote: string;
+  description: string;
+  suggestedChannels: string[];
+  variantLabel: string;
+  sourceJobDescription: string;
+  isIllustration: boolean;
+}
+
+export function JobForm({ fromVariantId }: { fromVariantId?: string }) {
   const router = useRouter();
   const [mode, setMode] = useState<Mode>("socials");
   const [description, setDescription] = useState("");
@@ -80,6 +90,33 @@ export function JobForm() {
   const [uploadError, setUploadError] = useState<string | null>(null);
   const [isDragOver, setIsDragOver] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // "From illustration" pre-fill state
+  const [socialContext, setSocialContext] = useState<SocialContext | null>(null);
+  const [isContextLocked, setIsContextLocked] = useState(false); // subject ref is locked (from illustration)
+  const [contextBannerDismissed, setContextBannerDismissed] = useState(false);
+
+  // On mount: if fromVariantId is present, fetch and pre-fill
+  useEffect(() => {
+    if (!fromVariantId) return;
+    (async () => {
+      try {
+        const res = await fetch(`/api/variants/${fromVariantId}/social-context`);
+        if (!res.ok) return;
+        const ctx: SocialContext = await res.json();
+        setSocialContext(ctx);
+        setMode("socials");
+        setChannels(ctx.suggestedChannels);
+        setDescription(ctx.description);
+        setSubjectReferenceUrl(ctx.subjectReferenceUrl);
+        setSubjectPreview(ctx.subjectReferenceUrl);
+        setSubjectReferenceNote(ctx.subjectReferenceNote.slice(0, 500));
+        setIsContextLocked(true);
+      } catch {
+        // Silently fail — user can fill manually
+      }
+    })();
+  }, [fromVariantId]);
 
   const handleShuffle = () => {
     const prompts = mode === "illustration" ? ILLUSTRATION_PROMPTS : RANDOM_PROMPTS;
@@ -170,6 +207,8 @@ export function JobForm() {
     setSubjectPreview(null);
     setSubjectReferenceNote("");
     setUploadError(null);
+    setIsContextLocked(false);
+    setSocialContext(null);
   };
 
   const handleSubmit = async () => {
@@ -194,7 +233,9 @@ export function JobForm() {
         channels: mode === "illustration" ? [] : channels,
       };
 
-      if (mode === "illustration" && subjectReferenceUrl) {
+      // Attach subject reference for illustration mode, OR for socials mode when
+      // pre-filled from an accepted illustration ("Use in Social" flow)
+      if (subjectReferenceUrl && (mode === "illustration" || isContextLocked)) {
         body.subjectReferenceUrl = subjectReferenceUrl;
         if (subjectReferenceNote.trim()) {
           body.subjectReferenceNote = subjectReferenceNote.trim();
@@ -227,6 +268,31 @@ export function JobForm() {
         <CardTitle>Create New Job</CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
+
+        {/* "From illustration" context banner */}
+        {socialContext && !contextBannerDismissed && (
+          <div className="flex items-start gap-3 rounded-lg bg-violet-50 dark:bg-violet-950/30 border border-violet-200 dark:border-violet-800 p-3">
+            <Sparkles className="h-4 w-4 text-violet-600 dark:text-violet-400 shrink-0 mt-0.5" />
+            <div className="flex-1 min-w-0 space-y-0.5">
+              <p className="text-sm font-medium text-violet-800 dark:text-violet-200">
+                Creating social from Variant {socialContext.variantLabel}
+              </p>
+              <p className="text-xs text-violet-600 dark:text-violet-400 line-clamp-1">
+                {socialContext.sourceJobDescription}
+              </p>
+              <p className="text-xs text-violet-500 dark:text-violet-500">
+                The accepted illustration is pre-loaded as the hero subject — the social agent will pick a brand template and compose it.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => setContextBannerDismissed(true)}
+              className="text-violet-400 hover:text-violet-600 transition-colors shrink-0"
+            >
+              <X className="h-4 w-4" />
+            </button>
+          </div>
+        )}
 
         {/* Mode selector */}
         <div className="space-y-2">
@@ -341,8 +407,8 @@ export function JobForm() {
           </div>
         )}
 
-        {/* Subject reference upload (illustration only) */}
-        {mode === "illustration" && (
+        {/* Subject reference — illustration mode OR socials pre-filled from illustration */}
+        {(mode === "illustration" || isContextLocked) && (
           <div className="space-y-2">
             <div className="flex items-center justify-between">
               <Label>Subject Reference</Label>
@@ -351,7 +417,7 @@ export function JobForm() {
 
             {subjectPreview ? (
               <div className="space-y-3">
-                <div className="relative rounded-lg border overflow-hidden bg-muted/30">
+                <div className={`relative rounded-lg border overflow-hidden ${isContextLocked ? "bg-violet-50/50 dark:bg-violet-950/20 border-violet-200 dark:border-violet-800/50" : "bg-muted/30"}`}>
                   <div className="flex items-start gap-3 p-3">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
@@ -360,14 +426,21 @@ export function JobForm() {
                       className="w-20 h-20 object-cover rounded-md border shrink-0"
                     />
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium">Subject reference uploaded</p>
-                      {isUploading && (
+                      <p className="text-sm font-medium">
+                        {isContextLocked ? "Illustration (locked)" : "Subject reference uploaded"}
+                      </p>
+                      {isContextLocked && (
+                        <p className="text-xs text-violet-600 dark:text-violet-400 mt-1">
+                          Accepted illustration — used as the hero character for this social post
+                        </p>
+                      )}
+                      {isUploading && !isContextLocked && (
                         <div className="flex items-center gap-1.5 mt-1 text-xs text-muted-foreground">
                           <Loader2 className="h-3 w-3 animate-spin" />
                           Uploading...
                         </div>
                       )}
-                      {subjectReferenceUrl && !isUploading && (
+                      {subjectReferenceUrl && !isUploading && !isContextLocked && (
                         <p className="text-xs text-green-600 mt-1">Ready — will be sent to image generator as first reference</p>
                       )}
                       {uploadError && (
@@ -378,7 +451,7 @@ export function JobForm() {
                       type="button"
                       onClick={clearSubjectReference}
                       className="text-muted-foreground hover:text-foreground transition-colors p-1 rounded"
-                      title="Remove reference"
+                      title={isContextLocked ? "Remove illustration reference" : "Remove reference"}
                     >
                       <X className="h-4 w-4" />
                     </button>
