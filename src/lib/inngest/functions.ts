@@ -88,11 +88,25 @@ export const generateSocialPostJob = inngest.createFunction(
       const enrichedItems = await enrichWithAnalysis(allItems);
       const rules = await buildRulesBlock(job.mode || "socials");
 
-      console.log(`[Rules] Injecting ${rules.ruleCount} rules (~${rules.estimatedTokens} tokens, v${rules.version})`);
+      // Load template performance stats and append to rules block
+      const templateStats = await prisma.templateStats.findMany({
+        where: { jobCount: { gt: 0 } },
+        orderBy: { acceptCount: "desc" },
+      });
+      let rulesText = rules.text;
+      if (templateStats.length > 0) {
+        const statsLines = templateStats.map((ts) => {
+          const rate = ts.jobCount > 0 ? Math.round((ts.acceptCount / ts.jobCount) * 100) : 0;
+          return `  - ${ts.templateId} [${ts.channel}]: ${ts.acceptCount}/${ts.jobCount} accepted (${rate}% win rate)`;
+        });
+        rulesText += `\n\nTEMPLATE PERFORMANCE (prefer high win-rate templates):\n${statsLines.join("\n")}`;
+      }
+
+      console.log(`[Rules] Injecting ${rules.ruleCount} rules (~${rules.estimatedTokens} tokens, v${rules.version}), ${templateStats.length} template stats`);
 
       await prisma.job.update({
         where: { id: jobId },
-        data: { rulesVersion: rules.version },
+        data: { rulesVersion: rules.version, rulesSnapshot: rulesText || null },
       });
 
       const isPreStyledIllustration =
@@ -114,7 +128,7 @@ Your backgroundPrompt for each variant should describe HOW TO COMPOSITE the prov
         channels: job.channels,
         visualType: job.visualType,
         templateIds: TEMPLATE_REGISTRY.map((t) => t.id),
-        rulesBlock: rules.text,
+        rulesBlock: rulesText,
         vaultReferences: enrichedItems.map((item) => ({
           id: item.id,
           type: item.type,
@@ -470,7 +484,7 @@ export const generateIllustrationJob = inngest.createFunction(
 
       await prisma.job.update({
         where: { id: jobId },
-        data: { rulesVersion: rules.version },
+        data: { rulesVersion: rules.version, rulesSnapshot: rules.text || null },
       });
 
       const formatRef = (ref: typeof enrichedItems[0]) => {

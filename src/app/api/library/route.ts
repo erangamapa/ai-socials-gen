@@ -6,6 +6,8 @@ export async function GET(req: NextRequest) {
     const { searchParams } = new URL(req.url);
     const status = searchParams.get("status");
     const channel = searchParams.get("channel");
+    const mode = searchParams.get("mode");
+    const search = searchParams.get("search");
     const cursor = searchParams.get("cursor");
     const limit = Math.min(parseInt(searchParams.get("limit") || "20"), 50);
 
@@ -16,6 +18,12 @@ export async function GET(req: NextRequest) {
     }
     if (channel) {
       where.channels = { has: channel };
+    }
+    if (mode) {
+      where.mode = mode;
+    }
+    if (search && search.trim()) {
+      where.description = { contains: search.trim(), mode: "insensitive" };
     }
 
     const jobs = await prisma.job.findMany({

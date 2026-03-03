@@ -116,9 +116,17 @@ Return ONLY valid JSON matching this schema:
   }
 
   let disabled = 0;
+  let weightedAvgConfidence: number | null = null;
   if (parsed.supersededIds.length > 0) {
     const validIds = parsed.supersededIds.filter((id) => ruleIds.includes(id));
     if (validIds.length > 0) {
+      // Compute weighted average confidence from superseded rules (weight = hitCount)
+      const supersededRules = existingRules.filter((r) => validIds.includes(r.id));
+      const totalHits = supersededRules.reduce((sum, r) => sum + Math.max(r.hitCount, 1), 0);
+      weightedAvgConfidence = Math.round(
+        supersededRules.reduce((sum, r) => sum + r.confidence * Math.max(r.hitCount, 1), 0) / totalHits
+      );
+
       const result = await prisma.promptRule.updateMany({
         where: { id: { in: validIds } },
         data: { enabled: false },
@@ -133,13 +141,14 @@ Return ONLY valid JSON matching this schema:
       where: { content: rule.content, mode },
     });
     if (!existing) {
+      const finalConfidence = weightedAvgConfidence ?? rule.confidence;
       await prisma.promptRule.create({
         data: {
           content: rule.content,
           category: rule.category,
-          confidence: rule.confidence,
+          confidence: Math.min(100, Math.max(0, finalConfidence)),
           source: "synthesis",
-          priority: Math.round(rule.confidence / 20),
+          priority: Math.round(finalConfidence / 20),
           mode,
         },
       });

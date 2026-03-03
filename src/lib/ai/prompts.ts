@@ -39,6 +39,7 @@ TEMPLATE SELECTION (REQUIRED per variant):
 - Each variant MUST have a templateAssetId pointing to a vault template for the target channel.
 - You may reuse the same template across variants OR pick different ones — but match channel (twitter/ig_feed).
 - The template has the brand logo, notch, and background already — the image generator ONLY adds what goes ON TOP.
+- If TEMPLATE PERFORMANCE data is provided in the rules block, PREFER templates with higher win rates for the target channel. Avoid templates that consistently get rejected.
 
 COPY (headline, subhead, CTA):
 - Write for the design team to overlay LATER — NOT rendered in the image.

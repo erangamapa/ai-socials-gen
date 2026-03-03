@@ -1,11 +1,13 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { JobStatusBadge } from "./job-status-badge";
 import { ChannelBadges } from "./channel-badges";
 import { Badge } from "@/components/ui/badge";
+import { Search } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -231,6 +233,9 @@ export function LibraryTable() {
   const [isLoading, setIsLoading] = useState(true);
   const [statusFilter, setStatusFilter] = useState<string>("all");
   const [channelFilter, setChannelFilter] = useState<string>("all");
+  const [modeFilter, setModeFilter] = useState<string>("all");
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const searchDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const fetchJobs = useCallback(
     async (cursor?: string) => {
@@ -238,6 +243,8 @@ export function LibraryTable() {
       const params = new URLSearchParams();
       if (statusFilter !== "all") params.set("status", statusFilter);
       if (channelFilter !== "all") params.set("channel", channelFilter);
+      if (modeFilter !== "all") params.set("mode", modeFilter);
+      if (searchQuery.trim()) params.set("search", searchQuery.trim());
       if (cursor) params.set("cursor", cursor);
 
       const res = await fetch(`/api/library?${params}`);
@@ -257,7 +264,7 @@ export function LibraryTable() {
       setHasMore(data.hasMore ?? false);
       setIsLoading(false);
     },
-    [statusFilter, channelFilter]
+    [statusFilter, channelFilter, modeFilter, searchQuery]
   );
 
   useEffect(() => {
@@ -267,9 +274,37 @@ export function LibraryTable() {
   return (
     <div className="space-y-5">
       {/* Filters */}
-      <div className="flex gap-3 flex-wrap">
+      <div className="flex gap-3 flex-wrap items-center">
+        <div className="relative">
+          <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
+          <Input
+            placeholder="Search briefs..."
+            className="w-56 pl-8 h-9"
+            value={searchQuery}
+            onChange={(e) => {
+              const val = e.target.value;
+              setSearchQuery(val);
+              if (searchDebounceRef.current) clearTimeout(searchDebounceRef.current);
+              searchDebounceRef.current = setTimeout(() => {
+                setSearchQuery(val);
+              }, 300);
+            }}
+          />
+        </div>
+
+        <Select value={modeFilter} onValueChange={setModeFilter}>
+          <SelectTrigger className="w-36">
+            <SelectValue placeholder="Mode" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">All modes</SelectItem>
+            <SelectItem value="socials">Socials</SelectItem>
+            <SelectItem value="illustration">Illustration</SelectItem>
+          </SelectContent>
+        </Select>
+
         <Select value={statusFilter} onValueChange={setStatusFilter}>
-          <SelectTrigger className="w-40">
+          <SelectTrigger className="w-36">
             <SelectValue placeholder="Status" />
           </SelectTrigger>
           <SelectContent>
@@ -283,7 +318,7 @@ export function LibraryTable() {
         </Select>
 
         <Select value={channelFilter} onValueChange={setChannelFilter}>
-          <SelectTrigger className="w-40">
+          <SelectTrigger className="w-36">
             <SelectValue placeholder="Channel" />
           </SelectTrigger>
           <SelectContent>
@@ -293,17 +328,19 @@ export function LibraryTable() {
           </SelectContent>
         </Select>
 
-        {(statusFilter !== "all" || channelFilter !== "all") && (
+        {(statusFilter !== "all" || channelFilter !== "all" || modeFilter !== "all" || searchQuery.trim()) && (
           <Button
             variant="ghost"
             size="sm"
             onClick={() => {
               setStatusFilter("all");
               setChannelFilter("all");
+              setModeFilter("all");
+              setSearchQuery("");
             }}
             className="text-xs text-muted-foreground"
           >
-            Clear filters ×
+            Clear filters
           </Button>
         )}
       </div>

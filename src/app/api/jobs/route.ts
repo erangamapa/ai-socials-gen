@@ -9,7 +9,7 @@ const CreateJobSchema = z.object({
   visualType: z.enum(["background-only", "illustration", "pictogram", "1:1", "4:5", "16:9"]).default("background-only"),
   mode: z.enum(["socials", "illustration"]).default("socials"),
   subjectReferenceUrl: z.string().min(1).optional(),
-  subjectReferenceNote: z.string().max(500).optional(),
+  subjectReferenceNote: z.string().max(2000).optional(),
 });
 
 export async function POST(req: NextRequest) {

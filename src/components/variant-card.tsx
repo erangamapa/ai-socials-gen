@@ -38,6 +38,7 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
   const [acceptDialogOpen, setAcceptDialogOpen] = useState(false);
   const [acceptNotes, setAcceptNotes] = useState("");
   const [isAccepting, setIsAccepting] = useState(false);
+  const [acceptError, setAcceptError] = useState<string | null>(null);
   const [isExpanding, setIsExpanding] = useState(false);
   const [expandError, setExpandError] = useState<string | null>(null);
   const [isRemovingBg, setIsRemovingBg] = useState(false);
@@ -98,8 +99,9 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
 
   const submitAccept = async () => {
     setIsAccepting(true);
+    setAcceptError(null);
     try {
-      await fetch("/api/feedback", {
+      const res = await fetch("/api/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -109,8 +111,14 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
           notes: acceptNotes.trim() || undefined,
         }),
       });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || `Request failed (${res.status})`);
+      }
       setAcceptDialogOpen(false);
       onFeedbackSubmitted();
+    } catch (err) {
+      setAcceptError(err instanceof Error ? err.message : "Failed to submit");
     } finally {
       setIsAccepting(false);
     }
@@ -604,6 +612,11 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
               Positive notes help the AI learn what to repeat in future generations.
             </p>
           </div>
+          {acceptError && (
+            <p className="text-sm text-destructive bg-destructive/10 border border-destructive/20 rounded-md px-3 py-2">
+              {acceptError}
+            </p>
+          )}
           <DialogFooter className="gap-2 sm:gap-0">
             <Button variant="ghost" size="sm" onClick={() => setAcceptDialogOpen(false)}>
               Cancel

@@ -187,14 +187,15 @@ export async function searchVaultSplit(params: VaultSearchParams): Promise<Split
   };
 }
 
-export function searchVault(params: VaultSearchParams): VaultSearchResult {
+export async function searchVault(params: VaultSearchParams): Promise<VaultSearchResult> {
   const index = loadVaultIndex();
+  const analysisMap = await loadAnalysisCache();
   const queryTokens = tokenize(params.query);
   const expandedTokens = expandQuery(queryTokens);
   const limit = params.limit ?? 10;
 
   const scored = index
-    .map((item) => ({ item, score: scoreItem(item, queryTokens, expandedTokens, params) }))
+    .map((item) => ({ item, score: scoreItem(item, queryTokens, expandedTokens, params, analysisMap.get(item.id)) }))
     .filter(({ score }) => score > 0)
     .sort((a, b) => b.score - a.score);
 

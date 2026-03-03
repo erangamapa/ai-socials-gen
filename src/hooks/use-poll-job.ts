@@ -12,6 +12,8 @@ export interface JobData {
   status: string;
   errorMessage: string | null;
   retrievalBundle: unknown;
+  rulesVersion: number;
+  rulesSnapshot: string | null;
   mode: string;
   subjectReferenceUrl: string | null;
   subjectReferenceNote: string | null;

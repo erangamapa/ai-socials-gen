@@ -42,6 +42,7 @@ export function FeedbackDialog({
   const [reasons, setReasons] = useState<string[]>([]);
   const [notes, setNotes] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const toggleReason = (reason: string) => {
     setReasons((prev) =>
@@ -53,8 +54,9 @@ export function FeedbackDialog({
     if (reasons.length === 0) return;
 
     setIsSubmitting(true);
+    setSubmitError(null);
     try {
-      await fetch("/api/feedback", {
+      const res = await fetch("/api/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -64,10 +66,17 @@ export function FeedbackDialog({
           notes: notes || undefined,
         }),
       });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || `Request failed (${res.status})`);
+      }
       setReasons([]);
       setNotes("");
+      setSubmitError(null);
       onOpenChange(false);
       onSubmitted();
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : "Failed to submit feedback");
     } finally {
       setIsSubmitting(false);
     }
@@ -110,6 +119,12 @@ export function FeedbackDialog({
             />
           </div>
         </div>
+
+        {submitError && (
+          <p className="text-sm text-destructive bg-destructive/10 border border-destructive/20 rounded-md px-3 py-2">
+            {submitError}
+          </p>
+        )}
 
         <DialogFooter>
           <Button variant="outline" onClick={() => onOpenChange(false)}>

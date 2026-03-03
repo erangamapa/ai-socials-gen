@@ -66,13 +66,21 @@ export async function POST(req: NextRequest) {
     const jobMode = variant.job?.mode || "socials";
     const referencesUsed = Array.isArray(spec?.referencesUsed) ? (spec.referencesUsed as string[]) : [];
 
-    // ─── RULE COUNTERS — track effectiveness ────────────────────────────────
-    const enabledRuleIds = (
-      await prisma.promptRule.findMany({
-        where: { enabled: true, mode: jobMode },
-        select: { id: true },
-      })
-    ).map((r) => r.id);
+    // ─── RULE COUNTERS — only update rules that were actually active for this job ──
+    const job = variant.job;
+    const rulesSnapshot: string | null = job
+      ? ((await prisma.job.findUnique({ where: { id: job.id }, select: { rulesSnapshot: true } }))?.rulesSnapshot ?? null)
+      : null;
+
+    const enabledRules = await prisma.promptRule.findMany({
+      where: { enabled: true, mode: jobMode },
+      select: { id: true, category: true, content: true },
+    });
+
+    const activeRules = rulesSnapshot
+      ? enabledRules.filter((r) => rulesSnapshot.includes(r.content))
+      : enabledRules;
+    const enabledRuleIds = activeRules.map((r) => r.id);
 
     if (enabledRuleIds.length > 0) {
       await prisma.promptRule.updateMany({
@@ -81,20 +89,94 @@ export async function POST(req: NextRequest) {
       });
 
       if (input.decision === "accept") {
+        const notesLen = (input.notes ?? "").trim().length;
+        const confidenceBoost = notesLen > 20 ? 5 : notesLen > 5 ? 3 : 1;
+
         await prisma.promptRule.updateMany({
           where: { id: { in: enabledRuleIds } },
           data: {
             successCount: { increment: 1 },
-            confidence: { increment: 2 },
+            confidence: { increment: confidenceBoost },
           },
         });
       }
 
-      // Cap confidence at 100
+      if (input.decision === "reject") {
+        // Mild negative pressure on all enabled rules for this mode
+        await prisma.promptRule.updateMany({
+          where: { id: { in: enabledRuleIds } },
+          data: { confidence: { decrement: 1 } },
+        });
+
+        // Targeted penalty: if rejection reasons map to a rule category, penalize harder
+        const reasonToCategoryMap: Record<string, string> = {
+          "Off-brand palette": "color",
+          "Poor composition": "composition",
+          "Wrong vibe": "style",
+          "Bad subject quality": "style",
+          "Too busy / low clarity": "composition",
+          "Not enough text-safe area": "composition",
+          "Typography issues": "typography",
+          "Wrong channel sizing": "composition",
+        };
+        const targetedCategories = new Set(
+          input.reasons.map((r) => reasonToCategoryMap[r]).filter(Boolean)
+        );
+        if (targetedCategories.size > 0) {
+          const targetedRuleIds = activeRules
+            .filter((r) => targetedCategories.has(r.category))
+            .map((r) => r.id);
+          if (targetedRuleIds.length > 0) {
+            await prisma.promptRule.updateMany({
+              where: { id: { in: targetedRuleIds } },
+              data: { confidence: { decrement: 2 } },
+            });
+          }
+        }
+      }
+
+      // Clamp confidence to 0–100
       await prisma.promptRule.updateMany({
         where: { id: { in: enabledRuleIds }, confidence: { gt: 100 } },
         data: { confidence: 100 },
       });
+      await prisma.promptRule.updateMany({
+        where: { id: { in: enabledRuleIds }, confidence: { lt: 0 } },
+        data: { confidence: 0 },
+      });
+    }
+
+    // ─── TEMPLATE STATS — track per-template effectiveness ─────────────────
+    const templateAssetIdForStats = spec?.templateAssetId as string | undefined;
+    const variantArtifacts = await prisma.artifact.findMany({
+      where: { variantId: input.variantId, kind: "final_png" },
+      select: { channel: true },
+      take: 1,
+    });
+    const channelForStats = variantArtifacts[0]?.channel ?? undefined;
+    if (templateAssetIdForStats && channelForStats) {
+      try {
+        await prisma.templateStats.upsert({
+          where: {
+            templateId_channel: { templateId: templateAssetIdForStats, channel: channelForStats },
+          },
+          create: {
+            templateId: templateAssetIdForStats,
+            channel: channelForStats,
+            jobCount: 1,
+            acceptCount: input.decision === "accept" ? 1 : 0,
+            rejectCount: input.decision === "reject" ? 1 : 0,
+          },
+          update: {
+            jobCount: { increment: 1 },
+            ...(input.decision === "accept" ? { acceptCount: { increment: 1 } } : {}),
+            ...(input.decision === "reject" ? { rejectCount: { increment: 1 } } : {}),
+            lastUsedAt: new Date(),
+          },
+        });
+      } catch (err) {
+        console.warn("[Feedback] Template stats update failed:", err);
+      }
     }
 
     // ─── REJECT ────────────────────────────────────────────────────────────────
@@ -342,9 +424,110 @@ export async function DELETE(req: NextRequest) {
       return NextResponse.json({ error: "No feedback found for this variant" }, { status: 404 });
     }
 
+    const variant = await prisma.variant.findUnique({
+      where: { id: input.variantId },
+      include: { job: { select: { id: true, mode: true, rulesSnapshot: true } } },
+    });
+
+    const jobMode = variant?.job?.mode || "socials";
+    const rulesSnapshot = variant?.job?.rulesSnapshot ?? null;
+    const spec = variant?.plannerSpec as Record<string, unknown> | null;
+    const referencesUsed = Array.isArray(spec?.referencesUsed) ? (spec.referencesUsed as string[]) : [];
+
+    // Revert rule counters for rules that were active during this job
+    const enabledRules = await prisma.promptRule.findMany({
+      where: { enabled: true, mode: jobMode },
+      select: { id: true, content: true },
+    });
+    const activeRuleIds = rulesSnapshot
+      ? enabledRules.filter((r) => rulesSnapshot.includes(r.content)).map((r) => r.id)
+      : enabledRules.map((r) => r.id);
+
+    if (activeRuleIds.length > 0) {
+      await prisma.promptRule.updateMany({
+        where: { id: { in: activeRuleIds } },
+        data: { hitCount: { decrement: 1 } },
+      });
+
+      if (latest.decision === "accept") {
+        const notesLen = (latest.notes ?? "").trim().length;
+        const confidenceBoost = notesLen > 20 ? 5 : notesLen > 5 ? 3 : 1;
+        await prisma.promptRule.updateMany({
+          where: { id: { in: activeRuleIds } },
+          data: { successCount: { decrement: 1 }, confidence: { decrement: confidenceBoost } },
+        });
+      }
+
+      if (latest.decision === "reject") {
+        await prisma.promptRule.updateMany({
+          where: { id: { in: activeRuleIds } },
+          data: { confidence: { increment: 1 } },
+        });
+      }
+
+      // Clamp counters to 0 minimum
+      await prisma.$executeRaw`UPDATE "PromptRule" SET "hitCount" = 0 WHERE "hitCount" < 0`;
+      await prisma.$executeRaw`UPDATE "PromptRule" SET "successCount" = 0 WHERE "successCount" < 0`;
+      await prisma.$executeRaw`UPDATE "PromptRule" SET "confidence" = LEAST(GREATEST("confidence", 0), 100)`;
+    }
+
+    // Revert usageScore changes on vault items
+    if (latest.decision === "accept" && referencesUsed.length > 0) {
+      for (const refId of referencesUsed) {
+        await prisma.assetVaultItem.updateMany({
+          where: { id: refId },
+          data: { usageScore: { decrement: 1 } },
+        });
+      }
+    }
+    if (latest.decision === "reject" && latest.reasons.includes("Bad subject quality") && referencesUsed.length > 0) {
+      for (const refId of referencesUsed) {
+        await prisma.assetVaultItem.updateMany({
+          where: { id: refId },
+          data: { usageScore: { increment: 1 } },
+        });
+      }
+    }
+
+    // Revert template stats
+    const templateAssetId = spec?.templateAssetId as string | undefined;
+    const variantArtifacts = await prisma.artifact.findMany({
+      where: { variantId: input.variantId, kind: "final_png" },
+      select: { channel: true },
+      take: 1,
+    });
+    const channel = variantArtifacts[0]?.channel;
+    if (templateAssetId && channel) {
+      try {
+        await prisma.templateStats.update({
+          where: { templateId_channel: { templateId: templateAssetId, channel } },
+          data: {
+            jobCount: { decrement: 1 },
+            ...(latest.decision === "accept" ? { acceptCount: { decrement: 1 } } : {}),
+            ...(latest.decision === "reject" ? { rejectCount: { decrement: 1 } } : {}),
+          },
+        });
+      } catch {
+        // Stats row may not exist
+      }
+    }
+
+    // Delete rules that were created from this specific feedback
+    if (variant?.job?.id) {
+      const feedbackCreatedAt = latest.createdAt;
+      const fiveSecondsAfter = new Date(feedbackCreatedAt.getTime() + 5000);
+      await prisma.promptRule.deleteMany({
+        where: {
+          sourceJobId: variant.job.id,
+          mode: jobMode,
+          createdAt: { gte: feedbackCreatedAt, lte: fiveSecondsAfter },
+        },
+      });
+    }
+
     await prisma.feedback.delete({ where: { id: latest.id } });
 
-    console.log(`[Feedback] RECONSIDER on variant ${input.variantId} — deleted feedback ${latest.id}`);
+    console.log(`[Feedback] RECONSIDER on variant ${input.variantId} — deleted feedback ${latest.id} and reverted side effects`);
 
     return NextResponse.json({ deleted: latest.id }, { status: 200 });
   } catch (error) {

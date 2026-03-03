@@ -8,7 +8,7 @@ export async function GET(req: NextRequest) {
     const type = searchParams.get("type") || undefined;
     const limit = parseInt(searchParams.get("limit") || "10");
 
-    const results = searchVault({
+    const results = await searchVault({
       query: q,
       visualType: type,
       limit,

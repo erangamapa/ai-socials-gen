@@ -16,12 +16,16 @@ model Job {
   errorMessage         String?
   retrievalBundle      Json?
   rulesVersion         Int       @default(0)
+  rulesSnapshot        String?
   mode                 String    @default("socials")
   subjectReferenceUrl  String?
   subjectReferenceNote String?
   createdAt            DateTime  @default(now())
   updatedAt            DateTime  @updatedAt
   variants             Variant[]
+
+  @@index([status, createdAt])
+  @@index([mode, createdAt])
 }
 
 model Variant {
@@ -58,6 +62,9 @@ model Feedback {
   notes     String?
   createdAt DateTime @default(now())
   variant   Variant  @relation(fields: [variantId], references: [id], onDelete: Cascade)
+
+  @@index([variantId, createdAt])
+  @@index([decision, createdAt])
 }
 
 model Template {
@@ -82,6 +89,10 @@ model PromptRule {
   lastUsedAt   DateTime?
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @updatedAt
+
+  @@index([enabled, mode])
+  @@index([mode, confidence])
+  @@index([sourceJobId, mode, createdAt])
 }
 
 model AssetVaultItem {
@@ -96,4 +107,18 @@ model AssetVaultItem {
   analyzedAt     DateTime?
   usageScore     Int       @default(0)
   createdAt      DateTime  @default(now())
+}
+
+model TemplateStats {
+  id          String   @id @default(cuid())
+  templateId  String
+  channel     String
+  jobCount    Int      @default(0)
+  acceptCount Int      @default(0)
+  rejectCount Int      @default(0)
+  lastUsedAt  DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([templateId, channel])
 }
