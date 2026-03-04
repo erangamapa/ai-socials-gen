@@ -2,6 +2,7 @@ import { z } from "zod";
 
 const envSchema = z.object({
   DATABASE_URL: z.string().min(1, "DATABASE_URL is required"),
+  DIRECT_DATABASE_URL: z.string().optional(),
 
   BLOB_STORAGE_PROVIDER: z.enum(["local", "vercel-blob"]).default("local"),
   BLOB_READ_WRITE_TOKEN: z.string().optional(),

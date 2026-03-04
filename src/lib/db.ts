@@ -5,15 +5,19 @@ import pg from "pg";
 let _prisma: PrismaClient | null = null;
 
 function createClient(): PrismaClient {
+  const connectionString =
+    process.env.DIRECT_DATABASE_URL || process.env.DATABASE_URL;
+  if (!connectionString) {
+    throw new Error(
+      "Neither DIRECT_DATABASE_URL nor DATABASE_URL is set in the environment"
+    );
+  }
+
   const pool = new pg.Pool({
-    host: "127.0.0.1",
-    port: 51214,
-    user: "postgres",
-    password: "postgres",
-    database: "template1",
-    max: 1,
-    idleTimeoutMillis: 1,
-    connectionTimeoutMillis: 10000,
+    connectionString,
+    max: 5,
+    idleTimeoutMillis: 30_000,
+    connectionTimeoutMillis: 10_000,
     allowExitOnIdle: true,
   });
   pool.on("error", () => {});
