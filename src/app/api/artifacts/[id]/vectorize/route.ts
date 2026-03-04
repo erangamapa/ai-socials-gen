@@ -57,7 +57,7 @@ export async function POST(
     console.log("[Vectorize] Image loaded, size:", imageBuffer.length, "bytes. Calling Recraft API...");
 
     const formData = new FormData();
-    formData.append("file", new Blob([imageBuffer], { type: "image/png" }), "image.png");
+    formData.append("file", new Blob([new Uint8Array(imageBuffer)], { type: "image/png" }), "image.png");
 
     const recraftRes = await fetch("https://external.api.recraft.ai/v1/images/vectorize", {
       method: "POST",

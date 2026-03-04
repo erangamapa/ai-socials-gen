@@ -57,7 +57,7 @@ export async function POST(
     console.log("[RemoveBG] Image loaded, size:", imageBuffer.length, "bytes. Calling Recraft removeBackground...");
 
     const formData = new FormData();
-    formData.append("file", new Blob([imageBuffer], { type: "image/png" }), "image.png");
+    formData.append("file", new Blob([new Uint8Array(imageBuffer)], { type: "image/png" }), "image.png");
     formData.append("response_format", "url");
 
     const recraftRes = await fetch("https://external.api.recraft.ai/v1/images/removeBackground", {

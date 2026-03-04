@@ -77,14 +77,16 @@ async function analyzeImage(filePath: string): Promise<AnalysisResult> {
     };
   }
 
-  let imageData = fs.readFileSync(absolutePath);
+  let imageData: Buffer = fs.readFileSync(absolutePath);
   // Resize if over 4MB to stay within Claude's 5MB limit
   const MAX_BYTES = 4 * 1024 * 1024;
   if (imageData.length > MAX_BYTES) {
-    imageData = await sharp(imageData)
-      .resize(1536, 1536, { fit: "inside", withoutEnlargement: true })
-      .jpeg({ quality: 85 })
-      .toBuffer();
+    imageData = Buffer.from(
+      await sharp(imageData)
+        .resize(1536, 1536, { fit: "inside", withoutEnlargement: true })
+        .jpeg({ quality: 85 })
+        .toBuffer()
+    );
   }
   const base64 = imageData.toString("base64");
   const ext = path.extname(filePath).toLowerCase().slice(1);
