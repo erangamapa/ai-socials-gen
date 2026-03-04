@@ -14,8 +14,9 @@ const envSchema = z.object({
 
   USE_MOCK_PROVIDERS: z
     .string()
-    .transform((v) => v === "true")
-    .default("false"),
+    .optional()
+    .default("false")
+    .transform((v) => v === "true"),
 
   INNGEST_EVENT_KEY: z.string().optional(),
   INNGEST_SIGNING_KEY: z.string().optional(),
