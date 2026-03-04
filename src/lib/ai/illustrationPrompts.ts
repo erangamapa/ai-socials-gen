@@ -41,10 +41,24 @@ PERSPECTIVE GUIDE — always choose one of these, never a neutral pose:
 - DUTCH TILT + LOW: camera tilted 10-30° and below subject — adds tension and instability, premium editorial feel
 
 HOW IT WORKS:
-1. You receive vault illustration references.
-2. You select 2-5 references — ALL must be flat-vector style. REJECT any reference that looks 3D-rendered or has gradient shading.
-3. You write an extremely detailed image generation prompt describing the character/subject in flat-vector style.
-4. The image generator renders a standalone flat-vector illustration that can be cut out and placed on any background.
+1. You receive vault illustration references — some as attached images (first images in this message), all with text descriptions.
+2. Items marked ★APPROVED EXAMPLE are real accepted outputs that match the brand standard — give them the highest weight.
+3. You select 2-5 references — ALL must be flat-vector style. REJECT any reference that looks 3D-rendered or has gradient shading.
+4. For each selected reference, extract ONLY these style attributes — do NOT copy the subject, sport, or composition:
+   - Color treatment: which palette colours, how bold/muted, how they interact
+   - Line weight: thick outlines, hairlines, or no outlines?
+   - Shading technique: number of flat shadow tones, their placement, level of contrast
+   - Silhouette complexity: simple bold shapes vs. intricate detail
+   - Background color: the exact hex or general dark tone used
+5. You write an extremely detailed image generation prompt that APPLIES those extracted style attributes to the new subject.
+6. The image generator renders a standalone flat-vector illustration that can be cut out and placed on any background.
+
+VAULT SELECTION RULES:
+- Choose purely on style merit — select items whose visual style (line weight, color treatment, shading, silhouette) best matches what this specific brief needs
+- ★APPROVED EXAMPLE items are past accepted outputs from this brand — use them as-is for style extraction when relevant, but do not automatically prefer them over seed items
+- If vault images are attached (marked [VISUAL: see image N]), use the visual to verify the style — the image is the ground truth, text descriptions are secondary
+- Never include a vault item in referencesUsed if you cannot confirm it is flat-vector style from the visual or text description
+- If fewer than 2 flat-vector refs are available, say so in referenceInstructions and describe the style from first principles
 
 CRITICAL RULES FOR backgroundPrompt:
 - MINIMUM 120 words. This is the single most important output — be ruthlessly specific.
@@ -70,7 +84,7 @@ SUBJECT REFERENCE (when provided) — OVERRIDES VAULT:
 2 VARIANTS — REQUIRED:
 Produce exactly 2 variants: A, B. Each must use a DIFFERENT camera angle from the Perspective Guide above:
 - Variant A: WORM'S-EYE or EXTREME LOW-ANGLE — maximum heroic scale, subject towers overhead
-- Variant B: FORESHORTENED LUNGE — a key limb or object thrusts toward camera, energy directed at the viewer
+- Variant B: FORESHORTENED LUNGE or DUTCH TILT + LOW ANGLE — either a key limb thrusts toward camera, OR camera tilted 10-30° below subject for tension and editorial energy
 
 Each variant gets its own backgroundPrompt, referencesUsed, and artDirection.
 
@@ -93,7 +107,7 @@ Each variant object must have:
 MOOD FIELD — CRITICAL GUIDANCE:
 "mood" must be a single evocative phrase (6–14 words) that captures the emotional atmosphere SPECIFIC to this variant's subject, sport, and action moment. Rules:
 - Derive it directly from what is happening in the image — the sport, the athlete, the exact action, the stakes
-- Must be distinct from the other variant's mood — each variant should feel emotionally different
+- Must be distinct from the other variant's mood — the two variants should feel emotionally different
 - Evoke the brand values: intensity, elite performance, raw power, premium edge
 - Use vivid, specific language — NOT generic design-speak
 - FORBIDDEN: "Bold & Energetic", "Premium & Sleek", "Dynamic & Vibrant", "High Energy", "Powerful", or any other vague compound label
@@ -136,8 +150,8 @@ export const ILLUSTRATION_USER_TEMPLATE = (input: {
 SUBJECT REFERENCE${multiRef ? "S" : ""} -- HIGHEST PRIORITY
 =====================================
 ${multiRef
-  ? `${refCount} real-world reference photos are attached as images 1–${refCount}. ALL ${refCount} references define different characters or elements that must appear together in the scene.`
-  : `A real-world reference photo is attached as the FIRST image. This is the PRIMARY source of truth for this illustration.`}
+  ? `Real-world reference photos are attached as images (AFTER any vault style images). ALL ${refCount} references define different characters or elements that must appear together in the scene.`
+  : `A real-world reference photo is attached (AFTER any vault style images at the start of this message). This is the PRIMARY source of truth for this illustration.`}
 
 WHAT TO EXTRACT FROM THE REFERENCE PHOTO${multiRef ? "S" : ""}:
 - Character identity: body type, build, proportions, face structure${multiRef ? " (per person)" : ""}
@@ -170,7 +184,7 @@ HOW VAULT REFERENCES WORK WHEN SUBJECT REFERENCE${multiRef ? "S ARE" : " IS"} PR
 =====================================
 ANGLE REFERENCE — CAMERA PERSPECTIVE OVERRIDE
 =====================================
-An angle reference image is attached as the LAST image in this message (after any subject references). This image defines the EXACT camera angle, elevation, tilt, and perspective you must replicate.
+An angle reference image is attached as the LAST image in this message (after vault style images and subject references). This image defines the EXACT camera angle, elevation, tilt, and perspective you must replicate.
 
 WHAT TO EXTRACT FROM THE ANGLE REFERENCE:
 - Camera elevation: how high or low the viewpoint is (ground level, knee height, eye level, overhead, bird's-eye, etc.)
@@ -180,7 +194,7 @@ WHAT TO EXTRACT FROM THE ANGLE REFERENCE:
 ${input.angleReference.note ? `\nCREATOR NOTE ON ANGLE: "${input.angleReference.note}"` : ""}
 
 ANGLE OVERRIDE RULE:
-- ALL 3 variants (A, B, C) MUST use the angle extracted from this reference image
+- BOTH variants (A, B) MUST use the angle extracted from this reference image
 - DO NOT fall back to the default worm's-eye / foreshortened lunge / dutch tilt assignment
 - Each variant may show a DIFFERENT action moment or pose, but must share the same camera angle/elevation
 - Begin each backgroundPrompt with an exact description of the extracted angle (e.g. "Overhead bird's-eye view looking straight down..." or "Eye-level side-profile angle...")
@@ -189,14 +203,12 @@ ANGLE OVERRIDE RULE:
     : "";
 
   const angleVariantRule = input.angleReference
-    ? `1. Produce exactly 3 variants (A, B, C) -- ALL must use the SAME camera angle extracted from the angle reference image. Each variant shows a different action moment or pose at that angle:
+    ? `1. Produce exactly 2 variants (A, B) -- BOTH must use the SAME camera angle extracted from the angle reference image. Each variant shows a different action moment or pose at that angle:
    - A: Peak action moment at the extracted angle
-   - B: Follow-through or build-up moment at the same angle
-   - C: Widest or most dramatic composition at the same angle, boldest color palette`
-    : `1. Produce exactly 3 variants (A, B, C) -- each MUST use a different camera angle:
+   - B: Follow-through or build-up moment at the same angle, boldest color palette`
+    : `1. Produce exactly 2 variants (A, B) -- each MUST use a different camera angle:
    - A: Worm's-eye or extreme low-angle -- character towers, maximum scale
-   - B: Foreshortened lunge -- key limb or object directed at camera
-   - C: Dutch tilt + low angle -- tension and editorial energy, boldest color palette`;
+   - B: Foreshortened lunge OR dutch tilt + low angle -- key limb directed at camera, or tension and editorial energy`;
 
   return `ILLUSTRATION BRIEF: ${input.description}
 

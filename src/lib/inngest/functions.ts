@@ -156,7 +156,7 @@ export const generateSocialPostJob = inngest.createFunction(
 
       await prisma.job.update({
         where: { id: jobId },
-        data: { rulesVersion: rules.version, rulesSnapshot: rulesText || null },
+        data: { rulesVersion: rules.version, rulesSnapshot: rulesText || null, activeRuleIds: rules.ruleIds },
       });
 
       const jobSubjectRefs = getSubjectRefs(job);
@@ -533,7 +533,7 @@ export const generateIllustrationJob = inngest.createFunction(
 
       await prisma.job.update({
         where: { id: jobId },
-        data: { rulesVersion: rules.version, rulesSnapshot: rules.text || null },
+        data: { rulesVersion: rules.version, rulesSnapshot: rules.text || null, activeRuleIds: rules.ruleIds },
       });
 
       const formatRef = (ref: typeof enrichedItems[0]) => {
@@ -553,8 +553,27 @@ export const generateIllustrationJob = inngest.createFunction(
       const vaultLabel = hasSubjectRef
         ? "STYLE REFERENCES FROM VAULT (use for rendering style only — line weight, colour approach, flat shading technique — NOT to define the subject):"
         : "ILLUSTRATION VAULT REFERENCES (pick 2-5 that share the same flat-vector visual style):";
+
+      // Annotate which items have visual images attached so Claude knows to use vision + text together
+      const formatRefWithVisual = (ref: typeof enrichedItems[0], visualIdx: number | null) => {
+        const origin = ref.id.startsWith("vault-gen-") ? "accepted-output" : "seed";
+        let line = `- ${ref.id} [${ref.type}] [origin:${origin}]`;
+        if (visualIdx !== null) line += ` [VISUAL: see image ${visualIdx + 1} at top of this message]`;
+        line += ` tags=[${ref.tags.join(",")}]`;
+        if (ref.analysis?.subjects?.length) line += `\n  Subjects: ${ref.analysis.subjects.join(", ")}`;
+        if (ref.analysis?.description) line += `\n  Description: ${ref.analysis.description}`;
+        if (ref.analysis?.styleNotes) line += `\n  Style: ${ref.analysis.styleNotes}`;
+        if (ref.analysis?.colorPalette?.length) line += `\n  Colors: ${ref.analysis.colorPalette.join(", ")}`;
+        if (ref.analysis?.mood) line += `\n  Mood: ${ref.analysis.mood}`;
+        if (ref.notes) line += `\n  Notes: ${ref.notes}`;
+        return line;
+      };
+
       const vaultSummary = enrichedItems.length > 0
-        ? `${vaultLabel}\n` + enrichedItems.map(formatRef).join("\n")
+        ? `${vaultLabel}\n` + enrichedItems.map((ref, i) => {
+            const visualIdx = i < 3 ? i : null; // first 3 have images attached
+            return formatRefWithVisual(ref, visualIdx);
+          }).join("\n")
         : "No illustration references available — rely on style description alone.";
 
       const userMessage = ILLUSTRATION_USER_TEMPLATE({
@@ -576,9 +595,9 @@ export const generateIllustrationJob = inngest.createFunction(
             {
               variantLabel: "A",
               artDirection: {
-                backgroundPrompt: `Bold stylized character in dynamic action pose, low-angle hero perspective looking up. The figure is centered with generous breathing room on all sides, suitable for cutout compositing. Bold flat-vector style with solid color fills and clean sharp edges. Dramatic cast shadows in dark navy. Character wears bold electric blue kit with orange accents. Background is a single flat rich dark purple (#1A0B2E). No text, no logos, pure standalone character illustration.`,
+                backgroundPrompt: `Bold stylized character in dynamic action pose, extreme low-angle worm's-eye view looking steeply up. The figure towers overhead with feet or lower body enormous in the foreground. Bold flat-vector style with solid color fills and clean sharp edges. Dramatic cast shadows in dark navy. Character wears bold electric blue kit with orange accents. Background is a single flat rich dark purple (#1A0B2E). No text, no logos, pure standalone character illustration, full body within frame.`,
                 style: "flat-vector",
-                mood: "Bold & Dynamic",
+                mood: "Predatory closing speed — the last five metres that define a career",
                 palette: ["#2D4BE6", "#FF6B2F", "#1A0B2E"],
                 solidBackground: "#0F0A1A",
                 referenceInstructions: "Match the clean vector style and bold color blocking.",
@@ -589,9 +608,9 @@ export const generateIllustrationJob = inngest.createFunction(
             {
               variantLabel: "B",
               artDirection: {
-                backgroundPrompt: `Alternative angle — same character from a side-profile or three-quarter view, captured mid-action with strong foreshortening. Bold flat-vector illustration with clean hard edges, stylized proportions, and dramatic cast shadows. Deep orange and purple palette. Solid single-color background in dark midnight blue (#0B1120). Subject fills 65% of frame height with clear negative space. No text, no logos.`,
+                backgroundPrompt: `Foreshortened lunge toward camera — a key limb or object thrusts directly toward the viewer, filling the foreground at 2-3x scale while the body recedes behind. Bold flat-vector illustration with clean hard edges, stylized proportions, and extreme depth of field suggestion through size contrast. Deep orange and purple palette. Solid single-color background in dark midnight blue (#0B1120). Subject fully contained, no cropping. No text, no logos.`,
                 style: "flat-vector",
-                mood: "Premium & Sleek",
+                mood: "Kinetic breakthrough — the exact millisecond momentum becomes irreversible",
                 palette: ["#7C3AED", "#FF6B2F", "#0B1120"],
                 solidBackground: "#0B1120",
                 referenceInstructions: "Match the flat-vector style: bold solid fills, clean hard edges, dramatic cast shadows.",
@@ -611,6 +630,31 @@ export const generateIllustrationJob = inngest.createFunction(
           | Anthropic.Messages.TextBlockParam;
 
         const messageContent: ContentBlock[] = [];
+
+        // 0. Vault style reference images (up to 3) — send FIRST so Claude can visually extract style
+        //    Both local-file and URL-based (auto-ingested approved) items are supported
+        const vaultImagesLoaded: string[] = [];
+        for (const item of enrichedItems.slice(0, 3)) {
+          try {
+            let vaultBuf: Buffer | null = null;
+            if (item.pathOrUrl.startsWith("http://") || item.pathOrUrl.startsWith("https://")) {
+              vaultBuf = await loadRefBuffer(item.pathOrUrl);
+            } else {
+              const fp = path.resolve(process.cwd(), item.pathOrUrl);
+              if (fs.existsSync(fp)) vaultBuf = fs.readFileSync(fp);
+            }
+            if (vaultBuf) {
+              messageContent.push({
+                type: "image",
+                source: { type: "base64", media_type: "image/jpeg", data: vaultBuf.toString("base64") },
+              });
+              vaultImagesLoaded.push(item.id);
+              console.log(`[IllustrationPlanner] Sending vault style ref to Claude: ${item.id} (${vaultBuf.length} bytes)`);
+            }
+          } catch {
+            console.warn(`[IllustrationPlanner] Could not load vault image for Claude: ${item.id}`);
+          }
+        }
 
         // Append subject reference images (so Claude sees them during planning)
         for (let ri = 0; ri < subjectRefs.length; ri++) {
@@ -856,25 +900,35 @@ export const generateIllustrationImagesJob = inngest.createFunction(
           });
 
           for (const [styleIdx, item] of vaultItems.entries()) {
-            const filePath = path.resolve(process.cwd(), item.pathOrUrl);
-            const ext = path.extname(filePath).toLowerCase();
-            if (![".png", ".jpg", ".jpeg", ".webp"].includes(ext)) continue;
-
             try {
-              if (fs.existsSync(filePath)) {
-                const buf = fs.readFileSync(filePath);
-                const a = item.analysis as Record<string, unknown> | null;
-                const subjects = Array.isArray(a?.subjects) ? (a.subjects as string[]).join(", ") : "";
-                const style = typeof a?.styleNotes === "string" ? a.styleNotes : "";
-                const desc = subjects ? `illustration of ${subjects}` : (item.notes || "illustration");
-                const styleHint = style ? ` — style: ${style.slice(0, 100)}` : "";
-
-                referenceImages.push({
-                  buffer: buf,
-                  description: `STYLE REFERENCE ${styleIdx + 1} — ${desc}${styleHint}. Use this for visual style guidance: color treatment, line work, shading technique, and level of stylization.`,
-                });
-                console.log(`[IllustrationImageGen] Loaded style ref ${styleIdx + 1}: ${item.id} (${buf.length} bytes)`);
+              // Support both local file paths and full HTTP URLs (auto-ingested items)
+              let buf: Buffer | null = null;
+              if (item.pathOrUrl.startsWith("http://") || item.pathOrUrl.startsWith("https://")) {
+                buf = await loadRefBuffer(item.pathOrUrl);
+              } else {
+                const filePath = path.resolve(process.cwd(), item.pathOrUrl);
+                const ext = path.extname(filePath).toLowerCase();
+                if (![".png", ".jpg", ".jpeg", ".webp"].includes(ext)) continue;
+                if (fs.existsSync(filePath)) buf = fs.readFileSync(filePath);
               }
+
+              if (!buf) {
+                console.warn(`[IllustrationImageGen] Could not load vault ref ${item.id}: ${item.pathOrUrl}`);
+                continue;
+              }
+
+              const a = item.analysis as Record<string, unknown> | null;
+              const subjects = Array.isArray(a?.subjects) ? (a.subjects as string[]).join(", ") : "";
+              const style = typeof a?.styleNotes === "string" ? a.styleNotes : "";
+              const sourceLabel = item.id.startsWith("vault-gen-") ? "accepted-output" : "seed";
+              const desc = subjects ? `illustration of ${subjects}` : (item.notes || "illustration");
+              const styleHint = style ? ` — style: ${style.slice(0, 100)}` : "";
+
+              referenceImages.push({
+                buffer: buf,
+                description: `STYLE REFERENCE ${styleIdx + 1} [origin:${sourceLabel}] — ${desc}${styleHint}. Extract: flat color treatment, line weight, shading technique, color palette, and silhouette approach. Do NOT copy the subject or pose.`,
+              });
+              console.log(`[IllustrationImageGen] Loaded style ref ${styleIdx + 1}: ${item.id} [origin:${sourceLabel}] (${buf.length} bytes)`);
             } catch {
               console.warn(`[IllustrationImageGen] Failed to load vault ref ${item.id}`);
             }
@@ -890,14 +944,25 @@ export const generateIllustrationImagesJob = inngest.createFunction(
         if (refInstructions) imagePrompt += `\n\n${refInstructions}`;
         if (illustrationStyleRules) imagePrompt += `\n\n${illustrationStyleRules}`;
 
-        const result = await imageProvider.generateImage({
-          prompt: imagePrompt,
-          width,
-          height,
-          style: spec.artDirection.style || "flat-vector",
-          referenceImages,
-          mode: "illustration",
-        });
+        let result;
+        try {
+          result = await imageProvider.generateImage({
+            prompt: imagePrompt,
+            width,
+            height,
+            style: spec.artDirection.style || "flat-vector",
+            referenceImages,
+            mode: "illustration",
+          });
+        } catch (genErr) {
+          const errMsg = genErr instanceof Error ? genErr.message : "Image generation failed";
+          console.error(`[IllustrationImageGen] Variant ${spec.variantLabel} image generation failed: ${errMsg}`);
+          await prisma.variant.update({
+            where: { id: variant.id },
+            data: { status: "failed", errorMessage: errMsg.slice(0, 500) },
+          });
+          continue;
+        }
 
         const artifactPath = `jobs/${jobId}/illustrations/${spec.variantLabel}_illustration.png`;
         const url = await storage.upload(result.buffer, artifactPath, result.mimeType);
@@ -940,8 +1005,11 @@ export const generateIllustrationImagesJob = inngest.createFunction(
         include: { variants: true },
       });
 
+      // Mark non-failed variants as ready; leave failed ones as-is
       for (const variant of job.variants) {
-        await prisma.variant.update({ where: { id: variant.id }, data: { status: "ready" } });
+        if (variant.status !== "failed") {
+          await prisma.variant.update({ where: { id: variant.id }, data: { status: "ready" } });
+        }
       }
 
       await prisma.job.update({ where: { id: jobId }, data: { status: "ready" } });
@@ -1025,7 +1093,8 @@ export const expandIllustrationJob = inngest.createFunction(
       });
 
       const storage = getStorageProvider();
-      const expandedPath = `jobs/${variant.jobId}/illustrations/${artifactId}_expanded.png`;
+      const timestamp = Date.now();
+      const expandedPath = `jobs/${variant.jobId}/illustrations/${artifactId}_expanded_${timestamp}.png`;
       const url = await storage.upload(result.buffer, expandedPath, result.mimeType);
 
       await prisma.artifact.create({
@@ -1037,6 +1106,7 @@ export const expandIllustrationJob = inngest.createFunction(
           width: newW,
           height: newH,
           mimeType: result.mimeType,
+          sourceArtifactId: artifactId,
         },
       });
 
@@ -1050,7 +1120,7 @@ export const expandIllustrationJob = inngest.createFunction(
 /**
  * Edit an accepted illustration or pictogram using a user-supplied text instruction.
  * Sends the existing image + edit prompt to Gemini, saves result as "edited_png".
- * Replaces any previous edited_png for the same variant.
+ * Does NOT delete previous edits — full history is preserved.
  */
 export const editIllustrationJob = inngest.createFunction(
   {
@@ -1083,47 +1153,35 @@ export const editIllustrationJob = inngest.createFunction(
       const artDir = spec?.artDirection as Record<string, unknown> | null;
       const solidBg = (artDir?.solidBackground as string) || "#0F0A1A";
       const style = (artDir?.style as string) || "flat-vector";
-      const bgPrompt = typeof artDir?.backgroundPrompt === "string" ? artDir.backgroundPrompt : "";
-      const styleContext = bgPrompt.length > 20
-        ? bgPrompt.slice(0, 150).replace(/\s+/g, " ").trim()
-        : "";
 
-      console.log(`[Edit] Editing artifact ${artifactId} (${artifact.width}×${artifact.height}) with prompt: "${editPrompt.slice(0, 80)}..."`);
+      console.log(`[Edit] Editing artifact ${artifactId} (${artifact.width}×${artifact.height}) with prompt: "${editPrompt.slice(0, 80)}"`);
 
       const imageProvider = getImageProvider();
       const result = await imageProvider.generateImage({
-        prompt: `You are editing an existing ${style} illustration. Apply ONLY the following change to the image:
+        prompt: `Edit the provided ${style} illustration image. Apply this change:
 
-EDIT INSTRUCTION: "${editPrompt}"
+"${editPrompt}"
 
-STRICT RULES:
-- Apply ONLY the requested change — preserve EVERYTHING else exactly
-- Maintain the exact same art style: ${style}
-- Maintain the same color palette and overall composition
+RULES:
+- Apply ONLY the requested change — preserve everything else exactly as shown in the reference image
+- Keep the same art style, color palette, composition, and framing
 - Keep the solid background colour: ${solidBg}
-- Preserve the same dimensions and framing
-- Zero text, logos, or branding elements unless they were in the original
-- The result must look like a professional continuation of the original image${styleContext ? `\n\nOriginal image context: "${styleContext}..."` : ""}
-
-Output a single clean flattened RGB image at exactly ${artifact.width}×${artifact.height} pixels.`,
+- No text, logos, or branding unless already in the original
+- Output a single clean flattened RGB image at exactly ${artifact.width}×${artifact.height} pixels`,
         width: artifact.width,
         height: artifact.height,
         mode: "illustration",
         referenceImages: [
           {
             buffer: originalBuffer,
-            description: `SUBJECT REFERENCE — the original image to edit. Apply only the requested change while preserving all other aspects of this image exactly.`,
+            description: `SUBJECT REFERENCE — the image to edit. Apply only the requested change while preserving all other aspects exactly.`,
           },
         ],
       });
 
-      // Delete any existing edited_png for this variant so we always show the latest edit
-      await prisma.artifact.deleteMany({
-        where: { variantId, kind: "edited_png" },
-      });
-
       const storage = getStorageProvider();
-      const editedPath = `jobs/${variant.jobId}/illustrations/${artifactId}_edited.png`;
+      const timestamp = Date.now();
+      const editedPath = `jobs/${variant.jobId}/illustrations/${artifactId}_edited_${timestamp}.png`;
       const url = await storage.upload(result.buffer, editedPath, result.mimeType);
 
       await prisma.artifact.create({
@@ -1135,6 +1193,8 @@ Output a single clean flattened RGB image at exactly ${artifact.width}×${artifa
           width: artifact.width,
           height: artifact.height,
           mimeType: result.mimeType,
+          editPrompt,
+          sourceArtifactId: artifactId,
         },
       });
 
@@ -1216,7 +1276,7 @@ export const generatePictogramJob = inngest.createFunction(
 
       await prisma.job.update({
         where: { id: jobId },
-        data: { rulesVersion: rules.version, rulesSnapshot: rules.text || null },
+        data: { rulesVersion: rules.version, rulesSnapshot: rules.text || null, activeRuleIds: rules.ruleIds },
       });
 
       const formatRef = (ref: typeof enrichedItems[0]) => {
@@ -1514,14 +1574,25 @@ export const generatePictogramImagesJob = inngest.createFunction(
         if (refInstructions) imagePrompt += `\n\n${refInstructions}`;
         if (pictogramStyleRules) imagePrompt += `\n\n${pictogramStyleRules}`;
 
-        const result = await imageProvider.generateImage({
-          prompt: imagePrompt,
-          width,
-          height,
-          style: spec.artDirection.style || "flat-vector-toon",
-          referenceImages,
-          mode: "pictogram",
-        });
+        let result;
+        try {
+          result = await imageProvider.generateImage({
+            prompt: imagePrompt,
+            width,
+            height,
+            style: spec.artDirection.style || "flat-vector-toon",
+            referenceImages,
+            mode: "pictogram",
+          });
+        } catch (genErr) {
+          const errMsg = genErr instanceof Error ? genErr.message : "Image generation failed";
+          console.error(`[PictogramImageGen] Variant ${spec.variantLabel} image generation failed: ${errMsg}`);
+          await prisma.variant.update({
+            where: { id: variant.id },
+            data: { status: "failed", errorMessage: errMsg.slice(0, 500) },
+          });
+          continue;
+        }
 
         const artifactPath = `jobs/${jobId}/pictograms/${spec.variantLabel}_pictogram.png`;
         const url = await storage.upload(result.buffer, artifactPath, result.mimeType);
@@ -1564,8 +1635,11 @@ export const generatePictogramImagesJob = inngest.createFunction(
         include: { variants: true },
       });
 
+      // Mark non-failed variants as ready; leave failed ones as-is
       for (const variant of job.variants) {
-        await prisma.variant.update({ where: { id: variant.id }, data: { status: "ready" } });
+        if (variant.status !== "failed") {
+          await prisma.variant.update({ where: { id: variant.id }, data: { status: "ready" } });
+        }
       }
 
       await prisma.job.update({ where: { id: jobId }, data: { status: "ready" } });
@@ -1641,12 +1715,27 @@ export const analyzeVaultItemJob = inngest.createFunction(
       const cleaned = text.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
       const analysis = JSON.parse(cleaned);
 
+      // Compute semantic embedding for improved vault search
+      const { computeVaultItemEmbedding } = await import("../vault/embeddings");
+      const embedding = await computeVaultItemEmbedding(
+        typeof analysis.description === "string" ? analysis.description : "",
+        item.tags,
+        typeof analysis.styleNotes === "string" ? analysis.styleNotes : undefined,
+      ).catch(() => null);
+
+      if (embedding) {
+        console.log(`[VaultAnalyze] Computed embedding (${embedding.length} dims) for ${vaultItemId}`);
+      } else {
+        console.log(`[VaultAnalyze] Embedding unavailable — saving analysis only for ${vaultItemId}`);
+      }
+
       await prisma.assetVaultItem.update({
         where: { id: vaultItemId },
         data: {
           analysis: JSON.parse(JSON.stringify(analysis)),
           analysisStatus: "done",
           analyzedAt: new Date(),
+          ...(embedding ? { embedding } : {}),
         },
       });
 

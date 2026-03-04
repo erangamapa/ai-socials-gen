@@ -18,7 +18,10 @@ const ApproveSchema = z.object({
         mood: z.string().default(""),
         style: z.string().default(""),
         backgroundPrompt: z.string(),
+        referenceInstructions: z.string().optional(),
+        solidBackground: z.string().optional(),
       }).passthrough(),
+      referencesUsed: z.array(z.string()).optional(),
     })
   ),
 });
@@ -53,7 +56,7 @@ export async function POST(
       if (!variant) continue;
 
       const existingSpec = (variant.plannerSpec as Record<string, unknown>) || {};
-      const updatedSpec = {
+      const updatedSpec: Record<string, unknown> = {
         ...existingSpec,
         copy: edited.copy,
         artDirection: {
@@ -63,6 +66,26 @@ export async function POST(
           ...edited.artDirection,
         },
       };
+
+      // Persist user's ref swap choices if provided
+      if (edited.referencesUsed !== undefined) {
+        updatedSpec.referencesUsed = edited.referencesUsed;
+      }
+
+      // Compute specEdits delta for learning (compare original vs submitted artDirection)
+      const origArt = (existingSpec.artDirection as Record<string, unknown>) ?? {};
+      const editedArt = edited.artDirection as Record<string, unknown>;
+      const specEdits: Record<string, { from: unknown; to: unknown }> = {};
+      for (const key of Object.keys(editedArt)) {
+        const origVal = origArt[key];
+        const newVal = editedArt[key];
+        if (JSON.stringify(origVal) !== JSON.stringify(newVal)) {
+          specEdits[key] = { from: origVal, to: newVal };
+        }
+      }
+      if (Object.keys(specEdits).length > 0) {
+        updatedSpec.specEdits = specEdits;
+      }
 
       await prisma.variant.update({
         where: { id: variant.id },

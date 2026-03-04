@@ -65,11 +65,10 @@ export async function POST(req: NextRequest) {
       },
     });
 
+    const variantLabels = ["A", "B"];
+
     await prisma.variant.createMany({
-      data: [
-        { jobId: job.id, label: "A", status: "pending" },
-        { jobId: job.id, label: "B", status: "pending" },
-      ],
+      data: variantLabels.map((label) => ({ jobId: job.id, label, status: "pending" })),
     });
 
     const eventName = input.mode === "illustration"

@@ -2,9 +2,10 @@ import { VaultItem, VaultIndexSchema, VaultSearchParams, VaultSearchResult, Enri
 import * as fs from "fs";
 import * as path from "path";
 import { prisma } from "../db";
+import { cosineSimilarity, embedText } from "./embeddings";
 
 let cachedIndex: VaultItem[] | null = null;
-let cachedAnalysis: Map<string, { subjects: string[]; description: string; styleNotes: string; usageScore: number }> | null = null;
+let cachedAnalysis: Map<string, { subjects: string[]; description: string; styleNotes: string; usageScore: number; contextScores: Record<string, number>; embedding: number[] | null }> | null = null;
 let cachedGeneratedItems: VaultItem[] | null = null;
 let generatedItemsCachedAt = 0;
 const GENERATED_ITEMS_TTL_MS = 60_000;
@@ -50,22 +51,25 @@ async function loadGeneratedVaultItems(): Promise<VaultItem[]> {
   return cachedGeneratedItems;
 }
 
-async function loadAnalysisCache(): Promise<Map<string, { subjects: string[]; description: string; styleNotes: string; usageScore: number }>> {
+async function loadAnalysisCache(): Promise<Map<string, { subjects: string[]; description: string; styleNotes: string; usageScore: number; contextScores: Record<string, number>; embedding: number[] | null }>> {
   if (cachedAnalysis) return cachedAnalysis;
 
   const rows = await prisma.assetVaultItem.findMany({
-    select: { id: true, analysis: true, analysisStatus: true, usageScore: true },
+    select: { id: true, analysis: true, analysisStatus: true, usageScore: true, contextScores: true, embedding: true },
   });
 
   cachedAnalysis = new Map();
   for (const row of rows) {
     const a = row.analysis as Record<string, unknown> | null;
     const hasDoneAnalysis = row.analysisStatus === "done" && a;
+    const embeddingRaw = row.embedding as number[] | null;
     cachedAnalysis.set(row.id, {
       subjects: hasDoneAnalysis && Array.isArray(a.subjects) ? (a.subjects as string[]).map((s) => s.toLowerCase()) : [],
       description: hasDoneAnalysis && typeof a.description === "string" ? a.description.toLowerCase() : "",
       styleNotes: hasDoneAnalysis && typeof a.styleNotes === "string" ? a.styleNotes.toLowerCase() : "",
       usageScore: row.usageScore ?? 0,
+      contextScores: (row.contextScores as Record<string, number>) ?? {},
+      embedding: Array.isArray(embeddingRaw) ? embeddingRaw : null,
     });
   }
   return cachedAnalysis;
@@ -116,7 +120,8 @@ function scoreItem(
   queryTokens: string[],
   expandedTokens: string[],
   params: VaultSearchParams,
-  analysisData?: { subjects: string[]; description: string; styleNotes: string; usageScore: number },
+  analysisData?: { subjects: string[]; description: string; styleNotes: string; usageScore: number; contextScores: Record<string, number>; embedding: number[] | null },
+  queryEmbedding?: number[] | null,
 ): number {
   let score = 0;
 
@@ -144,10 +149,28 @@ function scoreItem(
       if (analysisData.styleNotes.includes(qt)) score += 1;
     }
 
-    // usageScore bonus: accepted references rank higher; rejected ones rank lower
-    // Cap the influence to ±5 to avoid stale data dominating fresh signals
+    // Global usageScore bonus (capped ±5)
     const usageBonus = Math.min(Math.max(analysisData.usageScore, -5), 5);
     score += usageBonus;
+
+    // Per-context score bonus: if query tokens match context keys, apply their scores
+    if (analysisData.contextScores && Object.keys(analysisData.contextScores).length > 0) {
+      let contextBonus = 0;
+      for (const qt of queryTokens) {
+        const cs = analysisData.contextScores[qt];
+        if (cs !== undefined) {
+          contextBonus += Math.min(Math.max(cs, -3), 3);
+        }
+      }
+      score += contextBonus;
+    }
+
+    // Semantic similarity bonus (60% weight relative to a max keyword score of ~10)
+    if (queryEmbedding && analysisData.embedding) {
+      const sim = cosineSimilarity(queryEmbedding, analysisData.embedding);
+      // Cosine similarity is in [-1, 1]; scale to ~0-6 bonus range
+      score += Math.max(sim * 6, 0);
+    }
   }
 
   if (params.visualType) {
@@ -185,11 +208,14 @@ export async function searchVaultSplit(params: VaultSearchParams): Promise<Split
   const queryTokens = tokenize(params.query);
   const expandedTokens = expandQuery(queryTokens);
 
+  // Attempt semantic embedding for blended scoring (non-blocking — null if unavailable)
+  const queryEmbedding = await embedText(params.query).catch(() => null);
+
   const templates = index.filter((i) => i.type === "template");
   const nonTemplates = index.filter((i) => i.type !== "template");
 
   const scoredTemplates = templates
-    .map((item) => ({ item, score: scoreItem(item, queryTokens, expandedTokens, params, analysisMap.get(item.id)) }))
+    .map((item) => ({ item, score: scoreItem(item, queryTokens, expandedTokens, params, analysisMap.get(item.id), queryEmbedding) }))
     .sort((a, b) => b.score - a.score);
 
   const channelTemplates = params.channels?.length
@@ -199,7 +225,7 @@ export async function searchVaultSplit(params: VaultSearchParams): Promise<Split
   const topTemplates = (channelTemplates.length > 0 ? channelTemplates : scoredTemplates).slice(0, 4).map(({ item }) => item);
 
   const scoredOther = nonTemplates
-    .map((item) => ({ item, score: scoreItem(item, queryTokens, expandedTokens, params, analysisMap.get(item.id)) }))
+    .map((item) => ({ item, score: scoreItem(item, queryTokens, expandedTokens, params, analysisMap.get(item.id), queryEmbedding) }))
     .filter(({ score }) => score > 0)
     .sort((a, b) => b.score - a.score);
 
@@ -232,8 +258,10 @@ export async function searchVault(params: VaultSearchParams): Promise<VaultSearc
   const expandedTokens = expandQuery(queryTokens);
   const limit = params.limit ?? 10;
 
+  const queryEmbedding = await embedText(params.query).catch(() => null);
+
   const scored = index
-    .map((item) => ({ item, score: scoreItem(item, queryTokens, expandedTokens, params, analysisMap.get(item.id)) }))
+    .map((item) => ({ item, score: scoreItem(item, queryTokens, expandedTokens, params, analysisMap.get(item.id), queryEmbedding) }))
     .filter(({ score }) => score > 0)
     .sort((a, b) => b.score - a.score);
 

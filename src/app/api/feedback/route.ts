@@ -5,6 +5,14 @@ import { reasonToRule, decayRules } from "@/lib/ai/promptBuilder";
 import { inngest } from "@/lib/inngest/client";
 import { clearVaultCache } from "@/lib/vault/vaultIndex";
 
+const STOP_WORDS = new Set([
+  "the", "and", "for", "with", "this", "that", "from", "they", "have", "will",
+  "are", "was", "but", "not", "all", "can", "her", "his", "our", "out", "use",
+  "how", "any", "its", "new", "one", "two", "who", "has", "him", "you", "she",
+  "him", "had", "would", "could", "should", "than", "then", "when", "also",
+  "been", "into", "more", "some", "such", "your", "what", "just", "very",
+]);
+
 const CHANNEL_LABELS: Record<string, string> = {
   twitter: "Twitter / X",
   ig_feed: "IG Feed",
@@ -78,16 +86,21 @@ export async function POST(req: NextRequest) {
 
     // ─── RULE COUNTERS — only update rules that were actually active for this job ──
     const job = variant.job;
-    const rulesSnapshot: string | null = job
-      ? ((await prisma.job.findUnique({ where: { id: job.id }, select: { rulesSnapshot: true } }))?.rulesSnapshot ?? null)
+    const jobRecord = job
+      ? await prisma.job.findUnique({ where: { id: job.id }, select: { rulesSnapshot: true, activeRuleIds: true } })
       : null;
+    const storedActiveRuleIds = jobRecord?.activeRuleIds ?? [];
+    const rulesSnapshot: string | null = jobRecord?.rulesSnapshot ?? null;
 
     const enabledRules = await prisma.promptRule.findMany({
       where: { enabled: true, mode: jobMode },
       select: { id: true, category: true, content: true },
     });
 
-    const activeRules = rulesSnapshot
+    // Prefer ID-based matching (precise); fall back to text substring for legacy jobs
+    const activeRules = storedActiveRuleIds.length > 0
+      ? enabledRules.filter((r) => storedActiveRuleIds.includes(r.id))
+      : rulesSnapshot
       ? enabledRules.filter((r) => rulesSnapshot.includes(r.content))
       : enabledRules;
     const enabledRuleIds = activeRules.map((r) => r.id);
@@ -425,15 +438,42 @@ export async function POST(req: NextRequest) {
         }
       }
 
-      // 8. Increment usageScore for all accepted references
+      // 8. Increment usageScore and per-context scores for all accepted references
       if (referencesUsed.length > 0) {
+        // Extract context tags from job description for per-context scoring
+        const jobDesc = variant.job?.description ?? "";
+        const contextTags = jobDesc
+          .toLowerCase()
+          .replace(/[^a-z0-9\s]/g, "")
+          .split(/\s+/)
+          .filter((t) => t.length >= 3 && !STOP_WORDS.has(t))
+          .slice(0, 5);
+
         for (const refId of referencesUsed) {
           await prisma.assetVaultItem.updateMany({
             where: { id: refId },
             data: { usageScore: { increment: 1 } },
           });
+
+          // Update contextScores for each extracted context tag
+          if (contextTags.length > 0) {
+            const vaultItem = await prisma.assetVaultItem.findUnique({
+              where: { id: refId },
+              select: { contextScores: true },
+            });
+            if (vaultItem) {
+              const scores = (vaultItem.contextScores as Record<string, number>) ?? {};
+              for (const tag of contextTags) {
+                scores[tag] = (scores[tag] ?? 0) + 1;
+              }
+              await prisma.assetVaultItem.update({
+                where: { id: refId },
+                data: { contextScores: scores },
+              });
+            }
+          }
         }
-        console.log(`[Feedback] Incremented usageScore for ${referencesUsed.length} refs`);
+        console.log(`[Feedback] Incremented usageScore for ${referencesUsed.length} refs (contexts: ${contextTags.join(", ") || "none"})`);
       }
 
       // 9. Auto-ingest accepted illustration/pictogram into vault
@@ -451,15 +491,22 @@ export async function POST(req: NextRequest) {
             const vaultItemId = `vault-gen-${bestArtifact.id}`;
             const description = variant.job?.description ?? "";
             const descSnippet = description.slice(0, 80).replace(/\s+/g, " ").trim() || "generated output";
-            const tags = [
-              jobMode,
-              ...description
-                .toLowerCase()
-                .replace(/[^a-z0-9\s]/g, "")
-                .split(/\s+/)
-                .filter((t) => t.length > 3)
-                .slice(0, 8),
-            ];
+
+            // Extract semantic tags from spec's Claude-analyzed subjects (highest quality signal)
+            const acceptedSpec = variant.plannerSpec as Record<string, unknown> | null;
+            const analysisSubjects = Array.isArray(acceptedSpec?.analysisSubjects)
+              ? (acceptedSpec.analysisSubjects as string[]).map((s) => s.toLowerCase().trim()).filter(Boolean)
+              : [];
+
+            // Extract tags from description with proper stop-word filter
+            const descTags = description
+              .toLowerCase()
+              .replace(/[^a-z0-9\s]/g, "")
+              .split(/\s+/)
+              .filter((t) => t.length >= 3 && !STOP_WORDS.has(t))
+              .slice(0, 8);
+
+            const tags = [...new Set([jobMode, ...analysisSubjects.slice(0, 5), ...descTags])];
 
             await prisma.assetVaultItem.upsert({
               where: { id: vaultItemId },
@@ -487,6 +534,78 @@ export async function POST(req: NextRequest) {
         } catch (err) {
           console.warn("[Feedback] Vault ingestion failed (non-fatal):", err);
         }
+      }
+    }
+
+    // ─── A/B CONTRAST LEARNING — accepted vs rejected sibling signal ───────
+    if (input.decision === "accept" && jobId) {
+      try {
+        // Find sibling variants (same job, different variant)
+        const allVariants = await prisma.variant.findMany({
+          where: { jobId, id: { not: input.variantId } },
+          include: { feedback: { orderBy: { createdAt: "desc" }, take: 1 } },
+        });
+
+        for (const sibling of allVariants) {
+          const siblingDecision = sibling.feedback?.[0]?.decision;
+          if (siblingDecision !== "reject") continue;
+
+          // We have an accepted variant and a rejected sibling — extract contrast
+          const acceptedArt = art;
+          const rejectedArt = (sibling.plannerSpec as Record<string, unknown> | null)?.artDirection as Record<string, unknown> | undefined;
+
+          if (!acceptedArt || !rejectedArt) continue;
+
+          // Compare mood
+          const acceptMood = acceptedArt.mood as string | undefined;
+          const rejectMood = rejectedArt.mood as string | undefined;
+          if (acceptMood && rejectMood && acceptMood !== rejectMood) {
+            await upsertRule({
+              content: `A/B contrast: "${acceptMood}" was preferred over "${rejectMood}" for this job type`,
+              category: "style",
+              source: "positive",
+              priority: 3,
+              sourceJobId: jobId,
+              mode: jobMode,
+            });
+          }
+
+          // Compare solidBackground
+          const acceptBg = acceptedArt.solidBackground as string | undefined;
+          const rejectBg = rejectedArt.solidBackground as string | undefined;
+          if (acceptBg && rejectBg && acceptBg !== rejectBg) {
+            await upsertRule({
+              content: `A/B contrast: background "${acceptBg}" was preferred over "${rejectBg}"`,
+              category: "style",
+              source: "positive",
+              priority: 2,
+              sourceJobId: jobId,
+              mode: jobMode,
+            });
+          }
+
+          // Compare palette
+          const acceptPalette = Array.isArray(acceptedArt.palette) ? (acceptedArt.palette as string[]) : [];
+          const rejectPalette = Array.isArray(rejectedArt.palette) ? (rejectedArt.palette as string[]) : [];
+          if (acceptPalette.length > 0 && rejectPalette.length > 0) {
+            const acceptKey = acceptPalette.slice(0, 3).join(",");
+            const rejectKey = rejectPalette.slice(0, 3).join(",");
+            if (acceptKey !== rejectKey) {
+              await upsertRule({
+                content: `A/B contrast: palette [${acceptKey}] outperformed [${rejectKey}] — prefer the former for similar briefs`,
+                category: "color",
+                source: "positive",
+                priority: 2,
+                sourceJobId: jobId,
+                mode: jobMode,
+              });
+            }
+          }
+
+          console.log(`[Feedback] A/B contrast rule(s) created: accepted variant ${variant.label} vs rejected sibling ${sibling.label}`);
+        }
+      } catch (err) {
+        console.warn("[Feedback] A/B contrast learning failed (non-fatal):", err);
       }
     }
 
@@ -551,11 +670,12 @@ export async function DELETE(req: NextRequest) {
 
     const variant = await prisma.variant.findUnique({
       where: { id: input.variantId },
-      include: { job: { select: { id: true, mode: true, rulesSnapshot: true } } },
+      include: { job: { select: { id: true, mode: true, rulesSnapshot: true, activeRuleIds: true } } },
     });
 
     const jobMode = variant?.job?.mode || "socials";
     const rulesSnapshot = variant?.job?.rulesSnapshot ?? null;
+    const storedActiveRuleIds = variant?.job?.activeRuleIds ?? [];
     const spec = variant?.plannerSpec as Record<string, unknown> | null;
     const referencesUsed = Array.isArray(spec?.referencesUsed) ? (spec.referencesUsed as string[]) : [];
 
@@ -564,7 +684,9 @@ export async function DELETE(req: NextRequest) {
       where: { enabled: true, mode: jobMode },
       select: { id: true, content: true },
     });
-    const activeRuleIds = rulesSnapshot
+    const activeRuleIds = storedActiveRuleIds.length > 0
+      ? enabledRules.filter((r) => storedActiveRuleIds.includes(r.id)).map((r) => r.id)
+      : rulesSnapshot
       ? enabledRules.filter((r) => rulesSnapshot.includes(r.content)).map((r) => r.id)
       : enabledRules.map((r) => r.id);
 

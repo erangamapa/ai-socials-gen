@@ -16,6 +16,7 @@ export default function JobPage({ params }: { params: Promise<{ id: string }> })
   const { job, isLoading, error, mutate } = usePollJob(id);
   const [showRulesSnapshot, setShowRulesSnapshot] = useState(false);
   const [isRetrying, setIsRetrying] = useState(false);
+  const [isRegeneratingImages, setIsRegeneratingImages] = useState(false);
   const [isBulkAccepting, setIsBulkAccepting] = useState(false);
   const [isCancelling, setIsCancelling] = useState(false);
 
@@ -165,31 +166,81 @@ export default function JobPage({ params }: { params: Promise<{ id: string }> })
       </div>
 
       {job.status === "failed" && (
-        <div className="mb-6 p-4 bg-destructive/10 border border-destructive/20 rounded-lg">
+        <div className="mb-6 p-4 bg-destructive/10 border border-destructive/20 rounded-lg space-y-3">
           {job.errorMessage && (
-            <p className="text-sm text-destructive mb-3">
+            <p className="text-sm text-destructive">
               <span className="font-medium">Error:</span> {job.errorMessage}
             </p>
           )}
+          <div className="flex gap-2 flex-wrap">
+            <Button
+              size="sm"
+              variant="outline"
+              className="gap-2 border-destructive/30 text-destructive hover:bg-destructive/10"
+              disabled={isRetrying}
+              onClick={async () => {
+                setIsRetrying(true);
+                try {
+                  const res = await fetch(`/api/jobs/${job.id}/retry`, { method: "POST" });
+                  if (res.ok) {
+                    mutate({ ...job, status: "queued", errorMessage: null }, false);
+                  }
+                } finally {
+                  setIsRetrying(false);
+                }
+              }}
+            >
+              {isRetrying ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <RotateCcw className="h-3.5 w-3.5" />}
+              Retry Full Job
+            </Button>
+
+            {(job.mode === "illustration" || job.mode === "pictogram") && (
+              <Button
+                size="sm"
+                variant="outline"
+                className="gap-2"
+                disabled={isRegeneratingImages}
+                onClick={async () => {
+                  setIsRegeneratingImages(true);
+                  try {
+                    const res = await fetch(`/api/jobs/${job.id}/regenerate-images`, { method: "POST" });
+                    if (res.ok) {
+                      mutate({ ...job, status: "generating", errorMessage: null }, false);
+                    }
+                  } finally {
+                    setIsRegeneratingImages(false);
+                  }
+                }}
+              >
+                {isRegeneratingImages ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <RotateCcw className="h-3.5 w-3.5" />}
+                Regenerate Images Only
+              </Button>
+            )}
+          </div>
+        </div>
+      )}
+
+      {job.status === "ready" && (job.mode === "illustration" || job.mode === "pictogram") && (
+        <div className="mb-6 flex justify-end">
           <Button
             size="sm"
             variant="outline"
-            className="gap-2 border-destructive/30 text-destructive hover:bg-destructive/10"
-            disabled={isRetrying}
+            className="gap-2 text-muted-foreground"
+            disabled={isRegeneratingImages}
             onClick={async () => {
-              setIsRetrying(true);
+              setIsRegeneratingImages(true);
               try {
-                const res = await fetch(`/api/jobs/${job.id}/retry`, { method: "POST" });
+                const res = await fetch(`/api/jobs/${job.id}/regenerate-images`, { method: "POST" });
                 if (res.ok) {
-                  mutate({ ...job, status: "queued", errorMessage: null }, false);
+                  mutate({ ...job, status: "generating" }, false);
                 }
               } finally {
-                setIsRetrying(false);
+                setIsRegeneratingImages(false);
               }
             }}
           >
-            {isRetrying ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <RotateCcw className="h-3.5 w-3.5" />}
-            Retry Job
+            {isRegeneratingImages ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <RotateCcw className="h-3.5 w-3.5" />}
+            Regenerate Images
           </Button>
         </div>
       )}

@@ -38,12 +38,13 @@ export async function POST(
       return NextResponse.json({ error: "Artifact not found" }, { status: 404 });
     }
 
-    if (!["final_png", "expanded_png"].includes(artifact.kind)) {
-      return NextResponse.json({ error: "Only final images can have background removed" }, { status: 400 });
+    if (!["final_png", "expanded_png", "edited_png"].includes(artifact.kind)) {
+      return NextResponse.json({ error: "Only final, expanded, or edited images can have background removed" }, { status: 400 });
     }
 
+    // Each source artifact gets its own nobg — uniqueness is always per source artifact
     const existing = await prisma.artifact.findFirst({
-      where: { variantId: artifact.variantId, kind: "nobg_png" },
+      where: { variantId: artifact.variantId, kind: "nobg_png", sourceArtifactId: artifactId },
     });
     if (existing) {
       return NextResponse.json(
@@ -91,7 +92,8 @@ export async function POST(
     const storage = getStorageProvider();
     const jobId = artifact.variant.jobId;
     const variantLabel = artifact.variant.label;
-    const storagePath = `jobs/${jobId}/finals/${variantLabel}_nobg.png`;
+    const suffix = `_${artifactId.slice(-8)}_nobg`;
+    const storagePath = `jobs/${jobId}/finals/${variantLabel}${suffix}.png`;
     const url = await storage.upload(resultBuffer, storagePath, "image/png");
 
     const nobgArtifact = await prisma.artifact.create({
@@ -103,6 +105,7 @@ export async function POST(
         width: artifact.width,
         height: artifact.height,
         mimeType: "image/png",
+        sourceArtifactId: artifactId,
       },
     });
 

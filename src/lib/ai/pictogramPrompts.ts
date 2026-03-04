@@ -76,7 +76,7 @@ Each variant object must have:
     "style": "flat-vector-toon",
     "mood": "...",
     "palette": ["#hex", ...],
-    "solidBackground": "#F8F5FC",
+    "solidBackground": "#0F0A1A",
     "referenceInstructions": "..."
   },
   "referencesUsed": ["vault-id-1"],
@@ -138,10 +138,9 @@ ${subjectRefBlock}
 ${input.vaultSummary}
 
 REQUIREMENTS:
-1. Produce exactly 3 variants (A, B, C) — each must explore a different take on the concept:
+1. Produce exactly 2 variants (A, B) — each must explore a different take on the concept:
    - A: Most iconic representation — the clearest, most recognisable version
-   - B: Different angle or colour accent — same concept, different perspective or dominant colour
-   - C: Bold/experimental — more dynamic, different accent, or alternative representation of the concept
+   - B: Different angle, colour accent, or bold take — same concept, different perspective, dominant colour, or more dynamic/experimental approach
 2. Each variant MUST have:
    - referencesUsed: 1-3 vault pictogram IDs used as style references${input.hasSubjectReference ? " (reference image(s) define the concept; vault refs inform icon style)" : ""}
    - backgroundPrompt: MINIMUM 80 WORDS — describe the form, rendering style, colours, proportions, and background

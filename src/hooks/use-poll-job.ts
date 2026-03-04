@@ -45,6 +45,8 @@ export interface ArtifactData {
   width: number;
   height: number;
   mimeType: string;
+  editPrompt: string | null;
+  sourceArtifactId: string | null;
   createdAt: string;
 }
 

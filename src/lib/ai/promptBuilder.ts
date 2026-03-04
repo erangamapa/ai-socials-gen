@@ -1,21 +1,35 @@
 import { prisma } from "../db";
 import * as crypto from "crypto";
 
-const MAX_RULES = 15;
+const PRIORITY_RULES_CAP = 5;  // manual/seeded high-priority rules always included
+const FEEDBACK_RULES_CAP = 10; // confidence-ranked feedback rules fill the rest
 
 interface RulesBlock {
   text: string;
   version: number;
   ruleCount: number;
   estimatedTokens: number;
+  ruleIds: string[];
 }
 
 export async function buildRulesBlock(mode: string = "socials"): Promise<RulesBlock> {
-  const rules = await prisma.promptRule.findMany({
-    where: { enabled: true, mode },
-    orderBy: [{ confidence: "desc" }, { priority: "desc" }, { createdAt: "desc" }],
-    take: MAX_RULES,
+  // Tier 1: top priority rules (manual/seeded) — always included up to cap
+  const priorityRules = await prisma.promptRule.findMany({
+    where: { enabled: true, mode, priority: { gte: 4 } },
+    orderBy: [{ priority: "desc" }, { confidence: "desc" }, { createdAt: "desc" }],
+    take: PRIORITY_RULES_CAP,
   });
+
+  const priorityIds = new Set(priorityRules.map((r) => r.id));
+
+  // Tier 2: remaining confidence-ranked feedback rules
+  const feedbackRules = await prisma.promptRule.findMany({
+    where: { enabled: true, mode, id: { notIn: [...priorityIds] } },
+    orderBy: [{ confidence: "desc" }, { createdAt: "desc" }],
+    take: FEEDBACK_RULES_CAP,
+  });
+
+  const rules = [...priorityRules, ...feedbackRules];
 
   if (rules.length > 0) {
     await prisma.promptRule.updateMany({
@@ -25,7 +39,7 @@ export async function buildRulesBlock(mode: string = "socials"): Promise<RulesBl
   }
 
   if (rules.length === 0) {
-    return { text: "", version: 0, ruleCount: 0, estimatedTokens: 0 };
+    return { text: "", version: 0, ruleCount: 0, estimatedTokens: 0, ruleIds: [] };
   }
 
   const doRules = rules.filter((r) => r.category === "do" || r.category === "style" || r.category === "positive");
@@ -104,7 +118,7 @@ export async function buildRulesBlock(mode: string = "socials"): Promise<RulesBl
   const version = rawVersion % INT32_MAX;
   const estimatedTokens = Math.ceil(text.length / 4);
 
-  return { text, version, ruleCount: rules.length, estimatedTokens };
+  return { text, version, ruleCount: rules.length, estimatedTokens, ruleIds: rules.map((r) => r.id) };
 }
 
 const REASON_TO_RULE: Record<string, { content: string; category: string }> = {

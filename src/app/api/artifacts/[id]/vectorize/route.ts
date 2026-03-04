@@ -38,12 +38,13 @@ export async function POST(
       return NextResponse.json({ error: "Artifact not found" }, { status: 404 });
     }
 
-    if (!["final_png", "expanded_png", "nobg_png"].includes(artifact.kind)) {
+    if (!["final_png", "expanded_png", "nobg_png", "edited_png"].includes(artifact.kind)) {
       return NextResponse.json({ error: "Only PNG images can be vectorized" }, { status: 400 });
     }
 
+    // Each source artifact gets its own vector — uniqueness is always per source artifact
     const existing = await prisma.artifact.findFirst({
-      where: { variantId: artifact.variantId, kind: "vector_svg" },
+      where: { variantId: artifact.variantId, kind: "vector_svg", sourceArtifactId: artifactId },
     });
     if (existing) {
       return NextResponse.json(
@@ -90,7 +91,8 @@ export async function POST(
     const storage = getStorageProvider();
     const jobId = artifact.variant.jobId;
     const variantLabel = artifact.variant.label;
-    const storagePath = `jobs/${jobId}/finals/${variantLabel}_vector.svg`;
+    const suffix = `_${artifactId.slice(-8)}_vector`;
+    const storagePath = `jobs/${jobId}/finals/${variantLabel}${suffix}.svg`;
     const url = await storage.upload(svgBuffer, storagePath, "image/svg+xml");
 
     const svgArtifact = await prisma.artifact.create({
@@ -102,6 +104,7 @@ export async function POST(
         width: artifact.width,
         height: artifact.height,
         mimeType: "image/svg+xml",
+        sourceArtifactId: artifactId,
       },
     });
 

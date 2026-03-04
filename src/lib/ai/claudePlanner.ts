@@ -61,25 +61,8 @@ export class MockClaudePlanner implements Planner {
           },
           referencesUsed: refIds.slice(0, 2),
         },
-        {
-          variantLabel: "C",
-          templateId: pickTemplate(2),
-          copy: {
-            headline: `${input.description.split(" ").slice(0, 3).join(" ")} Awaits`,
-            subhead: "Exclusive odds you won't find anywhere else",
-            cta: "Join Now",
-            disclaimer: "18+ | Gamble responsibly",
-          },
-          artDirection: {
-            palette: palettes[2],
-            mood: moods[2],
-            style: styles[2],
-            backgroundPrompt: `Experimental, bold composition — dramatic close-up or extreme angle of the sport subject. Neon accent colours against deep dark background, high contrast, electric energy lines radiating from the figure. 3D-render hybrid style, slightly exaggerated proportions for maximum visual impact.`,
-          },
-          referencesUsed: refIds.slice(0, 2),
-        },
       ],
-      reasoning: `Generated 3 variants for "${input.description}" targeting ${input.channels.join(", ")}. Used ${input.vaultReferences.length} vault references for style guidance.`,
+      reasoning: `Generated 2 variants for "${input.description}" targeting ${input.channels.join(", ")}. Used ${input.vaultReferences.length} vault references for style guidance.`,
     };
 
     return PlannerOutputSchema.parse(output);

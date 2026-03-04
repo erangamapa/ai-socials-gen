@@ -65,11 +65,15 @@ export class GeminiImageProvider implements ImageProvider {
 
       // Collect ALL subject references (may be 0, 1, or many)
       const subjectRefs = referenceImages?.filter((r) => r.description.startsWith("SUBJECT REFERENCE")) ?? [];
-      const styleRefs = referenceImages?.filter((r) => !r.description.startsWith("SUBJECT REFERENCE")) ?? [];
+      // Angle references sit between subject refs and style refs — 1024x1024, highest-priority angle guide
+      const angleRefs = referenceImages?.filter((r) => r.description.startsWith("ANGLE REFERENCE")) ?? [];
+      const styleRefs = referenceImages?.filter(
+        (r) => !r.description.startsWith("SUBJECT REFERENCE") && !r.description.startsWith("ANGLE REFERENCE")
+      ) ?? [];
       const hasMultiSubject = subjectRefs.length > 1;
 
       console.log(
-        `[NanoBanana] ${(mode ?? "standalone").toUpperCase()} mode — subjectRefs=${subjectRefs.length}, styleRefs=${styleRefs.length}, ${width}x${height}`
+        `[NanoBanana] ${(mode ?? "standalone").toUpperCase()} mode — subjectRefs=${subjectRefs.length}, angleRefs=${angleRefs.length}, styleRefs=${styleRefs.length}, ${width}x${height}`
       );
 
       // Pack ALL subject references first — in order, with numbered labels
@@ -84,6 +88,17 @@ export class GeminiImageProvider implements ImageProvider {
           ? `SUBJECT REFERENCE ${i + 1} of ${subjectRefs.length} (HIGHEST PRIORITY)`
           : `SUBJECT REFERENCE (HIGHEST PRIORITY)`;
         contentParts.push({ text: `${label}: ${ref.description}` });
+      }
+
+      // Angle references come after subject refs, before style refs
+      for (let i = 0; i < angleRefs.length; i++) {
+        const ref = angleRefs[i];
+        const resized = await sharp(ref.buffer)
+          .resize(1024, 1024, { fit: "inside", withoutEnlargement: true })
+          .png()
+          .toBuffer();
+        contentParts.push({ inlineData: { mimeType: "image/png", data: resized.toString("base64") } });
+        contentParts.push({ text: `ANGLE REFERENCE: ${ref.description}` });
       }
 
       for (let i = 0; i < styleRefs.length; i++) {
@@ -256,21 +271,50 @@ FINAL INSTRUCTION — ABSOLUTE PRIORITY: Do NOT render ANY text, words, letters,
 
         const elapsed = ((Date.now() - start) / 1000).toFixed(1);
 
-        if (response.candidates?.[0]?.content?.parts) {
-          for (const part of response.candidates[0].content.parts) {
-            if (part.inlineData?.mimeType?.startsWith("image/")) {
-              const imageBuffer = Buffer.from(part.inlineData.data!, "base64");
-              console.log(`[NanoBanana] Got ${imageBuffer.length} bytes in ${elapsed}s`);
-              const resized = await sharp(imageBuffer)
-                .resize(width, height, { fit: "cover" })
-                .png()
-                .toBuffer();
-              return { buffer: resized, mimeType: "image/png" };
-            }
-            if (part.text) {
-              console.log(`[NanoBanana] Text: ${part.text.slice(0, 100)}`);
+        // Collect image buffers from all candidates
+        const allCandidateBuffers: Buffer[] = [];
+        for (const candidate of (response.candidates ?? [])) {
+          if (candidate.content?.parts) {
+            for (const part of candidate.content.parts) {
+              if (part.inlineData?.mimeType?.startsWith("image/")) {
+                const raw = Buffer.from(part.inlineData.data!, "base64");
+                const resized = await sharp(raw)
+                  .resize(width, height, { fit: "cover" })
+                  .png()
+                  .toBuffer();
+                allCandidateBuffers.push(resized);
+              }
+              if (part.text) {
+                console.log(`[NanoBanana] Text: ${part.text.slice(0, 100)}`);
+              }
             }
           }
+        }
+
+        if (allCandidateBuffers.length > 0) {
+          console.log(`[NanoBanana] Got ${allCandidateBuffers.length} candidate(s) in ${elapsed}s`);
+          // Aspect ratio quality gate: warn if source AR differs from target by > 20%
+          const firstRaw = response.candidates?.[0]?.content?.parts?.find(
+            (p) => p.inlineData?.mimeType?.startsWith("image/")
+          );
+          if (firstRaw?.inlineData?.data) {
+            const rawBuf = Buffer.from(firstRaw.inlineData.data, "base64");
+            const meta = await sharp(rawBuf).metadata();
+            if (meta.width && meta.height) {
+              const srcAR = meta.width / meta.height;
+              const tgtAR = width / height;
+              const arDiff = Math.abs(srcAR - tgtAR) / tgtAR;
+              if (arDiff > 0.2) {
+                console.warn(
+                  `[NanoBanana] Aspect ratio mismatch — source ${meta.width}x${meta.height} (${srcAR.toFixed(2)}) vs target ${width}x${height} (${tgtAR.toFixed(2)}) — diff ${(arDiff * 100).toFixed(0)}% — significant crop likely`
+                );
+              }
+            }
+          }
+          return {
+            buffer: allCandidateBuffers[0],
+            mimeType: "image/png",
+          };
         }
 
         console.warn(`[NanoBanana] No image in response after ${elapsed}s`);
@@ -284,8 +328,8 @@ FINAL INSTRUCTION — ABSOLUTE PRIORITY: Do NOT render ANY text, words, letters,
       }
     }
 
-    console.warn("[NanoBanana] All attempts failed, using mock");
-    return new MockNanaBananaProvider().generateImage(request);
+    console.error("[NanoBanana] All attempts failed — throwing error");
+    throw new Error("Image generation failed: Gemini returned no image after 2 attempts");
   }
 }
 

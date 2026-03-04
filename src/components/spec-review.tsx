@@ -9,6 +9,28 @@ import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { VariantData } from "@/hooks/use-poll-job";
 
+/** Thumbnail that shows a styled placeholder instead of disappearing on load failure */
+function VaultThumb({ src, alt, label, size = "md" }: { src: string | null; alt: string; label: string; size?: "sm" | "md" }) {
+  const [failed, setFailed] = useState(false);
+  const dim = size === "sm" ? "w-14 h-14" : "w-16 h-16";
+  if (!src || failed) {
+    return (
+      <span className={`inline-flex items-center justify-center ${dim} text-[10px] bg-muted text-muted-foreground font-medium select-none`}>
+        {label.slice(0, 6)}
+      </span>
+    );
+  }
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={src}
+      alt={alt}
+      className={`${dim} object-cover`}
+      onError={() => setFailed(true)}
+    />
+  );
+}
+
 interface VariantSpec {
   variantLabel: string;
   copy: {
@@ -22,7 +44,10 @@ interface VariantSpec {
     mood: string;
     style: string;
     backgroundPrompt: string;
+    referenceInstructions: string;
+    solidBackground: string;
   };
+  referencesUsed: string[];
 }
 
 function findNested(obj: Record<string, unknown>, ...keys: string[]): unknown {
@@ -61,6 +86,9 @@ function extractSpec(variant: VariantData): VariantSpec {
   const style = (art.style || findNested(spec, "style") || "") as string;
   const palette = (art.palette || art.colors || findNested(spec, "palette", "colors") || []) as string[];
   const refInstructions = (art.referenceInstructions || art.reference_instructions || findNested(spec, "referenceInstructions") || "") as string;
+  const solidBackground = (art.solidBackground || art.solid_background || findNested(spec, "solidBackground") || "") as string;
+
+  const refsUsed = (Array.isArray(spec.referencesUsed) ? spec.referencesUsed : []) as string[];
 
   return {
     variantLabel: variant.label,
@@ -69,8 +97,11 @@ function extractSpec(variant: VariantData): VariantSpec {
       palette: Array.isArray(palette) ? palette : [],
       mood,
       style,
-      backgroundPrompt: bgPrompt + (refInstructions ? `\n\n${refInstructions}` : ""),
+      backgroundPrompt: bgPrompt,
+      referenceInstructions: refInstructions,
+      solidBackground,
     },
+    referencesUsed: refsUsed,
   };
 }
 
@@ -117,6 +148,14 @@ export function SpecReview({ jobId, variants, jobMode, subjectReferences, subjec
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const updateSpecRefs = (idx: number, refsUsed: string[]) => {
+    setSpecs((prev) => {
+      const next = [...prev];
+      next[idx] = { ...next[idx], referencesUsed: refsUsed };
+      return next;
+    });
+  };
+
   const updateSpec = (idx: number, path: string, value: string) => {
     setSpecs((prev) => {
       const next = [...prev];
@@ -140,10 +179,16 @@ export function SpecReview({ jobId, variants, jobMode, subjectReferences, subjec
     setError(null);
 
     try {
+      const payload = specs.map((s) => ({
+        variantLabel: s.variantLabel,
+        copy: s.copy,
+        artDirection: s.artDirection,
+        referencesUsed: s.referencesUsed,
+      }));
       const res = await fetch(`/api/jobs/${jobId}/approve`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ variants: specs }),
+        body: JSON.stringify({ variants: payload }),
       });
 
       if (!res.ok) {
@@ -274,21 +319,7 @@ export function SpecReview({ jobId, variants, jobMode, subjectReferences, subjec
                     }`}
                     title={`${item.type} — ${item.tags.join(", ")}${isSelected ? " (selected by planner)" : ""}`}
                   >
-                    {src ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={src}
-                        alt={item.tags.join(", ")}
-                        className="w-16 h-16 object-cover"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).style.display = "none";
-                        }}
-                      />
-                    ) : (
-                      <span className="inline-flex items-center justify-center w-16 h-16 text-[10px] bg-muted text-muted-foreground">
-                        {item.type}
-                      </span>
-                    )}
+                    <VaultThumb src={src} alt={item.tags.join(", ")} label={item.type} />
                     {isSelected && (
                       <div className="absolute top-0.5 right-0.5 w-3.5 h-3.5 rounded-full bg-primary flex items-center justify-center">
                         <span className="text-[8px] text-primary-foreground font-bold">✓</span>
@@ -324,19 +355,6 @@ export function SpecReview({ jobId, variants, jobMode, subjectReferences, subjec
                   ))}
                 </div>
               )}
-              {isIllustrationMode && (() => {
-                const raw = variants[idx]?.plannerSpec as Record<string, unknown> | null;
-                const art = raw?.artDirection as Record<string, unknown> | null;
-                const solidBg = art?.solidBackground as string | undefined;
-                if (!solidBg) return null;
-                return (
-                  <div className="flex items-center gap-1.5 ml-auto">
-                    <span className="text-xs text-muted-foreground">Background:</span>
-                    <div className="w-5 h-5 rounded-sm border shadow-sm" style={{ backgroundColor: solidBg }} title={solidBg} />
-                    <span className="text-xs font-mono text-muted-foreground">{solidBg}</span>
-                  </div>
-                );
-              })()}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -347,15 +365,21 @@ export function SpecReview({ jobId, variants, jobMode, subjectReferences, subjec
               if (!templateId && refs.length === 0) return null;
 
               if (isIllustrationMode && refs.length > 0) {
-                // Illustration mode: show actual image thumbnails for the vault refs
-                const styleRefs = refs.filter((r) => r !== templateId);
-                // referencePaths maps DB id → public asset path (added by planner)
+                // Illustration mode: interactive ref management (remove/add from retrieval bundle)
+                const styleRefs = specs[idx].referencesUsed.filter((r) => r !== templateId);
                 const refPaths = (raw?.referencePaths as Record<string, string>) ?? {};
+
+                // Available refs from the retrieval bundle not yet selected
+                const bundle = retrievalBundle as RetrievalBundle | null;
+                const bundleItems = bundle?.items ?? [];
+                const availableToAdd = bundleItems.filter(
+                  (item) => !specs[idx].referencesUsed.includes(item.id)
+                );
 
                 return (
                   <div className="space-y-1.5">
                     <Label className="text-xs font-medium text-muted-foreground">
-                      Style References ({styleRefs.length})
+                      Style References ({styleRefs.length}) — click ✕ to remove, + to add
                     </Label>
                     <div className="flex flex-wrap gap-2">
                       {styleRefs.map((refId, ri) => {
@@ -365,25 +389,38 @@ export function SpecReview({ jobId, variants, jobMode, subjectReferences, subjec
                           : null;
                         return (
                           <div key={refId} className="relative group">
-                            {src ? (
-                              // eslint-disable-next-line @next/next/no-img-element
-                              <img
-                                src={src}
-                                alt={`Style ref ${ri + 1}`}
-                                className="w-14 h-14 object-cover rounded border"
-                                onError={(e) => {
-                                  (e.target as HTMLImageElement).style.display = "none";
-                                }}
-                              />
-                            ) : (
-                              <span className="inline-flex items-center justify-center w-14 h-14 text-xs rounded border bg-muted text-muted-foreground">
-                                Ref {ri + 1}
-                              </span>
-                            )}
-                            <div className="absolute inset-0 flex items-center justify-center bg-black/60 rounded opacity-0 group-hover:opacity-100 transition-opacity">
-                              <span className="text-white text-xs font-mono">{refId.slice(0, 8)}</span>
+                            <VaultThumb src={src} alt={`Style ref ${ri + 1}`} label={`Ref ${ri + 1}`} size="sm" />
+                            <button
+                              onClick={() => updateSpecRefs(idx, specs[idx].referencesUsed.filter((r) => r !== refId))}
+                              className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-destructive text-white text-[10px] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:scale-110"
+                              title="Remove reference"
+                            >
+                              ✕
+                            </button>
+                            <div className="absolute inset-0 flex items-end justify-center bg-black/40 rounded opacity-0 group-hover:opacity-100 transition-opacity pb-1">
+                              <span className="text-white text-[9px] font-mono">{refId.slice(0, 6)}</span>
                             </div>
                           </div>
+                        );
+                      })}
+
+                      {/* Add buttons for available refs from the bundle */}
+                      {availableToAdd.slice(0, 4).map((item) => {
+                        const src = item.pathOrUrl
+                          ? `/api/vault/asset?path=${encodeURIComponent(item.pathOrUrl)}`
+                          : null;
+                        return (
+                          <button
+                            key={item.id}
+                            onClick={() => updateSpecRefs(idx, [...specs[idx].referencesUsed, item.id])}
+                            className="relative group w-14 h-14 rounded border-2 border-dashed border-border/50 hover:border-primary/60 overflow-hidden transition-all opacity-50 hover:opacity-100"
+                            title={`Add: ${item.tags.slice(0, 3).join(", ")}`}
+                          >
+                            <VaultThumb src={src} alt={item.tags.join(", ")} label="+" size="sm" />
+                            <div className="absolute inset-0 flex items-center justify-center bg-primary/70 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                              <span className="text-white text-lg font-bold">+</span>
+                            </div>
+                          </button>
                         );
                       })}
                     </div>
@@ -468,6 +505,34 @@ export function SpecReview({ jobId, variants, jobMode, subjectReferences, subjec
               </div>
             </div>
 
+            {isStandaloneMode && spec.artDirection.solidBackground && (
+              <div className="space-y-2">
+                <Label className="text-xs font-medium text-muted-foreground">Solid Background</Label>
+                <div className="flex items-center gap-2">
+                  <input
+                    type="color"
+                    value={spec.artDirection.solidBackground}
+                    onChange={(e) => updateSpec(idx, "artDirection.solidBackground", e.target.value)}
+                    className="w-8 h-8 rounded border cursor-pointer p-0 bg-transparent"
+                    title="Pick background color"
+                  />
+                  <input
+                    type="text"
+                    value={spec.artDirection.solidBackground}
+                    onChange={(e) => updateSpec(idx, "artDirection.solidBackground", e.target.value)}
+                    className="w-28 rounded-md border px-2 py-1 text-xs font-mono bg-background"
+                    placeholder="#0F0A1A"
+                    maxLength={7}
+                  />
+                  <div
+                    className="w-8 h-8 rounded border shadow-sm shrink-0"
+                    style={{ backgroundColor: spec.artDirection.solidBackground }}
+                    title={spec.artDirection.solidBackground}
+                  />
+                </div>
+              </div>
+            )}
+
             <div className="space-y-2">
               <Label className="text-xs font-medium text-muted-foreground">
                 Image Generation Prompt
@@ -480,6 +545,21 @@ export function SpecReview({ jobId, variants, jobMode, subjectReferences, subjec
                 className="font-mono text-xs"
               />
             </div>
+
+            {spec.artDirection.referenceInstructions && (
+              <div className="space-y-2">
+                <Label className="text-xs font-medium text-muted-foreground">
+                  Reference Instructions
+                  <Badge variant="outline" className="ml-2 text-xs">appended to prompt</Badge>
+                </Label>
+                <Textarea
+                  value={spec.artDirection.referenceInstructions}
+                  onChange={(e) => updateSpec(idx, "artDirection.referenceInstructions", e.target.value)}
+                  rows={3}
+                  className="font-mono text-xs"
+                />
+              </div>
+            )}
 
             <Separator />
 

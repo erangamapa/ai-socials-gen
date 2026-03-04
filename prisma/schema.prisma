@@ -17,6 +17,8 @@ model Job {
   retrievalBundle      Json?
   rulesVersion         Int       @default(0)
   rulesSnapshot        String?
+  /// IDs of PromptRules that were active when this job was generated — used for accurate feedback attribution
+  activeRuleIds        String[]  @default([])
   mode                 String    @default("socials")
   subjectReferenceUrl  String?
   subjectReferenceNote String?
@@ -44,16 +46,18 @@ model Variant {
 }
 
 model Artifact {
-  id        String   @id @default(cuid())
-  variantId String
-  channel   String
-  kind      String
-  url       String
-  width     Int
-  height    Int
-  mimeType  String   @default("image/png")
-  createdAt DateTime @default(now())
-  variant   Variant  @relation(fields: [variantId], references: [id], onDelete: Cascade)
+  id               String   @id @default(cuid())
+  variantId        String
+  channel          String
+  kind             String
+  url              String
+  width            Int
+  height           Int
+  mimeType         String   @default("image/png")
+  editPrompt       String?
+  sourceArtifactId String?
+  createdAt        DateTime @default(now())
+  variant          Variant  @relation(fields: [variantId], references: [id], onDelete: Cascade)
 }
 
 model Feedback {
@@ -108,6 +112,10 @@ model AssetVaultItem {
   analysisStatus String    @default("pending")
   analyzedAt     DateTime?
   usageScore     Int       @default(0)
+  /// Per-context scores keyed by sport/topic tag, e.g. {"football": 3, "mma": -1}
+  contextScores  Json?
+  /// Semantic embedding vector stored as a JSON array of floats
+  embedding      Json?
   createdAt      DateTime  @default(now())
 }
 

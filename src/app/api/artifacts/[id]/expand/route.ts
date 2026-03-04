@@ -18,12 +18,13 @@ export async function POST(
       return NextResponse.json({ error: "Artifact not found" }, { status: 404 });
     }
 
-    if (artifact.kind !== "final_png" && artifact.kind !== "expanded_png") {
-      return NextResponse.json({ error: "Only final images can be expanded" }, { status: 400 });
+    if (!["final_png", "expanded_png", "edited_png"].includes(artifact.kind)) {
+      return NextResponse.json({ error: "Only final, expanded, or edited images can be expanded" }, { status: 400 });
     }
 
+    // Each source artifact can only have one expanded version — check by sourceArtifactId
     const existing = await prisma.artifact.findFirst({
-      where: { variantId: artifact.variantId, kind: "expanded_png" },
+      where: { variantId: artifact.variantId, kind: "expanded_png", sourceArtifactId: artifactId },
     });
     if (existing) {
       return NextResponse.json(

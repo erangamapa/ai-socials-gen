@@ -22,6 +22,12 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "Missing path param" }, { status: 400 });
   }
 
+  // Auto-ingested vault items store a full Blob URL — redirect the browser directly to it.
+  // This is safe: these are always our own Vercel Blob public URLs.
+  if (assetPath.startsWith("http://") || assetPath.startsWith("https://")) {
+    return NextResponse.redirect(assetPath, { status: 302 });
+  }
+
   // Security: reject any path traversal attempts
   const normalised = path.normalize(assetPath).replace(/\\/g, "/");
   if (normalised.startsWith("..") || normalised.includes("/../")) {
