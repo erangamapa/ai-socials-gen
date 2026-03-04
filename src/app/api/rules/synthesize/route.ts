@@ -3,7 +3,7 @@ import { z } from "zod";
 import { synthesizeRules } from "@/lib/ai/ruleSynthesis";
 
 const SynthesizeSchema = z.object({
-  mode: z.enum(["socials", "illustration"]),
+  mode: z.enum(["socials", "illustration", "pictogram"]),
 });
 
 export async function POST(req: NextRequest) {

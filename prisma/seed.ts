@@ -2,6 +2,7 @@ import "dotenv/config";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { TEMPLATE_REGISTRY } from "../src/lib/templates/registry";
+import { PICTOGRAM_DEFAULT_RULES } from "../src/lib/ai/pictogramPrompts";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -57,6 +58,29 @@ async function main() {
     });
   }
   console.log(`  Upserted ${vaultItems.length} vault items`);
+
+  console.log("Seeding default pictogram rules...");
+  let pictogramRulesSeeded = 0;
+  for (const rule of PICTOGRAM_DEFAULT_RULES) {
+    const existing = await prisma.promptRule.findFirst({
+      where: { content: rule.content, mode: "pictogram" },
+    });
+    if (!existing) {
+      await prisma.promptRule.create({
+        data: {
+          content: rule.content,
+          category: rule.category,
+          priority: rule.priority,
+          mode: "pictogram",
+          enabled: true,
+          source: "default",
+          confidence: 70,
+        },
+      });
+      pictogramRulesSeeded++;
+    }
+  }
+  console.log(`  Seeded ${pictogramRulesSeeded} new pictogram rules (${PICTOGRAM_DEFAULT_RULES.length - pictogramRulesSeeded} already existed)`);
 
   console.log("Seed complete.");
 }

@@ -11,12 +11,19 @@ interface AgentStats {
   feedback: { accept: number; reject: number };
   rules: { active: number; total: number };
   lastJobAt: string | null;
+  estimatedCost?: {
+    claudeUsd: number;
+    imagenUsd: number;
+    totalUsd: number;
+    variantsGenerated: number;
+  };
 }
 
 interface Stats {
   agents?: {
     socials: AgentStats;
     illustration: AgentStats;
+    pictogram: AgentStats;
   };
   vault: {
     totalFiles: number;
@@ -175,10 +182,10 @@ export default function DevPage() {
 
       {/* Agent Health */}
       {stats.agents && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {(["socials", "illustration"] as const).map((mode) => {
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {(["socials", "illustration", "pictogram"] as const).map((mode) => {
             const agent = stats.agents![mode];
-            const label = mode === "socials" ? "Social Post Agent" : "Illustration Agent";
+            const label = mode === "socials" ? "Social Post Agent" : mode === "illustration" ? "Illustration Agent" : "Pictogram Agent";
             const lastUsed = agent.lastJobAt
               ? new Date(agent.lastJobAt).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" })
               : "never";
@@ -195,19 +202,35 @@ export default function DevPage() {
                   </Badge>
                 </div>
 
-                <div className="grid grid-cols-3 gap-3 text-center">
-                  <div className="rounded-lg bg-background/60 border px-3 py-2">
-                    <div className="text-xl font-bold">{agent.jobs}</div>
-                    <div className="text-xs text-muted-foreground">Jobs</div>
+                <div className="rounded-lg border divide-y divide-border overflow-hidden text-sm">
+                  <div className="flex items-center justify-between px-3 py-2 bg-background/60">
+                    <span className="text-muted-foreground">Jobs run</span>
+                    <span className="font-semibold tabular-nums">{agent.jobs}</span>
                   </div>
-                  <div className="rounded-lg bg-background/60 border px-3 py-2">
-                    <div className="text-xl font-bold text-accent">{agent.feedback.accept}</div>
-                    <div className="text-xs text-muted-foreground">Accepts</div>
+                  <div className="flex items-center justify-between px-3 py-2 bg-background/60">
+                    <span className="text-muted-foreground">Accepted</span>
+                    <span className="font-semibold tabular-nums text-accent">{agent.feedback.accept}</span>
                   </div>
-                  <div className="rounded-lg bg-background/60 border px-3 py-2">
-                    <div className="text-xl font-bold text-destructive">{agent.feedback.reject}</div>
-                    <div className="text-xs text-muted-foreground">Rejects</div>
+                  <div className="flex items-center justify-between px-3 py-2 bg-background/60">
+                    <span className="text-muted-foreground">Rejected</span>
+                    <span className="font-semibold tabular-nums text-destructive">{agent.feedback.reject}</span>
                   </div>
+                  {agent.estimatedCost && agent.estimatedCost.totalUsd > 0 && (
+                    <>
+                      <div className="flex items-center justify-between px-3 py-2 bg-muted/30">
+                        <span className="text-muted-foreground">Claude cost</span>
+                        <span className="font-semibold tabular-nums">${agent.estimatedCost.claudeUsd.toFixed(2)}</span>
+                      </div>
+                      <div className="flex items-center justify-between px-3 py-2 bg-muted/30">
+                        <span className="text-muted-foreground">Imagen cost <span className="opacity-50">({agent.estimatedCost.variantsGenerated} img)</span></span>
+                        <span className="font-semibold tabular-nums">${agent.estimatedCost.imagenUsd.toFixed(2)}</span>
+                      </div>
+                      <div className="flex items-center justify-between px-3 py-2 bg-muted/50">
+                        <span className="font-medium">Est. total spend</span>
+                        <span className="font-bold tabular-nums">${agent.estimatedCost.totalUsd.toFixed(2)}</span>
+                      </div>
+                    </>
+                  )}
                 </div>
 
                 <div className="flex items-center justify-between text-sm">

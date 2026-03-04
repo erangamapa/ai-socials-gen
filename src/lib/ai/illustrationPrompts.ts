@@ -67,15 +67,14 @@ SUBJECT REFERENCE (when provided) — OVERRIDES VAULT:
 - Facial likeness is LOW PRIORITY — describe simplified bold flat features; energy comes from body language.
 - Focus on: sport-specific body language, gear, and the specific action moment described or shown.
 
-3 VARIANTS — REQUIRED:
-Produce exactly 3 variants: A, B, C. Each must use a DIFFERENT camera angle from the Perspective Guide above:
+2 VARIANTS — REQUIRED:
+Produce exactly 2 variants: A, B. Each must use a DIFFERENT camera angle from the Perspective Guide above:
 - Variant A: WORM'S-EYE or EXTREME LOW-ANGLE — maximum heroic scale, subject towers overhead
 - Variant B: FORESHORTENED LUNGE — a key limb or object thrusts toward camera, energy directed at the viewer
-- Variant C: DUTCH TILT + dramatic angle — tension, instability, editorial premium feel — most experimental color palette
 
 Each variant gets its own backgroundPrompt, referencesUsed, and artDirection.
 
-OUTPUT: Valid JSON with a "variants" array of exactly 3 objects. No markdown, no code fences.
+OUTPUT: Valid JSON with a "variants" array of exactly 2 objects. No markdown, no code fences.
 Each variant object must have:
 {
   "variantLabel": "A",
@@ -89,7 +88,24 @@ Each variant object must have:
   },
   "referencesUsed": ["vault-id-1", "vault-id-2"],
   "copy": { "headline": "", "subhead": "", "cta": "" }
-}`;
+}
+
+MOOD FIELD — CRITICAL GUIDANCE:
+"mood" must be a single evocative phrase (6–14 words) that captures the emotional atmosphere SPECIFIC to this variant's subject, sport, and action moment. Rules:
+- Derive it directly from what is happening in the image — the sport, the athlete, the exact action, the stakes
+- Must be distinct from the other variant's mood — each variant should feel emotionally different
+- Evoke the brand values: intensity, elite performance, raw power, premium edge
+- Use vivid, specific language — NOT generic design-speak
+- FORBIDDEN: "Bold & Energetic", "Premium & Sleek", "Dynamic & Vibrant", "High Energy", "Powerful", or any other vague compound label
+- GOOD EXAMPLES (vary your language, do not copy literally):
+  "Raw pre-match predator calm — coiled stillness before the eruption"
+  "Championship-peak euphoria — the split second before everything changes"
+  "Ice-cold elite precision — surgical focus under maximum external pressure"
+  "Street-level hunger meeting the prime-time stage for the first time"
+  "Dominant gravitational authority — immovable force that bends the room"
+  "Comeback volcanic energy — unstoppable reclamation after being written off"
+  "Kinetic breakthrough — the exact millisecond momentum becomes irreversible"
+  "Predatory closing speed — the last five metres that define a career"`;
 
 export function buildIllustrationSystemPrompt(dynamicRulesBlock: string): string {
   if (!dynamicRulesBlock) return ILLUSTRATION_SYSTEM_PROMPT;
@@ -101,46 +117,98 @@ export const ILLUSTRATION_USER_TEMPLATE = (input: {
   sizePreset: string;
   vaultSummary: string;
   hasSubjectReference: boolean;
+  subjectReferences?: Array<{ url: string; note: string }>;
+  /** @deprecated use subjectReferences instead */
   subjectReferenceNote?: string;
-}) => `ILLUSTRATION BRIEF: ${input.description}
+  /** Optional angle reference — image attached separately; overrides default per-variant angle assignment */
+  angleReference?: { url: string; note: string };
+}) => {
+  const refs = input.subjectReferences && input.subjectReferences.length > 0
+    ? input.subjectReferences
+    : input.subjectReferenceNote
+    ? [{ url: "", note: input.subjectReferenceNote }]
+    : [];
+  const refCount = refs.length;
+  const multiRef = refCount > 1;
 
-OUTPUT SIZE: ${input.sizePreset}
-
-${input.hasSubjectReference ? `
+  const subjectRefBlock = input.hasSubjectReference && refCount > 0 ? `
 =====================================
-SUBJECT REFERENCE -- HIGHEST PRIORITY
+SUBJECT REFERENCE${multiRef ? "S" : ""} -- HIGHEST PRIORITY
 =====================================
-A real-world reference photo is attached as the FIRST image. This is the PRIMARY source of truth for this illustration.
+${multiRef
+  ? `${refCount} real-world reference photos are attached as images 1–${refCount}. ALL ${refCount} references define different characters or elements that must appear together in the scene.`
+  : `A real-world reference photo is attached as the FIRST image. This is the PRIMARY source of truth for this illustration.`}
 
-WHAT TO EXTRACT FROM THE REFERENCE PHOTO:
-- Character identity: body type, build, proportions, face structure
+WHAT TO EXTRACT FROM THE REFERENCE PHOTO${multiRef ? "S" : ""}:
+- Character identity: body type, build, proportions, face structure${multiRef ? " (per person)" : ""}
 - Sport/activity: what they do, how they move, characteristic gear or clothing
 - Pose energy: the direction and nature of their movement, stance, reach
 
-${input.subjectReferenceNote
+${multiRef
+  ? `MULTI-REFERENCE SCENE:
+Each reference image defines a separate character or element:
+${refs.map((r, i) => `Reference ${i + 1}${r.note ? `: "${r.note}"` : " — extract character identity and pose"}`).join("\n")}
+Compose ALL ${refCount} references together into a single cohesive scene. Each character must be clearly visible and their interaction/dynamic should drive the composition.`
+  : refs[0]?.note
   ? `CREATOR INSTRUCTIONS (FOLLOW EXACTLY -- override anything else):
-"${input.subjectReferenceNote}"
+"${refs[0].note}"
 
 These instructions tell you precisely what the creator wants done with this reference. They take precedence over everything -- over the brief, over vault references, over default style choices.`
   : `Translate the subject into our flat-vector illustration style -- do NOT reproduce the photo literally.`}
 
-HOW VAULT REFERENCES WORK WHEN A SUBJECT REFERENCE IS PROVIDED:
+HOW VAULT REFERENCES WORK WHEN SUBJECT REFERENCE${multiRef ? "S ARE" : " IS"} PROVIDED:
 - Vault refs are STYLE GUIDES ONLY -- they define line weight, color approach, and rendering technique
 - They do NOT define what the subject looks like, what they wear, or what pose they take
-- The subject reference photo anchors WHAT is drawn; vault refs only inform HOW it's rendered
+- The subject reference photo${multiRef ? "s anchor" : " anchors"} WHAT is drawn; vault refs only inform HOW it's rendered
 =====================================
-` : ""}
+` : "";
 
+  const firstNote = refs[0]?.note ?? "";
+
+  const angleRefBlock = input.angleReference
+    ? `
+=====================================
+ANGLE REFERENCE — CAMERA PERSPECTIVE OVERRIDE
+=====================================
+An angle reference image is attached as the LAST image in this message (after any subject references). This image defines the EXACT camera angle, elevation, tilt, and perspective you must replicate.
+
+WHAT TO EXTRACT FROM THE ANGLE REFERENCE:
+- Camera elevation: how high or low the viewpoint is (ground level, knee height, eye level, overhead, bird's-eye, etc.)
+- Camera tilt: any dutch tilt or rotation of the frame
+- Perspective distortion: how extreme the foreshortening is, which elements are enlarged by proximity
+- Viewing direction: the angle at which the subject is seen (front-on, three-quarter, side profile, from above/below)
+${input.angleReference.note ? `\nCREATOR NOTE ON ANGLE: "${input.angleReference.note}"` : ""}
+
+ANGLE OVERRIDE RULE:
+- ALL 3 variants (A, B, C) MUST use the angle extracted from this reference image
+- DO NOT fall back to the default worm's-eye / foreshortened lunge / dutch tilt assignment
+- Each variant may show a DIFFERENT action moment or pose, but must share the same camera angle/elevation
+- Begin each backgroundPrompt with an exact description of the extracted angle (e.g. "Overhead bird's-eye view looking straight down..." or "Eye-level side-profile angle...")
+=====================================
+`
+    : "";
+
+  const angleVariantRule = input.angleReference
+    ? `1. Produce exactly 3 variants (A, B, C) -- ALL must use the SAME camera angle extracted from the angle reference image. Each variant shows a different action moment or pose at that angle:
+   - A: Peak action moment at the extracted angle
+   - B: Follow-through or build-up moment at the same angle
+   - C: Widest or most dramatic composition at the same angle, boldest color palette`
+    : `1. Produce exactly 3 variants (A, B, C) -- each MUST use a different camera angle:
+   - A: Worm's-eye or extreme low-angle -- character towers, maximum scale
+   - B: Foreshortened lunge -- key limb or object directed at camera
+   - C: Dutch tilt + low angle -- tension and editorial energy, boldest color palette`;
+
+  return `ILLUSTRATION BRIEF: ${input.description}
+
+OUTPUT SIZE: ${input.sizePreset}
+${subjectRefBlock}${angleRefBlock}
 ${input.vaultSummary}
 
 REQUIREMENTS:
-1. Produce exactly 3 variants (A, B, C) -- each MUST use a different camera angle:
-   - A: Worm's-eye or extreme low-angle -- character towers, maximum scale
-   - B: Foreshortened lunge -- key limb or object directed at camera
-   - C: Dutch tilt + low angle -- tension and editorial energy, boldest color palette
+${angleVariantRule}
 2. Each variant MUST have:
-   - referencesUsed: 2-5 flat-vector vault IDs used as STYLE references only${input.hasSubjectReference ? " (NOT to define the subject -- the uploaded photo does that)" : ""}
-   - backgroundPrompt: MINIMUM 120 WORDS -- start with the angle/perspective, then describe action moment, foreshortening specifics, flat color treatment, motion energy, minimal face detail${input.hasSubjectReference ? `. MUST explicitly describe the subject from the reference photo${input.subjectReferenceNote ? ` following the creator instruction: "${input.subjectReferenceNote}"` : ""}.` : ""}
+   - referencesUsed: 2-5 flat-vector vault IDs used as STYLE references only${input.hasSubjectReference ? " (NOT to define the subject -- the uploaded photo(s) do that)" : ""}
+   - backgroundPrompt: MINIMUM 120 WORDS -- start with the angle/perspective, then describe action moment, foreshortening specifics, flat color treatment, motion energy, minimal face detail${input.hasSubjectReference ? `. MUST explicitly describe the subject(s) from the reference photo(s)${firstNote && !multiRef ? ` following the creator instruction: "${firstNote}"` : ""}${multiRef ? ". Describe the multi-character scene and how the characters interact or share the frame." : ""}.` : ""}${input.angleReference ? " MUST begin with the exact angle extracted from the angle reference image." : ""}
    - artDirection.solidBackground: a single rich hex color (CB brand darks or primaries -- no white, no light pastels)
    - artDirection.style: ALWAYS "flat-vector"
    - referenceInstructions: how each vault ref informs the rendering style only (line weight, color approach, silhouette shape)
@@ -148,7 +216,9 @@ REQUIREMENTS:
 4. FLAT VECTOR -- bold solid fills, hard-edged shadow shapes ON the character only, no gradients, no 3D rendering, no cartoonish style
 5. MINIMAL FACIAL DETAIL -- face is simplified flat shapes; energy comes from body language and action, not expression
 6. FULL BODY WITHIN FRAME -- no cropping of any limbs, head, or body part. Subject entirely contained with breathing room on all sides.
-7. CLEAN BACKGROUND FOR CUTOUT -- background is one solid flat color only. NO drop shadows, NO glows, NO halos, NO backdrop shapes, NO ground shadows behind or below the character.`;
+7. CLEAN BACKGROUND FOR CUTOUT -- background is one solid flat color only. NO drop shadows, NO glows, NO halos, NO backdrop shapes, NO ground shadows behind or below the character.
+8. MOOD FIELD -- write a single evocative phrase (6–14 words) derived from the specific sport, athlete, and action moment of THIS variant. It must be emotionally distinct from the other variants. FORBIDDEN: "Bold & Energetic", "Premium & Sleek", "Dynamic & Vibrant", or any generic compound label. It must read like a cinematic logline for the image — e.g. "Championship-peak euphoria — the split second before everything changes" or "Predatory closing speed — the last metres that define a career".`;
+};
 
 export const ILLUSTRATION_DEFAULT_RULES: Array<{
   content: string;

@@ -17,6 +17,8 @@ export interface JobData {
   mode: string;
   subjectReferenceUrl: string | null;
   subjectReferenceNote: string | null;
+  subjectReferences: Array<{ url: string; note: string }> | null;
+  angleReference: { url: string; note: string } | null;
   createdAt: string;
   updatedAt: string;
   variants: VariantData[];

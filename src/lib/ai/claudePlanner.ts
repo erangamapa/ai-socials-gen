@@ -175,7 +175,7 @@ export class RealClaudePlanner implements Planner {
   }
 
   private normalizeOutput(raw: Record<string, unknown>): Record<string, unknown> {
-    const labels: Array<"A" | "B" | "C"> = ["A", "B", "C"];
+    const labels: Array<"A" | "B"> = ["A", "B"];
 
     let variants: Record<string, unknown>[];
     if (Array.isArray(raw.variants)) {
@@ -191,9 +191,9 @@ export class RealClaudePlanner implements Planner {
 
     const defaultTemplateId = TEMPLATE_REGISTRY[0]?.id ?? "tpl-centered-hero";
 
-    const normalized = variants.slice(0, 3).map((v, i) => {
+    const normalized = variants.slice(0, 2).map((v, i) => {
       const label = String(v.variantLabel || v.variant_label || v.label || "").toUpperCase().trim();
-      const variantLabel = (["A", "B", "C"].includes(label) ? label : labels[i]) as "A" | "B" | "C";
+      const variantLabel = (["A", "B"].includes(label) ? label : labels[i]) as "A" | "B";
 
       let copyObj: Record<string, unknown>;
       if (typeof v.copy === "object" && v.copy !== null) {

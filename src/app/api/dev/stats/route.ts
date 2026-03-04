@@ -4,6 +4,14 @@ import { TEMPLATE_REGISTRY } from "@/lib/templates/registry";
 import { loadVaultIndex } from "@/lib/vault/vaultIndex";
 import { BRAND, getBrandColorList } from "@/lib/brand/guidelines";
 
+// Approximate pricing constants
+// Claude Sonnet 4 (claude-sonnet-4-20250514): $3/MTok in, $15/MTok out
+// Estimated ~5k input + 2.5k output tokens per planner call
+const CLAUDE_COST_PER_JOB = 0.0525; // ($3 * 5000 + $15 * 2500) / 1_000_000
+
+// Gemini Flash image generation (gemini-3.1-flash-image-preview): ~$0.02 per image
+const IMAGEN_COST_PER_VARIANT = 0.02;
+
 interface AnalysisJson {
   description?: string;
   colorPalette?: string[];
@@ -27,6 +35,7 @@ export async function GET() {
       rulesByMode,
       lastSocialsJob,
       lastIllustrationJob,
+      lastPictogramJob,
     ] = await Promise.all([
       prisma.job.count(),
       prisma.job.groupBy({ by: ["status"], _count: true }),
@@ -40,16 +49,28 @@ export async function GET() {
       prisma.promptRule.groupBy({ by: ["mode", "enabled"], _count: true }),
       prisma.job.findFirst({ where: { mode: "socials" }, orderBy: { createdAt: "desc" }, select: { createdAt: true } }),
       prisma.job.findFirst({ where: { mode: "illustration" }, orderBy: { createdAt: "desc" }, select: { createdAt: true } }),
+      prisma.job.findFirst({ where: { mode: "pictogram" }, orderBy: { createdAt: "desc" }, select: { createdAt: true } }),
+    ]);
+
+    // Per-mode variant counts (for image cost estimation)
+    const [socialsVariants, illustrationVariants, pictogramVariants] = await Promise.all([
+      prisma.variant.count({ where: { job: { mode: "socials" } } }),
+      prisma.variant.count({ where: { job: { mode: "illustration" } } }),
+      prisma.variant.count({ where: { job: { mode: "pictogram" } } }),
     ]);
 
     // Per-mode feedback: join through variants → jobs
-    const [socialsFeedback, illustrationFeedback] = await Promise.all([
+    const [socialsFeedback, illustrationFeedback, pictogramFeedback] = await Promise.all([
       prisma.feedback.findMany({
         where: { variant: { job: { mode: "socials" } } },
         select: { decision: true },
       }),
       prisma.feedback.findMany({
         where: { variant: { job: { mode: "illustration" } } },
+        select: { decision: true },
+      }),
+      prisma.feedback.findMany({
+        where: { variant: { job: { mode: "pictogram" } } },
         select: { decision: true },
       }),
     ]);
@@ -115,18 +136,21 @@ export async function GET() {
     function buildAgentStats(
       mode: string,
       feedbackRows: { decision: string }[],
-      lastJob: { createdAt: Date } | null
+      lastJob: { createdAt: Date } | null,
+      variantsGenerated: number
     ) {
       const jobRow = jobsByMode.find((r) => r.mode === mode);
       const modeRules = rulesByMode.filter((r) => r.mode === mode);
       const activeRulesRow = modeRules.find((r) => r.enabled === true);
       const totalRulesCount = modeRules.reduce((s, r) => s + r._count, 0);
       const activeRulesCount = activeRulesRow?._count ?? 0;
+      const jobsCount = jobRow?._count ?? 0;
 
-      // Estimate tokens from active rule content lengths (rough)
-      // We skip full content fetch here; use 0 as placeholder (detailed on rules page)
+      const claudeCost = jobsCount * CLAUDE_COST_PER_JOB;
+      const imagenCost = variantsGenerated * IMAGEN_COST_PER_VARIANT;
+
       return {
-        jobs: jobRow?._count ?? 0,
+        jobs: jobsCount,
         feedback: {
           accept: feedbackRows.filter((f) => f.decision === "accept").length,
           reject: feedbackRows.filter((f) => f.decision === "reject").length,
@@ -136,12 +160,19 @@ export async function GET() {
           total: totalRulesCount,
         },
         lastJobAt: lastJob?.createdAt?.toISOString() ?? null,
+        estimatedCost: {
+          claudeUsd: claudeCost,
+          imagenUsd: imagenCost,
+          totalUsd: claudeCost + imagenCost,
+          variantsGenerated,
+        },
       };
     }
 
     const agents = {
-      socials: buildAgentStats("socials", socialsFeedback, lastSocialsJob),
-      illustration: buildAgentStats("illustration", illustrationFeedback, lastIllustrationJob),
+      socials: buildAgentStats("socials", socialsFeedback, lastSocialsJob, socialsVariants),
+      illustration: buildAgentStats("illustration", illustrationFeedback, lastIllustrationJob, illustrationVariants),
+      pictogram: buildAgentStats("pictogram", pictogramFeedback, lastPictogramJob, pictogramVariants),
     };
 
     return NextResponse.json({

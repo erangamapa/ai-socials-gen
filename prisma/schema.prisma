@@ -20,6 +20,8 @@ model Job {
   mode                 String    @default("socials")
   subjectReferenceUrl  String?
   subjectReferenceNote String?
+  subjectReferences    Json?
+  angleReference       Json?
   createdAt            DateTime  @default(now())
   updatedAt            DateTime  @updatedAt
   variants             Variant[]

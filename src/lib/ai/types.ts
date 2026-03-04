@@ -25,7 +25,7 @@ export const CopySpecSchema = z.object({
 }).passthrough();
 
 export const VariantPlanSchema = z.object({
-  variantLabel: z.enum(["A", "B", "C"]),
+  variantLabel: z.enum(["A", "B"]),
   templateId: z.string(),
   templateAssetId: z.string().optional(),
   copy: CopySpecSchema,
@@ -34,7 +34,7 @@ export const VariantPlanSchema = z.object({
 }).passthrough();
 
 export const PlannerOutputSchema = z.object({
-  variants: z.array(VariantPlanSchema).min(1).max(3),
+  variants: z.array(VariantPlanSchema).min(1).max(2),
   reasoning: z.string().optional(),
 });
 
@@ -76,7 +76,7 @@ export interface ImageGenRequest {
   height: number;
   style?: string;
   referenceImages?: ReferenceImage[];
-  mode?: "socials" | "illustration";
+  mode?: "socials" | "illustration" | "pictogram";
 }
 
 export interface ImageGenResult {

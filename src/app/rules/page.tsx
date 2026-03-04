@@ -16,7 +16,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-type AgentMode = "socials" | "illustration";
+type AgentMode = "socials" | "illustration" | "pictogram";
 
 interface Rule {
   id: string;
@@ -49,6 +49,7 @@ interface RulesData {
     byMode: {
       socials: ModeStats;
       illustration: ModeStats;
+      pictogram: ModeStats;
     };
   };
 }
@@ -82,6 +83,10 @@ const MODE_CONFIG: Record<AgentMode, { label: string; description: string }> = {
   illustration: {
     label: "Illustration Agent",
     description: "Rules for generating standalone character illustrations with solid backgrounds and cutout-ready output",
+  },
+  pictogram: {
+    label: "Pictogram Agent",
+    description: "Rules for generating minimal geometric icons — single concept, bold shapes, flat fill, reads clearly at any size",
   },
 };
 
@@ -341,8 +346,9 @@ function RulesPageInner() {
   const router = useRouter();
 
   const initialMode = (searchParams.get("mode") as AgentMode) || "socials";
+  const validModes: AgentMode[] = ["socials", "illustration", "pictogram"];
   const [activeMode, setActiveMode] = useState<AgentMode>(
-    initialMode === "illustration" ? "illustration" : "socials"
+    validModes.includes(initialMode) ? initialMode : "socials"
   );
   const [data, setData] = useState<RulesData | null>(null);
   const [newContent, setNewContent] = useState("");
@@ -474,8 +480,8 @@ function RulesPageInner() {
       </div>
 
       {/* Mode tab switcher */}
-      <div className="grid grid-cols-2 gap-3">
-        {(["socials", "illustration"] as AgentMode[]).map((mode) => {
+      <div className="grid grid-cols-3 gap-3">
+        {(["socials", "illustration", "pictogram"] as AgentMode[]).map((mode) => {
           const cfg = MODE_CONFIG[mode];
           const stats = data?.stats.byMode[mode];
           const isActive = activeMode === mode;

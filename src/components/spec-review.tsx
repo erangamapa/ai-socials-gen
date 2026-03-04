@@ -91,14 +91,26 @@ interface SpecReviewProps {
   jobId: string;
   variants: VariantData[];
   jobMode?: string;
+  // New: array of references
+  subjectReferences?: Array<{ url: string; note: string }> | null;
+  // Legacy (kept for backward compat — will be normalised into array)
   subjectReferenceUrl?: string | null;
   subjectReferenceNote?: string | null;
   retrievalBundle?: unknown;
   onApproved: () => void;
 }
 
-export function SpecReview({ jobId, variants, jobMode, subjectReferenceUrl, subjectReferenceNote, retrievalBundle, onApproved }: SpecReviewProps) {
+export function SpecReview({ jobId, variants, jobMode, subjectReferences, subjectReferenceUrl, subjectReferenceNote, retrievalBundle, onApproved }: SpecReviewProps) {
+  // Normalise: prefer new array, fall back to legacy single fields
+  const resolvedRefs: Array<{ url: string; note: string }> =
+    subjectReferences && subjectReferences.length > 0
+      ? subjectReferences.filter(r => r.url)
+      : subjectReferenceUrl
+      ? [{ url: subjectReferenceUrl, note: subjectReferenceNote ?? "" }]
+      : [];
   const isIllustrationMode = jobMode === "illustration";
+  const isPictogramMode = jobMode === "pictogram";
+  const isStandaloneMode = isIllustrationMode || isPictogramMode;
   const [specs, setSpecs] = useState<VariantSpec[]>(() =>
     variants.map(extractSpec)
   );
@@ -153,48 +165,72 @@ export function SpecReview({ jobId, variants, jobMode, subjectReferenceUrl, subj
         <p className="text-sm font-medium text-primary">
           {isIllustrationMode
             ? "Review the illustration spec below. Edit any prompts, then approve to generate your illustrations."
+            : isPictogramMode
+            ? "Review the pictogram spec below. Edit any prompts, then approve to generate your icons."
             : "Review the planner output below. Edit any copy or image prompts, then approve to start image generation."}
         </p>
       </div>
 
-      {/* Subject / hero illustration reference */}
-      {subjectReferenceUrl && (() => {
-        const isHeroIllustration = subjectReferenceNote?.includes("GENERATED CB FLAT-VECTOR ILLUSTRATION");
-        const label = isHeroIllustration ? "Hero Illustration" : "Subject Reference";
-        const sublabel = isHeroIllustration
-          ? "This pre-styled illustration will be composited AS-IS onto the chosen template as the hero element."
-          : "Sent to the image generator as the first reference — anchors the subject\u2019s likeness before style references are applied.";
+      {/* Subject / hero illustration references (supports 1 or many) */}
+      {resolvedRefs.length > 0 && (
+        <div className="space-y-2">
+          {resolvedRefs.length > 1 && (
+            <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+              Subject References ({resolvedRefs.length}) — all sent to image generator
+            </p>
+          )}
+          {resolvedRefs.map((ref, ri) => {
+            const isHeroIllustration = ref.note.includes("GENERATED CB FLAT-VECTOR ILLUSTRATION");
+            const isHeroPictogram = ref.note.includes("GENERATED CB PICTOGRAM ICON");
+            const label = isHeroIllustration
+              ? "Hero Illustration"
+              : isHeroPictogram
+              ? "Pictogram Icon"
+              : resolvedRefs.length > 1
+              ? `Subject Reference ${ri + 1}`
+              : "Subject Reference";
+            const sublabel = isHeroIllustration
+              ? "Pre-styled illustration — composited AS-IS onto the chosen template."
+              : isHeroPictogram
+              ? "Pictogram icon — placed as a graphic element on the chosen template."
+              : isPictogramMode
+              ? "Sent to image generator as the concept reference — defines what to iconify."
+              : resolvedRefs.length > 1
+              ? `Reference ${ri + 1} of ${resolvedRefs.length} — composited together into the final scene.`
+              : "Sent to image generator as the first reference — anchors the subject\u2019s likeness.";
 
-        return (
-          <div className="flex items-start gap-3 rounded-lg border bg-secondary/5 border-secondary/20 p-3">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={subjectReferenceUrl}
-              alt={label}
-              className="w-20 h-20 object-cover rounded-md border shrink-0"
-            />
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2">
-                <p className="text-sm font-medium text-foreground">{label}</p>
-                {isHeroIllustration && (
-                  <Badge variant="secondary" className="text-[10px]">
-                    Compositing mode
-                  </Badge>
-                )}
-              </div>
-              <p className="text-xs text-muted-foreground mt-0.5">{sublabel}</p>
-              {subjectReferenceNote && (
-                <div className="mt-1.5 rounded-md bg-secondary/10 border border-secondary/20 px-2.5 py-1.5">
-                  <p className="text-xs font-medium text-secondary mb-0.5">
-                    {isHeroIllustration ? "Context passed to generator" : "Creator instructions"}
-                  </p>
-                  <p className="text-xs text-foreground/80 italic line-clamp-3">&ldquo;{subjectReferenceNote}&rdquo;</p>
+            return (
+              <div key={ri} className="flex items-start gap-3 rounded-lg border bg-secondary/5 border-secondary/20 p-3">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={ref.url}
+                  alt={label}
+                  className="w-16 h-16 object-cover rounded-md border shrink-0"
+                />
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2">
+                    <p className="text-sm font-medium text-foreground">{label}</p>
+                    {isHeroIllustration && (
+                      <Badge variant="secondary" className="text-[10px]">
+                        Compositing mode
+                      </Badge>
+                    )}
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-0.5">{sublabel}</p>
+                  {ref.note && (
+                    <div className="mt-1.5 rounded-md bg-secondary/10 border border-secondary/20 px-2.5 py-1.5">
+                      <p className="text-xs font-medium text-secondary mb-0.5">
+                        {isHeroIllustration ? "Context passed to generator" : "Creator instructions"}
+                      </p>
+                      <p className="text-xs text-foreground/80 italic line-clamp-3">&ldquo;{ref.note}&rdquo;</p>
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-          </div>
-        );
-      })()}
+              </div>
+            );
+          })}
+        </div>
+      )}
 
       {/* Vault style references */}
       {(() => {
@@ -218,7 +254,9 @@ export function SpecReview({ jobId, variants, jobMode, subjectReferenceUrl, subj
               </Badge>
             </div>
             <p className="text-xs text-muted-foreground">
-              These illustrations from the brand vault are sent as style references to guide the AI&apos;s rendering approach.
+              {isPictogramMode
+                ? "These icons/illustrations from the brand vault are sent as style references to guide the icon's rendering approach."
+                : "These illustrations from the brand vault are sent as style references to guide the AI\u2019s rendering approach."}
             </p>
             <div className="flex flex-wrap gap-2">
               {items.map((item) => {

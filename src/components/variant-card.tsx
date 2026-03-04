@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/dialog";
 import { FeedbackDialog } from "./feedback-dialog";
 import { VariantData, ArtifactData } from "@/hooks/use-poll-job";
-import { Download, Expand, ArrowRight, Loader2, CheckCircle2, XCircle, Eye, EyeOff, Scissors, FileCode, Check } from "lucide-react";
+import { Download, Expand, ArrowRight, Loader2, CheckCircle2, XCircle, Eye, EyeOff, Scissors, FileCode, Check, Pencil, X } from "lucide-react";
 
 const CHANNEL_LABELS: Record<string, string> = {
   twitter: "Twitter / X",
@@ -50,17 +50,32 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
   const expandPollRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const prevExpandedRef = useRef<string | undefined>(undefined);
 
+  // Edit with prompt state
+  const [editPanelOpen, setEditPanelOpen] = useState(false);
+  const [editPrompt, setEditPrompt] = useState("");
+  const [isEditing, setIsEditing] = useState(false);
+  const [editError, setEditError] = useState<string | null>(null);
+  const [justEdited, setJustEdited] = useState(false);
+  const editPollRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const prevEditedRef = useRef<string | undefined>(undefined);
+
   const isIllustration = jobMode === "illustration";
+  const isPictogram = jobMode === "pictogram";
+  const isStandalone = isIllustration || isPictogram;
   const latestFeedback = variant.feedback?.[0];
   const hasAccepted = latestFeedback?.decision === "accept";
   const hasRejected = latestFeedback?.decision === "reject";
 
   const finals = variant.artifacts.filter((a) => a.kind === "final_png");
   const expanded = variant.artifacts.find((a) => a.kind === "expanded_png");
+  const edited = variant.artifacts.find((a) => a.kind === "edited_png");
   const nobg = variant.artifacts.find((a) => a.kind === "nobg_png");
   const vector = variant.artifacts.find((a) => a.kind === "vector_svg");
-  const heroArtifact: ArtifactData | undefined =
-    (expanded && !showOriginal) ? expanded : finals[0];
+
+  // Hero priority: edited > expanded > final
+  const heroArtifact: ArtifactData | undefined = showOriginal
+    ? finals[0]
+    : (edited || expanded || finals[0]);
   const secondaryArtifacts = finals.slice(1);
 
   const startExpandPolling = useCallback(() => {
@@ -85,10 +100,28 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
     prevExpandedRef.current = expanded?.id;
   }, [expanded]);
 
-  // Clean up polling interval on unmount
+  // Detect when edited_png first appears (or changes) — stop polling + show flash
+  useEffect(() => {
+    if (edited && edited.id !== prevEditedRef.current) {
+      if (editPollRef.current) {
+        clearInterval(editPollRef.current);
+        editPollRef.current = null;
+      }
+      setIsEditing(false);
+      setJustEdited(true);
+      setEditPrompt("");
+      setEditPanelOpen(false);
+      const timer = setTimeout(() => setJustEdited(false), 3000);
+      return () => clearTimeout(timer);
+    }
+    prevEditedRef.current = edited?.id;
+  }, [edited]);
+
+  // Clean up polling intervals on unmount
   useEffect(() => {
     return () => {
       if (expandPollRef.current) clearInterval(expandPollRef.current);
+      if (editPollRef.current) clearInterval(editPollRef.current);
     };
   }, []);
 
@@ -133,6 +166,38 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
     onFeedbackSubmitted();
   };
 
+  const startEditPolling = useCallback(() => {
+    if (editPollRef.current) return;
+    editPollRef.current = setInterval(() => {
+      onFeedbackSubmitted();
+    }, 3000);
+  }, [onFeedbackSubmitted]);
+
+  const handleEdit = async () => {
+    const sourceArtifact = edited || expanded || finals[0];
+    if (!sourceArtifact || !editPrompt.trim()) return;
+    setEditError(null);
+    setIsEditing(true);
+
+    try {
+      const res = await fetch(`/api/artifacts/${sourceArtifact.id}/edit`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt: editPrompt.trim() }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Edit failed");
+      }
+
+      startEditPolling();
+    } catch (err) {
+      setIsEditing(false);
+      setEditError(err instanceof Error ? err.message : "Edit failed");
+    }
+  };
+
   const handleExpand = async () => {
     if (!finals[0]) return;
     setExpandError(null);
@@ -163,7 +228,8 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
   };
 
   const handleRemoveBg = async () => {
-    const sourceArtifact = expanded || finals[0];
+    // Use expanded when it exists and is currently displayed; otherwise fall back to original
+    const sourceArtifact = (expanded && !showOriginal) ? expanded : finals[0];
     if (!sourceArtifact) return;
     setRemoveBgError(null);
     setIsRemovingBg(true);
@@ -193,7 +259,9 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
   };
 
   const handleVectorize = async () => {
-    const sourceArtifact = nobg || expanded || finals[0];
+    // When expanded is active, prefer nobg → expanded; otherwise prefer nobg → original
+    const baseArtifact = (expanded && !showOriginal) ? expanded : finals[0];
+    const sourceArtifact = nobg || baseArtifact;
     if (!sourceArtifact) return;
     setVectorizeError(null);
     setIsVectorizing(true);
@@ -265,13 +333,48 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
               </div>
             )}
 
+            {/* Editing shimmer overlay */}
+            {isEditing && (
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black/30 backdrop-blur-[2px]">
+                <div className="absolute inset-0 animate-pulse bg-linear-to-r from-transparent via-primary/10 to-transparent" />
+                <Loader2 className="h-8 w-8 text-white animate-spin" />
+                <span className="text-sm font-medium text-white drop-shadow-md">
+                  Applying edit...
+                </span>
+                <span className="text-[11px] text-white/70">
+                  Regenerating with your changes — this may take a minute
+                </span>
+              </div>
+            )}
+
             {/* Variant label overlay */}
             <span className="absolute bottom-2 left-2 text-xs font-bold px-2 py-1 rounded-md bg-black/55 text-white backdrop-blur-sm">
               {variant.label}
             </span>
 
-            {/* Expanded badge (enhanced on first appearance) */}
-            {expanded && !showOriginal && (
+            {/* Channel badge on hero image (socials only, when not replaced by other badges) */}
+            {!isStandalone && !expanded && !edited && heroArtifact && heroArtifact.kind === "final_png" && heroArtifact.channel && (
+              <span className="absolute bottom-2 right-2 text-[10px] font-semibold px-2 py-1 rounded-md bg-black/60 text-white backdrop-blur-sm">
+                {CHANNEL_LABELS[heroArtifact.channel] || heroArtifact.channel}
+              </span>
+            )}
+
+            {/* Edited badge */}
+            {edited && !showOriginal && (
+              <span
+                className={[
+                  "absolute bottom-2 right-2 text-[10px] font-semibold px-2 py-1 rounded-md text-white transition-all duration-700",
+                  justEdited
+                    ? "bg-primary ring-4 ring-primary/30 scale-110"
+                    : "bg-primary/80",
+                ].join(" ")}
+              >
+                {justEdited ? "Edited!" : "Edited"} ✎
+              </span>
+            )}
+
+            {/* Expanded badge (shown only when edited doesn't override) */}
+            {expanded && !edited && !showOriginal && (
               <span
                 className={[
                   "absolute bottom-2 right-2 text-[10px] font-semibold px-2 py-1 rounded-md text-white transition-all duration-700",
@@ -285,7 +388,7 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
             )}
 
             {/* Viewing original indicator */}
-            {expanded && showOriginal && (
+            {(expanded || edited) && showOriginal && (
               <span className="absolute bottom-2 right-2 text-[10px] font-semibold px-2 py-1 rounded-md bg-black/60 text-white/80 backdrop-blur-sm">
                 Original
               </span>
@@ -353,14 +456,19 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
               )}
             </span>
           )}
-          {!isIllustration && finals[0] && (
-            <Badge variant="outline" className="text-xs">
-              {CHANNEL_LABELS[finals[0].channel] || finals[0].channel}
+          {!isStandalone && finals.map((a) => (
+            <Badge key={a.id} variant="outline" className="text-xs">
+              {CHANNEL_LABELS[a.channel] || a.channel}
             </Badge>
-          )}
+          ))}
           {isIllustration && (
             <Badge variant="secondary" className="text-xs">
               Illustration
+            </Badge>
+          )}
+          {isPictogram && (
+            <Badge variant="secondary" className="text-xs">
+              Pictogram
             </Badge>
           )}
         </div>
@@ -393,8 +501,8 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
           {/* After accept: post-accept action bar */}
           {hasAccepted && (finals[0] || expanded) && (
             <div className="space-y-3">
-              {/* Before/after toggle (only when expanded exists) */}
-              {isIllustration && expanded && finals[0] && (
+              {/* Before/after toggle (when edited or expanded exists) */}
+              {isStandalone && (edited || expanded) && finals[0] && (
                 <button
                   type="button"
                   onClick={() => setShowOriginal((v) => !v)}
@@ -403,24 +511,47 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
                   {showOriginal ? (
                     <>
                       <Eye className="h-3.5 w-3.5" />
-                      Viewing original — click to see expanded
+                      {edited ? "Viewing original — click to see edited" : "Viewing original — click to see expanded"}
                     </>
                   ) : (
                     <>
                       <EyeOff className="h-3.5 w-3.5" />
-                      Viewing expanded — click to see original
+                      {edited ? "Viewing edited — click to see original" : "Viewing expanded — click to see original"}
                     </>
                   )}
                 </button>
               )}
 
               {/* ── Output Tools ── */}
-              {isIllustration && (
+              {isStandalone && (
                 <div className="space-y-2">
                   <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
                     Tools
                   </p>
-                  <div className="grid grid-cols-3 gap-1.5">
+                  <div className="grid grid-cols-4 gap-1.5">
+                    {/* Edit with prompt tool */}
+                    <button
+                      type="button"
+                      onClick={() => setEditPanelOpen((v) => !v)}
+                      disabled={isEditing}
+                      className={[
+                        "flex flex-col items-center gap-1 py-2 px-1 rounded-lg border transition-all text-muted-foreground disabled:opacity-50",
+                        editPanelOpen
+                          ? "border-primary/60 bg-primary/10 text-primary"
+                          : "border-border/60 hover:border-primary/50 hover:bg-primary/5 hover:text-foreground",
+                      ].join(" ")}
+                      title="Edit image with a text instruction"
+                    >
+                      {isEditing ? (
+                        <Loader2 className="h-4 w-4 animate-spin text-primary" />
+                      ) : (
+                        <Pencil className="h-4 w-4" />
+                      )}
+                      <span className="text-[10px] font-medium">
+                        {isEditing ? "Editing" : "Edit"}
+                      </span>
+                    </button>
+
                     {/* Expand tool */}
                     {!expanded ? (
                       <button
@@ -501,6 +632,54 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
                   {expandError && <p className="text-xs text-destructive">{expandError}</p>}
                   {removeBgError && <p className="text-xs text-destructive">{removeBgError}</p>}
                   {vectorizeError && <p className="text-xs text-destructive">{vectorizeError}</p>}
+                  {editError && <p className="text-xs text-destructive">{editError}</p>}
+                </div>
+              )}
+
+              {/* ── Edit prompt panel ── */}
+              {isStandalone && editPanelOpen && (
+                <div className="space-y-2 rounded-lg border border-primary/30 bg-primary/5 p-3">
+                  <div className="flex items-center justify-between">
+                    <p className="text-[10px] font-semibold uppercase tracking-wider text-primary">
+                      Edit with Prompt
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => { setEditPanelOpen(false); setEditError(null); }}
+                      className="text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      <X className="h-3.5 w-3.5" />
+                    </button>
+                  </div>
+                  <Textarea
+                    placeholder="Describe what to change, e.g. 'Add a gold crown on the character's head' or 'Remove the sword and give them a football'"
+                    value={editPrompt}
+                    onChange={(e) => setEditPrompt(e.target.value)}
+                    rows={3}
+                    className="text-xs resize-none"
+                    disabled={isEditing}
+                  />
+                  <p className="text-[10px] text-muted-foreground">
+                    Only the requested change is applied — everything else is preserved.
+                  </p>
+                  <Button
+                    size="sm"
+                    onClick={handleEdit}
+                    disabled={isEditing || !editPrompt.trim()}
+                    className="w-full gap-2"
+                  >
+                    {isEditing ? (
+                      <>
+                        <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                        Applying edit...
+                      </>
+                    ) : (
+                      <>
+                        <Pencil className="h-3.5 w-3.5" />
+                        Apply Edit
+                      </>
+                    )}
+                  </Button>
                 </div>
               )}
 
@@ -508,18 +687,36 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
               {(() => {
                 const downloads: { label: string; href: string; filename: string }[] = [];
 
-                const displayArtifact = expanded && !showOriginal ? expanded : finals[0]!;
+                // Determine the "best" artifact to download as the primary
+                const bestArtifact = !showOriginal
+                  ? (edited || expanded || finals[0]!)
+                  : finals[0]!;
+                const bestLabel = !showOriginal && edited
+                  ? "PNG (Edited)"
+                  : !showOriginal && expanded
+                  ? "PNG (Expanded)"
+                  : "PNG";
                 downloads.push({
-                  label: expanded && !showOriginal ? "PNG (Expanded)" : "PNG",
-                  href: downloadUrl(displayArtifact),
+                  label: bestLabel,
+                  href: downloadUrl(bestArtifact),
                   filename: `variant-${variant.label}.png`,
                 });
 
-                if (isIllustration && expanded && finals[0]) {
+                // Offer original download when viewing an altered version
+                if (isStandalone && (edited || expanded) && finals[0] && !showOriginal) {
                   downloads.push({
-                    label: showOriginal ? "PNG (Expanded)" : "PNG (Original)",
-                    href: downloadUrl(showOriginal ? expanded : finals[0]),
-                    filename: `variant-${variant.label}-${showOriginal ? "expanded" : "original"}.png`,
+                    label: "PNG (Original)",
+                    href: downloadUrl(finals[0]),
+                    filename: `variant-${variant.label}-original.png`,
+                  });
+                }
+
+                // Offer the other altered version as a separate download
+                if (isStandalone && edited && expanded && !showOriginal) {
+                  downloads.push({
+                    label: "PNG (Expanded)",
+                    href: downloadUrl(expanded),
+                    filename: `variant-${variant.label}-expanded.png`,
                   });
                 }
 
@@ -558,8 +755,8 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
                 );
               })()}
 
-              {/* Use in Social — illustration only */}
-              {isIllustration && (
+              {/* Use in Social — illustration and pictogram */}
+              {isStandalone && (
                 <Button
                   onClick={handleUseInSocial}
                   size="sm"
@@ -591,6 +788,7 @@ export function VariantCard({ variant, jobMode, jobId, onFeedbackSubmitted }: Va
         onOpenChange={setRejectDialogOpen}
         variantId={variant.id}
         variantLabel={variant.label}
+        jobMode={jobMode}
         onSubmitted={onFeedbackSubmitted}
       />
 

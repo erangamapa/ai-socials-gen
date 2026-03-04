@@ -38,6 +38,8 @@ export async function POST(
     const eventName =
       job.mode === "illustration"
         ? "job/generate-illustration"
+        : job.mode === "pictogram"
+        ? "job/generate-pictogram"
         : "job/generate";
 
     await inngest.send({ name: eventName, data: { jobId: id } });

@@ -27,8 +27,8 @@ export async function GET(
       return NextResponse.json({ error: "Variant not found" }, { status: 404 });
     }
 
-    if (variant.job.mode !== "illustration") {
-      return NextResponse.json({ error: "Only illustration variants can be used in social posts" }, { status: 400 });
+    if (variant.job.mode !== "illustration" && variant.job.mode !== "pictogram") {
+      return NextResponse.json({ error: "Only illustration and pictogram variants can be used in social posts" }, { status: 400 });
     }
 
     // Pick the best artifact: prefer expanded_png, fall back to final_png
@@ -47,13 +47,22 @@ export async function GET(
 
     // Take first ~250 chars of the image prompt as context for the social agent
     const promptExcerpt = backgroundPrompt.slice(0, 250).trim();
-    const subjectNote = [
-      "THIS IS A GENERATED CB FLAT-VECTOR ILLUSTRATION — use it as the hero character AS-IS. Do NOT re-stylise or alter it.",
-      promptExcerpt ? `Illustration context: "${promptExcerpt}"` : null,
-      "Place this character prominently on a CB social template. Choose a template that gives the character maximum visual impact.",
-    ]
-      .filter(Boolean)
-      .join(" ");
+    const isPictogram = variant.job.mode === "pictogram";
+    const subjectNote = isPictogram
+      ? [
+          "THIS IS A GENERATED CB PICTOGRAM ICON — use it as a graphic element AS-IS. Do NOT re-stylise or alter it.",
+          promptExcerpt ? `Pictogram context: "${promptExcerpt}"` : null,
+          "Place this icon prominently on a CB social template as a graphic badge or feature element.",
+        ]
+          .filter(Boolean)
+          .join(" ")
+      : [
+          "THIS IS A GENERATED CB FLAT-VECTOR ILLUSTRATION — use it as the hero character AS-IS. Do NOT re-stylise or alter it.",
+          promptExcerpt ? `Illustration context: "${promptExcerpt}"` : null,
+          "Place this character prominently on a CB social template. Choose a template that gives the character maximum visual impact.",
+        ]
+          .filter(Boolean)
+          .join(" ");
 
     // Suggest a description based on the original illustration brief
     const suggestedDescription = variant.job.description
@@ -61,6 +70,9 @@ export async function GET(
       : "Social post featuring a CB illustration";
 
     return NextResponse.json({
+      // New array format — the form will use this
+      subjectReferences: [{ url: heroArtifact.url, note: subjectNote }],
+      // Legacy fields kept for backward compat
       subjectReferenceUrl: heroArtifact.url,
       subjectReferenceNote: subjectNote,
       description: suggestedDescription,
@@ -68,6 +80,7 @@ export async function GET(
       variantLabel: variant.label,
       sourceJobDescription: variant.job.description,
       isIllustration: true,
+      sourceMode: variant.job.mode,
     });
   } catch (error) {
     console.error("Failed to get social context:", error);

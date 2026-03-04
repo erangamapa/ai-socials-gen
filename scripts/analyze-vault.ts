@@ -2,6 +2,7 @@ import "dotenv/config";
 import * as fs from "fs";
 import * as path from "path";
 import Anthropic from "@anthropic-ai/sdk";
+import sharp from "sharp";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 
@@ -76,10 +77,18 @@ async function analyzeImage(filePath: string): Promise<AnalysisResult> {
     };
   }
 
-  const imageData = fs.readFileSync(absolutePath);
+  let imageData = fs.readFileSync(absolutePath);
+  // Resize if over 4MB to stay within Claude's 5MB limit
+  const MAX_BYTES = 4 * 1024 * 1024;
+  if (imageData.length > MAX_BYTES) {
+    imageData = await sharp(imageData)
+      .resize(1536, 1536, { fit: "inside", withoutEnlargement: true })
+      .jpeg({ quality: 85 })
+      .toBuffer();
+  }
   const base64 = imageData.toString("base64");
   const ext = path.extname(filePath).toLowerCase().slice(1);
-  const mediaType = ext === "jpg" ? "image/jpeg" : `image/${ext}` as "image/png" | "image/jpeg" | "image/gif" | "image/webp";
+  const mediaType = (imageData.length > MAX_BYTES || ext === "jpg") ? "image/jpeg" : `image/${ext}` as "image/png" | "image/jpeg" | "image/gif" | "image/webp";
 
   const response = await anthropic.messages.create({
     model: "claude-sonnet-4-20250514",

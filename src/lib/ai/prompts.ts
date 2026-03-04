@@ -28,11 +28,10 @@ EXAMPLE OF A GREAT backgroundPrompt:
 EXAMPLE OF A BAD backgroundPrompt:
 "Football player kicking ball" — TOO SHORT, no detail, no style direction, useless.
 
-3 VARIANTS — REQUIRED:
-You MUST produce exactly 3 variants: A, B, and C. Each must feel distinctly different:
+2 VARIANTS — REQUIRED:
+You MUST produce exactly 2 variants: A and B. Each must feel distinctly different:
 - Variant A: primary choice — best match to the brief, most on-brand template + subject.
 - Variant B: alternative angle — different template OR different subject pose/action OR different illustration style (e.g. more 3D vs. flat vector).
-- Variant C: bold/experimental — push a different mood, energy, or color direction while staying on-brand.
 Each variant gets its OWN templateAssetId, OWN backgroundPrompt, OWN referencesUsed, OWN copy.
 
 TEMPLATE SELECTION (REQUIRED per variant):
@@ -52,7 +51,7 @@ ILLUSTRATION REFERENCES (REQUIRED per variant — pick 2 to 5 each):
 - In referenceInstructions, explain per reference: what style to borrow (colors, line work, shading, perspective).
 - More references = better style consistency. Don't be stingy.
 
-OUTPUT: Valid JSON with a "variants" array of exactly 3 objects. No markdown, no code fences.`;
+OUTPUT: Valid JSON with a "variants" array of exactly 2 objects. No markdown, no code fences.`;
 
 export function buildSystemPrompt(dynamicRulesBlock: string): string {
   if (!dynamicRulesBlock) return PLANNER_SYSTEM_PROMPT;
@@ -71,12 +70,12 @@ CHANNELS: ${input.channels.join(", ")}
 ${input.vaultSummary}
 
 REQUIREMENTS:
-1. Produce exactly 3 variants (A, B, C) — each distinctly different in visual direction.
+1. Produce exactly 2 variants (A, B) — each distinctly different in visual direction.
 2. Each variant MUST have:
    - templateAssetId: a TEMPLATE vault ID for the target channel
    - referencesUsed: 2-5 ILLUSTRATION vault IDs with matching subjects/style
    - backgroundPrompt: MINIMUM 80 WORDS — vivid, detailed, style-rich. Zero text/logos/backgrounds in the image.
    - referenceInstructions: what to borrow from each reference
    - copy: headline/subhead/CTA for text overlay (NOT generated in image)
-3. Variant A = primary / most on-brand. Variant B = alternative angle/pose/style. Variant C = bold/different mood.
+3. Variant A = primary / most on-brand. Variant B = alternative angle/pose/style.
 4. ZERO text rendered in images. Template is already the background — only describe what goes ON TOP.`;

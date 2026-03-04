@@ -21,13 +21,14 @@ export async function GET(req: NextRequest) {
       orderBy: [{ priority: "desc" }, { createdAt: "desc" }],
     });
 
-    // Per-mode stats (always compute both regardless of filter, for the header summary)
+    // Per-mode stats (always compute all modes regardless of filter, for the header summary)
     const allRules = modeParam && modeParam !== "all"
       ? await prisma.promptRule.findMany({ select: { mode: true, enabled: true, content: true } })
       : rules;
 
     const socialsRules = allRules.filter((r) => (r as { mode?: string }).mode === "socials");
     const illustrationRules = allRules.filter((r) => (r as { mode?: string }).mode === "illustration");
+    const pictogramRules = allRules.filter((r) => (r as { mode?: string }).mode === "pictogram");
 
     const total = rules.length;
     const active = rules.filter((r) => r.enabled).length;
@@ -50,6 +51,11 @@ export async function GET(req: NextRequest) {
             active: illustrationRules.filter((r) => r.enabled).length,
             estimatedTokens: calcTokens(illustrationRules),
           },
+          pictogram: {
+            total: pictogramRules.length,
+            active: pictogramRules.filter((r) => r.enabled).length,
+            estimatedTokens: calcTokens(pictogramRules),
+          },
         },
       },
     });
@@ -67,7 +73,7 @@ const CreateRuleSchema = z.object({
   priority: z.number().int().min(1).max(5).default(3),
   source: z.enum(["manual", "feedback", "positive", "default"]).default("manual"),
   sourceJobId: z.string().optional(),
-  mode: z.enum(["socials", "illustration"]).default("socials"),
+  mode: z.enum(["socials", "illustration", "pictogram"]).default("socials"),
 });
 
 export async function POST(req: NextRequest) {

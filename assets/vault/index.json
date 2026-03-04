@@ -1722,6 +1722,2062 @@
     "notes": "illustration: illustration-57 [PNG]"
   },
   {
+    "id": "vault-pictograms-calendar-1",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Calendar-1.png",
+    "tags": [
+      "pictograms",
+      "calendar",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "utility"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Calendar variant 1 — date/event symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-calendar-2",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Calendar-2.png",
+    "tags": [
+      "pictograms",
+      "calendar",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "utility"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Calendar variant 2 — schedule symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-calendar",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Calendar.png",
+    "tags": [
+      "pictograms",
+      "calendar",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "utility"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Purple 3D spiral-bound calendar — events/scheduling symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-card-1",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Card-1.png",
+    "tags": [
+      "pictograms",
+      "card",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "casino"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Playing card variant 1 — ace/face card symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-card-2",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Card-2.png",
+    "tags": [
+      "pictograms",
+      "card",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "casino"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Playing card variant 2 — card game symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-card-3",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Card-3.png",
+    "tags": [
+      "pictograms",
+      "card",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "casino"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Playing card variant 3 — gambling card symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-card",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Card.png",
+    "tags": [
+      "pictograms",
+      "card",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "casino"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Playing card in 3D perspective — casino/poker symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-cash-drop-1",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Cash-drop-1.png",
+    "tags": [
+      "pictograms",
+      "cash",
+      "drop",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "promotion",
+      "bonus"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Cash drop variant 1 — prize/reward symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-cash-drop-2",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Cash-drop-2.png",
+    "tags": [
+      "pictograms",
+      "cash",
+      "drop",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "promotion",
+      "bonus"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Cash drop variant 2 — money/drop symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-cash-drop-3",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Cash-drop-3.png",
+    "tags": [
+      "pictograms",
+      "cash",
+      "drop",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "promotion",
+      "bonus"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Cash drop variant 3 — cash prize symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-cash-drop-4",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Cash-drop-4.png",
+    "tags": [
+      "pictograms",
+      "cash",
+      "drop",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "promotion",
+      "bonus"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Cash drop variant 4 — money box symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-cash-drop-5",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Cash-drop-5.png",
+    "tags": [
+      "pictograms",
+      "cash",
+      "drop",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "promotion",
+      "bonus"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Cash drop variant 5 — reward symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-cash-drop-6",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Cash-drop-6.png",
+    "tags": [
+      "pictograms",
+      "cash",
+      "drop",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "promotion",
+      "bonus"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Cash drop variant 6 — cash drop symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-cash-drop-7",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Cash-drop-7.png",
+    "tags": [
+      "pictograms",
+      "cash",
+      "drop",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "promotion",
+      "bonus"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Cash drop variant 7 — prize box symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-cash-drop",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Cash-drop.png",
+    "tags": [
+      "pictograms",
+      "cash",
+      "drop",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "promotion",
+      "bonus"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Dark purple 3D box/vault with glowing neon green stripe and dollar sign — cash prize symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-chips-bitcoin-1",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Chips-bitcoin-1.png",
+    "tags": [
+      "pictograms",
+      "chips",
+      "bitcoin",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "casino",
+      "crypto",
+      "blockchain"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Bitcoin chip variant 1. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-chips-bitcoin-2",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Chips-bitcoin-2.png",
+    "tags": [
+      "pictograms",
+      "chips",
+      "bitcoin",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "casino",
+      "crypto",
+      "blockchain"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Bitcoin chip variant 2. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-chips-bitcoin",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Chips-bitcoin.png",
+    "tags": [
+      "pictograms",
+      "chips",
+      "bitcoin",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "casino",
+      "crypto",
+      "blockchain"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: 3D casino chip with Bitcoin symbol — crypto/bitcoin gambling chip. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-chips-cb-1",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Chips-cb-1.png",
+    "tags": [
+      "pictograms",
+      "chips",
+      "cb",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "casino",
+      "cb_branded"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: CB chip variant 1. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-chips-cb",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Chips-cb.png",
+    "tags": [
+      "pictograms",
+      "chips",
+      "cb",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "casino",
+      "cb_branded"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Purple 3D casino chip with CB brandmark (||||) — official CB chip. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-chips-dollar-1",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Chips-dollar-1.png",
+    "tags": [
+      "pictograms",
+      "chips",
+      "dollar",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "casino"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Dollar chip variant 1. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-chips-dollar-2",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Chips-dollar-2.png",
+    "tags": [
+      "pictograms",
+      "chips",
+      "dollar",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "casino"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Dollar chip variant 2. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-chips-dollar",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Chips-dollar.png",
+    "tags": [
+      "pictograms",
+      "chips",
+      "dollar",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "casino"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: 3D casino chip with dollar symbol — dollar/fiat chip. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-chips-stack-1",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Chips-stack-1.png",
+    "tags": [
+      "pictograms",
+      "chips",
+      "stack",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "casino"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Chip stack variant 1. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-chips-stack-2",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Chips-stack-2.png",
+    "tags": [
+      "pictograms",
+      "chips",
+      "stack",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "casino"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Chip stack variant 2. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-chips-stack-3",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Chips-stack-3.png",
+    "tags": [
+      "pictograms",
+      "chips",
+      "stack",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "casino"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Chip stack variant 3. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-chips-stack-4",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Chips-stack-4.png",
+    "tags": [
+      "pictograms",
+      "chips",
+      "stack",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "casino"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Chip stack variant 4. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-chips-stack",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Chips-stack.png",
+    "tags": [
+      "pictograms",
+      "chips",
+      "stack",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "casino"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Stack of 3D casino chips — high value/gambling symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-competitions-1",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Competitions-1.png",
+    "tags": [
+      "pictograms",
+      "competitions",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Competition variant 1 — tournament symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-competitions",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Competitions.png",
+    "tags": [
+      "pictograms",
+      "competitions",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Trophy/competition symbol — tournament/contest. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-country-1",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Country-1.png",
+    "tags": [
+      "pictograms",
+      "country",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Country variant 1 — geo symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-country",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Country.png",
+    "tags": [
+      "pictograms",
+      "country",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Globe/flag symbol — country/region. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-crypto-1",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Crypto-1.png",
+    "tags": [
+      "pictograms",
+      "crypto",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "blockchain"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Crypto coin variant 1. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-crypto-2",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Crypto-2.png",
+    "tags": [
+      "pictograms",
+      "crypto",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "blockchain"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Crypto coin variant 2. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-crypto-3",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Crypto-3.png",
+    "tags": [
+      "pictograms",
+      "crypto",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "blockchain"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Crypto coin variant 3. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-crypto-4",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Crypto-4.png",
+    "tags": [
+      "pictograms",
+      "crypto",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "blockchain"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Crypto coin variant 4. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-crypto",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Crypto.png",
+    "tags": [
+      "pictograms",
+      "crypto",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "blockchain"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Dark navy 3D coin with CB blue stripe design — crypto/blockchain symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-dice-1",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Dice-1.png",
+    "tags": [
+      "pictograms",
+      "dice",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "casino"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Single purple 3D die showing a face — casino/chance symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-dice",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Dice.png",
+    "tags": [
+      "pictograms",
+      "dice",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "casino"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Pair of purple 3D dice in isometric view — gambling/casino symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-gaming-1",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Gaming-1.png",
+    "tags": [
+      "pictograms",
+      "gaming",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "esports"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Gaming variant 1 — esports symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-gaming-2",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Gaming-2.png",
+    "tags": [
+      "pictograms",
+      "gaming",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "esports"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Gaming variant 2 — gaming symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-gaming-3",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Gaming-3.png",
+    "tags": [
+      "pictograms",
+      "gaming",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "esports"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Gaming variant 3 — gaming symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-gaming",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Gaming.png",
+    "tags": [
+      "pictograms",
+      "gaming",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "esports"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Gaming/esports controller symbol — video games. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-magnet",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Magnet.png",
+    "tags": [
+      "pictograms",
+      "magnet",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: 3D magnet symbol — attract/pull/bonus. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-mma-1",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/MMA-1.png",
+    "tags": [
+      "pictograms",
+      "mma",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "sports",
+      "combat"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: MMA/boxing variant 1. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-mma-2",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/MMA-2.png",
+    "tags": [
+      "pictograms",
+      "mma",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "sports",
+      "combat"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: MMA/boxing variant 2. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-mma-3",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/MMA-3.png",
+    "tags": [
+      "pictograms",
+      "mma",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "sports",
+      "combat"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: MMA/boxing variant 3. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-mma-4",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/MMA-4.png",
+    "tags": [
+      "pictograms",
+      "mma",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "sports",
+      "combat"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: MMA/boxing variant 4. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-mma-5",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/MMA-5.png",
+    "tags": [
+      "pictograms",
+      "mma",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "sports",
+      "combat"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: MMA/boxing variant 5. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-mma",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/MMA.png",
+    "tags": [
+      "pictograms",
+      "mma",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "sports",
+      "combat"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Red 3D boxing gloves hanging — MMA/boxing/combat sports symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-others-1",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Others-1.png",
+    "tags": [
+      "pictograms",
+      "others",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Others variant 1. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-others-10",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Others-10.png",
+    "tags": [
+      "pictograms",
+      "others",
+      "10",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Others variant 10. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-others-11",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Others-11.png",
+    "tags": [
+      "pictograms",
+      "others",
+      "11",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Others variant 11. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-others-12",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Others-12.png",
+    "tags": [
+      "pictograms",
+      "others",
+      "12",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Others variant 12. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-others-13",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Others-13.png",
+    "tags": [
+      "pictograms",
+      "others",
+      "13",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Others variant 13. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-others-2",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Others-2.png",
+    "tags": [
+      "pictograms",
+      "others",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Others variant 2. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-others-3",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Others-3.png",
+    "tags": [
+      "pictograms",
+      "others",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Others variant 3. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-others-4",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Others-4.png",
+    "tags": [
+      "pictograms",
+      "others",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Others variant 4. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-others-5",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Others-5.png",
+    "tags": [
+      "pictograms",
+      "others",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Others variant 5. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-others-6",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Others-6.png",
+    "tags": [
+      "pictograms",
+      "others",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Others variant 6. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-others-7",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Others-7.png",
+    "tags": [
+      "pictograms",
+      "others",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Others variant 7. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-others-8",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Others-8.png",
+    "tags": [
+      "pictograms",
+      "others",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Others variant 8. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-others-9",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Others-9.png",
+    "tags": [
+      "pictograms",
+      "others",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Others variant 9. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-others",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Others.png",
+    "tags": [
+      "pictograms",
+      "others",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Miscellaneous symbol — other category. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-slots-1",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Slots-1.png",
+    "tags": [
+      "pictograms",
+      "slots",
+      "casino",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Slot machine variant 1. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-slots-2",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Slots-2.png",
+    "tags": [
+      "pictograms",
+      "slots",
+      "casino",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Slot machine variant 2. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-slots",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Slots.png",
+    "tags": [
+      "pictograms",
+      "slots",
+      "casino",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Purple 3D slot machine with 777 and red siren — casino slots symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-sports-1",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Sports-1.png",
+    "tags": [
+      "pictograms",
+      "sports",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: 3D baseball — white sphere with red stitching, isometric view. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-sports-10",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Sports-10.png",
+    "tags": [
+      "pictograms",
+      "sports",
+      "10",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Sports variant 10 — sports equipment icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-sports-11",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Sports-11.png",
+    "tags": [
+      "pictograms",
+      "sports",
+      "11",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Sports variant 11 — sports equipment icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-sports-12",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Sports-12.png",
+    "tags": [
+      "pictograms",
+      "sports",
+      "12",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Sports variant 12 — sports equipment icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-sports-13",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Sports-13.png",
+    "tags": [
+      "pictograms",
+      "sports",
+      "13",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Sports variant 13 — sports equipment icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-sports-14",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Sports-14.png",
+    "tags": [
+      "pictograms",
+      "sports",
+      "14",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Sports variant 14 — sports equipment icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-sports-15",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Sports-15.png",
+    "tags": [
+      "pictograms",
+      "sports",
+      "15",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Sports variant 15 — sports equipment icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-sports-16",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Sports-16.png",
+    "tags": [
+      "pictograms",
+      "sports",
+      "16",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Sports variant 16 — sports equipment icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-sports-17",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Sports-17.png",
+    "tags": [
+      "pictograms",
+      "sports",
+      "17",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Sports variant 17 — sports equipment icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-sports-18",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Sports-18.png",
+    "tags": [
+      "pictograms",
+      "sports",
+      "18",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Sports variant 18 — sports equipment icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-sports-2",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Sports-2.png",
+    "tags": [
+      "pictograms",
+      "sports",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Sports variant 2 — sports equipment icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-sports-3",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Sports-3.png",
+    "tags": [
+      "pictograms",
+      "sports",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Sports variant 3 — sports equipment icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-sports-4",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Sports-4.png",
+    "tags": [
+      "pictograms",
+      "sports",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Sports variant 4 — sports equipment icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-sports-5",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Sports-5.png",
+    "tags": [
+      "pictograms",
+      "sports",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Sports variant 5 — sports equipment icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-sports-6",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Sports-6.png",
+    "tags": [
+      "pictograms",
+      "sports",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Sports variant 6 — sports equipment icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-sports-7",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Sports-7.png",
+    "tags": [
+      "pictograms",
+      "sports",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Sports variant 7 — sports equipment icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-sports-8",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Sports-8.png",
+    "tags": [
+      "pictograms",
+      "sports",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Sports variant 8 — sports equipment icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-sports-9",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Sports-9.png",
+    "tags": [
+      "pictograms",
+      "sports",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Sports variant 9 — sports equipment icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-sports",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Sports.png",
+    "tags": [
+      "pictograms",
+      "sports",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Sports equipment collection — general sports symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-utility-1",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Utility-1.png",
+    "tags": [
+      "pictograms",
+      "utility",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Utility variant 1 — functional/UI symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-utility-10",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Utility-10.png",
+    "tags": [
+      "pictograms",
+      "utility",
+      "10",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Utility variant 10 — utility icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-utility-11",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Utility-11.png",
+    "tags": [
+      "pictograms",
+      "utility",
+      "11",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Utility variant 11 — large/detailed utility icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-utility-2",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Utility-2.png",
+    "tags": [
+      "pictograms",
+      "utility",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Utility variant 2 — functional symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-utility-3",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Utility-3.png",
+    "tags": [
+      "pictograms",
+      "utility",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Utility variant 3 — utility icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-utility-4",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Utility-4.png",
+    "tags": [
+      "pictograms",
+      "utility",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Utility variant 4 — utility icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-utility-5",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Utility-5.png",
+    "tags": [
+      "pictograms",
+      "utility",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Utility variant 5 — utility icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-utility-6",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Utility-6.png",
+    "tags": [
+      "pictograms",
+      "utility",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Utility variant 6 — utility icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-utility-7",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Utility-7.png",
+    "tags": [
+      "pictograms",
+      "utility",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Utility variant 7 — utility icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-utility-8",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Utility-8.png",
+    "tags": [
+      "pictograms",
+      "utility",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Utility variant 8 — utility icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-utility-9",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Utility-9.png",
+    "tags": [
+      "pictograms",
+      "utility",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Utility variant 9 — utility icon. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-utility",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/Utility.png",
+    "tags": [
+      "pictograms",
+      "utility",
+      "3d_icon",
+      "isometric",
+      "cb_purple"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Purple 3D browser/UI screen in isometric view — utility/app symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-vip-1",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/VIP-1.png",
+    "tags": [
+      "pictograms",
+      "vip",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "premium",
+      "exclusive",
+      "cb_branded"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: VIP variant 1 — premium/exclusive symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-vip-2",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/VIP-2.png",
+    "tags": [
+      "pictograms",
+      "vip",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "premium",
+      "exclusive",
+      "cb_branded"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: VIP variant 2 — VIP symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-vip-3",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/VIP-3.png",
+    "tags": [
+      "pictograms",
+      "vip",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "premium",
+      "exclusive",
+      "cb_branded"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: VIP variant 3 — VIP symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
+    "id": "vault-pictograms-vip",
+    "type": "pictogram",
+    "pathOrUrl": "assets/vault/pictograms/VIP.png",
+    "tags": [
+      "pictograms",
+      "vip",
+      "3d_icon",
+      "isometric",
+      "cb_purple",
+      "premium",
+      "exclusive",
+      "cb_branded"
+    ],
+    "channelHints": [
+      "twitter",
+      "ig_feed",
+      "ig_story",
+      "email_header"
+    ],
+    "notes": "CB 3D pictogram icon [PNG]: Black and gold 3D VIP casino chip with 'VIP' text — exclusive/premium symbol. Style: 3D isometric, CB purple gradient, soft shadow, transparent background, premium game-asset quality."
+  },
+  {
     "id": "vault-previous-posts-0101",
     "type": "previous_post",
     "pathOrUrl": "assets/vault/previous-posts/0101.png",

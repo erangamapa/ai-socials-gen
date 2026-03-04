@@ -40,7 +40,7 @@ export class MockNanaBananaProvider implements ImageProvider {
   }
 }
 
-const GEMINI_MODEL = "gemini-3-pro-image-preview";
+const GEMINI_MODEL = "gemini-3.1-flash-image-preview";
 
 export class GeminiImageProvider implements ImageProvider {
   private client: GoogleGenAI;
@@ -53,29 +53,37 @@ export class GeminiImageProvider implements ImageProvider {
     const { width, height, prompt, referenceImages, mode } = request;
     const aspectLabel = width > height ? "landscape" : height > width ? "portrait" : "square";
     const isIllustration = mode === "illustration";
+    const isPictogram = mode === "pictogram";
+    const isStandalone = isIllustration || isPictogram;
 
     const contentParts: { inlineData?: { mimeType: string; data: string }; text?: string }[] = [];
 
-    if (isIllustration) {
-      // ── ILLUSTRATION MODE ──────────────────────────────────────────────────
-      // No template canvas. We want a standalone flat-vector illustration on a
-      // solid background, ready for cutout. Subject reference (if any) comes
-      // first; then style references; then the generation prompt.
+    if (isStandalone) {
+      // ── ILLUSTRATION / PICTOGRAM MODE ─────────────────────────────────────
+      // No template canvas. Standalone image on solid background, ready for
+      // cutout. Subject reference (if any) comes first; style refs follow.
 
-      const subjectRef = referenceImages?.find((r) => r.description.startsWith("SUBJECT REFERENCE"));
+      // Collect ALL subject references (may be 0, 1, or many)
+      const subjectRefs = referenceImages?.filter((r) => r.description.startsWith("SUBJECT REFERENCE")) ?? [];
       const styleRefs = referenceImages?.filter((r) => !r.description.startsWith("SUBJECT REFERENCE")) ?? [];
+      const hasMultiSubject = subjectRefs.length > 1;
 
       console.log(
-        `[NanoBanana] ILLUSTRATION mode — subject=${!!subjectRef}, styleRefs=${styleRefs.length}, ${width}x${height}`
+        `[NanoBanana] ${(mode ?? "standalone").toUpperCase()} mode — subjectRefs=${subjectRefs.length}, styleRefs=${styleRefs.length}, ${width}x${height}`
       );
 
-      if (subjectRef) {
-        const resized = await sharp(subjectRef.buffer)
+      // Pack ALL subject references first — in order, with numbered labels
+      for (let i = 0; i < subjectRefs.length; i++) {
+        const ref = subjectRefs[i];
+        const resized = await sharp(ref.buffer)
           .resize(1024, 1024, { fit: "inside", withoutEnlargement: true })
           .png()
           .toBuffer();
         contentParts.push({ inlineData: { mimeType: "image/png", data: resized.toString("base64") } });
-        contentParts.push({ text: `SUBJECT REFERENCE (HIGHEST PRIORITY): ${subjectRef.description}` });
+        const label = hasMultiSubject
+          ? `SUBJECT REFERENCE ${i + 1} of ${subjectRefs.length} (HIGHEST PRIORITY)`
+          : `SUBJECT REFERENCE (HIGHEST PRIORITY)`;
+        contentParts.push({ text: `${label}: ${ref.description}` });
       }
 
       for (let i = 0; i < styleRefs.length; i++) {
@@ -90,23 +98,43 @@ export class GeminiImageProvider implements ImageProvider {
         });
       }
 
-      const illustrationSystemNote = subjectRef
-        ? "The subject reference above defines WHAT you draw. Style references define HOW it is rendered."
-        : "Style references above define the visual language to use.";
+      const multiSubjectNote = hasMultiSubject
+        ? ` You have ${subjectRefs.length} subject references — compose ALL of them into a single cohesive scene. Each reference defines a separate character, element, or angle that must appear in the final output.`
+        : "";
 
-      contentParts.push({
-        text: `${illustrationSystemNote}
+      const standaloneSystemNote = subjectRefs.length > 0
+        ? isPictogram
+          ? `The subject reference${hasMultiSubject ? "s" : ""} above define${hasMultiSubject ? "" : "s"} the CONCEPT(S) to iconify.${multiSubjectNote} Style references define the CB pictogram visual language: flat vector toon style, slight 3D perspective angle, hard-edged cel-shading. ALL icons are rendered on a SOLID DARK BACKGROUND (#0F0A1A) — no white, no transparency.`
+          : `The subject reference${hasMultiSubject ? "s" : ""} above define${hasMultiSubject ? "" : "s"} WHAT you draw.${multiSubjectNote} Style references define HOW it is rendered.`
+        : isPictogram
+          ? "Style references above define the CB pictogram visual language: flat vector toon style with slight 3D perspective, hard-edged cel-shading (2-3 flat tones per surface, not smooth gradients). ALL icons rendered on SOLID DARK BACKGROUND (#0F0A1A) — no white, no transparency, no soft shadows."
+          : "Style references above define the visual language to use.";
 
-ILLUSTRATION BRIEF:
-${prompt}
-
-OUTPUT REQUIREMENTS — ABSOLUTE:
-- ${aspectLabel.toUpperCase()} format, exactly ${width}×${height} pixels, single flattened RGB image.
+      const outputRequirements = isPictogram
+        ? `OUTPUT REQUIREMENTS — ABSOLUTE:
+- ${aspectLabel.toUpperCase()} format, exactly ${width}x${height} pixels, single flattened RGB image.
+- SOLID DARK BACKGROUND (#0F0A1A or #120D20) fills the entire canvas — no white, no transparency, no light backgrounds, no vignettes. The dark background IS the design.
+- NO DROP SHADOWS, NO SOFT HALOS, NO GLOW EFFECTS on or around the icon. Clean object on clean dark ground.
+- FLAT VECTOR TOON STYLE — flat vector icon drawn from a slight 3D perspective angle with toon cel-shading. Use 2-3 hard-edged flat highlight/shadow planes per surface (cartoon/comic style). Clean geometric vector shapes, crisp edges. NOT smooth gradient blending, NOT volumetric CGI, NOT photorealism.
+- VIVID SATURATED COLOURS — icon must pop against the dark background. No muted or pastel tones.
+- COLOUR: Purple (#8B4CF7/#C47EFF) for Casino/Slots/Utility; black+gold for VIP; dark navy for Crypto; crimson red for MMA; object's natural vivid colours for Sports.
+- ICON CENTERED with 15-20% breathing room — occupies ~70% of canvas. NEVER cropped or touching edge.
+- SLIGHT 3D PERSPECTIVE ANGLE — isometric or 3/4 view gives depth; paired with flat toon cel-shading.
+- CLEAN GEOMETRIC FORMS — vector-precise shapes, rounded corners where natural to the object.
+- Icon must read clearly at thumbnail size (64 pixels).
+- NO TEXT unless intrinsic to the object ('777' on slot reels, 'VIP' on VIP chip, currency symbol on coin).`
+        : `OUTPUT REQUIREMENTS — ABSOLUTE:
+- ${aspectLabel.toUpperCase()} format, exactly ${width}x${height} pixels, single flattened RGB image.
 - FLAT VECTOR illustration style — no 3D rendering, no volumetric shading, no photorealism.
 - ENTIRE subject must be FULLY CONTAINED within the frame — no cropping of limbs, head, or body.
 - BACKGROUND is a single solid flat colour only — no drop shadows, no glows, no halos, no backdrop effects.
 - ALL shading is internal to the character only — no shadows projected onto the background.
-- ZERO text, logos, watermarks, or typography anywhere in the image.`,
+- ZERO text, logos, watermarks, or typography anywhere in the image.`;
+
+      const briefLabel = isPictogram ? "PICTOGRAM BRIEF" : "ILLUSTRATION BRIEF";
+
+      contentParts.push({
+        text: `${standaloneSystemNote}\n\n${briefLabel}:\n${prompt}\n\n${outputRequirements}`,
       });
     } else {
       // ── SOCIALS / TEMPLATE MODE ────────────────────────────────────────────
@@ -115,12 +143,16 @@ OUTPUT REQUIREMENTS — ABSOLUTE:
 
       const templateRef = referenceImages?.find((r) => r.description.includes("BASE TEMPLATE"));
       const heroRef = referenceImages?.find((r) => r.description.includes("HERO ILLUSTRATION"));
+      // In socials mode, subject references that are NOT hero illustrations are user-uploaded photos
+      const socialsSubjectRefs = referenceImages?.filter(
+        (r) => r.description.startsWith("SUBJECT REFERENCE") && !r.description.includes("HERO ILLUSTRATION")
+      ) ?? [];
       const styleRefs = referenceImages?.filter(
-        (r) => !r.description.includes("BASE TEMPLATE") && !r.description.includes("HERO ILLUSTRATION")
+        (r) => !r.description.includes("BASE TEMPLATE") && !r.description.includes("HERO ILLUSTRATION") && !r.description.startsWith("SUBJECT REFERENCE")
       ) ?? [];
 
       console.log(
-        `[NanoBanana] SOCIALS mode — template=${!!templateRef}, hero=${!!heroRef}, styleRefs=${styleRefs.length}, ${width}x${height}`
+        `[NanoBanana] SOCIALS mode — template=${!!templateRef}, hero=${!!heroRef}, subjectRefs=${socialsSubjectRefs.length}, styleRefs=${styleRefs.length}, ${width}x${height}`
       );
 
       // Build the main prompt: compositing mode when hero exists, generation mode otherwise
@@ -171,7 +203,21 @@ FINAL INSTRUCTION — ABSOLUTE PRIORITY: Do NOT render ANY text, words, letters,
         });
       }
 
-      // IMAGE 3+: Vault style references (supplementary only when hero exists)
+      // User-uploaded subject references (multi-person scenes in socials mode)
+      for (let i = 0; i < socialsSubjectRefs.length; i++) {
+        const ref = socialsSubjectRefs[i];
+        const resized = await sharp(ref.buffer)
+          .resize(1024, 1024, { fit: "inside", withoutEnlargement: true })
+          .png()
+          .toBuffer();
+        contentParts.push({ inlineData: { mimeType: "image/png", data: resized.toString("base64") } });
+        const label = socialsSubjectRefs.length > 1
+          ? `SUBJECT REFERENCE ${i + 1} of ${socialsSubjectRefs.length}`
+          : `SUBJECT REFERENCE`;
+        contentParts.push({ text: `${label}: ${ref.description}. Use to capture likeness, pose, and energy.` });
+      }
+
+      // Vault style references (supplementary only when hero exists)
       for (let i = 0; i < styleRefs.length; i++) {
         const ref = styleRefs[i];
         const resized = await sharp(ref.buffer)

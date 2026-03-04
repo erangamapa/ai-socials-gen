@@ -108,6 +108,7 @@ export async function buildRulesBlock(mode: string = "socials"): Promise<RulesBl
 }
 
 const REASON_TO_RULE: Record<string, { content: string; category: string }> = {
+  // ── Socials reasons ──
   "Off-brand palette": { content: "Avoid off-brand color combinations; use only official CB palette hex values", category: "dont" },
   "Too busy / low clarity": { content: "Keep compositions clean with clear visual hierarchy; avoid visual clutter", category: "dont" },
   "Wrong vibe": { content: "Match the energy and mood to the brief; avoid generic or mismatched tones", category: "general" },
@@ -116,6 +117,17 @@ const REASON_TO_RULE: Record<string, { content: string; category: string }> = {
   "Typography issues": { content: "Follow typography rules strictly: Midnight Sans Heavy ALL CAPS for headlines, Inter for body", category: "typography" },
   "Bad subject quality": { content: "Generate high-quality, detailed graphic elements; avoid low-fidelity or blurry subjects", category: "style" },
   "Wrong channel sizing": { content: "Ensure elements are properly sized and positioned for the target channel dimensions", category: "composition" },
+
+  // ── Illustration reasons ──
+  "Wrong style / not flat-vector": { content: "Strictly maintain flat-vector art style with clean bold lines, solid color fills, and no photorealistic rendering", category: "style" },
+  "Poor anatomy / proportions": { content: "Ensure anatomically correct proportions with natural body positioning; avoid distorted or awkward limb placement", category: "style" },
+  "Wrong pose / energy": { content: "Match pose energy to the brief — dynamic, powerful, sport-specific; avoid static or low-energy poses", category: "style" },
+  "Background issues": { content: "Keep background as solid colour only — no gradients, no patterns, no textures, no environment details", category: "composition" },
+
+  // ── Pictogram reasons ──
+  "Wrong style / not flat-vector toon": { content: "Strictly maintain flat-vector toon style: clean geometric shapes from a slight 3D perspective angle, hard-edged cel-shading (2-3 flat tone planes per surface), NOT smooth gradients, NOT volumetric CGI, NOT photorealism", category: "style" },
+  "Poor shape clarity": { content: "Ensure the icon concept is immediately recognisable at small sizes — clear silhouette, no ambiguity", category: "composition" },
+  "Wrong scale / proportions": { content: "Icon must occupy 65-75% of canvas with generous breathing room on all sides; avoid cramped or oversized icons", category: "composition" },
 };
 
 export function reasonToRule(reason: string): { content: string; category: string } | null {

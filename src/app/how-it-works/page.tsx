@@ -26,6 +26,7 @@ import {
   RefreshCw,
   TrendingDown,
   ChevronRight,
+  Shapes,
 } from "lucide-react";
 
 function FadeIn({ children, className = "" }: { children: ReactNode; className?: string }) {
@@ -122,7 +123,7 @@ export default function HowItWorksPage() {
             </p>
             <p className="text-base text-muted-foreground/80 max-w-xl mx-auto mb-10">
               AI-powered creative pipeline that learns from every decision you make.
-              Generate on-brand social posts and illustrations, then refine them with
+              Generate on-brand social posts, illustrations, and pictogram icons — then refine them with
               intelligent output tools — all while the system gets smarter.
             </p>
           </FadeIn>
@@ -175,21 +176,21 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      {/* ── Two Modes ─────────────────────────────────────────────────── */}
+      {/* ── Three Modes ───────────────────────────────────────────────── */}
       <section className="relative py-20">
         <div className="absolute inset-0 bg-linear-to-b from-transparent via-card/30 to-transparent pointer-events-none" />
         <div className="relative max-w-5xl mx-auto px-4">
           <FadeIn>
             <div className="text-center mb-14">
               <Badge variant="secondary" className="mb-3">Modes</Badge>
-              <h2 className="text-3xl font-bold tracking-tight">Two Creative Engines</h2>
+              <h2 className="text-3xl font-bold tracking-tight">Three Creative Engines</h2>
               <p className="text-muted-foreground mt-2 max-w-lg mx-auto">
-                Choose the right pipeline for your creative need.
+                Each mode has its own dedicated AI agent, ruleset, and vault — built for a specific creative output.
               </p>
             </div>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             <FadeIn>
               <div className="border border-border rounded-xl p-6 bg-card/50 h-full">
                 <div className="flex items-center gap-3 mb-4">
@@ -223,7 +224,7 @@ export default function HowItWorksPage() {
                 </div>
                 <p className="text-sm text-muted-foreground mb-5 leading-relaxed">
                   Standalone character and scene generation in the CB flat-vector style.
-                  Support for subject reference photos, multiple size presets, and direct
+                  Supports subject reference photos, multiple size presets, and direct
                   handoff to the social post pipeline.
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -232,6 +233,31 @@ export default function HowItWorksPage() {
                   <Badge variant="outline">16:9 Landscape</Badge>
                   <Badge variant="outline">Subject Reference</Badge>
                   <Badge variant="outline">Flat Vector Style</Badge>
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn>
+              <div className="rounded-xl p-6 bg-card/50 h-full border border-accent/20">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                    <Shapes className="h-5 w-5 text-accent" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold">Pictogram</h3>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground mb-5 leading-relaxed">
+                  3D stylized icon generation in the CB brand style. Each pictogram is a
+                  premium isometric asset — volumetric depth, gradient fills, CB purple dominant —
+                  ready for compositing on any surface.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="outline">1:1 Square</Badge>
+                  <Badge variant="outline">3D Isometric Style</Badge>
+                  <Badge variant="outline">102 Vault Icons</Badge>
+                  <Badge variant="outline">Concept Reference</Badge>
+                  <Badge variant="outline">Use in Social</Badge>
                 </div>
               </div>
             </FadeIn>

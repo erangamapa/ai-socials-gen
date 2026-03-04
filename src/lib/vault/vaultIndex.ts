@@ -5,6 +5,9 @@ import { prisma } from "../db";
 
 let cachedIndex: VaultItem[] | null = null;
 let cachedAnalysis: Map<string, { subjects: string[]; description: string; styleNotes: string; usageScore: number }> | null = null;
+let cachedGeneratedItems: VaultItem[] | null = null;
+let generatedItemsCachedAt = 0;
+const GENERATED_ITEMS_TTL_MS = 60_000;
 
 export function loadVaultIndex(): VaultItem[] {
   if (cachedIndex) return cachedIndex;
@@ -19,6 +22,32 @@ export function loadVaultIndex(): VaultItem[] {
 export function clearVaultCache(): void {
   cachedIndex = null;
   cachedAnalysis = null;
+  cachedGeneratedItems = null;
+  generatedItemsCachedAt = 0;
+}
+
+/** Load auto-ingested vault items (accepted illustrations/pictograms) from DB with TTL cache. */
+async function loadGeneratedVaultItems(): Promise<VaultItem[]> {
+  const now = Date.now();
+  if (cachedGeneratedItems && now - generatedItemsCachedAt < GENERATED_ITEMS_TTL_MS) {
+    return cachedGeneratedItems;
+  }
+
+  const rows = await prisma.assetVaultItem.findMany({
+    where: { id: { startsWith: "vault-gen-" } },
+    select: { id: true, type: true, pathOrUrl: true, tags: true, channelHints: true, notes: true },
+  });
+
+  cachedGeneratedItems = rows.map((row) => ({
+    id: row.id,
+    type: row.type as VaultItem["type"],
+    pathOrUrl: row.pathOrUrl,
+    tags: row.tags,
+    channelHints: row.channelHints,
+    notes: row.notes ?? undefined,
+  }));
+  generatedItemsCachedAt = now;
+  return cachedGeneratedItems;
 }
 
 async function loadAnalysisCache(): Promise<Map<string, { subjects: string[]; description: string; styleNotes: string; usageScore: number }>> {
@@ -146,7 +175,12 @@ export interface SplitVaultResult {
 }
 
 export async function searchVaultSplit(params: VaultSearchParams): Promise<SplitVaultResult> {
-  const index = loadVaultIndex();
+  const seedItems = loadVaultIndex();
+  const generatedItems = await loadGeneratedVaultItems();
+  // Merge: generated items supplement seed items (seed takes precedence if same id)
+  const seedIds = new Set(seedItems.map((i) => i.id));
+  const index = [...seedItems, ...generatedItems.filter((g) => !seedIds.has(g.id))];
+
   const analysisMap = await loadAnalysisCache();
   const queryTokens = tokenize(params.query);
   const expandedTokens = expandQuery(queryTokens);
@@ -188,7 +222,11 @@ export async function searchVaultSplit(params: VaultSearchParams): Promise<Split
 }
 
 export async function searchVault(params: VaultSearchParams): Promise<VaultSearchResult> {
-  const index = loadVaultIndex();
+  const seedItems = loadVaultIndex();
+  const generatedItems = await loadGeneratedVaultItems();
+  const seedIds = new Set(seedItems.map((i) => i.id));
+  const index = [...seedItems, ...generatedItems.filter((g) => !seedIds.has(g.id))];
+
   const analysisMap = await loadAnalysisCache();
   const queryTokens = tokenize(params.query);
   const expandedTokens = expandQuery(queryTokens);

@@ -13,7 +13,7 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 
-const REJECT_REASONS = [
+const SOCIALS_REJECT_REASONS = [
   "Off-brand palette",
   "Too busy / low clarity",
   "Wrong vibe",
@@ -24,11 +24,34 @@ const REJECT_REASONS = [
   "Wrong channel sizing",
 ] as const;
 
+const ILLUSTRATION_REJECT_REASONS = [
+  "Off-brand palette",
+  "Wrong style / not flat-vector",
+  "Poor anatomy / proportions",
+  "Wrong pose / energy",
+  "Bad subject quality",
+  "Too busy / low clarity",
+  "Background issues",
+  "Wrong vibe",
+] as const;
+
+const PICTOGRAM_REJECT_REASONS = [
+  "Off-brand palette",
+  "Wrong style / not flat-vector toon",
+  "Poor shape clarity",
+  "Wrong scale / proportions",
+  "Background issues",
+  "Too busy / low clarity",
+  "Wrong vibe",
+  "Bad subject quality",
+] as const;
+
 interface FeedbackDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   variantId: string;
   variantLabel: string;
+  jobMode?: string;
   onSubmitted: () => void;
 }
 
@@ -37,8 +60,16 @@ export function FeedbackDialog({
   onOpenChange,
   variantId,
   variantLabel,
+  jobMode,
   onSubmitted,
 }: FeedbackDialogProps) {
+  const rejectReasons =
+    jobMode === "pictogram"
+      ? PICTOGRAM_REJECT_REASONS
+      : jobMode === "illustration"
+      ? ILLUSTRATION_REJECT_REASONS
+      : SOCIALS_REJECT_REASONS;
+
   const [reasons, setReasons] = useState<string[]>([]);
   const [notes, setNotes] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -86,14 +117,16 @@ export function FeedbackDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-md">
         <DialogHeader>
-          <DialogTitle>Reject Variant {variantLabel}</DialogTitle>
+          <DialogTitle>
+            Reject {jobMode === "illustration" ? "Illustration" : jobMode === "pictogram" ? "Pictogram" : "Variant"} {variantLabel}
+          </DialogTitle>
         </DialogHeader>
 
         <div className="space-y-4">
           <div className="space-y-2">
             <Label>Select reason(s)</Label>
             <div className="space-y-2">
-              {REJECT_REASONS.map((reason) => (
+              {rejectReasons.map((reason) => (
                 <label
                   key={reason}
                   className="flex items-center gap-3 rounded-md border p-2.5 cursor-pointer hover:bg-muted/50 transition-colors"

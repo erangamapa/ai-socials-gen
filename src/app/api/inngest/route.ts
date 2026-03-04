@@ -6,6 +6,10 @@ import {
   generateIllustrationJob,
   generateIllustrationImagesJob,
   expandIllustrationJob,
+  editIllustrationJob,
+  generatePictogramJob,
+  generatePictogramImagesJob,
+  analyzeVaultItemJob,
 } from "@/lib/inngest/functions";
 
 export const { GET, POST, PUT } = serve({
@@ -16,5 +20,9 @@ export const { GET, POST, PUT } = serve({
     generateIllustrationJob,
     generateIllustrationImagesJob,
     expandIllustrationJob,
+    editIllustrationJob,
+    generatePictogramJob,
+    generatePictogramImagesJob,
+    analyzeVaultItemJob,
   ],
 });

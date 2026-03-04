@@ -9,7 +9,7 @@ import { VariantCard } from "@/components/variant-card";
 import { SpecReview } from "@/components/spec-review";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ChevronDown, ChevronRight, BookOpen, RotateCcw, Loader2, CheckCheck, Ban } from "lucide-react";
+import { ChevronDown, ChevronRight, BookOpen, RotateCcw, Loader2, CheckCheck, Ban, Copy } from "lucide-react";
 
 export default function JobPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
@@ -54,24 +54,103 @@ export default function JobPage({ params }: { params: Promise<{ id: string }> })
         <div>
           <div className="flex items-center gap-3 mb-2">
             <h1 className="text-2xl font-bold">
-              {job.status === "planned" ? "Review Prompts" : job.mode === "illustration" ? "Illustration Review" : "Job Review"}
+              {job.status === "planned"
+                ? "Review Prompts"
+                : job.mode === "illustration"
+                ? "Illustration Review"
+                : job.mode === "pictogram"
+                ? "Pictogram Review"
+                : "Job Review"}
             </h1>
             <JobStatusBadge status={job.status} />
             {job.mode === "illustration" && (
               <Badge variant="secondary">Illustration</Badge>
             )}
+            {job.mode === "pictogram" && (
+              <Badge variant="secondary">Pictogram</Badge>
+            )}
           </div>
           <p className="text-muted-foreground text-sm max-w-xl">{job.description}</p>
-          {job.mode !== "illustration" && (
+          {job.mode !== "illustration" && job.mode !== "pictogram" && (
             <div className="mt-2">
               <ChannelBadges channels={job.channels} />
             </div>
           )}
-          {job.mode === "illustration" && job.visualType && (
+          {(job.mode === "illustration" || job.mode === "pictogram") && job.visualType && (
             <p className="mt-1 text-xs text-muted-foreground">Size: {job.visualType}</p>
           )}
+
+          {/* Subject references */}
+          {(() => {
+            const refs: Array<{ url: string; note: string }> =
+              job.subjectReferences && job.subjectReferences.length > 0
+                ? job.subjectReferences
+                : job.subjectReferenceUrl
+                ? [{ url: job.subjectReferenceUrl, note: job.subjectReferenceNote ?? "" }]
+                : [];
+            const angleRef = job.angleReference as { url: string; note: string } | null | undefined;
+            if (refs.length === 0 && !angleRef?.url) return null;
+
+            return (
+              <div className="mt-3 flex flex-wrap gap-2">
+                {refs.map((ref, i) => (
+                  <div
+                    key={i}
+                    className="flex items-start gap-2.5 rounded-lg bg-secondary/5 border border-secondary/20 p-2 max-w-[220px]"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={ref.url}
+                      alt={`Ref ${i + 1}`}
+                      className="w-10 h-10 rounded object-cover shrink-0 border border-secondary/30"
+                    />
+                    <div className="min-w-0">
+                      <p className="text-[10px] font-semibold text-secondary uppercase tracking-wide mb-0.5">
+                        {refs.length > 1 ? `Ref ${i + 1} of ${refs.length}` : "Subject Reference"}
+                      </p>
+                      {ref.note ? (
+                        <p className="text-xs text-muted-foreground italic line-clamp-2 leading-tight">
+                          &ldquo;{ref.note}&rdquo;
+                        </p>
+                      ) : (
+                        <p className="text-xs text-muted-foreground">Reference image</p>
+                      )}
+                    </div>
+                  </div>
+                ))}
+                {angleRef?.url && (
+                  <div className="flex items-start gap-2.5 rounded-lg bg-primary/5 border border-primary/20 p-2 max-w-[220px]">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={angleRef.url}
+                      alt="Angle reference"
+                      className="w-10 h-10 rounded object-cover shrink-0 border border-primary/30"
+                    />
+                    <div className="min-w-0">
+                      <p className="text-[10px] font-semibold text-primary uppercase tracking-wide mb-0.5">
+                        Angle Reference
+                      </p>
+                      {angleRef.note ? (
+                        <p className="text-xs text-muted-foreground italic line-clamp-2 leading-tight">
+                          &ldquo;{angleRef.note}&rdquo;
+                        </p>
+                      ) : (
+                        <p className="text-xs text-muted-foreground">Camera angle guide</p>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })()}
         </div>
         <div className="flex gap-2">
+          <Link href={`/create?fromJob=${job.id}`}>
+            <Button variant="outline" size="sm" className="gap-1.5">
+              <Copy className="h-3.5 w-3.5" />
+              Reuse Brief
+            </Button>
+          </Link>
           <Link href="/create">
             <Button variant="outline" size="sm">
               New Job
@@ -198,6 +277,7 @@ export default function JobPage({ params }: { params: Promise<{ id: string }> })
           jobId={job.id}
           variants={job.variants}
           jobMode={job.mode}
+          subjectReferences={job.subjectReferences}
           subjectReferenceUrl={job.subjectReferenceUrl}
           subjectReferenceNote={job.subjectReferenceNote}
           retrievalBundle={job.retrievalBundle}
@@ -242,7 +322,7 @@ export default function JobPage({ params }: { params: Promise<{ id: string }> })
                 </Button>
               </div>
             )}
-            <div className="flex flex-col gap-4 md:grid md:grid-cols-3">
+            <div className="flex flex-col gap-4 md:grid md:grid-cols-2">
               {job.variants.map((variant) => (
                 <VariantCard
                   key={variant.id}

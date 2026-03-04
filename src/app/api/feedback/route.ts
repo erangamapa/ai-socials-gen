@@ -2,6 +2,16 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { prisma } from "@/lib/db";
 import { reasonToRule, decayRules } from "@/lib/ai/promptBuilder";
+import { inngest } from "@/lib/inngest/client";
+import { clearVaultCache } from "@/lib/vault/vaultIndex";
+
+const CHANNEL_LABELS: Record<string, string> = {
+  twitter: "Twitter / X",
+  ig_feed: "IG Feed",
+  ig_story: "IG Story",
+  email_header: "Email",
+  illustration: "Illustration",
+};
 
 const FeedbackSchema = z.object({
   variantId: z.string().min(1),
@@ -146,37 +156,44 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    // ─── TEMPLATE STATS — track per-template effectiveness ─────────────────
+    // ─── TEMPLATE STATS — track per-template effectiveness for ALL channels ──
     const templateAssetIdForStats = spec?.templateAssetId as string | undefined;
     const variantArtifacts = await prisma.artifact.findMany({
       where: { variantId: input.variantId, kind: "final_png" },
       select: { channel: true },
-      take: 1,
     });
-    const channelForStats = variantArtifacts[0]?.channel ?? undefined;
-    if (templateAssetIdForStats && channelForStats) {
-      try {
-        await prisma.templateStats.upsert({
-          where: {
-            templateId_channel: { templateId: templateAssetIdForStats, channel: channelForStats },
-          },
-          create: {
-            templateId: templateAssetIdForStats,
-            channel: channelForStats,
-            jobCount: 1,
-            acceptCount: input.decision === "accept" ? 1 : 0,
-            rejectCount: input.decision === "reject" ? 1 : 0,
-          },
-          update: {
-            jobCount: { increment: 1 },
-            ...(input.decision === "accept" ? { acceptCount: { increment: 1 } } : {}),
-            ...(input.decision === "reject" ? { rejectCount: { increment: 1 } } : {}),
-            lastUsedAt: new Date(),
-          },
-        });
-      } catch (err) {
-        console.warn("[Feedback] Template stats update failed:", err);
+    // Collect unique channels (exclude special channels like "all", "illustration", "pictogram")
+    const statsChannels = [...new Set(
+      variantArtifacts
+        .map((a) => a.channel)
+        .filter((ch) => ch && !["all", "illustration", "pictogram"].includes(ch))
+    )];
+    if (templateAssetIdForStats && statsChannels.length > 0) {
+      for (const ch of statsChannels) {
+        try {
+          await prisma.templateStats.upsert({
+            where: {
+              templateId_channel: { templateId: templateAssetIdForStats, channel: ch },
+            },
+            create: {
+              templateId: templateAssetIdForStats,
+              channel: ch,
+              jobCount: 1,
+              acceptCount: input.decision === "accept" ? 1 : 0,
+              rejectCount: input.decision === "reject" ? 1 : 0,
+            },
+            update: {
+              jobCount: { increment: 1 },
+              ...(input.decision === "accept" ? { acceptCount: { increment: 1 } } : {}),
+              ...(input.decision === "reject" ? { rejectCount: { increment: 1 } } : {}),
+              lastUsedAt: new Date(),
+            },
+          });
+        } catch (err) {
+          console.warn(`[Feedback] Template stats update failed for channel ${ch}:`, err);
+        }
       }
+      console.log(`[Feedback] Updated template stats for ${statsChannels.length} channel(s): ${statsChannels.join(", ")}`);
     }
 
     // ─── REJECT ────────────────────────────────────────────────────────────────
@@ -300,7 +317,7 @@ export async function POST(req: NextRequest) {
       if (bgPrompt.length > 30) {
         const snippet = bgPrompt.slice(0, 120).replace(/\s+/g, " ").trim();
         const added = await upsertRule({
-          content: `Accepted illustration direction: ${snippet}...`,
+          content: `Accepted ${jobMode === "pictogram" ? "pictogram" : "illustration"} direction: ${snippet}...`,
           category: "style",
           source: "positive",
           priority: 2,
@@ -323,12 +340,15 @@ export async function POST(req: NextRequest) {
         if (added) rulesCreated.push(added);
       }
 
-      // 5. Template that worked well
+      // 5. Template that worked well (include all channels it was accepted for)
       const acceptedTemplateId = spec?.templateAssetId as string | undefined;
-      const channel = (spec as Record<string, unknown> | null)?.channel as string | undefined;
       if (acceptedTemplateId) {
+        // Use the channels derived from actual artifacts (same as what's tracked in TemplateStats)
+        const channelLabel = statsChannels.length > 0
+          ? ` for ${statsChannels.map((ch) => CHANNEL_LABELS[ch] || ch).join(" & ")}`
+          : "";
         const added = await upsertRule({
-          content: `Template ${acceptedTemplateId} works well${channel ? ` for ${channel}` : ""} — reuse it`,
+          content: `Template ${acceptedTemplateId} works well${channelLabel} — reuse it`,
           category: "do",
           source: "positive",
           priority: 2,
@@ -353,7 +373,59 @@ export async function POST(req: NextRequest) {
         if (added) rulesCreated.push(added);
       }
 
-      // 7. Increment usageScore for all accepted references
+      // 7. Illustration/pictogram-specific: solidBackground, perspective angle, subject prompt
+      if (jobMode === "illustration" || jobMode === "pictogram") {
+        const solidBg = typeof art?.solidBackground === "string" ? art.solidBackground : null;
+        const subjectPrompt = typeof art?.subjectPrompt === "string" ? art.subjectPrompt : null;
+
+        // Store the accepted solid background colour
+        if (solidBg) {
+          const added = await upsertRule({
+            content: `Accepted solid background colour: ${solidBg} — this dark background worked well`,
+            category: "style",
+            source: "positive",
+            priority: 2,
+            sourceJobId: jobId,
+            mode: jobMode,
+          });
+          if (added) rulesCreated.push(added);
+        }
+
+        // Extract and store camera angle / perspective (illustration-specific)
+        if (jobMode === "illustration") {
+          const bgPromptForAngle = typeof art?.backgroundPrompt === "string" ? art.backgroundPrompt : "";
+          const angleMatch = bgPromptForAngle.match(
+            /(worm[''']?s.?eye|low-angle|high-angle|foreshortened|dutch tilt|overhead|top-down|three-quarter|side.profile|front-on|isometric)/i
+          );
+          if (angleMatch) {
+            const added = await upsertRule({
+              content: `Camera angle that worked: "${angleMatch[1]}" — use this perspective type for similar briefs`,
+              category: "composition",
+              source: "positive",
+              priority: 2,
+              sourceJobId: jobId,
+              mode: jobMode,
+            });
+            if (added) rulesCreated.push(added);
+          }
+        }
+
+        // Store accepted subject description snippet
+        if (subjectPrompt && subjectPrompt.length > 15) {
+          const snippet = subjectPrompt.slice(0, 100).replace(/\s+/g, " ").trim();
+          const added = await upsertRule({
+            content: `Accepted subject description that worked well: "${snippet}..."`,
+            category: "style",
+            source: "positive",
+            priority: 1,
+            sourceJobId: jobId,
+            mode: jobMode,
+          });
+          if (added) rulesCreated.push(added);
+        }
+      }
+
+      // 8. Increment usageScore for all accepted references
       if (referencesUsed.length > 0) {
         for (const refId of referencesUsed) {
           await prisma.assetVaultItem.updateMany({
@@ -362,6 +434,59 @@ export async function POST(req: NextRequest) {
           });
         }
         console.log(`[Feedback] Incremented usageScore for ${referencesUsed.length} refs`);
+      }
+
+      // 9. Auto-ingest accepted illustration/pictogram into vault
+      if (jobMode === "illustration" || jobMode === "pictogram") {
+        try {
+          const artifacts = await prisma.artifact.findMany({
+            where: { variantId: input.variantId, kind: { in: ["edited_png", "expanded_png", "final_png"] } },
+            orderBy: { createdAt: "desc" },
+          });
+          const kindPriority: Record<string, number> = { edited_png: 0, expanded_png: 1, final_png: 2 };
+          artifacts.sort((a, b) => (kindPriority[a.kind] ?? 99) - (kindPriority[b.kind] ?? 99));
+          const bestArtifact = artifacts[0];
+
+          if (bestArtifact) {
+            const vaultItemId = `vault-gen-${bestArtifact.id}`;
+            const description = variant.job?.description ?? "";
+            const descSnippet = description.slice(0, 80).replace(/\s+/g, " ").trim() || "generated output";
+            const tags = [
+              jobMode,
+              ...description
+                .toLowerCase()
+                .replace(/[^a-z0-9\s]/g, "")
+                .split(/\s+/)
+                .filter((t) => t.length > 3)
+                .slice(0, 8),
+            ];
+
+            await prisma.assetVaultItem.upsert({
+              where: { id: vaultItemId },
+              create: {
+                id: vaultItemId,
+                type: jobMode,
+                pathOrUrl: bestArtifact.url,
+                tags,
+                channelHints: [],
+                notes: `Auto-ingested accepted ${jobMode}: ${descSnippet}`,
+                analysisStatus: "pending",
+              },
+              update: {
+                pathOrUrl: bestArtifact.url,
+                tags,
+                notes: `Auto-ingested accepted ${jobMode}: ${descSnippet}`,
+                analysisStatus: "pending",
+                analyzedAt: null,
+              },
+            });
+
+            await inngest.send({ name: "vault/analyze", data: { vaultItemId } });
+            console.log(`[Feedback] Auto-ingested ${jobMode} into vault: ${vaultItemId}`);
+          }
+        } catch (err) {
+          console.warn("[Feedback] Vault ingestion failed (non-fatal):", err);
+        }
       }
     }
 
@@ -489,26 +614,31 @@ export async function DELETE(req: NextRequest) {
       }
     }
 
-    // Revert template stats
+    // Revert template stats for ALL channels
     const templateAssetId = spec?.templateAssetId as string | undefined;
-    const variantArtifacts = await prisma.artifact.findMany({
+    const variantArtifactsForRevert = await prisma.artifact.findMany({
       where: { variantId: input.variantId, kind: "final_png" },
       select: { channel: true },
-      take: 1,
     });
-    const channel = variantArtifacts[0]?.channel;
-    if (templateAssetId && channel) {
-      try {
-        await prisma.templateStats.update({
-          where: { templateId_channel: { templateId: templateAssetId, channel } },
-          data: {
-            jobCount: { decrement: 1 },
-            ...(latest.decision === "accept" ? { acceptCount: { decrement: 1 } } : {}),
-            ...(latest.decision === "reject" ? { rejectCount: { decrement: 1 } } : {}),
-          },
-        });
-      } catch {
-        // Stats row may not exist
+    const revertChannels = [...new Set(
+      variantArtifactsForRevert
+        .map((a) => a.channel)
+        .filter((ch) => ch && !["all", "illustration", "pictogram"].includes(ch))
+    )];
+    if (templateAssetId && revertChannels.length > 0) {
+      for (const ch of revertChannels) {
+        try {
+          await prisma.templateStats.update({
+            where: { templateId_channel: { templateId: templateAssetId, channel: ch } },
+            data: {
+              jobCount: { decrement: 1 },
+              ...(latest.decision === "accept" ? { acceptCount: { decrement: 1 } } : {}),
+              ...(latest.decision === "reject" ? { rejectCount: { decrement: 1 } } : {}),
+            },
+          });
+        } catch {
+          // Stats row may not exist yet — safe to ignore
+        }
       }
     }
 
@@ -523,6 +653,23 @@ export async function DELETE(req: NextRequest) {
           createdAt: { gte: feedbackCreatedAt, lte: fiveSecondsAfter },
         },
       });
+    }
+
+    // Remove auto-ingested vault item if reconsidering an illustration/pictogram accept
+    if (latest.decision === "accept" && (jobMode === "illustration" || jobMode === "pictogram")) {
+      try {
+        const variantArtifacts = await prisma.artifact.findMany({
+          where: { variantId: input.variantId, kind: { in: ["edited_png", "expanded_png", "final_png"] } },
+          select: { id: true },
+        });
+        for (const art of variantArtifacts) {
+          await prisma.assetVaultItem.deleteMany({ where: { id: `vault-gen-${art.id}` } });
+        }
+        clearVaultCache();
+        console.log(`[Feedback] Removed vault items for reconsidered variant ${input.variantId}`);
+      } catch (err) {
+        console.warn("[Feedback] Vault cleanup failed (non-fatal):", err);
+      }
     }
 
     await prisma.feedback.delete({ where: { id: latest.id } });

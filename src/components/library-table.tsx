@@ -2,12 +2,13 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { JobStatusBadge } from "./job-status-badge";
 import { ChannelBadges } from "./channel-badges";
 import { Badge } from "@/components/ui/badge";
-import { Search } from "lucide-react";
+import { Search, Copy } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -41,6 +42,7 @@ interface LibraryJob {
   mode: string;
   subjectReferenceUrl: string | null;
   subjectReferenceNote: string | null;
+  subjectReferences: Array<{ url: string; note: string }> | null;
   createdAt: string;
   variants: LibraryVariant[];
 }
@@ -51,7 +53,9 @@ interface LibraryResponse {
   hasMore: boolean;
 }
 
-// ── Variant thumbnail strip ─────────────────────────────────────────────────
+// ── Variant thumbnails (2-variant row layout) ───────────────────────────────
+
+const VARIANT_COUNT = 2;
 
 function VariantThumbs({
   variants,
@@ -62,96 +66,81 @@ function VariantThumbs({
 }) {
   const hasImages = variants.some((v) => (v.artifacts ?? []).length > 0);
 
-  if (!hasImages) {
-    return (
-      <div className="flex gap-1.5 h-36 items-stretch">
-        {["A", "B", "C"].map((label) => (
-          <div
-            key={label}
-            className="flex-1 rounded-lg bg-muted flex flex-col items-center justify-center gap-1.5 border border-border/50"
-          >
-            <span className="text-xs font-semibold text-muted-foreground/60 uppercase tracking-widest">
-              {label}
-            </span>
-            {jobStatus === "generating" && (
-              <span className="w-3 h-3 rounded-full bg-secondary animate-pulse" />
-            )}
-          </div>
-        ))}
-      </div>
-    );
-  }
-
   return (
-    <div className="flex gap-1.5">
-      {variants.map((v) => {
-        const art = (v.artifacts ?? [])[0];
-        const decision = (v.feedback ?? [])[0]?.decision;
-        const ringClass =
-          decision === "accept"
-            ? "ring-2 ring-accent"
-            : decision === "reject"
-            ? "ring-2 ring-destructive/60"
-            : "";
-
-        return (
-          <div
-            key={v.id}
-            className={`flex-1 relative rounded-lg overflow-hidden border ${ringClass}`}
-          >
-            {art ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={art.url}
-                alt={`Variant ${v.label}`}
-                className="w-full h-full object-cover"
-                style={{
-                  aspectRatio: `${art.width}/${art.height}`,
-                  maxHeight: "160px",
-                }}
-              />
-            ) : (
-              <div className="h-36 bg-muted flex items-center justify-center">
-                <span className="text-xs text-muted-foreground/50 font-semibold">
+    <div className="flex gap-2 h-full">
+      {hasImages
+        ? variants.map((v) => {
+            const art = (v.artifacts ?? [])[0];
+            const decision = (v.feedback ?? [])[0]?.decision;
+            const isAccepted = decision === "accept";
+            const isRejected = decision === "reject";
+            return (
+              <div
+                key={v.id}
+                className={`relative rounded-lg overflow-hidden flex-1 min-w-0 min-h-[120px] border ${
+                  isAccepted
+                    ? "ring-2 ring-accent border-accent/40"
+                    : isRejected
+                    ? "ring-2 ring-destructive/60 border-destructive/30"
+                    : "border-border/40"
+                }`}
+              >
+                {art ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={art.url}
+                    alt={`Variant ${v.label}`}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-muted flex items-center justify-center">
+                    <span className="text-xs text-muted-foreground/50 font-semibold">{v.label}</span>
+                  </div>
+                )}
+                <span className="absolute bottom-1.5 left-1.5 text-[10px] font-bold px-1.5 py-0.5 rounded-md bg-black/60 text-white backdrop-blur-sm leading-none">
                   {v.label}
                 </span>
+                {isAccepted && (
+                  <span className="absolute top-1.5 right-1.5 text-[10px] font-bold w-5 h-5 rounded-full bg-accent text-accent-foreground flex items-center justify-center shadow-sm">
+                    ✓
+                  </span>
+                )}
+                {isRejected && (
+                  <span className="absolute top-1.5 right-1.5 text-[10px] font-bold w-5 h-5 rounded-full bg-destructive text-white flex items-center justify-center shadow-sm">
+                    ✗
+                  </span>
+                )}
               </div>
-            )}
-            {/* Variant label pill */}
-            <span className="absolute bottom-1.5 left-1.5 text-[10px] font-bold px-1.5 py-0.5 rounded bg-black/50 text-white backdrop-blur-sm">
-              {v.label}
-            </span>
-            {decision === "accept" && (
-              <span className="absolute top-1.5 right-1.5 text-[10px] font-bold px-1 py-0.5 rounded bg-accent text-accent-foreground">
-                ✓
-              </span>
-            )}
-            {decision === "reject" && (
-              <span className="absolute top-1.5 right-1.5 text-[10px] font-bold px-1 py-0.5 rounded bg-destructive text-white">
-                ✗
-              </span>
-            )}
-          </div>
-        );
-      })}
-      {/* Pad with empty slots if fewer than 3 variants */}
-      {Array.from({ length: Math.max(0, 3 - variants.length) }).map((_, i) => (
-        <div
-          key={`pad-${i}`}
-          className="flex-1 rounded-lg bg-muted/30 border border-dashed border-border/40 h-36"
-        />
-      ))}
+            );
+          })
+        : ["A", "B"].map((label) => (
+            <div
+              key={label}
+              className="flex-1 min-h-[120px] rounded-lg bg-muted/40 flex flex-col items-center justify-center gap-2 border border-border/40"
+            >
+              <span className="text-xs font-semibold text-muted-foreground/50 uppercase tracking-widest">{label}</span>
+              {jobStatus === "generating" && (
+                <span className="w-2.5 h-2.5 rounded-full bg-primary/50 animate-pulse" />
+              )}
+            </div>
+          ))}
+      {hasImages &&
+        Array.from({ length: Math.max(0, VARIANT_COUNT - variants.length) }).map((_, i) => (
+          <div
+            key={`pad-${i}`}
+            className="flex-1 min-h-[120px] rounded-lg bg-muted/20 border border-dashed border-border/30"
+          />
+        ))}
     </div>
   );
 }
 
-// ── Job card ─────────────────────────────────────────────────────────────────
-// Uses CSS subgrid so every card in the same row shares identical row heights:
-//   row-span-2 on the card + [grid-template-rows:subgrid] makes the browser
-//   size "info" and "thumbnails" rows consistently across the whole band.
+// ── Job row ───────────────────────────────────────────────────────────────────
 
 function JobCard({ job }: { job: LibraryJob }) {
+  const router = useRouter();
   const isIllustration = job.mode === "illustration";
+  const isPictogram = job.mode === "pictogram";
 
   const formatDate = (dateStr: string) =>
     new Date(dateStr).toLocaleDateString("en-US", {
@@ -161,66 +150,95 @@ function JobCard({ job }: { job: LibraryJob }) {
       minute: "2-digit",
     });
 
+  const refs: Array<{ url: string; note: string }> =
+    job.subjectReferences && job.subjectReferences.length > 0
+      ? job.subjectReferences
+      : job.subjectReferenceUrl
+      ? [{ url: job.subjectReferenceUrl, note: job.subjectReferenceNote ?? "" }]
+      : [];
+
   return (
-    <Link
-      href={`/jobs/${job.id}`}
-      className="row-span-2 grid grid-rows-subgrid rounded-xl border bg-card hover:border-primary/40 hover:shadow-sm transition-all cursor-pointer overflow-hidden group"
+    <div
+      onClick={() => router.push(`/jobs/${job.id}`)}
+      className="flex items-stretch gap-0 rounded-xl border border-border/60 bg-card hover:border-primary/50 hover:bg-card/80 hover:shadow-md transition-all duration-150 cursor-pointer overflow-hidden group"
     >
-      {/* ── Row 1: info ── */}
-      <div className="flex flex-col p-4 pb-3 gap-2.5">
-        {/* Badges + date */}
-        <div className="flex items-center gap-2 flex-wrap">
-          <JobStatusBadge status={job.status} />
-          {isIllustration ? (
-            <Badge variant="secondary" className="text-xs">
-              Illustration
-            </Badge>
-          ) : (
-            <ChannelBadges channels={job.channels} />
-          )}
-          {isIllustration && job.visualType && (
-            <span className="text-xs text-muted-foreground">{job.visualType}</span>
-          )}
-          <span className="text-xs text-muted-foreground ml-auto whitespace-nowrap">
+      {/* ── Col 1: Meta ── */}
+      <div className="flex flex-col gap-2 w-48 shrink-0 p-4 border-r border-border/40 justify-between">
+        <div className="flex flex-col gap-1.5">
+          <div className="flex items-center gap-1.5 flex-wrap">
+            <JobStatusBadge status={job.status} />
+          </div>
+          <div className="flex items-center gap-1.5 flex-wrap">
+            {isIllustration ? (
+              <Badge variant="secondary" className="text-xs">Illustration</Badge>
+            ) : isPictogram ? (
+              <Badge variant="secondary" className="text-xs">Pictogram</Badge>
+            ) : (
+              <ChannelBadges channels={job.channels} />
+            )}
+            {(isIllustration || isPictogram) && job.visualType && (
+              <span className="text-[11px] font-semibold text-muted-foreground bg-muted px-1.5 py-0.5 rounded">
+                {job.visualType}
+              </span>
+            )}
+          </div>
+        </div>
+        <div className="flex flex-col gap-2">
+          <span className="text-[11px] text-muted-foreground/60 tabular-nums">
             {formatDate(job.createdAt)}
           </span>
+          <Link
+            href={`/create?fromJob=${job.id}`}
+            onClick={(e) => e.stopPropagation()}
+            className="flex items-center gap-1 text-xs text-muted-foreground font-medium hover:text-foreground transition-colors rounded px-1.5 py-1 hover:bg-muted/60 w-fit"
+          >
+            <Copy className="h-3 w-3" />
+            Reuse
+          </Link>
         </div>
+      </div>
 
-        {/* Description */}
+      {/* ── Col 2: Brief + refs ── */}
+      <div className="flex-1 min-w-0 flex flex-col gap-3 p-4 justify-center">
         <p className="text-sm font-medium leading-snug line-clamp-2 text-foreground/90">
           {job.description}
         </p>
-
-        {/* Subject reference */}
-        {job.subjectReferenceUrl && (
-          <div className="flex items-start gap-2.5 rounded-lg bg-secondary/5 border border-secondary/20 p-2">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={job.subjectReferenceUrl}
-              alt="Reference"
-              className="w-9 h-9 rounded object-cover shrink-0 border border-secondary/30"
-            />
-            <div className="min-w-0">
-              <p className="text-[10px] font-semibold text-secondary uppercase tracking-wide mb-0.5">
-                Subject reference
-              </p>
-              {job.subjectReferenceNote ? (
-                <p className="text-xs text-muted-foreground italic line-clamp-2">
-                  &ldquo;{job.subjectReferenceNote}&rdquo;
-                </p>
-              ) : (
-                <p className="text-xs text-muted-foreground">Reference image attached</p>
-              )}
-            </div>
+        {refs.length > 0 && (
+          <div className="flex gap-2 flex-wrap">
+            {refs.map((ref, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-2 bg-secondary/8 border border-secondary/25 rounded-lg p-1.5 pr-2.5 max-w-[260px]"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={ref.url}
+                  alt={ref.note || `Ref ${i + 1}`}
+                  className="w-11 h-11 rounded-md object-cover border border-secondary/20 shrink-0"
+                />
+                <div className="min-w-0 flex flex-col gap-0.5">
+                  <span className="text-[9px] font-bold text-secondary/70 uppercase tracking-widest leading-none">
+                    {refs.length === 1 ? "Reference" : `Ref ${i + 1}`}
+                  </span>
+                  {ref.note ? (
+                    <p className="text-[11px] text-muted-foreground italic line-clamp-2 leading-snug">
+                      &ldquo;{ref.note}&rdquo;
+                    </p>
+                  ) : (
+                    <p className="text-[11px] text-muted-foreground/60">Image attached</p>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
         )}
       </div>
 
-      {/* ── Row 2: thumbnails ── */}
-      <div className="px-3 pb-3 pt-0">
+      {/* ── Col 3: Variant thumbnails ── */}
+      <div className="w-64 shrink-0 p-3 border-l border-border/40">
         <VariantThumbs variants={job.variants} jobStatus={job.status} />
       </div>
-    </Link>
+    </div>
   );
 }
 
@@ -300,6 +318,7 @@ export function LibraryTable() {
             <SelectItem value="all">All modes</SelectItem>
             <SelectItem value="socials">Socials</SelectItem>
             <SelectItem value="illustration">Illustration</SelectItem>
+            <SelectItem value="pictogram">Pictogram</SelectItem>
           </SelectContent>
         </Select>
 
@@ -347,26 +366,36 @@ export function LibraryTable() {
 
       {/* Loading skeleton */}
       {isLoading && jobs.length === 0 && (
-        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-          {Array.from({ length: 6 }).map((_, i) => (
+        <div className="flex flex-col gap-2.5">
+          {Array.from({ length: 5 }).map((_, i) => (
             <div
               key={i}
-              className="rounded-xl border bg-card overflow-hidden animate-pulse"
+              className="flex items-stretch rounded-xl border border-border/60 bg-card overflow-hidden animate-pulse"
             >
-              <div className="p-4 space-y-2">
-                <div className="h-4 bg-muted rounded w-1/2" />
-                <div className="h-4 bg-muted rounded w-3/4" />
-                <div className="h-3 bg-muted rounded w-2/3" />
+              <div className="w-48 shrink-0 p-4 border-r border-border/40 flex flex-col gap-2 justify-between">
+                <div className="space-y-2">
+                  <div className="h-5 bg-muted rounded w-16" />
+                  <div className="h-5 bg-muted rounded w-24" />
+                </div>
+                <div className="h-3 bg-muted rounded w-20" />
               </div>
-              <div className="h-36 bg-muted mx-3 mb-3 rounded-lg" />
+              <div className="flex-1 p-4 space-y-2.5">
+                <div className="h-4 bg-muted rounded w-full" />
+                <div className="h-4 bg-muted rounded w-4/5" />
+                <div className="h-12 bg-muted/50 rounded-lg w-56 mt-1" />
+              </div>
+              <div className="w-64 shrink-0 p-3 border-l border-border/40 flex gap-2">
+                <div className="flex-1 h-[120px] bg-muted rounded-lg" />
+                <div className="flex-1 h-[120px] bg-muted rounded-lg" />
+              </div>
             </div>
           ))}
         </div>
       )}
 
-      {/* Card grid — row-span-2 + subgrid aligns info / thumbnail rows across cards */}
+      {/* Job rows */}
       {jobs.length > 0 && (
-        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+        <div className="flex flex-col gap-3">
           {jobs.map((job) => (
             <JobCard key={job.id} job={job} />
           ))}

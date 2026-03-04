@@ -3,13 +3,28 @@ import { z } from "zod";
 import { prisma } from "@/lib/db";
 import { inngest } from "@/lib/inngest/client";
 
+const SubjectReferenceItem = z.object({
+  url: z.string().min(1),
+  note: z.string().max(2000).default(""),
+});
+
+const AngleReferenceItem = z.object({
+  url: z.string().min(1),
+  note: z.string().max(2000).default(""),
+});
+
 const CreateJobSchema = z.object({
   description: z.string().min(1).max(2000),
   channels: z.array(z.enum(["twitter", "ig_feed"])).default([]),
   visualType: z.enum(["background-only", "illustration", "pictogram", "1:1", "4:5", "16:9"]).default("background-only"),
-  mode: z.enum(["socials", "illustration"]).default("socials"),
+  mode: z.enum(["socials", "illustration", "pictogram"]).default("socials"),
+  // New: array of references (up to 4)
+  subjectReferences: z.array(SubjectReferenceItem).max(4).optional(),
+  // Legacy single-reference fields (kept for backward compat — "Use in Social" flow)
   subjectReferenceUrl: z.string().min(1).optional(),
   subjectReferenceNote: z.string().max(2000).optional(),
+  // Optional angle reference — image whose camera angle is replicated in all variants
+  angleReference: AngleReferenceItem.optional(),
 });
 
 export async function POST(req: NextRequest) {
@@ -25,14 +40,28 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // Normalise references: prefer new array field, fall back to legacy single fields
+    let subjectReferences: Array<{ url: string; note: string }> | null = null;
+    if (input.subjectReferences && input.subjectReferences.length > 0) {
+      subjectReferences = input.subjectReferences;
+    } else if (input.subjectReferenceUrl) {
+      subjectReferences = [{ url: input.subjectReferenceUrl, note: input.subjectReferenceNote ?? "" }];
+    }
+
+    // First reference also stored in legacy fields for any code that reads them directly
+    const legacyUrl = subjectReferences?.[0]?.url ?? null;
+    const legacyNote = subjectReferences?.[0]?.note ?? null;
+
     const job = await prisma.job.create({
       data: {
         description: input.description,
         channels: input.channels,
         visualType: input.visualType,
         mode: input.mode,
-        subjectReferenceUrl: input.subjectReferenceUrl ?? null,
-        subjectReferenceNote: input.subjectReferenceNote ?? null,
+        subjectReferenceUrl: legacyUrl,
+        subjectReferenceNote: legacyNote,
+        subjectReferences: subjectReferences ? JSON.parse(JSON.stringify(subjectReferences)) : null,
+        angleReference: input.angleReference ? JSON.parse(JSON.stringify(input.angleReference)) : null,
       },
     });
 
@@ -40,12 +69,13 @@ export async function POST(req: NextRequest) {
       data: [
         { jobId: job.id, label: "A", status: "pending" },
         { jobId: job.id, label: "B", status: "pending" },
-        { jobId: job.id, label: "C", status: "pending" },
       ],
     });
 
     const eventName = input.mode === "illustration"
       ? "job/generate-illustration"
+      : input.mode === "pictogram"
+      ? "job/generate-pictogram"
       : "job/generate";
 
     await inngest.send({
