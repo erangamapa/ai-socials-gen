@@ -72,6 +72,14 @@ async function loadRefBuffer(url: string): Promise<Buffer | null> {
   return null;
 }
 
+/** Resize an image to max 512px and compress as JPEG — keeps Claude payloads small and fast. */
+async function shrinkForClaude(buf: Buffer, maxPx = 512): Promise<Buffer> {
+  return sharp(buf)
+    .resize(maxPx, maxPx, { fit: "inside", withoutEnlargement: true })
+    .jpeg({ quality: 78 })
+    .toBuffer();
+}
+
 /**
  * Phase 1: Retrieve vault refs + run Claude planner.
  * Saves specs to each Variant, then marks job as "planned" and STOPS.
@@ -644,12 +652,13 @@ export const generateIllustrationJob = inngest.createFunction(
               if (fs.existsSync(fp)) vaultBuf = fs.readFileSync(fp);
             }
             if (vaultBuf) {
+              const smallBuf = await shrinkForClaude(vaultBuf);
               messageContent.push({
                 type: "image",
-                source: { type: "base64", media_type: "image/jpeg", data: vaultBuf.toString("base64") },
+                source: { type: "base64", media_type: "image/jpeg", data: smallBuf.toString("base64") },
               });
               vaultImagesLoaded.push(item.id);
-              console.log(`[IllustrationPlanner] Sending vault style ref to Claude: ${item.id} (${vaultBuf.length} bytes)`);
+              console.log(`[IllustrationPlanner] Sending vault style ref to Claude: ${item.id} (${smallBuf.length} bytes, was ${vaultBuf.length})`);
             }
           } catch {
             console.warn(`[IllustrationPlanner] Could not load vault image for Claude: ${item.id}`);
@@ -660,9 +669,10 @@ export const generateIllustrationJob = inngest.createFunction(
         for (let ri = 0; ri < subjectRefs.length; ri++) {
           const buf = await loadRefBuffer(subjectRefs[ri].url);
           if (buf) {
+            const smallBuf = await shrinkForClaude(buf);
             messageContent.push({
               type: "image",
-              source: { type: "base64", media_type: "image/jpeg", data: buf.toString("base64") },
+              source: { type: "base64", media_type: "image/jpeg", data: smallBuf.toString("base64") },
             });
           }
         }
@@ -671,11 +681,12 @@ export const generateIllustrationJob = inngest.createFunction(
         if (angleRef?.url) {
           const angleRefBuffer = await loadRefBuffer(angleRef.url);
           if (angleRefBuffer) {
+            const smallAngleBuf = await shrinkForClaude(angleRefBuffer);
             messageContent.push({
               type: "image",
-              source: { type: "base64", media_type: "image/jpeg", data: angleRefBuffer.toString("base64") },
+              source: { type: "base64", media_type: "image/jpeg", data: smallAngleBuf.toString("base64") },
             });
-            console.log(`[IllustrationPlanner] Sending angle reference image to Claude (${angleRefBuffer.length} bytes)`);
+            console.log(`[IllustrationPlanner] Sending angle reference image to Claude (${smallAngleBuf.length} bytes, was ${angleRefBuffer.length})`);
           } else {
             console.warn(`[IllustrationPlanner] Could not load angle reference image: ${angleRef.url}`);
           }

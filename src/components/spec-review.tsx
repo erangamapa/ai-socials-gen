@@ -9,6 +9,18 @@ import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { VariantData } from "@/hooks/use-poll-job";
 
+/** Resolve a vault pathOrUrl to a browser-usable src:
+ *  - Full HTTP URLs (Blob storage) → use directly
+ *  - Absolute paths like /uploads/... → already publicly accessible, use directly
+ *  - Relative local paths like assets/vault/... → proxy via /api/vault/asset
+ */
+function vaultAssetSrc(pathOrUrl: string | null | undefined): string | null {
+  if (!pathOrUrl) return null;
+  if (pathOrUrl.startsWith("http://") || pathOrUrl.startsWith("https://")) return pathOrUrl;
+  if (pathOrUrl.startsWith("/")) return pathOrUrl;
+  return `/api/vault/asset?path=${encodeURIComponent(pathOrUrl)}`;
+}
+
 /** Thumbnail that shows a styled placeholder instead of disappearing on load failure */
 function VaultThumb({ src, alt, label, size = "md" }: { src: string | null; alt: string; label: string; size?: "sm" | "md" }) {
   const [failed, setFailed] = useState(false);
@@ -305,9 +317,7 @@ export function SpecReview({ jobId, variants, jobMode, subjectReferences, subjec
             </p>
             <div className="flex flex-wrap gap-2">
               {items.map((item) => {
-                const src = item.pathOrUrl
-                  ? `/api/vault/asset?path=${encodeURIComponent(item.pathOrUrl)}`
-                  : null;
+                const src = vaultAssetSrc(item.pathOrUrl);
                 const isSelected = allSelectedIds.has(item.id);
                 return (
                   <div
@@ -367,7 +377,7 @@ export function SpecReview({ jobId, variants, jobMode, subjectReferences, subjec
               if (isIllustrationMode && refs.length > 0) {
                 // Illustration mode: interactive ref management (remove/add from retrieval bundle)
                 const styleRefs = specs[idx].referencesUsed.filter((r) => r !== templateId);
-                const refPaths = (raw?.referencePaths as Record<string, string>) ?? {};
+                const plannerPaths = (raw?.referencePaths as Record<string, string>) ?? {};
 
                 // Available refs from the retrieval bundle not yet selected
                 const bundle = retrievalBundle as RetrievalBundle | null;
@@ -376,6 +386,12 @@ export function SpecReview({ jobId, variants, jobMode, subjectReferences, subjec
                   (item) => !specs[idx].referencesUsed.includes(item.id)
                 );
 
+                // Merge planner paths with bundle paths so newly-added refs also resolve
+                const allPaths: Record<string, string> = { ...plannerPaths };
+                for (const bi of bundleItems) {
+                  if (bi.pathOrUrl && !allPaths[bi.id]) allPaths[bi.id] = bi.pathOrUrl;
+                }
+
                 return (
                   <div className="space-y-1.5">
                     <Label className="text-xs font-medium text-muted-foreground">
@@ -383,10 +399,7 @@ export function SpecReview({ jobId, variants, jobMode, subjectReferences, subjec
                     </Label>
                     <div className="flex flex-wrap gap-2">
                       {styleRefs.map((refId, ri) => {
-                        const assetPath = refPaths[refId];
-                        const src = assetPath
-                          ? `/api/vault/asset?path=${encodeURIComponent(assetPath)}`
-                          : null;
+                        const src = vaultAssetSrc(allPaths[refId]);
                         return (
                           <div key={refId} className="relative group">
                             <VaultThumb src={src} alt={`Style ref ${ri + 1}`} label={`Ref ${ri + 1}`} size="sm" />
@@ -406,9 +419,7 @@ export function SpecReview({ jobId, variants, jobMode, subjectReferences, subjec
 
                       {/* Add buttons for available refs from the bundle */}
                       {availableToAdd.slice(0, 4).map((item) => {
-                        const src = item.pathOrUrl
-                          ? `/api/vault/asset?path=${encodeURIComponent(item.pathOrUrl)}`
-                          : null;
+                        const src = vaultAssetSrc(item.pathOrUrl);
                         return (
                           <button
                             key={item.id}

@@ -138,6 +138,11 @@ function scoreItem(
     }
   }
 
+  const isGenerated = item.id.startsWith("vault-gen-");
+
+  // Seed items get a baseline advantage — the curated vault is the primary style anchor
+  if (!isGenerated) score += 2;
+
   if (analysisData) {
     for (const qt of expandedTokens) {
       for (const subject of analysisData.subjects) {
@@ -149,9 +154,13 @@ function scoreItem(
       if (analysisData.styleNotes.includes(qt)) score += 1;
     }
 
-    // Global usageScore bonus (capped ±5)
-    const usageBonus = Math.min(Math.max(analysisData.usageScore, -5), 5);
-    score += usageBonus;
+    // usageScore bonus is gated behind keyword relevance: an off-topic generated item
+    // must have at least some keyword match before its acceptance history helps it rank.
+    // Cap reduced to ±3 so it acts as a tiebreaker, not a primary ranking signal.
+    if (score > 0) {
+      const usageBonus = Math.min(Math.max(analysisData.usageScore, -3), 3);
+      score += usageBonus;
+    }
 
     // Per-context score bonus: if query tokens match context keys, apply their scores
     if (analysisData.contextScores && Object.keys(analysisData.contextScores).length > 0) {
@@ -165,11 +174,12 @@ function scoreItem(
       score += contextBonus;
     }
 
-    // Semantic similarity bonus (60% weight relative to a max keyword score of ~10)
+    // Semantic similarity bonus — generated items are capped at half the seed bonus
+    // so they need stronger keyword relevance to compete with seed items.
     if (queryEmbedding && analysisData.embedding) {
       const sim = cosineSimilarity(queryEmbedding, analysisData.embedding);
-      // Cosine similarity is in [-1, 1]; scale to ~0-6 bonus range
-      score += Math.max(sim * 6, 0);
+      const maxBonus = isGenerated ? 3 : 6;
+      score += Math.max(sim * maxBonus, 0);
     }
   }
 
