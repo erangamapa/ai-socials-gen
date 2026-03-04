@@ -1,0 +1,30 @@
+{
+  "copy": {
+    "cta": "Claim Exclusive",
+    "subhead": "Exclusive brand variant",
+    "headline": "CB Asimov",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "premium, futuristic, dynamic, distinctive",
+    "style": "3d-icon",
+    "palette": [
+      "#8D52DA",
+      "#FF6B2F",
+      "#FFFFFF",
+      "#C47EFF"
+    ],
+    "solidBackground": "#F8F5FC",
+    "backgroundPrompt": "A bold 3D isometric AK-47 featuring CB's signature purple (#8D52DA) as the dominant body color with vibrant orange (#FF6B2F) Asimov geometric patterns and bright white accent highlights. The rifle is positioned at a dynamic 25-degree tilt with slight perspective rotation to create visual impact while maintaining recognizability. The geometric Asimov skin pattern consists of angular white and orange segments that create a futuristic overlay across the barrel, stock, and receiver areas. The 3D form uses premium matte rendering with soft gradient fills and consistent top-left lighting that creates dimensional depth through subtle shadows on the right and bottom edges. Clean beveled surfaces and smooth polygon geometry maintain the high-quality game-asset appearance. The geometric pattern overlay features sharp triangular and polygonal shapes that appear embossed into the weapon surface, creating additional visual interest. Purple-to-lighter-purple gradient fills add sophisticated depth while orange pattern segments provide striking contrast. Soft drop shadow with minimal opacity offset grounds the icon professionally.\n\nFollow vault-pictograms-others' purple gradient 3D approach for the rifle body, incorporating vault-pictograms-competitions-1's orange accent treatment for the geometric Asimov pattern segments",
+    "referenceInstructions": "Follow vault-pictograms-others' purple gradient 3D approach for the rifle body, incorporating vault-pictograms-competitions-1's orange accent treatment for the geometric Asimov pattern segments"
+  },
+  "variantLabel": "C",
+  "referencePaths": {
+    "vault-pictograms-others": "assets/vault/pictograms/Others.png",
+    "vault-pictograms-competitions-1": "assets/vault/pictograms/Competitions-1.png"
+  },
+  "referencesUsed": [
+    "vault-pictograms-others",
+    "vault-pictograms-competitions-1"
+  ]
+}

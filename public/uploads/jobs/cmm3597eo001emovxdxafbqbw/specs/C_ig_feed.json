@@ -1,0 +1,66 @@
+{
+  "channel": "ig_feed",
+  "variantLabel": "C",
+  "templateId": "tpl-centered-hero",
+  "copy": {
+    "cta": "Sign Up",
+    "disclaimer": "18+ | Weekend only | Gamble responsibly",
+    "headline": "FIRST DEPOSIT DOUBLES",
+    "subhead": "Weekend special: 100% BTC bonus for new players"
+  },
+  "artDirection": {
+    "backgroundPrompt": "",
+    "composition": "center overlay promo style with dramatic contrast and clean focus areas",
+    "mood": "bold promotional energy with crypto confidence",
+    "palette": [
+      "#2D4BE6",
+      "#DFFD51",
+      "#FF6B2F",
+      "#141114",
+      "#FFFFFF"
+    ],
+    "style": "",
+    "visualHierarchy": "deep blue background with bright yellow promo highlights, orange accent elements, white text on dark areas"
+  },
+  "textOverlays": [
+    {
+      "text": "FIRST DEPOSIT DOUBLES",
+      "x": 162,
+      "y": 405,
+      "width": 756,
+      "fontSize": 64,
+      "color": "#FFFFFF",
+      "fontWeight": "bold",
+      "textAnchor": "middle"
+    },
+    {
+      "text": "Weekend special: 100% BTC bonus for new players",
+      "x": 216,
+      "y": 702,
+      "width": 648,
+      "fontSize": 28,
+      "color": "#E0E0E0",
+      "textAnchor": "middle"
+    },
+    {
+      "text": "Sign Up",
+      "x": 324,
+      "y": 918,
+      "width": 432,
+      "fontSize": 36,
+      "color": "#FF6B2F",
+      "fontWeight": "bold",
+      "textAnchor": "middle"
+    }
+  ],
+  "notchOverlay": {
+    "x": 43,
+    "y": 54,
+    "width": 130,
+    "height": 108
+  },
+  "qaResult": {
+    "passed": true,
+    "issues": []
+  }
+}

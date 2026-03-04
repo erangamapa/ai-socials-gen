@@ -1,0 +1,29 @@
+{
+  "copy": {
+    "cta": "FIGHT ON",
+    "subhead": "Split-second timing, crushing power",
+    "headline": "BEAR FORCE CHAMPION",
+    "disclaimer": ""
+  },
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "Composite the pre-styled bear warrior against the warm orange and brown geometric template, positioning the illustration center-bottom to emerge powerfully from the lower curved shapes while preserving the upper portion for text placement. Scale the bear to 80% frame height to create overwhelming presence and championship dominance energy. The bear's flying kick pose should break dramatically above the template's curved geometric elements, creating visual tension between the structured background and explosive athletic action. Apply bold shadowing effects using the template's darker brown tones (#8B4513) to create depth and anchor the bear within the composition. Enhance the martial arts theme with angular geometric accent shapes around the bear's extended limbs, rendered in contrasting colors that pop against the warm template palette. The bear's gi pants should flow naturally with motion lines suggesting fabric movement during the devastating kick execution. Add subtle glow effects around the bear's hands and feet using bright highlights to emphasize the precision and power of elite competition. The composition maintains the template's sophisticated curved geometry while the bear's muscular frame commands attention through dramatic foreshortening and low-angle perspective. Ensure the illustration's bold vector styling with solid color fills and clean edges integrates seamlessly with the template's premium aesthetic, creating a unified championship moment that embodies 'We're All In' energy.\n\nvault-illustrations-illustration-09: Reference the protective powerful presence and clean cartoon-like proportions with bold color treatments\nvault-illustrations-illustration-03: Use the bold graphic vector style with flat colors, minimal shading, and strong geometric athletic forms\nvault-illustrations-illustration-01: Borrow the dramatic shadow casting technique and realistic proportions for powerful athletic presence",
+    "referenceInstructions": "vault-illustrations-illustration-09: Reference the protective powerful presence and clean cartoon-like proportions with bold color treatments\nvault-illustrations-illustration-03: Use the bold graphic vector style with flat colors, minimal shading, and strong geometric athletic forms\nvault-illustrations-illustration-01: Borrow the dramatic shadow casting technique and realistic proportions for powerful athletic presence"
+  },
+  "variantLabel": "C",
+  "referencesUsed": [
+    "vault-illustrations-illustration-09",
+    "vault-illustrations-illustration-03",
+    "vault-illustrations-illustration-01"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-02",
+  "backgroundPrompt": "Composite the pre-styled bear warrior against the warm orange and brown geometric template, positioning the illustration center-bottom to emerge powerfully from the lower curved shapes while preserving the upper portion for text placement. Scale the bear to 80% frame height to create overwhelming presence and championship dominance energy. The bear's flying kick pose should break dramatically above the template's curved geometric elements, creating visual tension between the structured background and explosive athletic action. Apply bold shadowing effects using the template's darker brown tones (#8B4513) to create depth and anchor the bear within the composition. Enhance the martial arts theme with angular geometric accent shapes around the bear's extended limbs, rendered in contrasting colors that pop against the warm template palette. The bear's gi pants should flow naturally with motion lines suggesting fabric movement during the devastating kick execution. Add subtle glow effects around the bear's hands and feet using bright highlights to emphasize the precision and power of elite competition. The composition maintains the template's sophisticated curved geometry while the bear's muscular frame commands attention through dramatic foreshortening and low-angle perspective. Ensure the illustration's bold vector styling with solid color fills and clean edges integrates seamlessly with the template's premium aesthetic, creating a unified championship moment that embodies 'We're All In' energy.",
+  "referenceInstructions": {
+    "vault-illustrations-illustration-01": "Borrow the dramatic shadow casting technique and realistic proportions for powerful athletic presence",
+    "vault-illustrations-illustration-03": "Use the bold graphic vector style with flat colors, minimal shading, and strong geometric athletic forms",
+    "vault-illustrations-illustration-09": "Reference the protective powerful presence and clean cartoon-like proportions with bold color treatments"
+  }
+}

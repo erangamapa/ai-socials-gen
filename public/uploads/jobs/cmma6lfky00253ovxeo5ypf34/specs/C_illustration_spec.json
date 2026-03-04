@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive heroic dominance",
+    "style": "flat-vector",
+    "palette": [
+      "#2D4BE6",
+      "#FF6B2F",
+      "#DFFD51",
+      "#8D52DA",
+      "#1A1A1A"
+    ],
+    "solidBackground": "#8D52DA",
+    "backgroundPrompt": "Dutch tilt low-angle view of a bold flat-vector fighter character inspired by Zeb Powell's distinctive competitive spirit, captured with the camera tilted 25 degrees and positioned below knee height as he assumes an explosive combat stance. The tilted perspective creates visual tension and instability, amplifying the raw intensity of his athletic presence through the off-kilter framing. His powerful physique is rendered in hard-edged geometric shapes with bold flat color treatment, translating his recognizable features into minimal forms while maintaining his commanding energy. The fighter's face appears as simplified flat planes with bold shadow mask, his fierce determination expressed through dynamic body language and aggressive positioning rather than detailed facial features. Extreme foreshortening emphasizes his leading shoulder and extended guard arm, making them appear dramatically oversized while his stance leg and rear torso recede behind the perspective plane. His muscular build alternates between vibrant blue primary fills and deep orange shadow shapes that define his athletic contours through flat hard-edged treatment. Kinetic yellow energy accents highlight key anatomical stress points and suggest explosive movement potential. Angular motion shapes and geometric speed line elements integrate with his form, creating the impression of barely contained power ready to explode into action. The tilted composition combined with the low viewpoint makes him appear larger-than-life and ready to dominate any opponent. Flat vector illustration style with bold solid color fills, hard edges, no gradients, no 3D rendering, emphasizing maximum visual impact through perspective distortion. Clean solid purple background with no shadows, effects, or decorative elements behind the character.\n\nvault-illustrations-illustration-14 provides the foundation for athletic figure treatment with clean vector forms and minimal shadow work; vault-illustrations-illustration-52 informs the dramatic perspective approach and bold color application against rich background tones",
+    "referenceInstructions": "vault-illustrations-illustration-14 provides the foundation for athletic figure treatment with clean vector forms and minimal shadow work; vault-illustrations-illustration-52 informs the dramatic perspective approach and bold color application against rich background tones"
+  },
+  "variantLabel": "C",
+  "referencePaths": {
+    "vault-illustrations-illustration-14": "assets/vault/illustrations/illustration-14.png",
+    "vault-illustrations-illustration-52": "assets/vault/illustrations/illustration-52.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-14",
+    "vault-illustrations-illustration-52"
+  ]
+}

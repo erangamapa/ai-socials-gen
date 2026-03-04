@@ -1,0 +1,28 @@
+{
+  "copy": {
+    "cta": "Unleash Your Bets",
+    "subhead": "Explosive wins await on crypto's best sportsbook",
+    "headline": "Break Every Limit",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive comic book energy",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#DFFD51",
+      "#8D52DA",
+      "#6B2DA6",
+      "#FFFFFF"
+    ],
+    "solidBackground": "#6B2DA6",
+    "backgroundPrompt": "An explosive basketball dunk scene captured from an extreme worm's-eye view with dramatic fish-eye lens distortion, rendered in bold flat-vector style. The basketball player appears to be floating directly above the viewer, their body stretched across the frame in a powerful superman-style slam pose. Both arms extend toward the basketball hoop, gripping a glowing orange basketball (#FF6B2F) that seems to pulse with energy. The player wears a striking uniform design featuring bold geometric patterns in alternating orange and purple stripes. Their shorts and jersey create strong angular shapes that complement the dramatic perspective. The athlete's face shows pure determination, rendered with simplified but expressive features in the flat-vector style. Exaggerated proportions make their hands and arms appear more powerful, while their legs trail behind in perfect athletic form. Sharp angular shadows in bright yellow (#DFFD51) radiate outward from beneath the player like comic book action lines, creating explosive energy. The basketball hoop appears in extreme perspective at the frame's edge, rendered as simple white geometric shapes. Bold color blocking uses only solid fills - no gradients or soft edges. The player's sneakers are rendered in crisp white with orange laces and purple sole details. The entire dynamic composition sits centered against a solid rich purple background (#6B2DA6) that makes the yellow shadow rays and orange basketball create maximum visual impact. The illustration maintains clean separation from background for perfect cutout potential.\n\nUse extreme perspective distortion and exaggerated proportions for maximum impact. Apply comic book-style action elements and bold contrasting colors with sharp edges only.",
+    "referenceInstructions": "Use extreme perspective distortion and exaggerated proportions for maximum impact. Apply comic book-style action elements and bold contrasting colors with sharp edges only."
+  },
+  "variantLabel": "C",
+  "referencesUsed": [
+    "vault-comic-014",
+    "vault-extreme-009",
+    "vault-dynamic-028"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "editorial tension, experimental energy, premium dynamics",
+    "style": "flat-vector",
+    "palette": [
+      "#DFFD51",
+      "#8D52DA",
+      "#FF6B2F",
+      "#2D4BE6",
+      "#0F1032"
+    ],
+    "solidBackground": "#0F1032",
+    "backgroundPrompt": "Dutch tilt composition rotated 25 degrees with extreme low-angle perspective capturing Dakota Ditcheva as tennis player in mid-serve with maximum editorial tension and instability. The tilted camera angle combined with worm's-eye viewpoint creates premium sports photography energy as her fighter's athletic build translates into tennis dominance. Her muscular frame stretched in full serve extension with racquet arcing overhead in dramatic diagonal sweep across the tilted frame. The angle emphasizes her powerful legs and core rotation with foreshortened perspective making her lower body appear massive while her serving arm extends into the upper corner. She wears bold yellow #DFFD51 tennis dress with electric purple #8D52DA racing stripes, the vibrant colors creating maximum visual impact against deep background. Her face rendered as simplified flat mask with determination implied through explosive body positioning rather than facial detail. Motion blur shapes and speed lines follow the racquet's diagonal path across the tilted composition, emphasizing the rotational power of her serve. Stadium lights streak diagonally due to camera tilt, creating dynamic background energy without actual background elements. Flat vector illustration with experimental bold color palette, hard-edged solid fills throughout, no gradients on character, no 3D rendering effects. Orange #FF6B2F highlights on racquet grip and shoe details. Full athletic silhouette contained within tilted frame boundaries with breathing room, character cleanly separated from solid color background for professional cutout application with no drop shadows or ambient lighting effects.\n\nvault-illustrations-illustration-05 provides clean vector rendering technique and dynamic running pose structure. vault-illustrations-illustration-10 guides minimalist shadow approach and athletic motion capture. vault-illustrations-illustration-52 informs dramatic lighting effects and premium visual energy without background complexity.",
+    "referenceInstructions": "vault-illustrations-illustration-05 provides clean vector rendering technique and dynamic running pose structure. vault-illustrations-illustration-10 guides minimalist shadow approach and athletic motion capture. vault-illustrations-illustration-52 informs dramatic lighting effects and premium visual energy without background complexity."
+  },
+  "variantLabel": "C",
+  "referencePaths": {
+    "vault-illustrations-illustration-05": "assets/vault/illustrations/illustration-05.png",
+    "vault-illustrations-illustration-10": "assets/vault/illustrations/illustration-10.png",
+    "vault-illustrations-illustration-52": "assets/vault/illustrations/illustration-52.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-05",
+    "vault-illustrations-illustration-10",
+    "vault-illustrations-illustration-52"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "copy": {
+    "cta": "Feel the Intensity",
+    "subhead": "The art of submission mastery",
+    "headline": "Crushing Control",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive force, crushing submission",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#8D52DA",
+      "#2D4BE6",
+      "#DFFD51"
+    ],
+    "solidBackground": "#0F1B3C",
+    "backgroundPrompt": "Foreshortened lunge perspective with Khabib Nurmagomedov's powerful right arm thrusting toward camera as he secures the rear naked choke, his forearm and bicep appearing massive in the extreme foreground while his torso recedes behind. The choking arm dominates the frame at 2.5x normal scale due to dramatic foreshortening, showing defined flat-colored muscle shapes and the crushing grip around McGregor's neck. Khabib's bearded face appears behind the arm, rendered with minimal flat features and bold shadow mask conveying fierce concentration. His characteristic dark curly hair styled as geometric flat shapes. McGregor positioned beneath and behind, compressed by the perspective, wearing dark blue MMA shorts while Khabib sports deep purple with orange trim. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style. Explosive yellow accent lines burst from the submission point, radiating outward to show applied force. Kinetic motion blur shapes in orange and purple create energy trails around both fighters, suggesting the violent takedown sequence. All shading consists of flat hard-edged shadow shapes on the characters only, never projected onto background. Full bodies contained within frame with generous breathing room. Rich dark blue solid background with no drop shadows, no glows, no halo effects - completely clean for professional cutout use.\n\nApply bold graphic sports illustration style with extreme foreshortening and flat color treatment for premium athletic energy",
+    "referenceInstructions": "Apply bold graphic sports illustration style with extreme foreshortening and flat color treatment for premium athletic energy"
+  },
+  "variantLabel": "B",
+  "referencePaths": {},
+  "referencesUsed": [
+    "flat-vector-003",
+    "flat-vector-004"
+  ]
+}

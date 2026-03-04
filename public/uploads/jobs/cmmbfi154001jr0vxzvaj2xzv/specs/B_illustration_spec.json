@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "cta": "Place Bet",
+    "subhead": "Technical Precision Meets Raw Power",
+    "headline": "Impact Imminent",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Synchronized violence — two masters perfecting destruction in perfect unison",
+    "style": "flat-vector",
+    "palette": [
+      "#DFFD51",
+      "#FF6B2F",
+      "#2D4BE6",
+      "#8D52DA",
+      "#300931"
+    ],
+    "solidBackground": "#2D4BE6",
+    "backgroundPrompt": "Eye-level side-profile angle capturing the explosive moment both MMA fighters simultaneously launch forward into striking range, bodies rotating into power generation. The left fighter (muscular Black athlete with beard and championship belt) drives a devastating right cross toward his opponent, his entire torso twisted for maximum impact, left hand protecting his chin in perfect defensive form. The right fighter (athletic mixed-race buzz-cut athlete with gold belt) simultaneously fires a lightning-fast left hook, his body coiled like a spring releasing energy. Both fighters' feet are planted in perfect striking stance, weight transferred through their legs into devastating punches crossing paths in mid-air. Championship belts swing with the rotational motion, rendered in flat metallic gold with sharp geometric highlights. MMA shorts ripple with movement - black with orange trim versus navy with lime accents. Hand wraps stretched tight across knuckles, cream-colored flat fills with bold shadowing. Muscles defined through angular geometric shadow shapes across shoulders, arms, and core - no gradients, pure flat color treatment. Facial features remain simplified geometric forms, but body language screams controlled violence and technical precision. Motion lines suggest the speed and power of simultaneous strikes. Clean flat vector illustration emphasizing the split-second moment when technique meets raw power, premium MMA aesthetic with bold color blocking and hard-edged shadows defining every muscle group.\n\nApply vault-gen-cmmbe6m9p000ar0vx05l5vmqh motion line technique and dynamic action pose structure. Use vault-illustrations-illustration-01 gradient shading approach adapted to flat color blocks for muscle definition.",
+    "referenceInstructions": "Apply vault-gen-cmmbe6m9p000ar0vx05l5vmqh motion line technique and dynamic action pose structure. Use vault-illustrations-illustration-01 gradient shading approach adapted to flat color blocks for muscle definition."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-gen-cmmbe6m9p000ar0vx05l5vmqh": "/uploads/jobs/cmmbdu2k30005r0vxsiun56zz/illustrations/B_illustration.png",
+    "vault-illustrations-illustration-01": "assets/vault/illustrations/illustration-01.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbe6m9p000ar0vx05l5vmqh",
+    "vault-illustrations-illustration-01"
+  ]
+}

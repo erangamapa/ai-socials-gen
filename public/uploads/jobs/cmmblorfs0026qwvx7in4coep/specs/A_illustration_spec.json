@@ -1,0 +1,39 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "specEdits": {
+    "solidBackground": {
+      "to": "#090c34",
+      "from": "#300931"
+    }
+  },
+  "artDirection": {
+    "mood": "Apex predator stillness — the microsecond before physics bends to mastery",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#300931",
+      "#8D52DA",
+      "#DFFD51"
+    ],
+    "solidBackground": "#090c34",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view of a rugged angler from the reference photo, positioned as a towering figure of patience and precision. The fisherman character displays a weathered, experienced face with distinctive features from the photo, wearing his characteristic fishing attire - olive green vest over casual clothing, weathered baseball cap casting dramatic shadows across his features. His body is positioned in the decisive moment just before the cast, fishing rod held high above his head with both hands gripping the handle, creating massive foreshortening where his arms and the rod dominate the upper portion of the frame while his boots and lower legs appear smaller in the background. The angler's stance shows one foot planted firmly forward, weight distributed for maximum casting power, muscles defined through his fishing gear as he channels pure focus into the line's trajectory. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, featuring simplified flat facial features with bold shadow mask emphasizing his concentrated expression implied through powerful body language rather than detailed facial detail. The composition captures tactical supremacy frozen at the breach point of the perfect cast, with flat hard-edged shadow shapes exclusively on the character's body and clothing, creating dramatic contrast against the solid #300931 background. Color treatment uses #FF6B2F for the fishing vest and key gear elements, #2D4BE6 for clothing accents, with #8D52DA highlights on the fishing rod and tackle. Full body contained within frame with generous breathing room, no drop shadows or glows behind the character, suitable for clean cutout use.",
+    "referenceInstructions": "vault-gen-cmmbigrrn000mqwvx8odnqrfd provides tactical angular forms and sharp geometric shadows for the angler's powerful stance; vault-gen-cmmbg52of0028r0vxbcrlz5wx informs the clean vector motion lines and dramatic body positioning; vault-illustrations-illustration-03 guides the bold flat color treatment and minimal shading approach for athletic wear"
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-gen-cmmbg52of0028r0vxbcrlz5wx": "/uploads/jobs/cmmbg30pz0023r0vxxejz7eyf/illustrations/B_illustration.png",
+    "vault-gen-cmmbigrrn000mqwvx8odnqrfd": "/uploads/jobs/cmmbifhno000jqwvx06rynfe6/illustrations/A_illustration.png",
+    "vault-illustrations-illustration-03": "assets/vault/illustrations/illustration-03.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbigrrn000mqwvx8odnqrfd",
+    "vault-gen-cmmbg52of0028r0vxbcrlz5wx",
+    "vault-illustrations-illustration-03"
+  ]
+}

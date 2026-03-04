@@ -1,0 +1,32 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Clutch-moment authority — calculated supremacy frozen at the tactical threshold",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#300931",
+      "#8D52DA"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view from ground level, looking steeply upward at a Counter-Strike pro player crouched in perfect tactical positioning. The camera is positioned at floor height, creating dramatic foreshortening where the player's boots and lower legs dominate the foreground, appearing massive and imposing, while their torso and head recede into the background. The player maintains a precise crouch stance with their assault rifle held in optimal positioning - weapon barrel slightly angled downward toward camera, grip steady with tactical authority. Their body language radiates calculated control and map knowledge, every muscle tensed for the decisive site retake execution. Flat vector illustration with bold solid color fills and hard edges, no gradients or 3D rendering. The player wears tactical gear in vibrant orange #FF6B2F as the dominant color, with electric blue #2D4BE6 accent highlights on weapon attachments, headset, and tactical vest details. Simplified flat features define the face with bold angular shadow shapes creating a tactical mask effect - expression conveyed through body positioning rather than detailed facial features. Clean geometric shadow shapes exist only on the character's clothing and gear, creating depth through flat dark-tone areas. No cartoonish style - this is premium esports illustration with raw intensity. The entire figure fits completely within frame with generous breathing room on all sides, suitable for professional cutout use. Background is pure solid deep purple #300931 with absolutely no drop shadows, glows, halos, or decorative elements behind the character.",
+    "referenceInstructions": "Use vault-gen-cmmbigrrn000mqwvx8odnqrfd for angular geometric shadow treatment and tactical stance authority. Apply vault-gen-cmmbg4kx90026r0vxq2nel790's bold color contrast approach and dramatic low-angle perspective energy. Reference vault-gen-cmmbitqoz001bqwvxlion8s0i for esports-specific gear rendering and professional competitive positioning."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-gen-cmmbg4kx90026r0vxq2nel790": "/uploads/jobs/cmmbg30pz0023r0vxxejz7eyf/illustrations/A_illustration.png",
+    "vault-gen-cmmbigrrn000mqwvx8odnqrfd": "/uploads/jobs/cmmbifhno000jqwvx06rynfe6/illustrations/A_illustration.png",
+    "vault-gen-cmmbitqoz001bqwvxlion8s0i": "/uploads/jobs/cmmbirx7r0016qwvxnc970isb/illustrations/A_illustration.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbigrrn000mqwvx8odnqrfd",
+    "vault-gen-cmmbg4kx90026r0vxq2nel790",
+    "vault-gen-cmmbitqoz001bqwvxlion8s0i"
+  ]
+}

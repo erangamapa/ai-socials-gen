@@ -1,0 +1,28 @@
+{
+  "copy": {
+    "cta": "Place Your Bet",
+    "subhead": "Dominate every game with premium crypto betting",
+    "headline": "Slam the Competition",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive athletic power",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#8D52DA",
+      "#2D4BE6",
+      "#4A2C5A",
+      "#1E1E2E"
+    ],
+    "solidBackground": "#4A2C5A",
+    "backgroundPrompt": "A powerful basketball player mid-dunk captured from a dramatic low-angle perspective, as if the viewer is looking up from the court floor. The athlete's muscular frame is rendered in bold flat-vector style with clean geometric shapes and solid color fills. Their body is fully extended in an aggressive slam pose - one arm reaching high above the rim gripping the orange basketball, the other arm pulled back for maximum power. The player wears a sleek basketball uniform in deep navy with orange trim details. Their facial expression shows fierce determination and athletic intensity. The figure dominates 70% of the frame height, positioned slightly off-center to create dynamic negative space. Bold cast shadows in rich purple (#8D52DA) fall beneath the player, creating strong contrast against the solid background. The lighting comes from above-left, casting sharp angular shadows that emphasize the player's powerful physique. Color treatment uses solid fills only - orange (#FF6B2F) for the basketball and uniform accents, deep navy for the jersey, warm skin tones, and white for highlights on the sneakers. The basketball hoop and rim are barely visible at the top edge, rendered in simple white geometric shapes. The entire illustration sits against a solid dark purple background (#4A2C5A) that makes the orange elements pop dramatically. No gradients, no textures, no photorealistic details - pure bold graphic illustration optimized for cutout use.\n\nFocus on bold geometric character construction with clean edges and solid color fills. Use dramatic low-angle perspective to create heroic proportions. Apply strong cast shadows in complementary colors.",
+    "referenceInstructions": "Focus on bold geometric character construction with clean edges and solid color fills. Use dramatic low-angle perspective to create heroic proportions. Apply strong cast shadows in complementary colors."
+  },
+  "variantLabel": "A",
+  "referencesUsed": [
+    "vault-sports-001",
+    "vault-action-012",
+    "vault-hero-025"
+  ]
+}

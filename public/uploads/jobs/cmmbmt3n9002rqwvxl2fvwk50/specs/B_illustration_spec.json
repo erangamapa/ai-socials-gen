@@ -1,0 +1,32 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Trigger-discipline precision — milliseconds before competitive destiny unfolds",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#300931",
+      "#8D52DA"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Foreshortened tactical lunge with the CS pro player's weapon and leading hand thrust directly toward camera in extreme close perspective. The assault rifle barrel and tactical grip dominate the immediate foreground, appearing 2-3x oversized relative to the player's body which recedes dramatically behind the extended weapon. Camera positioned at chest level with slight dutch tilt angle, creating tension and editorial dynamism. The player's body is captured mid-movement during the site retake execution - leading shoulder forward, tactical vest detailed with utility pouches, rear leg planted for stability. Their face appears behind the weapon sight, rendered with minimal flat geometric features and bold shadow mask treatment - tactical focus implied through body language rather than detailed expression. Flat vector illustration with clean hard edges, bold solid color fills, and no gradients or 3D rendering. Primary orange #FF6B2F fills the tactical vest and gear elements, with electric blue #2D4BE6 highlights on weapon components, scope attachments, and utility belt details. Flat geometric shadow shapes create depth only on the character's body and equipment - no projections onto background. Motion energy conveyed through angular silhouette and kinetic weapon positioning. The composition captures the split-second before trigger pull, where years of practice and map knowledge converge into tactical execution. Entire subject contained within frame with breathing room on all sides, no limb cropping. Background is solid rich purple #300931 with zero decorative elements, shadows, or effects - clean canvas suitable for professional cutout compositing.",
+    "referenceInstructions": "Apply vault-gen-cmmbigrrn000mqwvx8odnqrfd's tactical stance authority and angular shadow geometric treatment. Use vault-gen-cmmbg52of0028r0vxbcrlz5wx's dynamic motion positioning and foreshortening technique for weapon-forward composition. Reference vault-gen-cmmbitqoz001bqwvxlion8s0i for esports gear detailing and professional competitive character rendering with clean vector approach."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-gen-cmmbg52of0028r0vxbcrlz5wx": "/uploads/jobs/cmmbg30pz0023r0vxxejz7eyf/illustrations/B_illustration.png",
+    "vault-gen-cmmbigrrn000mqwvx8odnqrfd": "/uploads/jobs/cmmbifhno000jqwvx06rynfe6/illustrations/A_illustration.png",
+    "vault-gen-cmmbitqoz001bqwvxlion8s0i": "/uploads/jobs/cmmbirx7r0016qwvxnc970isb/illustrations/A_illustration.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbigrrn000mqwvx8odnqrfd",
+    "vault-gen-cmmbg52of0028r0vxbcrlz5wx",
+    "vault-gen-cmmbitqoz001bqwvxlion8s0i"
+  ]
+}

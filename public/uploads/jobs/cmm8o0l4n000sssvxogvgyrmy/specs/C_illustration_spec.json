@@ -1,0 +1,28 @@
+{
+  "copy": {
+    "cta": "Bet Big",
+    "subhead": "Unstoppable celebration",
+    "headline": "Goal Rush",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "editorial premium, kinetic tension, explosive celebration",
+    "style": "flat-vector",
+    "palette": [
+      "#8D52DA",
+      "#DFFD51",
+      "#FF6B2F",
+      "#2D4BE6",
+      "#1a1a2e"
+    ],
+    "solidBackground": "#1a1a2e",
+    "backgroundPrompt": "Dutch tilt camera angle at 25-degree rotation combined with extreme low-angle view of Usain Bolt in triumphant knee slide celebration, creating editorial tension and premium instability. The legendary sprinter's powerful frame cuts diagonally across the tilted frame, his athletic silhouette creating dynamic geometric energy through the composition. Both arms spread wide in classic goal celebration pose, his characteristic lean muscular build emphasized through bold flat color treatment and hard-edged shadow definition. His left knee contacts the ground while his right leg extends behind, the entire sliding motion captured at peak celebration moment. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style. The tilted perspective adds kinetic tension to his already dynamic pose, making the celebration feel more intense and editorial. Bolt's face rendered as simplified flat geometric shapes - strong jaw line defined by hard shadow, minimal eye detail, expression communicated through his triumphant body language rather than facial features. His football kit uses premium color palette with unexpected bold accent combinations - electric purple jersey with golden yellow shorts and bright orange boots, creating maximum visual impact against the dark background. Flat shadow shapes define fabric folds and muscle definition only on the character surface, never projected onto the background. The dutch tilt makes the solid background appear to slope, adding visual energy while maintaining the clean single-color backdrop requirement. Clean solid background with no shadow or glow behind the character, suitable for professional cutout applications.\n\nvault-illustrations-illustration-02 for smooth vector styling and bold color blocking; vault-illustrations-illustration-11 for gradient-free character design and athletic proportions; vault-illustrations-illustration-05 for clean modern vector aesthetic and dynamic positioning",
+    "referenceInstructions": "vault-illustrations-illustration-02 for smooth vector styling and bold color blocking; vault-illustrations-illustration-11 for gradient-free character design and athletic proportions; vault-illustrations-illustration-05 for clean modern vector aesthetic and dynamic positioning"
+  },
+  "variantLabel": "C",
+  "referencesUsed": [
+    "vault-illustrations-illustration-02",
+    "vault-illustrations-illustration-11",
+    "vault-illustrations-illustration-05"
+  ]
+}

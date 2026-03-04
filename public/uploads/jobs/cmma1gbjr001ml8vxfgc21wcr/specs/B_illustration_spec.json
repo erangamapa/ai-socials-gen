@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "FIGHT NOW",
+    "subhead": "Championship-level precision meets raw animal power",
+    "headline": "STRIKE FORCE",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "direct kinetic impact",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#DFFD51",
+      "#2D4BE6",
+      "#FFFFFF",
+      "#000000"
+    ],
+    "solidBackground": "#1A2951",
+    "backgroundPrompt": "Foreshortened lunge perspective with the bear's massive striking leg thrusting directly toward camera, the powerful hind paw and ankle filling the extreme foreground at massive scale while the bear's muscular torso recedes behind in perfect martial arts form. This is the explosive climax moment of a championship karate kick, with the extended leg appearing 4x oversized due to dramatic foreshortening - every muscle fiber and claw detail rendered in bold flat shapes. The bear's supporting leg coils beneath his frame in a tight spring of controlled power, while his arms maintain perfect striking stance with clenched fists positioned for maximum kinetic impact. Traditional white karate gi pants flow with angular motion shapes, the fabric stretched and twisted by the explosive movement. The bear's head appears proportionally smaller due to perspective, with simplified flat facial features - bold shadow mask across the muzzle, minimal eye detail, expression conveyed entirely through the aggressive body mechanics of the strike. Flat vector illustration with bold solid color fills, hard-edged shadow shapes, and clean geometric forms - no gradients, no 3D rendering, no soft blending. Bright orange speed lines explode radially from the striking paw in sharp angular streaks, while yellow energy bursts accent the point of impact as flat starburst shapes. Blue motion blur trails streak behind the bear's movement as bold geometric forms, creating layers of directional energy toward the viewer. All shading exists only as flat dark shadow shapes on the character's body and gi - no shadows projected onto background. The entire bear's form fits within frame including both arms, head, and supporting leg, with the striking limb dominating foreground space. Clean solid dark blue background with zero additional elements.\n\nvault-31 provides the dynamic athletic pose structure and motion blur treatment for explosive sports action. vault-50 informs the foreshortened limb positioning and professional uniform details. vault-32 contributes the clean vector approach and motion line integration for directional energy flow.",
+    "referenceInstructions": "vault-31 provides the dynamic athletic pose structure and motion blur treatment for explosive sports action. vault-50 informs the foreshortened limb positioning and professional uniform details. vault-32 contributes the clean vector approach and motion line integration for directional energy flow."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-illustrations-illustration-31": "assets/vault/illustrations/illustration-31.png",
+    "vault-illustrations-illustration-32": "assets/vault/illustrations/illustration-32.png",
+    "vault-illustrations-illustration-50": "assets/vault/illustrations/illustration-50.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-31",
+    "vault-illustrations-illustration-50",
+    "vault-illustrations-illustration-32"
+  ]
+}

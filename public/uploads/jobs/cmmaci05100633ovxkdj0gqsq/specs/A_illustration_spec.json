@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "Experience the Rush",
+    "subhead": "Where split-second decisions define champions",
+    "headline": "Precision Under Pressure",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "heroic dominance, surgical precision, racing intensity",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#8D52DA",
+      "#300931",
+      "#FFFFFF",
+      "#1A1A1A"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view of a Formula 1 driver captured mid-corner in aggressive racing position, camera positioned at track level looking steeply upward. The driver dominates the frame from below, body coiled with surgical precision as they lean deep into the turn, hands gripping the steering wheel with white-knuckle intensity. Their racing helmet appears massive in the foreground due to extreme foreshortening, sleek aerodynamic design catching dramatic light with bold geometric reflections. The driver's torso and shoulders tower overhead, creating a heroic silhouette against the dark background. Bold orange racing suit #FF6B2F with sharp purple accent stripes #8D52DA wraps the muscular form, fabric showing natural creases and tension from the driving position. Flat vector illustration with bold solid color fills, hard-edged shadow shapes defining muscle definition and suit contours, no gradients or 3D rendering. Clean geometric helmet design with simplified visor reflection, minimal facial features visible as dark shadow shapes beneath. Motion energy conveyed through dynamic body positioning and speed-line details integrated into the suit design. Full figure contained within frame including hands on steering wheel and lower body in racing seat. Background is solid deep purple #300931 with zero additional elements, perfect for cutout use with no drop shadows or glows behind the character.\n\nUse illustration-12's clean vector approach with minimal shading and geometric shapes for helmet design. Apply illustration-27's bold solid color fills and dynamic motion energy for the racing suit. Incorporate illustration-53's dramatic character positioning and clean line weight for the overall silhouette structure.",
+    "referenceInstructions": "Use illustration-12's clean vector approach with minimal shading and geometric shapes for helmet design. Apply illustration-27's bold solid color fills and dynamic motion energy for the racing suit. Incorporate illustration-53's dramatic character positioning and clean line weight for the overall silhouette structure."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-illustrations-illustration-12": "assets/vault/illustrations/illustration-12.png",
+    "vault-illustrations-illustration-27": "assets/vault/illustrations/illustration-27.png",
+    "vault-illustrations-illustration-53": "assets/vault/illustrations/illustration-53.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-12",
+    "vault-illustrations-illustration-27",
+    "vault-illustrations-illustration-53"
+  ]
+}

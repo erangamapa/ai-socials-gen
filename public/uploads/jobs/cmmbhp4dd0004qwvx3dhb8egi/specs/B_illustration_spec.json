@@ -1,0 +1,32 @@
+{
+  "copy": {
+    "cta": "Take the Shot",
+    "subhead": "When milliseconds determine victory",
+    "headline": "Zero Hour",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Crosshairs convergence — the final breath before history rewrites itself",
+    "style": "flat-vector",
+    "palette": [
+      "#8D52DA",
+      "#300931",
+      "#FF6B2F",
+      "#DFFD51"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Foreshortened lunge toward camera capturing the CS2 sniper's rifle barrel and scope assembly thrust directly at the viewer, with extreme perspective distortion making the weapon appear 2.5x oversized in the foreground while the ghillie-suited marksman's body recedes dramatically behind it. The rifle dominates the entire left side of the frame, barrel extending toward the camera with the distinctive scope crosshairs visible through the lens as flat geometric lines. The sniper's trigger finger completes the shot mid-frame, rendered as bold simplified shapes with minimal anatomical detail. The ghillie hood creates angular shadow patterns across the face, depicted as flat dark-tone shapes rather than detailed features, with only the focused eye visible as a clean geometric form. Muzzle flash erupts from the barrel tip as #DFFD51 flat burst shapes with hard edges. The recoil energy flows backward through the marksman's prone position, shoulders braced against the weapon's kick. Flat vector illustration with solid color fills, bold outlines on the rifle components, no gradients or 3D rendering effects. The ghillie suit fabric uses #8D52DA base tones with flat shadow shapes creating camouflage texture through color blocking. Scope lens reflects #FF6B2F as a clean circular accent. Full character visible within frame despite extreme foreshortening, with complete prone shooting stance and breathing room on all edges. Clean solid #300931 background with no drop shadows, halos, or backdrop elements behind the subject.",
+    "referenceInstructions": "Apply vault-gen-cmmbg4kx90026r0vxq2nel790's geometric angular art style for the rifle and scope components. Use vault-illustrations-illustration-15's motion blur approach for the muzzle flash effect. Reference vault-illustrations-illustration-57's clean line work and minimal shading for the character form."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-gen-cmmbg4kx90026r0vxq2nel790": "/uploads/jobs/cmmbg30pz0023r0vxxejz7eyf/illustrations/A_illustration.png",
+    "vault-illustrations-illustration-15": "assets/vault/illustrations/illustration-15.png",
+    "vault-illustrations-illustration-57": "assets/vault/illustrations/illustration-57.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbg4kx90026r0vxq2nel790",
+    "vault-illustrations-illustration-15",
+    "vault-illustrations-illustration-57"
+  ]
+}

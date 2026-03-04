@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Pedal-stroke detonation — decades of training crystallized into one granite-crushing revolution",
+    "style": "flat-vector",
+    "palette": [
+      "#2D4BE6",
+      "#DFFD51",
+      "#FF6B2F",
+      "#8D52DA",
+      "#300931"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Foreshortened lunge perspective with the cyclist's leading leg and pedal stroke thrusting dramatically toward the camera, appearing 2-3x oversized in the foreground while the torso and trailing elements recede behind. The camera captures the decisive moment of maximum power transfer through the pedal stroke, with the closest leg dominating the frame in extreme foreshortening. The cyclist is out of the saddle on the final mountain pitch, body coiled with explosive energy as cobalt blue and yellow crowd color streaks blur as horizontal motion lines on both sides, suggesting the electric atmosphere of the mountain stage finale. The athlete's face shows simplified flat features with bold shadow shapes defining determination through body posture rather than detailed expression. The bicycle frame angles sharply away from camera, creating dynamic perspective lines that emphasize the forward momentum. Racing kit rendered in bold flat solid colors with hard-edged shadow shapes on the fabric folds and muscular definition. Flat vector illustration style with clean geometric forms, no gradients on the character, bold outlines defining the silhouette against motion-blurred background elements. The pedal, shoe, and closest leg create the primary focal point through dramatic scale relationships. Full athlete contained within frame boundaries. Clean solid background color suitable for cutout use with no drop shadows, halos, or ground contact effects behind the subject.",
+    "referenceInstructions": "Apply vault-illustrations-illustration-31's dynamic motion capture with motion blur effects for the crowd streaks, use vault-illustrations-illustration-50's flat color treatment and bold geometric forms for the racing kit, implement vault-illustrations-illustration-12's clean minimalist approach for streamlined athletic equipment, ensuring all shading remains as flat hard-edged shapes on the character only while maintaining the dramatic foreshortening perspective."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-illustrations-illustration-12": "assets/vault/illustrations/illustration-12.png",
+    "vault-illustrations-illustration-31": "assets/vault/illustrations/illustration-31.png",
+    "vault-illustrations-illustration-50": "assets/vault/illustrations/illustration-50.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-31",
+    "vault-illustrations-illustration-50",
+    "vault-illustrations-illustration-12"
+  ]
+}

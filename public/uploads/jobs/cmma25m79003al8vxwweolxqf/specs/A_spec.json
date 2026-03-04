@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "cta": "BET NOW",
+    "subhead": "Championship fights demand championship stakes",
+    "headline": "UNLEASH THE POWER",
+    "disclaimer": ""
+  },
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "Composite the pre-styled bear warrior karate illustration positioned center-left of the blue gradient template canvas, sized to occupy 65% of the frame height to create commanding presence while preserving critical text-safe area on the right side. The bear's muscular form and flying kick pose should dominate the left two-thirds of the composition, with its extended leg creating dynamic diagonal energy across the frame. Apply subtle atmospheric effects around the bear including faint motion lines radiating from the impact point of the kick and small geometric fragments suggesting explosive power. Add dramatic cast shadows beneath the bear using deep navy tones to anchor the figure to the template surface. The illustration maintains its bold vector styling with solid color fills, dramatic shading, and clean crisp edges. Enhance the martial arts energy with subtle glowing effects around the bear's fists and feet using warm orange highlights (#FF6B2F) that complement the template's blue gradient. The composition ensures ample negative space in the upper right quadrant for headline text overlay while the bear's powerful silhouette creates visual hierarchy. Low-angle perspective is preserved to maintain the crushing force and championship dominance described in the brief, positioning viewers at ground level to experience the full athletic impact.\n\nvault-illustrations-illustration-01: Borrow the dynamic athletic pose with outstretched limbs and diagonal movement energy, plus the dramatic shadow casting technique\nvault-illustrations-illustration-02: Use the clean vector illustration style with bold color blocking and smooth gradient shading on muscular definition\nvault-illustrations-illustration-03: Apply the bold graphic vector aesthetic with flat colors, minimal shading, and strong geometric form definition\nvault-illustrations-illustration-39: Reference the dynamic sports action composition with dramatic proportions and energetic positioning",
+    "referenceInstructions": "vault-illustrations-illustration-01: Borrow the dynamic athletic pose with outstretched limbs and diagonal movement energy, plus the dramatic shadow casting technique\nvault-illustrations-illustration-02: Use the clean vector illustration style with bold color blocking and smooth gradient shading on muscular definition\nvault-illustrations-illustration-03: Apply the bold graphic vector aesthetic with flat colors, minimal shading, and strong geometric form definition\nvault-illustrations-illustration-39: Reference the dynamic sports action composition with dramatic proportions and energetic positioning"
+  },
+  "variantLabel": "A",
+  "referencesUsed": [
+    "vault-illustrations-illustration-01",
+    "vault-illustrations-illustration-02",
+    "vault-illustrations-illustration-03",
+    "vault-illustrations-illustration-39"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-01",
+  "backgroundPrompt": "Composite the pre-styled bear warrior karate illustration positioned center-left of the blue gradient template canvas, sized to occupy 65% of the frame height to create commanding presence while preserving critical text-safe area on the right side. The bear's muscular form and flying kick pose should dominate the left two-thirds of the composition, with its extended leg creating dynamic diagonal energy across the frame. Apply subtle atmospheric effects around the bear including faint motion lines radiating from the impact point of the kick and small geometric fragments suggesting explosive power. Add dramatic cast shadows beneath the bear using deep navy tones to anchor the figure to the template surface. The illustration maintains its bold vector styling with solid color fills, dramatic shading, and clean crisp edges. Enhance the martial arts energy with subtle glowing effects around the bear's fists and feet using warm orange highlights (#FF6B2F) that complement the template's blue gradient. The composition ensures ample negative space in the upper right quadrant for headline text overlay while the bear's powerful silhouette creates visual hierarchy. Low-angle perspective is preserved to maintain the crushing force and championship dominance described in the brief, positioning viewers at ground level to experience the full athletic impact.",
+  "referenceInstructions": {
+    "vault-illustrations-illustration-01": "Borrow the dynamic athletic pose with outstretched limbs and diagonal movement energy, plus the dramatic shadow casting technique",
+    "vault-illustrations-illustration-02": "Use the clean vector illustration style with bold color blocking and smooth gradient shading on muscular definition",
+    "vault-illustrations-illustration-03": "Apply the bold graphic vector aesthetic with flat colors, minimal shading, and strong geometric form definition",
+    "vault-illustrations-illustration-39": "Reference the dynamic sports action composition with dramatic proportions and energetic positioning"
+  }
+}

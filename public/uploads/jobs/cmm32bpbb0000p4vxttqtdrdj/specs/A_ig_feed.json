@@ -1,0 +1,64 @@
+{
+  "channel": "ig_feed",
+  "variantLabel": "A",
+  "templateId": "tpl-centered-hero",
+  "copy": {
+    "cta": "Bet Now",
+    "disclaimer": "18+ | Gamble responsibly",
+    "headline": " Weekend deposit bonus Now Live",
+    "subhead": "Experience the thrill with the best odds in crypto betting"
+  },
+  "artDirection": {
+    "backgroundPrompt": "Dark atmospheric illustration background with electric blue accents, sports energy, clean composition for text overlay",
+    "mood": "Bold & Energetic",
+    "palette": [
+      "#0B1120",
+      "#1E40AF",
+      "#F59E0B",
+      "#10B981"
+    ],
+    "style": "high-contrast-dark",
+    "subjectPrompt": "Clean illustration of  Weekend deposit bonus — Get 100% matched on your first BTC deposit up to 5 BTC. Limited time crypto welcome offer., minimal style, no text"
+  },
+  "textOverlays": [
+    {
+      "text": " Weekend deposit bonus Now Live",
+      "x": 162,
+      "y": 405,
+      "width": 756,
+      "fontSize": 64,
+      "color": "#FFFFFF",
+      "fontWeight": "bold",
+      "textAnchor": "middle"
+    },
+    {
+      "text": "Experience the thrill with the best odds in crypto betting",
+      "x": 216,
+      "y": 702,
+      "width": 648,
+      "fontSize": 28,
+      "color": "#E0E0E0",
+      "textAnchor": "middle"
+    },
+    {
+      "text": "Bet Now",
+      "x": 324,
+      "y": 918,
+      "width": 432,
+      "fontSize": 36,
+      "color": "#F59E0B",
+      "fontWeight": "bold",
+      "textAnchor": "middle"
+    }
+  ],
+  "notchOverlay": {
+    "x": 43,
+    "y": 54,
+    "width": 130,
+    "height": 108
+  },
+  "qaResult": {
+    "passed": true,
+    "issues": []
+  }
+}

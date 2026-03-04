@@ -1,0 +1,28 @@
+{
+  "copy": {
+    "cta": "Elevate Your Game",
+    "subhead": "Master Every Mountain",
+    "headline": "Reach New Heights",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "heroic, towering, athletic dominance",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#8D52DA",
+      "#2D4BE6",
+      "#FFFFFF",
+      "#1a1a1a"
+    ],
+    "solidBackground": "#2D4BE6",
+    "backgroundPrompt": "Extreme worm's-eye view from ground level looking steeply up at a snowboarder mid-air performing a massive method grab trick. The snowboarder appears as a towering heroic silhouette against the sky, with their board and lower body dramatically oversized in the foreground due to extreme foreshortening. The rider's back leg is kicked out high, front arm extended in classic method style, board edge closest to camera appearing 2x larger than anatomically correct. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering. The snowboarder wears a bright orange jacket and dark purple snow pants, gear rendered in clean geometric shapes with minimal detail. Face is simplified to flat shadow mask under helmet, expression implied through dynamic body language rather than facial features. Board shows as sleek geometric shape with flat color blocking. Motion energy radiates through speed lines trailing from the board edges and clothing. Hard-edged cast shadows fall as flat solid color shapes beneath the floating figure. Clean athletic proportions with slight stylistic exaggeration for graphic impact. Background is rich deep mountain blue solid color with no texture or patterns. Full body contained within frame with generous breathing room on all sides. No text, no logos, no brand elements.\n\nFrom vault-03 and vault-04: adopt the bold flat color blocking approach, clean geometric uniform shapes, and minimal shading technique. Use vault-01's dramatic shadow casting method but flatten to hard-edged solid shapes rather than soft gradients.",
+    "referenceInstructions": "From vault-03 and vault-04: adopt the bold flat color blocking approach, clean geometric uniform shapes, and minimal shading technique. Use vault-01's dramatic shadow casting method but flatten to hard-edged solid shapes rather than soft gradients."
+  },
+  "variantLabel": "A",
+  "referencesUsed": [
+    "vault-illustrations-illustration-03",
+    "vault-illustrations-illustration-04",
+    "vault-illustrations-illustration-01"
+  ]
+}

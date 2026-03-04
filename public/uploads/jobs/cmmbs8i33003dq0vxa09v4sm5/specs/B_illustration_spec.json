@@ -1,0 +1,29 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Salt-spray euphoria — weathered hands finally claiming their overdue fortune",
+    "style": "flat-vector",
+    "palette": [
+      "#2D4BE6",
+      "#FF6B2F",
+      "#DFFD51",
+      "#FFFFFF",
+      "#300931"
+    ],
+    "solidBackground": "#2D1B69",
+    "backgroundPrompt": "Foreshortened lunge toward camera with the fisherman's celebration-clenched fist thrust directly at the viewer in extreme close-up, his knuckles and weathered fishing glove appearing 3x oversized in the foreground while his body recedes dramatically behind. Shot at dutch tilt angle 20 degrees off horizontal, creating tension and editorial energy as the weathered fisherman character erupts in jackpot triumph. His gold-toothed grin simplified to bold flat shadow shapes, face reading as powerful silhouette beneath worn fishing cap rather than detailed expression. The massive foreground fist dominates the frame with championship-forged authority, work-hardened knuckles rendered in bold flat fills with hard-edged shadow defining every weathered detail. His yellow fishing vest and worn work shirt flow behind the lunging gesture, rendered in flat solid colors with internal shadow shapes only, no gradients or volumetric effects. The fisherman's boots and lower body appear compressed in the background due to extreme perspective distortion, emphasizing the explosive forward energy of pure victorious abandon. Electric moment frozen when 100x fortune transforms everything, velvet-glove precision meeting cosmic reward in that singular instant of life-changing realization. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style, clean solid background with no shadow or glow behind the character. Full body contained within frame despite dramatic foreshortening.",
+    "referenceInstructions": "vault-gen-cmmbg4kx90026r0vx for geometric angular art style with faceted surfaces and sharp angles creating dynamic positioning. vault-gen-cmmbmujz0002uqwvx for bold vector art with dramatic orange and blue contrast and clean geometric shapes. vault-gen-cmmbn3n940036qwvx for geometric angular shapes with strong directional lighting and motion blur effects on hands."
+  },
+  "variantLabel": "B",
+  "referencePaths": {},
+  "referencesUsed": [
+    "vault-gen-cmmbg4kx90026r0vx",
+    "vault-gen-cmmbmujz0002uqwvx",
+    "vault-gen-cmmbn3n940036qwvx"
+  ]
+}

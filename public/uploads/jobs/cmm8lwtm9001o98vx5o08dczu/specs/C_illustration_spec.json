@@ -1,0 +1,28 @@
+{
+  "copy": {
+    "cta": "Feel the Impact",
+    "subhead": "Twisted power unleashed",
+    "headline": "Hook Fury",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive, rotational, dynamic",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#DC143C",
+      "#DFFD51",
+      "#4A1A4A"
+    ],
+    "solidBackground": "#4A1A4A",
+    "backgroundPrompt": "Flat vector illustration of a boxer in the follow-through moment of a devastating left hook, his entire body twisted in a powerful spiral motion. Shot from a dramatic fish-eye inspired angle that warps the perspective, making his extended left red glove enormous in the foreground while his body curves away. The boxer's feet are planted wide in orthodox stance, his right foot pivoted, showing the complete kinetic chain of the hook punch. His face is turned away as he follows through, profile visible with jaw set in determination. Bright orange athletic shorts with blue striping complement his red gloves perfectly. Sweat streams are stylized as angular yellow lightning-bolt shapes radiating from his spinning torso, creating dynamic movement lines. His muscular back and shoulders are defined through flat geometric shadow shapes in deeper skin tones - no gradients, just clean hard edges between light and shadow areas. The twisted torso shows powerful lat muscles and defined spine, all rendered as flat color zones. Bold black outline work defines every element from glove seams to muscle separations. The warped perspective creates a sense of explosive rotational power, with the hook punch appearing to break the fourth wall. Composition is deliberately off-balance to emphasize the spinning motion, but the complete figure remains within frame boundaries with substantial negative space. Flat vector treatment throughout - solid fills, geometric shadows, clean line work, no 3D rendering or soft lighting effects.\n\nFrom vault-illustrations-illustration-05: clean vector style with smooth edges and dynamic movement pose. From vault-illustrations-illustration-11: smooth vector illustration approach with bold color blocking and athletic proportions. From vault-illustrations-illustration-02: stylized forms with clean geometric color blocking and action-focused composition.",
+    "referenceInstructions": "From vault-illustrations-illustration-05: clean vector style with smooth edges and dynamic movement pose. From vault-illustrations-illustration-11: smooth vector illustration approach with bold color blocking and athletic proportions. From vault-illustrations-illustration-02: stylized forms with clean geometric color blocking and action-focused composition."
+  },
+  "variantLabel": "C",
+  "referencesUsed": [
+    "vault-illustrations-illustration-05",
+    "vault-illustrations-illustration-11",
+    "vault-illustrations-illustration-02"
+  ]
+}

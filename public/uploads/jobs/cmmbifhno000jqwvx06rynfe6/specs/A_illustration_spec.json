@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Breach-point authority — tactical perfection frozen at the threshold of dominance",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#300931",
+      "#8D52DA",
+      "#DFFD51"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view from ground level looking steeply upward at a tactical SWAT operative captured mid-breach through a doorway. The camera positioned directly beneath emphasizes the operator's commanding presence as they tower overhead in perfect shooting stance. The figure displays tactical supremacy with rifle raised in two-handed grip, body coiled in wide-stance readiness that reads as lethal precision. Full protective gear coverage including tactical gas mask with prominent circular eyepieces, utility vest loaded with equipment pouches, knee pads, and combat boots create angular body positioning that defines authoritative posture. The gear-defined form emphasizes equipment silhouettes against stark composition - tactical vest straps, weapon attachments, and protective padding all rendered as bold geometric shapes. Flat vector illustration with solid color fills and hard edges, no gradients or 3D rendering. Face is simplified beneath gas mask with minimal detail - circular eyepieces and breathing apparatus read as bold flat shapes. Energy comes from wide-stance body language and coiled positioning rather than facial expression. Foreshortening makes the boots and lower legs appear dramatically oversized in foreground while torso and weapon recede upward. Bold flat shadow shapes exist only on the character's gear and uniform, creating depth through hard-edged dark tones on vest pouches, weapon details, and fabric folds. Clean solid background suitable for cutout use with no drop shadows or environmental elements. Full body contained within frame with generous breathing room on all sides.",
+    "referenceInstructions": "vault-gen-cmmbg52of0028r0vx for dynamic athletic positioning and bold color blocking. vault-gen-cmmbfmgzz001mr0vx for angular geometric rendering and sharp shadow work. vault-gen-cmmbg4kx90026r0vx for clean vector-based flat illustration technique and minimal shading approach."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-gen-cmmbfmgzz001mr0vxmcap70pa": "/uploads/jobs/cmmbfi154001jr0vxzvaj2xzv/illustrations/B_illustration.png",
+    "vault-gen-cmmbg4kx90026r0vxq2nel790": "/uploads/jobs/cmmbg30pz0023r0vxxejz7eyf/illustrations/A_illustration.png",
+    "vault-gen-cmmbg52of0028r0vxbcrlz5wx": "/uploads/jobs/cmmbg30pz0023r0vxxejz7eyf/illustrations/B_illustration.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbg52of0028r0vxbcrlz5wx",
+    "vault-gen-cmmbfmgzz001mr0vxmcap70pa",
+    "vault-gen-cmmbg4kx90026r0vxq2nel790"
+  ]
+}

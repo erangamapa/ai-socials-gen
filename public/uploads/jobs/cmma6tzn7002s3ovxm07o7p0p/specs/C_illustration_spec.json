@@ -1,0 +1,29 @@
+{
+  "copy": {
+    "cta": "Witness the Violence",
+    "subhead": "Championship Chaos Unleashed",
+    "headline": "Tilted Destruction",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive heroic dominance",
+    "style": "flat-vector",
+    "palette": [
+      "#DFFD51",
+      "#FF6B2F",
+      "#2D4BE6",
+      "#8D52DA",
+      "#300931"
+    ],
+    "solidBackground": "#2D4BE6",
+    "backgroundPrompt": "Dutch tilt low-angle composition of MMA fighter Costello van Steenis rotated 25 degrees counterclockwise, creating dynamic instability as he unleashes his devastating overhand right. Camera positioned below knee height looking up with dramatic tilted horizon, transforming the strike into an off-balance explosion of controlled violence. His tattooed fist cuts diagonally across the upper-right quadrant with extreme foreshortening, appearing massively oversized against his receding muscular torso. Van Steenis' athletic fighter build displays championship conditioning through bold flat geometric shadow shapes defining his coiled physique. The tilted perspective amplifies the predatory intensity of his forward lunge, planted rear leg creating dramatic angular shadows in electric blue. Motion blur shapes in vibrant yellow and deep purple streak behind his striking arm, emphasizing kinetic power transfer through the twisted composition. Speed lines radiate from impact point in sharp diagonal patterns, following the tilted energy flow. His minimal facial features remain shadow-masked, aggressive determination conveyed entirely through explosive body language and predatory forward momentum. Bold experimental color palette pushes premium athletic energy with high-contrast flat fills and hard-edged internal shadows. Flat vector illustration with clean geometric construction, no gradients, no 3D rendering, maximum visual tension through the unstable camera angle. Solid dark blue background maintains clean separation for cutout applications with zero shadow projection or decorative backdrop elements.\n\nLeverage vault-illustrations-illustration-14's athletic silhouette construction and motion emphasis techniques to capture van Steenis' explosive MMA dynamics within the tilted compositional framework.",
+    "referenceInstructions": "Leverage vault-illustrations-illustration-14's athletic silhouette construction and motion emphasis techniques to capture van Steenis' explosive MMA dynamics within the tilted compositional framework."
+  },
+  "variantLabel": "C",
+  "referencePaths": {
+    "vault-illustrations-illustration-14": "assets/vault/illustrations/illustration-14.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-14"
+  ]
+}

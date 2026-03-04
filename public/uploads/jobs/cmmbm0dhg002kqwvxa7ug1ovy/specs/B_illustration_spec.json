@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Technical perfection weaponized into one split-second defiance of natural law",
+    "style": "flat-vector",
+    "palette": [
+      "#DFFD51",
+      "#FF6B2F",
+      "#FFFFFF",
+      "#0F1032",
+      "#8D52DA"
+    ],
+    "solidBackground": "#0F1032",
+    "backgroundPrompt": "Foreshortened lunge perspective with Ronaldo's scissor-kick legs thrust directly toward camera, his boots appearing 3x oversized as they slice through the frame in perfect technical form. The legendary striker's inverted body extends behind his enormous foreground feet, creating dramatic depth as his muscular frame twists in mid-flight with surgical precision. His right boot connects with the approaching ball while his left leg scissors upward for balance, the foreshortening making his elevated boots dominate the entire composition. Arms spread wide behind the massive foreground limbs, white kit detailed in sharp flat vector shapes with bold CB gold jersey numbers and vibrant orange shorts catching stadium light. Torso and head recede into the background plane, face rendered as simplified bold shadow mask with minimal detail - all expression conveyed through the gravity-defying body language of this impossible aerial moment. Decades of elite precision condensed into this single breath-holding instant where technical brilliance separates legends from mortals. Flat vector illustration with clean geometric forms, bold solid color fills, hard edges, no gradients, no 3D rendering or cartoonish style. Internal shadow shapes create muscular definition and uniform depth only on the character, never projected onto the background. Clean deep navy canvas with zero backdrop elements - no drop shadows, halos, or glow effects behind the floating figure. Full body contained within frame with generous breathing room, suitable for instant background removal and professional cutout compositing.",
+    "referenceInstructions": "vault-illustrations-illustration-03 provides the vector illustration approach with flat colors and clean geometric forms for sports uniform details. vault-gen-cmmbg52of0028r0vxbcrlz5wx informs the dynamic motion treatment with flowing fabric details and dramatic contrast between warm and cool accent colors."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-gen-cmmbg52of0028r0vxbcrlz5wx": "/uploads/jobs/cmmbg30pz0023r0vxxejz7eyf/illustrations/B_illustration.png",
+    "vault-illustrations-illustration-03": "assets/vault/illustrations/illustration-03.png",
+    "vault-illustrations-illustration-04": "assets/vault/illustrations/illustration-04.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-03",
+    "vault-gen-cmmbg52of0028r0vxbcrlz5wx",
+    "vault-illustrations-illustration-04"
+  ]
+}

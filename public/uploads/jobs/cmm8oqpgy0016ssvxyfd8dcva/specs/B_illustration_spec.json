@@ -1,0 +1,34 @@
+{
+  "copy": {
+    "cta": "Join the Victory",
+    "subhead": "Explosive goal celebration",
+    "headline": "Strike Force",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive, kinetic, championship energy",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#8D52DA",
+      "#FFFFFF",
+      "#2D4BE6"
+    ],
+    "solidBackground": "#4a1d6b",
+    "backgroundPrompt": "Foreshortened lunge toward camera of Zeb Powell as a footballer in knee slide celebration, with his right fist pumping directly toward the viewer in triumphant celebration. The character embodies Zeb Powell's distinctive athletic build and characteristic movement style - lean but powerful frame with natural athleticism. His right arm is thrust forward in a victory pump, fist appearing 2-3x oversized due to extreme foreshortening as it dominates the foreground, while his sliding body recedes behind it. He's captured in the peak moment of the knee slide with left knee down, right leg trailing, left arm spread wide for balance. The camera angle creates dramatic depth with his massive fist filling the right side of the frame, shoulder and torso appearing medium-sized in the middle ground, and his sliding legs smaller in the background. His football kit features vibrant orange primary jersey with purple accent panels, white shorts, and dynamic boot positioning showing the slide motion. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style. Face shows simplified flat mask-like features with minimal detail, expression communicated through the explosive forward-thrusting body language. Speed lines and motion blur shapes trail from his sliding movement and the punching fist gesture. All shading exists as flat hard-edged shadow shapes internal to the character only - defining kit panels, muscle definition, and fabric folds. Clean solid purple background with no shadow or glow behind the character, perfect for professional cutout use.\n\nDrawing from vault-illustrations-illustration-04 and illustration-05 for the bold red/orange color treatment and clean geometric character construction. Vault-illustrations-illustration-11 provides guidance for the smooth flat vector approach without harsh shadows. The dynamic motion energy and simplified forms from illustration-12 inform the speed line treatment and kinetic positioning.",
+    "referenceInstructions": "Drawing from vault-illustrations-illustration-04 and illustration-05 for the bold red/orange color treatment and clean geometric character construction. Vault-illustrations-illustration-11 provides guidance for the smooth flat vector approach without harsh shadows. The dynamic motion energy and simplified forms from illustration-12 inform the speed line treatment and kinetic positioning."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-illustrations-illustration-04": "assets/vault/illustrations/illustration-04.png",
+    "vault-illustrations-illustration-05": "assets/vault/illustrations/illustration-05.png",
+    "vault-illustrations-illustration-11": "assets/vault/illustrations/illustration-11.png",
+    "vault-illustrations-illustration-12": "assets/vault/illustrations/illustration-12.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-04",
+    "vault-illustrations-illustration-05",
+    "vault-illustrations-illustration-11",
+    "vault-illustrations-illustration-12"
+  ]
+}

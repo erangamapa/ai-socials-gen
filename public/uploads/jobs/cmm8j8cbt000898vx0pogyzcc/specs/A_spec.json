@@ -1,0 +1,30 @@
+{
+  "id": "A",
+  "copy": {
+    "cta": "BET NOW",
+    "subhead": "Main event predictions are live",
+    "headline": "KNOCKOUT ODDS UNLOCKED",
+    "disclaimer": ""
+  },
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "A powerful MMA fighter captured in an explosive fighting stance, muscles tensed and ready to strike. The fighter is positioned center-right of the canvas, rendered in bold vector illustration style with clean sharp edges and dramatic shadows. Athletic build with detailed tattoo work across the chest and arms, wearing black MMA gloves and dark fighting shorts. The illustration uses bold solid color fills with no gradients - deep navy shadows contrasting with warm flesh tones and bright orange accent colors on the gloves and shorts. Dynamic low-angle perspective looking slightly up at the fighter creates a heroic larger-than-life presence. The fighter's expression is intense and focused, eyes locked forward in concentration. Clean geometric lighting creates dramatic cast shadows behind the figure, with small energy lines radiating from the clenched fists. The style matches CB's premium illustration library - stylized proportions, bold color blocking, and sophisticated athletic energy. Color palette emphasizes brand colors: orange (#FF6B2F) on gloves and trim, deep purple (#300931) shadows, with clean white highlights. No background elements as the template provides the canvas.\n\nvault-illustrations-illustration-21: Adopt the clean vector illustration style, detailed tattoo rendering, and athletic muscular build. Use the confident fighting stance and bold solid color approach.\nvault-illustrations-illustration-52: Borrow the dramatic lighting effects and premium VIP energy. Use the sophisticated color treatment and clean cartoon rendering approach.\nvault-previous-posts-slide-2-ig-new: Reference the intense athletic mood and professional sports presentation. Use the bold competitive energy and championship-level presence.",
+    "referenceInstructions": "vault-illustrations-illustration-21: Adopt the clean vector illustration style, detailed tattoo rendering, and athletic muscular build. Use the confident fighting stance and bold solid color approach.\nvault-illustrations-illustration-52: Borrow the dramatic lighting effects and premium VIP energy. Use the sophisticated color treatment and clean cartoon rendering approach.\nvault-previous-posts-slide-2-ig-new: Reference the intense athletic mood and professional sports presentation. Use the bold competitive energy and championship-level presence."
+  },
+  "variantLabel": "A",
+  "referencesUsed": [
+    "vault-illustrations-illustration-21",
+    "vault-illustrations-illustration-52",
+    "vault-previous-posts-slide-2-ig-new"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-02",
+  "backgroundPrompt": "A powerful MMA fighter captured in an explosive fighting stance, muscles tensed and ready to strike. The fighter is positioned center-right of the canvas, rendered in bold vector illustration style with clean sharp edges and dramatic shadows. Athletic build with detailed tattoo work across the chest and arms, wearing black MMA gloves and dark fighting shorts. The illustration uses bold solid color fills with no gradients - deep navy shadows contrasting with warm flesh tones and bright orange accent colors on the gloves and shorts. Dynamic low-angle perspective looking slightly up at the fighter creates a heroic larger-than-life presence. The fighter's expression is intense and focused, eyes locked forward in concentration. Clean geometric lighting creates dramatic cast shadows behind the figure, with small energy lines radiating from the clenched fists. The style matches CB's premium illustration library - stylized proportions, bold color blocking, and sophisticated athletic energy. Color palette emphasizes brand colors: orange (#FF6B2F) on gloves and trim, deep purple (#300931) shadows, with clean white highlights. No background elements as the template provides the canvas.",
+  "referenceInstructions": {
+    "vault-illustrations-illustration-21": "Adopt the clean vector illustration style, detailed tattoo rendering, and athletic muscular build. Use the confident fighting stance and bold solid color approach.",
+    "vault-illustrations-illustration-52": "Borrow the dramatic lighting effects and premium VIP energy. Use the sophisticated color treatment and clean cartoon rendering approach.",
+    "vault-previous-posts-slide-2-ig-new": "Reference the intense athletic mood and professional sports presentation. Use the bold competitive energy and championship-level presence."
+  }
+}

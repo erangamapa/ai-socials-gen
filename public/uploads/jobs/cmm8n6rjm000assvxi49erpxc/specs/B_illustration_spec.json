@@ -1,0 +1,28 @@
+{
+  "copy": {
+    "cta": "Claim Victory",
+    "subhead": "Explosive racing momentum",
+    "headline": "Victory Rush",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive, kinetic, championship energy",
+    "style": "flat-vector",
+    "palette": [
+      "#FF4444",
+      "#4A90E2",
+      "#FFFFFF",
+      "#FFD700",
+      "#2C3E50"
+    ],
+    "solidBackground": "#8B5CF6",
+    "backgroundPrompt": "Foreshortened dramatic composition with Formula 1 driver's helmeted head and raised gloved hand lunging directly toward camera in side profile, creating intense perspective distortion where the extended gloved fist appears 2.5x larger than anatomically correct, completely dominating the foreground. The racing glove rendered in flat vector style with bold geometric finger segments and palm padding as clean flat shapes in racing red and white. Driver's helmet in extreme foreshortening appears smaller in the background, visor down creating a sleek dark flat surface with minimal geometric highlight shapes. Racing suit visible from chest up shows dynamic color blocking in electric blue, racing red, and crisp white panels with sponsor patches as simple flat geometric rectangles and circles. The action captures the peak moment of a victory celebration or pre-race ritual, with explosive energy directed straight at the viewer. Flat vector illustration, bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style, clean solid background with no shadow or glow behind the character. Facial features completely obscured by helmet visor, all expression and attitude conveyed through the powerful gesture and body language of the reaching motion. The extreme foreshortening creates kinetic tension with the massive foreground glove contrasting against the receding helmet and shoulders. Motion implied through the aggressive forward thrust of the gesture, speed lines incorporated into the glove design itself as flat graphic elements. Color treatment features bold primary racing colors with flat hard-edged shadow shapes defining the glove's form and suit panels, creating premium motorsport graphic energy. Character fully contained within frame with dramatic perspective creating visual punch and editorial premium feel.\n\nApply illustration-06's flat geometric approach for clean shape definition. Use illustration-01's dynamic action energy and illustration-12's motion treatment for speed elements.",
+    "referenceInstructions": "Apply illustration-06's flat geometric approach for clean shape definition. Use illustration-01's dynamic action energy and illustration-12's motion treatment for speed elements."
+  },
+  "variantLabel": "B",
+  "referencesUsed": [
+    "vault-illustrations-illustration-06",
+    "vault-illustrations-illustration-01",
+    "vault-illustrations-illustration-12"
+  ]
+}

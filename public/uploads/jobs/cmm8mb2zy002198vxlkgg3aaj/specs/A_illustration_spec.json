@@ -1,0 +1,27 @@
+{
+  "copy": {
+    "cta": "BACK THE CHAMPION",
+    "subhead": "Where power meets technique",
+    "headline": "PRECISION STRIKE",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive, heroic, powerful, premium athletic",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#FFFFFF",
+      "#1A1A1A"
+    ],
+    "solidBackground": "#1A1A1A",
+    "backgroundPrompt": "Extreme worm's-eye view from ground level looking steeply up at Dakota Ditcheva mid-punch, her dominant punching fist enormous in the extreme foreground taking up nearly a quarter of the frame due to dramatic foreshortening. Her body recedes behind the oversized fist, legs appearing smaller at the top of the composition as she pivots into the strike. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style. Her face is simplified with flat geometric features, minimal detail, expression conveyed through the aggressive body language rather than facial expression. The punching arm extends directly toward the camera with the gloved fist rendered 2.5x larger than anatomically correct, showing the knuckles and thumb position in sharp detail with flat shadow shapes defining the glove's form. Her supporting leg is planted wide for power generation, while her rear leg shows the rotational torque of the punch. She wears fitted MMA training gear - sports bra and fitted shorts - rendered in bold flat color blocks. Sharp cast shadows fall beneath her feet and body as hard-edged geometric shapes, no soft blending. Speed lines radiate from the impact point of her fist, suggesting explosive forward momentum. Her hair is pulled back in a practical ponytail that shows subtle motion blur shapes. Full body contained within frame with generous breathing room on all sides, no limbs cropped at edges.\n\nUse illustration-03's bold flat color blocking and minimal shading approach. Adopt illustration-10's clean geometric forms and dynamic positioning. Reference illustration-12's motion energy treatment and flat vector execution for the striking action.",
+    "referenceInstructions": "Use illustration-03's bold flat color blocking and minimal shading approach. Adopt illustration-10's clean geometric forms and dynamic positioning. Reference illustration-12's motion energy treatment and flat vector execution for the striking action."
+  },
+  "variantLabel": "A",
+  "referencesUsed": [
+    "vault-illustrations-illustration-03",
+    "vault-illustrations-illustration-10",
+    "vault-illustrations-illustration-12"
+  ]
+}

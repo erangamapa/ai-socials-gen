@@ -1,0 +1,29 @@
+{
+  "cta": "BET NOW",
+  "copy": {
+    "cta": "BET NOW",
+    "subhead": "Karate Combat betting",
+    "headline": "UNLEASH THE WARRIOR WITHIN",
+    "disclaimer": ""
+  },
+  "subhead": "Karate Combat betting",
+  "variant": "A",
+  "headline": "UNLEASH THE WARRIOR WITHIN",
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "The pre-styled colossal bear warrior in pristine karate gi pants is composited as the dominant central focal point, positioned slightly center-right to leave optimal negative space on the left for text overlay. The bear fills approximately 75% of the vertical canvas height, captured in its thunderous flying kick pose with extreme low-angle foreshortening that makes its massive frame tower heroically above the viewer. Explosive orange speed lines and motion bursts radiate outward from the kick impact point in sharp, geometric rays that complement the template's flowing curved shapes. Electric blue motion trails streak behind the bear's movement in clean vector style, while bright yellow energy fragments scatter dynamically around the composition edges. The bear's controlled martial arts form and muscular definition pop against the template's dark purple gradient background through dramatic rim lighting effects that create high contrast separation. Subtle atmospheric particles and energy wisps float in the negative space areas, maintaining visual interest without overwhelming the text-safe zones. The overall composition balances the bear's commanding presence with strategic white space, creating a premium championship atmosphere where legends are forged and fortunes are won through bold action.\n\nFrom illustration-01: Borrow the dynamic athletic pose composition, dramatic shadow casting techniques, and the way motion is captured with clean vector precision. From illustration-15: Apply the energetic motion blur effects and geometric form simplification while maintaining powerful action dynamics. From illustration-31: Use the smooth gradient shading approach, professional sports illustration aesthetic, and the way speed/movement is conveyed through clean minimalist vector styling.",
+    "referenceInstructions": "From illustration-01: Borrow the dynamic athletic pose composition, dramatic shadow casting techniques, and the way motion is captured with clean vector precision. From illustration-15: Apply the energetic motion blur effects and geometric form simplification while maintaining powerful action dynamics. From illustration-31: Use the smooth gradient shading approach, professional sports illustration aesthetic, and the way speed/movement is conveyed through clean minimalist vector styling."
+  },
+  "variantLabel": "A",
+  "referencesUsed": [
+    "vault-illustrations-illustration-01",
+    "vault-illustrations-illustration-15",
+    "vault-illustrations-illustration-31"
+  ],
+  "templateAssetId": "vault-template-twitter-twitter-08",
+  "backgroundPrompt": "The pre-styled colossal bear warrior in pristine karate gi pants is composited as the dominant central focal point, positioned slightly center-right to leave optimal negative space on the left for text overlay. The bear fills approximately 75% of the vertical canvas height, captured in its thunderous flying kick pose with extreme low-angle foreshortening that makes its massive frame tower heroically above the viewer. Explosive orange speed lines and motion bursts radiate outward from the kick impact point in sharp, geometric rays that complement the template's flowing curved shapes. Electric blue motion trails streak behind the bear's movement in clean vector style, while bright yellow energy fragments scatter dynamically around the composition edges. The bear's controlled martial arts form and muscular definition pop against the template's dark purple gradient background through dramatic rim lighting effects that create high contrast separation. Subtle atmospheric particles and energy wisps float in the negative space areas, maintaining visual interest without overwhelming the text-safe zones. The overall composition balances the bear's commanding presence with strategic white space, creating a premium championship atmosphere where legends are forged and fortunes are won through bold action.",
+  "referenceInstructions": "From illustration-01: Borrow the dynamic athletic pose composition, dramatic shadow casting techniques, and the way motion is captured with clean vector precision. From illustration-15: Apply the energetic motion blur effects and geometric form simplification while maintaining powerful action dynamics. From illustration-31: Use the smooth gradient shading approach, professional sports illustration aesthetic, and the way speed/movement is conveyed through clean minimalist vector styling."
+}

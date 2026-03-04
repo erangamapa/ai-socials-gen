@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "direct kinetic impact",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#DFFD51",
+      "#300931",
+      "#1A1A1A"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Foreshortened lunge perspective capturing the explosive moment where the primary athlete's extended arm and fist thrust directly toward camera, appearing enormously oversized in the extreme foreground. The orange #FF6B2F arm dominates the frame at 3x normal proportion due to foreshortening, with the athlete's body receding behind it in dynamic perspective. Their torso and legs appear progressively smaller as they extend back into the frame, creating powerful depth through extreme perspective distortion. The secondary athlete in electric blue #2D4BE6 lunges from the opposite angle, their arm also reaching toward the connection point but positioned at middle distance. Flat vector illustration style with bold solid color fills, hard-edged shadow shapes on the characters only, no gradients or 3D rendering effects. Yellow #DFFD51 speed lines explode outward from the point of impending contact between their hands, creating radiating energy vectors that emphasize the kinetic collision. Geometric motion shapes trail behind both athletes' bodies, suggesting rapid movement and explosive celebration energy. Faces are simplified with flat geometric features and bold shadow masks, with expression conveyed through powerful body language rather than detailed facial rendering. Both figures maintain angular, bold silhouettes that read clearly against the rich purple #300931 solid background. No drop shadows, glows, or backdrop effects - the background remains perfectly flat and clean for cutout use. Full bodies visible within frame boundaries with no cropping of extremities.\n\nAdopt vault-illustrations-illustration-14's athletic body construction and motion blur techniques for the speed elements. Incorporate vault-illustrations-illustration-27's vibrant color contrast and celebratory energy with floating geometric elements radiating from the action center.",
+    "referenceInstructions": "Adopt vault-illustrations-illustration-14's athletic body construction and motion blur techniques for the speed elements. Incorporate vault-illustrations-illustration-27's vibrant color contrast and celebratory energy with floating geometric elements radiating from the action center."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-illustrations-illustration-14": "assets/vault/illustrations/illustration-14.png",
+    "vault-illustrations-illustration-27": "assets/vault/illustrations/illustration-27.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-14",
+    "vault-illustrations-illustration-27"
+  ]
+}

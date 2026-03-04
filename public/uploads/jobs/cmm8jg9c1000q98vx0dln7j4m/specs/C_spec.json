@@ -1,0 +1,27 @@
+{
+  "copy": {
+    "cta": "BET LIVE",
+    "subhead": "Nations League live odds",
+    "headline": "BLOCK OUT THE COMPETITION",
+    "disclaimer": ""
+  },
+  "variant": "C",
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "A bold volleyball blocking scene featuring two players positioned in the center, captured from a dramatic low-angle perspective. The primary player jumps with both arms raised high in a powerful blocking position, wearing a vibrant orange and blue uniform with geometric pattern details. A second player is visible in the background, creating depth and team dynamics. Both figures are rendered in clean vector illustration style with bold solid color fills and dramatic cast shadows - no gradients or photorealistic elements. A volleyball is suspended between them in mid-flight, rendered with bright yellow and orange panel segments that catch dramatic lighting. The composition uses strong vertical emphasis with the blocking action creating an imposing wall-like formation. Clean, sharp edges throughout for seamless template integration. The players show determined expressions with stylized features - strong jawlines and focused eyes. Small energy burst effects radiate from the point where hands would contact the ball. Bold color treatment emphasizing electric blue (#2D4BE6), vivid orange (#FF6B2F), and bright yellow (#DFFD51) against the template's blue gradient background. The bottom third remains clear for text overlay while the athletic action dominates the upper two-thirds with powerful vertical lines.\n\nFrom illustration-31: Borrow the dynamic team uniform details and bold color combinations. From illustration-17: Use the clean cartoon proportions and expressive character features. From illustration-07: Apply the protective/blocking gesture concept and dramatic positioning. From illustration-50: Reference the volleyball rendering style and athletic motion effects.",
+    "referenceInstructions": "From illustration-31: Borrow the dynamic team uniform details and bold color combinations. From illustration-17: Use the clean cartoon proportions and expressive character features. From illustration-07: Apply the protective/blocking gesture concept and dramatic positioning. From illustration-50: Reference the volleyball rendering style and athletic motion effects."
+  },
+  "variantLabel": "C",
+  "referencesUsed": [
+    "vault-illustrations-illustration-31",
+    "vault-illustrations-illustration-17",
+    "vault-illustrations-illustration-07",
+    "vault-illustrations-illustration-50"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-01",
+  "backgroundPrompt": "A bold volleyball blocking scene featuring two players positioned in the center, captured from a dramatic low-angle perspective. The primary player jumps with both arms raised high in a powerful blocking position, wearing a vibrant orange and blue uniform with geometric pattern details. A second player is visible in the background, creating depth and team dynamics. Both figures are rendered in clean vector illustration style with bold solid color fills and dramatic cast shadows - no gradients or photorealistic elements. A volleyball is suspended between them in mid-flight, rendered with bright yellow and orange panel segments that catch dramatic lighting. The composition uses strong vertical emphasis with the blocking action creating an imposing wall-like formation. Clean, sharp edges throughout for seamless template integration. The players show determined expressions with stylized features - strong jawlines and focused eyes. Small energy burst effects radiate from the point where hands would contact the ball. Bold color treatment emphasizing electric blue (#2D4BE6), vivid orange (#FF6B2F), and bright yellow (#DFFD51) against the template's blue gradient background. The bottom third remains clear for text overlay while the athletic action dominates the upper two-thirds with powerful vertical lines.",
+  "referenceInstructions": "From illustration-31: Borrow the dynamic team uniform details and bold color combinations. From illustration-17: Use the clean cartoon proportions and expressive character features. From illustration-07: Apply the protective/blocking gesture concept and dramatic positioning. From illustration-50: Reference the volleyball rendering style and athletic motion effects."
+}

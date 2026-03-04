@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "cta": "JOIN NOW",
+    "subhead": "Where every goal counts double",
+    "headline": "CHAMPIONS CELEBRATE HERE",
+    "disclaimer": ""
+  },
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "Compose the pre-styled footballer celebration as an off-center hero element, positioned in the lower two-thirds of the canvas and scaled to create dramatic visual weight. The sliding knee pose flows diagonally from bottom-left toward center-right, with the arms-wide celebration gesture creating dynamic movement across the purple gradient template background. The illustration retains its existing CB brand treatment with clean vector styling and bold color applications. Layer subtle geometric design elements behind and around the figure: angular light streaks emanating from the celebration point using the template's purple tones (#8B4CB8, #6B2C91), creating depth without overwhelming the hero. Add floating diamond and triangular shapes in varying sizes around the composition, echoing the template's geometric heart motif. These elements use transparency effects and the brand's purple gradient palette to maintain visual harmony. The upper third of the canvas remains strategically open for text hierarchy, while the geometric background naturally frames the celebration moment. Incorporate subtle particle effects around the sliding motion to enhance the sense of triumphant energy. The hero illustration commands attention through scale and positioning while the supporting elements create a cohesive brand ecosystem that amplifies the victory celebration mood.\n\nvault-illustrations-illustration-01: Reference the dramatic shadow casting and realistic proportions that ground the athletic figure\nvault-illustrations-illustration-05: Borrow the dynamic pose energy and speed suggestion through body positioning\nvault-illustrations-illustration-06: Use the clean geometric approach and bold color blocking technique for consistency\nvault-illustrations-illustration-11: Apply the smooth vector styling and athletic proportions that create modern sports appeal",
+    "referenceInstructions": "vault-illustrations-illustration-01: Reference the dramatic shadow casting and realistic proportions that ground the athletic figure\nvault-illustrations-illustration-05: Borrow the dynamic pose energy and speed suggestion through body positioning\nvault-illustrations-illustration-06: Use the clean geometric approach and bold color blocking technique for consistency\nvault-illustrations-illustration-11: Apply the smooth vector styling and athletic proportions that create modern sports appeal"
+  },
+  "variantLabel": "B",
+  "referencesUsed": [
+    "vault-illustrations-illustration-01",
+    "vault-illustrations-illustration-05",
+    "vault-illustrations-illustration-06",
+    "vault-illustrations-illustration-11"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-03",
+  "backgroundPrompt": "Compose the pre-styled footballer celebration as an off-center hero element, positioned in the lower two-thirds of the canvas and scaled to create dramatic visual weight. The sliding knee pose flows diagonally from bottom-left toward center-right, with the arms-wide celebration gesture creating dynamic movement across the purple gradient template background. The illustration retains its existing CB brand treatment with clean vector styling and bold color applications. Layer subtle geometric design elements behind and around the figure: angular light streaks emanating from the celebration point using the template's purple tones (#8B4CB8, #6B2C91), creating depth without overwhelming the hero. Add floating diamond and triangular shapes in varying sizes around the composition, echoing the template's geometric heart motif. These elements use transparency effects and the brand's purple gradient palette to maintain visual harmony. The upper third of the canvas remains strategically open for text hierarchy, while the geometric background naturally frames the celebration moment. Incorporate subtle particle effects around the sliding motion to enhance the sense of triumphant energy. The hero illustration commands attention through scale and positioning while the supporting elements create a cohesive brand ecosystem that amplifies the victory celebration mood.",
+  "referenceInstructions": {
+    "vault-illustrations-illustration-01": "Reference the dramatic shadow casting and realistic proportions that ground the athletic figure",
+    "vault-illustrations-illustration-05": "Borrow the dynamic pose energy and speed suggestion through body positioning",
+    "vault-illustrations-illustration-06": "Use the clean geometric approach and bold color blocking technique for consistency",
+    "vault-illustrations-illustration-11": "Apply the smooth vector styling and athletic proportions that create modern sports appeal"
+  }
+}

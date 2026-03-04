@@ -1,0 +1,28 @@
+{
+  "copy": {
+    "cta": "Bet Now",
+    "subhead": "Championship celebration energy",
+    "headline": "Victory Moment",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "triumphant, heroic, commanding",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#FFFFFF",
+      "#1a1a1a",
+      "#8D52DA"
+    ],
+    "solidBackground": "#1a1a1a",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view of Usain Bolt celebrating a goal with a dramatic knee slide, camera positioned at ground level looking steeply up at the towering figure. The legendary sprinter is captured mid-celebration with both arms spread wide in triumph, his powerful athletic frame dominating the frame from below. His left knee touches the ground in the classic sliding celebration pose while his right leg extends behind him, creating dynamic diagonal energy through the composition. His muscular torso and broad shoulders fill the upper portion of the frame, arms stretched horizontally with hands open in pure joy. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style. Bolt's characteristic lean athletic build and confident posture translate into simplified geometric forms with flat shadow shapes defining his muscle definition and clothing folds. His face shows minimal detail - simplified flat features with a bold shadow mask across his jaw and cheekbones, expression conveyed through body language rather than facial detail. The footballer kit renders in rich flat colors with clean hard-edged shadows only on the fabric surface. Foreshortening emphasizes his spread arms appearing 2x larger than anatomically correct, creating heroic scale and commanding presence. Clean solid background with no shadow or glow behind the character, suitable for professional cutout compositing.\n\nvault-illustrations-illustration-03 for bold flat color blocking and clean geometric forms; vault-illustrations-illustration-10 for dynamic athletic positioning and minimal shadow treatment; vault-illustrations-illustration-06 for flat design vector approach and contemporary sports graphic style",
+    "referenceInstructions": "vault-illustrations-illustration-03 for bold flat color blocking and clean geometric forms; vault-illustrations-illustration-10 for dynamic athletic positioning and minimal shadow treatment; vault-illustrations-illustration-06 for flat design vector approach and contemporary sports graphic style"
+  },
+  "variantLabel": "A",
+  "referencesUsed": [
+    "vault-illustrations-illustration-03",
+    "vault-illustrations-illustration-10",
+    "vault-illustrations-illustration-06"
+  ]
+}

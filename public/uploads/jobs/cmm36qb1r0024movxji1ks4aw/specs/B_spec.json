@@ -1,0 +1,29 @@
+{
+  "id": "weekend_btc_bonus_b",
+  "copy": {
+    "cta": "Join Now",
+    "subhead": "Match your first BTC deposit 100% up to 5 BTC",
+    "headline": "WEEKEND BONUS UNLOCKED",
+    "disclaimer": "New players only | 18+ | Gamble responsibly"
+  },
+  "template": "tpl-split-left",
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "premium_crypto_luxury",
+    "style": "",
+    "palette": [
+      "#8D52DA",
+      "#DFFD51",
+      "#FF6B2F",
+      "#FFFFFF",
+      "#141114"
+    ],
+    "backgroundPrompt": "Split-layout social media post with left half featuring vibrant purple (#8D52DA) gradient background. Right half shows geometric Bitcoin and crypto-inspired illustrations in electric yellow (#DFFD51) and orange (#FF6B2F) on dark charcoal (#141114). Bold white headline 'WEEKEND BONUS UNLOCKED' in Midnight Sans ST 48 Heavy ALL CAPS on the purple left side. White Inter subhead 'Match your first BTC deposit 100% up to 5 BTC' below headline. Bright yellow rounded CTA button 'Join Now' in orange text on left side. Small CB logo positioned in top-left corner. Modern tech aesthetic with clean lines and sophisticated color balance."
+  },
+  "influencedBy": [
+    "vault-previous-posts-slide-3-ig-new02",
+    "vault-illustrations-illustration-04"
+  ],
+  "variantLabel": "B",
+  "referencesUsed": []
+}

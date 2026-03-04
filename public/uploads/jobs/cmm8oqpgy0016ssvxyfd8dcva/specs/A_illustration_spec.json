@@ -1,0 +1,34 @@
+{
+  "copy": {
+    "cta": "Experience the Rush",
+    "subhead": "Pure celebration energy",
+    "headline": "Victory Unleashed",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "heroic, triumphant, explosive celebration",
+    "style": "flat-vector",
+    "palette": [
+      "#2D4BE6",
+      "#FFFFFF",
+      "#FF6B2F",
+      "#8D52DA"
+    ],
+    "solidBackground": "#1a2d5c",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view of Zeb Powell as a footballer celebrating a goal with a dramatic knee slide celebration, camera positioned at ground level looking steeply upward. The character has Zeb Powell's athletic build and proportions - lean muscular frame, characteristic body language and posture. He's captured mid-slide with his left knee down on the ground, right leg extended behind, both arms spread wide in triumphant celebration, head tilted back in pure joy. The extreme low angle makes his torso and raised arms appear massive and heroic against the frame, with his extended arms filling the upper portion of the composition. His football kit consists of bold team colors - deep blue jersey with clean geometric panels, white shorts, and football boots with visible studs. The foreshortening effect makes his chest and shoulders appear 2-3x larger than his lower body, creating maximum heroic scale. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style. His face shows simplified flat features with a bold shadow mask, expression implied through the powerful body language of victory rather than detailed facial features. The sliding motion is captured with speed lines trailing from his boots and dynamic fabric wrinkles on his jersey showing the explosive energy of the celebration. Internal flat shadow shapes define the muscle definition and kit details on the character only. Clean solid dark blue background with no shadow or glow behind the character, suitable for instant cutout use.\n\nUsing vault-illustrations-illustration-03 and illustration-06 for clean flat color blocking and minimal shadow approach. Vault-illustrations-illustration-10 informs the dynamic motion pose and simplified geometric forms. The athletic proportions and clean line weight from illustration-01 guide the character construction while maintaining flat vector execution without gradients.",
+    "referenceInstructions": "Using vault-illustrations-illustration-03 and illustration-06 for clean flat color blocking and minimal shadow approach. Vault-illustrations-illustration-10 informs the dynamic motion pose and simplified geometric forms. The athletic proportions and clean line weight from illustration-01 guide the character construction while maintaining flat vector execution without gradients."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-illustrations-illustration-01": "assets/vault/illustrations/illustration-01.png",
+    "vault-illustrations-illustration-03": "assets/vault/illustrations/illustration-03.png",
+    "vault-illustrations-illustration-06": "assets/vault/illustrations/illustration-06.png",
+    "vault-illustrations-illustration-10": "assets/vault/illustrations/illustration-10.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-03",
+    "vault-illustrations-illustration-06",
+    "vault-illustrations-illustration-10",
+    "vault-illustrations-illustration-01"
+  ]
+}

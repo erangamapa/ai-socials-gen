@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Microsecond tactical omniscience — neural pathways firing at championship velocity",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#300931",
+      "#8D52DA",
+      "#DFFD51"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view from ground level, looking steeply upward at a Counter-Strike pro player locked in tactical supremacy at their gaming station. The camera sits at desk level, angled sharply up to capture the player towering overhead in heroic scale. The gamer leans forward intensely into their setup, dominant hand positioned precisely over gaming mouse, fingers poised in the split-second before executing the decisive clutch play. Their other arm extends toward the mechanical keyboard, creating dramatic foreshortening where the forearm and hand closest to camera appear 2.5x oversized compared to their torso. Professional gaming headset frames their profile, with the left ear cup and microphone boom prominently silhouetted against the monitor glow. Multiple screens create angular geometric light sources behind them, but remain simplified as flat rectangular shapes. The player's esports jersey features bold team colors and geometric sponsor patches rendered as flat graphic elements. Their concentrated expression is minimal - simplified flat shadow mask across the face, with intensity conveyed through hunched shoulders, forward lean, and the coiled tension of their mouse-gripping stance. Motion energy radiates through sharp angular speed lines emanating from the mouse hand, suggesting the microsecond before the game-changing click. Flat vector illustration style with bold solid color fills, hard edges, no gradients, no 3D rendering, clean geometric shadows cast only ON the character's body and clothing. Background is pure solid color with no drop shadows, glows, or halos behind the subject. Full body contained within frame with generous breathing room on all sides.",
+    "referenceInstructions": "Use vault-gen-cmmbmujz0002uqwvxav3lht5s for bold vector line treatment and tactical color blocking with orange/purple contrast. Apply vault-gen-cmmbitqoz001bqwvxlion8s0i's esports jersey styling and geometric shadow approach for authentic gaming setup atmosphere. Incorporate vault-gen-cmmbigrrn000mqwvx8odnqrfd's angular edge work and dramatic lighting contrasts for maximum tactical intensity."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-gen-cmmbigrrn000mqwvx8odnqrfd": "/uploads/jobs/cmmbifhno000jqwvx06rynfe6/illustrations/A_illustration.png",
+    "vault-gen-cmmbitqoz001bqwvxlion8s0i": "/uploads/jobs/cmmbirx7r0016qwvxnc970isb/illustrations/A_illustration.png",
+    "vault-gen-cmmbmujz0002uqwvxav3lht5s": "/uploads/jobs/cmmbmt3n9002rqwvxl2fvwk50/illustrations/A_illustration.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbmujz0002uqwvxav3lht5s",
+    "vault-gen-cmmbitqoz001bqwvxlion8s0i",
+    "vault-gen-cmmbigrrn000mqwvx8odnqrfd"
+  ]
+}

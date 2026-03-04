@@ -1,0 +1,31 @@
+{
+  "id": "A",
+  "copy": {
+    "cta": "Join Now",
+    "subhead": "Get the ultimate welcome package this weekend only",
+    "headline": "CLAIM YOUR $2500 WEEKEND",
+    "disclaimer": "18+ | Gamble responsibly"
+  },
+  "template": "tpl-centered-hero",
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "energetic_promo",
+    "style": "",
+    "palette": [
+      "#FF6B2F",
+      "#300931",
+      "#DFFD51",
+      "#FFFFFF",
+      "#000000"
+    ],
+    "styleNotes": "High-energy weekend promo with premium casino feel, drawing from the dark background and bright accent approach seen in previous posts",
+    "backgroundPrompt": "Create a complete Instagram feed post (1080x1080px) for CB crypto casino welcome bonus promo. Dark purple gradient background (#300931 to deeper purple-black) with subtle geometric patterns. Large bold headline text 'CLAIM YOUR $2500 WEEKEND' in white Midnight Sans ST Heavy, all caps, positioned in upper third of image. Below headline, smaller subhead text 'Get the ultimate welcome package this weekend only' in white Inter font, sentence case. Prominent orange (#FF6B2F) rectangular button/badge in lower third containing white 'Join Now' text. Bright yellow (#DFFD51) accent elements - small geometric shapes and lines scattered around composition for energy. Small CB logo in bottom-right corner in white. Modern, premium casino aesthetic with high contrast and dynamic composition. Include subtle crypto-themed visual elements like blockchain patterns or digital grid overlays in dark tones."
+  },
+  "variantLabel": "A",
+  "referencesUsed": [],
+  "vaultInfluences": [
+    "vault-previous-posts-slide-1-ig-new-a",
+    "vault-previous-posts-slide-2-ig-new",
+    "vault-previous-posts-0101"
+  ]
+}

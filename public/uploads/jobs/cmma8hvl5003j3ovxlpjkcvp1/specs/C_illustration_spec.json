@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "cta": "Roll The Dice",
+    "subhead": "Every toss brings infinite possibilities",
+    "headline": "Luck Of The Draw",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive heroic dominance",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#8D52DA",
+      "#DFFD51",
+      "#2D4BE6",
+      "#1A1A4A"
+    ],
+    "solidBackground": "#1A1A4A",
+    "backgroundPrompt": "Dutch tilt camera angled 25 degrees counterclockwise combined with low-angle perspective creates tension and instability as leprechaun character explodes into coin-tossing action. The tilted horizon line adds editorial drama while maintaining powerful upward viewing angle that emphasizes his commanding presence. Peak action moment shows both arms in full throwing extension with golden coins cascading in asymmetrical arcs across the tilted frame composition. His wild orange beard streams diagonally due to combined motion and camera angle while his iconic purple hat appears to defy gravity in the canted perspective. One boot firmly planted on angled moss rock creates dynamic triangular base while his coattails whip in fabric motion trails that follow the tilted energy flow. Foreshortened perspective makes his leading arm appear oversized while coins burst outward in explosive yellow geometric patterns with blue kinetic energy lines. Bold experimental color palette uses electric yellow coins against rich purple shadows with orange beard creating vibrant three-point contrast. Face rendered as simplified flat mask with minimal features, energy conveyed through dynamic full-body gesture and unstable angular composition. Flat vector illustration style with hard-edged solid color fills, geometric shadow shapes on character only, no gradients or 3D rendering. Motion blur shapes trail behind coins in angular patterns following the dutch tilt orientation. Character fully contained within tilted frame with generous breathing room on all sides. Clean solid midnight blue background with no shadow, glow, halo, or backdrop effects behind the character.\n\nvault-illustrations-illustration-52 provides dramatic lighting approach and bold character silhouette structure with premium color treatment. vault-illustrations-illustration-27 informs dynamic gesture energy and coin-scatter patterns with experimental color contrast applications.",
+    "referenceInstructions": "vault-illustrations-illustration-52 provides dramatic lighting approach and bold character silhouette structure with premium color treatment. vault-illustrations-illustration-27 informs dynamic gesture energy and coin-scatter patterns with experimental color contrast applications."
+  },
+  "variantLabel": "C",
+  "referencePaths": {
+    "vault-illustrations-illustration-27": "assets/vault/illustrations/illustration-27.png",
+    "vault-illustrations-illustration-52": "assets/vault/illustrations/illustration-52.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-52",
+    "vault-illustrations-illustration-27"
+  ]
+}

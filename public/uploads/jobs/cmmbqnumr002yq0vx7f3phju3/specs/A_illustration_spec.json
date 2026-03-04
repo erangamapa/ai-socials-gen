@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Velvet-glove precision — split-second mastery where fortune turns on fingertip control",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#300931",
+      "#FFFFFF",
+      "#8D52DA"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view of a casino dealer character caught in the electric moment of revealing cards, shot from below as if the viewer is sitting at the gaming table looking up. The dealer towers overhead with dramatic foreshortening - their torso and shoulders appear massive in the upper frame while their hands dealing cards are closest to camera and oversized by 2x normal proportions. The character wears a crisp black vest over white shirt with bow tie, rendered in flat vector style with bold solid color fills and hard edges. Their face is simplified with minimal detail - just bold shadow shapes defining cheekbones and jaw, expression conveyed through confident body language rather than facial features. One hand extends forward dealing cards with fingers spread, the other holds a deck of cards against their chest. Playing cards float in mid-air between dealer and camera, showing their face-up reveal moment. The entire composition uses flat vector illustration techniques - no gradients on the character, no 3D rendering, clean geometric shapes with bold outlines. Internal shading consists of flat darker tone shapes ON the character's clothing and body only. Motion energy is captured through the dynamic card-dealing gesture and the powerful low-angle perspective. The character appears to float on the clean solid background with no drop shadows, no glows, no halos, or ground contact shadows. Full body is contained within frame with generous breathing room on all sides.",
+    "referenceInstructions": "vault-illustrations-illustration-55 provides the casino dealer subject foundation with professional attire and confident posture, extracting the clean character silhouette and formal vest/bow tie styling. vault-illustrations-illustration-32 informs the flat vector line weight approach with bold outlines and simplified geometric forms. vault-illustrations-illustration-42 guides the dynamic hand positioning and gesture energy, translating the athletic motion concept to precise card-dealing movements."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-illustrations-illustration-32": "assets/vault/illustrations/illustration-32.png",
+    "vault-illustrations-illustration-42": "assets/vault/illustrations/illustration-42.png",
+    "vault-illustrations-illustration-55": "assets/vault/illustrations/illustration-55.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-55",
+    "vault-illustrations-illustration-32",
+    "vault-illustrations-illustration-42"
+  ]
+}

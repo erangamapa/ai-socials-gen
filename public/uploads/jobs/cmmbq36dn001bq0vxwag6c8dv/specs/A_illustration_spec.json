@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Divine thunderstrike authority — olympian wrath crystallized into earth-shaking command",
+    "style": "flat-vector",
+    "palette": [
+      "#2D4BE6",
+      "#DFFD51",
+      "#FF6B2F",
+      "#FFFFFF",
+      "#300931"
+    ],
+    "solidBackground": "#2D1B69",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view from ground level, looking steeply upward at Zeus as the mighty Olympian god towering overhead in commanding divine authority. The ancient Greek deity stands with muscular bearded physique, flowing white robes with golden trim, and crackling lightning bolt raised high in his dominant right hand. His massive sandaled feet and powerful legs appear enormous in the extreme foreground due to dramatic foreshortening, while his torso and head recede into the upper frame. The lightning weapon extends toward the heavens, with electrical energy crackling around his fingers and forearm. His bearded face shows simplified flat features with bold shadow mask defining his godly expression, minimal facial detail allowing his commanding body language to carry the divine power. White robes billow with flat geometric shadow shapes creating depth on the fabric folds, golden belt and arm bands catching accent highlights. The composition captures the peak moment of Zeus preparing to unleash thunderous judgment, his entire form radiating unstoppable celestial energy. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, clean geometric shapes with strong silhouette reading. All shading exists as flat shadow tones on the character only, never projected onto the background. The god's proportions emphasize his legendary strength through powerful shoulders, muscular arms, and heroic stance that fills the frame from bottom to top. Background is pure solid deep blue color with no shadows, glows, or decorative elements behind Zeus.",
+    "referenceInstructions": "Using vault-gen-cmmbitqoz001bqwvxlion8s0i for dramatic uplighting and angular geometric shadows, vault-illustrations-illustration-01 for clean vector proportions and heroic stance energy, and vault-illustrations-illustration-03 for bold flat color blocking and minimal shading approach on character forms."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-gen-cmmbitqoz001bqwvxlion8s0i": "/uploads/jobs/cmmbirx7r0016qwvxnc970isb/illustrations/A_illustration.png",
+    "vault-illustrations-illustration-01": "assets/vault/illustrations/illustration-01.png",
+    "vault-illustrations-illustration-03": "assets/vault/illustrations/illustration-03.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbitqoz001bqwvxlion8s0i",
+    "vault-illustrations-illustration-01",
+    "vault-illustrations-illustration-03"
+  ]
+}

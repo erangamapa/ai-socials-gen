@@ -1,0 +1,27 @@
+{
+  "copy": {
+    "cta": "BET NOW",
+    "subhead": "Volleyball Nations League action",
+    "headline": "SPIKE THE ODDS LIVE",
+    "disclaimer": ""
+  },
+  "variant": "A",
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "A dynamic volleyball player captured mid-spike, soaring through the air with explosive athleticism. The player wears a bold electric blue uniform with orange accent details, positioned center-right of the canvas in a dramatic diagonal action pose. Their right arm is fully extended overhead, about to make contact with a volleyball rendered in bright orange and blue segments. The illustration style features bold solid color fills with dramatic cast shadows - no gradients or soft shading on the character. Clean, crisp vector-style edges suitable for compositing onto the template background. The player's face shows intense concentration and competitive drive. Energy lines and small geometric fragments radiate from the anticipated point of impact between hand and ball. Dynamic low-angle perspective looking slightly up at the athlete creates a heroic, larger-than-life presence. The volleyball is positioned in the upper-left quadrant, creating strong diagonal movement across the composition. Bold color palette emphasizing electric blue (#2D4BE6) and vibrant orange (#FF6B2F) with deep navy shadows and white highlights on the uniform details. The left side of the composition remains open for text overlay placement.\n\nFrom illustration-50: Borrow the clean vector volleyball spike pose, dynamic athletic positioning, and motion blur energy. From illustration-51: Use the bold color treatment and clean edges suitable for sports graphics. From illustration-31: Apply the smooth gradient uniform details and professional sports aesthetic. From illustration-17: Reference the simplified but expressive facial features and cartoon proportions.",
+    "referenceInstructions": "From illustration-50: Borrow the clean vector volleyball spike pose, dynamic athletic positioning, and motion blur energy. From illustration-51: Use the bold color treatment and clean edges suitable for sports graphics. From illustration-31: Apply the smooth gradient uniform details and professional sports aesthetic. From illustration-17: Reference the simplified but expressive facial features and cartoon proportions."
+  },
+  "variantLabel": "A",
+  "referencesUsed": [
+    "vault-illustrations-illustration-50",
+    "vault-illustrations-illustration-51",
+    "vault-illustrations-illustration-31",
+    "vault-illustrations-illustration-17"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-03",
+  "backgroundPrompt": "A dynamic volleyball player captured mid-spike, soaring through the air with explosive athleticism. The player wears a bold electric blue uniform with orange accent details, positioned center-right of the canvas in a dramatic diagonal action pose. Their right arm is fully extended overhead, about to make contact with a volleyball rendered in bright orange and blue segments. The illustration style features bold solid color fills with dramatic cast shadows - no gradients or soft shading on the character. Clean, crisp vector-style edges suitable for compositing onto the template background. The player's face shows intense concentration and competitive drive. Energy lines and small geometric fragments radiate from the anticipated point of impact between hand and ball. Dynamic low-angle perspective looking slightly up at the athlete creates a heroic, larger-than-life presence. The volleyball is positioned in the upper-left quadrant, creating strong diagonal movement across the composition. Bold color palette emphasizing electric blue (#2D4BE6) and vibrant orange (#FF6B2F) with deep navy shadows and white highlights on the uniform details. The left side of the composition remains open for text overlay placement.",
+  "referenceInstructions": "From illustration-50: Borrow the clean vector volleyball spike pose, dynamic athletic positioning, and motion blur energy. From illustration-51: Use the bold color treatment and clean edges suitable for sports graphics. From illustration-31: Apply the smooth gradient uniform details and professional sports aesthetic. From illustration-17: Reference the simplified but expressive facial features and cartoon proportions."
+}

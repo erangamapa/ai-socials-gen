@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Post-coffee biological conquest — primal satisfaction crystallized into victory salute",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#8D52DA",
+      "#2D4BE6",
+      "#DFFD51",
+      "#FFFFFF"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Foreshortened lunge composition showing Ben thrusting his fist toward the camera in a victorious celebration gesture, his knuckles appearing 2-3x oversized in the extreme foreground while his tall British frame recedes dramatically behind. The camera captures him at a dutch tilt angle, tilted 15 degrees for added tension and editorial energy. Ben's dirty blonde hair is tousled from the morning activity, his face showing simplified flat geometric features with a bold shadow mask defining his jawline and cheekbones. His extended arm dominates the composition through extreme perspective distortion, the oversized fist filling the foreground while his torso and legs appear proportionally smaller in the background. He wears a casual morning shirt and comfortable pants rendered in flat vector style with bold solid color fills and no gradients. Speed lines and kinetic energy streaks emanate from his victorious gesture, suggesting explosive satisfaction and accomplishment. The illustration employs clean hard edges throughout, with flat shadow shapes applied only to Ben's body and clothing to create dimension without any 3D rendering effects. His body language radiates pure triumph and relief, the gesture capturing the exact moment of biological victory celebration. Color treatment uses bold CB palette fills - orange on his shirt, purple accent details, blue shadows - all applied as flat solid colors with sharp boundaries. The entire figure fits completely within frame boundaries with ample space, positioned against a clean solid background color with absolutely no drop shadows, glows, or decorative elements behind the character, ensuring perfect cutout capability.",
+    "referenceInstructions": "Apply vault-illustrations-illustration-44's clean geometric approach and foreshortening technique for the extended arm composition. Use vault-illustrations-illustration-49's bold color blocking and flat fill methodology. Reference vault-illustrations-illustration-31's dynamic energy positioning and confident gesture work for the victorious body language."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-illustrations-illustration-31": "assets/vault/illustrations/illustration-31.png",
+    "vault-illustrations-illustration-44": "assets/vault/illustrations/illustration-44.png",
+    "vault-illustrations-illustration-49": "assets/vault/illustrations/illustration-49.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-44",
+    "vault-illustrations-illustration-49",
+    "vault-illustrations-illustration-31"
+  ]
+}

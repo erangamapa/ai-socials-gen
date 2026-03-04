@@ -1,0 +1,28 @@
+{
+  "copy": {
+    "cta": "Join Now",
+    "subhead": "Explosive celebration energy",
+    "headline": "Power Play",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive, kinetic, championship energy",
+    "style": "flat-vector",
+    "palette": [
+      "#8D52DA",
+      "#DFFD51",
+      "#FF6B2F",
+      "#FFFFFF",
+      "#2a2a2a"
+    ],
+    "solidBackground": "#2a2a2a",
+    "backgroundPrompt": "Foreshortened lunge perspective of Usain Bolt in celebration knee slide, with his right fist thrust powerfully toward the camera, appearing 3x oversized in the foreground. The legendary sprinter's clenched fist dominates the immediate frame, rendered as a massive flat-colored geometric shape with bold hard-edged shadows defining the knuckles and wrist. His athletic arm extends from the enormous fist back to his receding torso, creating dramatic perspective compression that emphasizes the explosive energy of his goal celebration. His left arm spreads wide horizontally for balance while his body slides on the left knee, right leg trailing behind in classic football celebration form. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style. Bolt's characteristic powerful build translates into simplified angular forms - broad shoulders tapering to his lean waist, defined through flat shadow shapes on his football kit only. His face appears in profile, simplified to basic flat geometric shapes with minimal detail - a bold shadow mask across his features, jaw line defined by hard-edged shadow, expression of triumph conveyed through his dynamic body positioning rather than facial expression. The extreme foreshortening makes his approaching fist the focal point while his sliding body creates supporting diagonal energy. Football boots and kit details rendered in flat solid colors with clean geometric shadow shapes. Clean solid dark background with no shadow or glow behind the character, perfect for professional cutout use.\n\nvault-illustrations-illustration-01 for dramatic action pose and motion-focused composition; vault-illustrations-illustration-04 for clean geometric forms and bold color treatment; vault-illustrations-illustration-12 for motion blur effects and dynamic energy capture",
+    "referenceInstructions": "vault-illustrations-illustration-01 for dramatic action pose and motion-focused composition; vault-illustrations-illustration-04 for clean geometric forms and bold color treatment; vault-illustrations-illustration-12 for motion blur effects and dynamic energy capture"
+  },
+  "variantLabel": "B",
+  "referencesUsed": [
+    "vault-illustrations-illustration-01",
+    "vault-illustrations-illustration-04",
+    "vault-illustrations-illustration-12"
+  ]
+}

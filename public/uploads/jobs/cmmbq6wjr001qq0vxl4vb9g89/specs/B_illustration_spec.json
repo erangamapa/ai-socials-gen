@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "Feel the Rush",
+    "subhead": "When speed meets destiny",
+    "headline": "Championship Moment",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Podium-surge detonation — decades of speed crystallized into earth-shaking dominance",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#8D52DA",
+      "#300931",
+      "#DFFD51"
+    ],
+    "solidBackground": "#000000",
+    "backgroundPrompt": "Foreshortened lunge composition with the F1 driver's triumphant fist thrust directly toward the camera, creating extreme perspective distortion where the gloved hand appears 3x larger than normal, dominating the entire foreground. The camera captures the precise moment as the driver emerges from his cockpit, his body angled toward the viewer in a powerful diagonal thrust. His racing glove fills the lower third of the frame, knuckles and fingers rendered in bold flat geometric shapes with hard-edged shadow forms defining each digit. Behind the massive fist, his body recedes dramatically - racing suit, helmet, and cockpit all compressed into the background plane due to the extreme foreshortening effect. The driver's helmet shows simplified flat features with a bold visor reflection rendered as clean geometric highlight shapes. His racing suit displays sponsor graphics as simplified flat color blocks in vibrant orange, blue, and purple, with triangular shadow shapes cast across the fabric to suggest dimension without gradients. The F1 cockpit behind him features clean mechanical elements - carbon fiber patterns simplified to bold graphic textures, dashboard displays as flat rectangular light shapes, steering wheel rendered in simple geometric forms. Motion blur shapes trail from his extended arm, creating speed lines that emphasize the explosive forward energy of his victory celebration. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style. His face beneath the helmet visor shows minimal detail - simplified flat shadow mask shapes with expression conveyed through the powerful forward thrust of his body. Clean solid black background with no shadow or glow behind the character, perfect for professional cutout use.",
+    "referenceInstructions": "Apply vault-gen-cmmbmujz0002uqwvxav3lht5s for the dramatic foreshortening technique and bold orange-blue color contrast with clean geometric shapes. Use vault-illustrations-illustration-28 for the powerful celebratory gesture emphasis with exaggerated hand proportions. Reference vault-gen-cmmbn3n940036qwvxueus6fri for the angular geometric forms and motion blur effects on the key action element."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-gen-cmmbmujz0002uqwvxav3lht5s": "/uploads/jobs/cmmbmt3n9002rqwvxl2fvwk50/illustrations/A_illustration.png",
+    "vault-gen-cmmbn3n940036qwvxueus6fri": "/uploads/jobs/cmmbn21kb0033qwvxq40a5qwb/illustrations/A_illustration.png",
+    "vault-illustrations-illustration-28": "assets/vault/illustrations/illustration-28.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbmujz0002uqwvxav3lht5s",
+    "vault-illustrations-illustration-28",
+    "vault-gen-cmmbn3n940036qwvxueus6fri"
+  ]
+}

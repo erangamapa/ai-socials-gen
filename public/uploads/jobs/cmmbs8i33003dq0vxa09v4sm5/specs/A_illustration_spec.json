@@ -1,0 +1,29 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Deep-water vindication — lifetime of patient casting rewarded in one explosive moment",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#DFFD51",
+      "#300931",
+      "#FFFFFF"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view of a weathered fisherman character caught in the explosive moment of jackpot realization, shot from ground level looking steeply upward as his body arches back in pure victorious abandon. The fisherman dominates the frame with championship-forged supremacy, his rugged weathered face simplified to bold flat shadow shapes beneath a worn fishing cap, gold-toothed grin implied through body language rather than detailed facial expression. Both arms thrust skyward in triumphant celebration, massive forearms and work-hardened hands appearing oversized due to extreme foreshortening as they reach toward the top of frame. His yellow fishing vest and worn work clothes rendered in bold flat color fills with hard-edged shadow shapes defining muscular form, no gradients or 3D rendering. The fisherman's boots planted firmly at bottom of frame appear smaller due to perspective distortion, creating powerful sense of towering authority. Electric energy radiates from his coiled muscles frozen in that singular instant when digital fortune detonates into life-changing reality. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style, clean solid background with no shadow or glow behind the character. Full body contained within frame with generous breathing room on all sides.",
+    "referenceInstructions": "vault-gen-cmmbg52of0028r0vx for dynamic motion blur effects and flowing fabric details on clothing. vault-gen-cmmbpt09a000rq0vx for bold geometric illustration style with strong angular forms and dramatic lighting on muscular definition. vault-gen-cmmbitqoz001bqwvx for extreme low-angle perspective and dramatic uplighting effect creating heroic scale."
+  },
+  "variantLabel": "A",
+  "referencePaths": {},
+  "referencesUsed": [
+    "vault-gen-cmmbg52of0028r0vx",
+    "vault-gen-cmmbpt09a000rq0vx",
+    "vault-gen-cmmbitqoz001bqwvx"
+  ]
+}

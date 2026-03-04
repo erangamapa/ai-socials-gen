@@ -1,0 +1,29 @@
+{
+  "copy": {
+    "cta": "Join the Action",
+    "subhead": "Peak cricket performance",
+    "headline": "Championship Moment",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "tension championship intensity",
+    "style": "flat-vector",
+    "palette": [
+      "#DFFD51",
+      "#FF6B2F",
+      "#8D52DA",
+      "#CC3300",
+      "#FFFFFF"
+    ],
+    "solidBackground": "#CC3300",
+    "backgroundPrompt": "Dutch tilt camera angle rotated 25 degrees counterclockwise combined with extreme low-angle perspective, creating maximum tension and instability as a cricket batsman executes a sweep shot at the peak moment of ball contact. The tilted horizon line adds editorial premium energy while the low viewpoint makes the player appear monumentally powerful and dynamic. The batsman is captured with body twisted in full extension, one knee planted, arms completing the follow-through with the bat creating a dramatic diagonal line across the tilted frame. Sharp geometric fragments explode from the contact point in all directions, enhanced by the diagonal composition. Flat vector illustration style with the most experimental color palette - cricket bat and uniform details in electric yellow #DFFD51, protective gear and uniform base in vibrant orange #FF6B2F, with purple #8D52DA speed lines and motion elements creating maximum visual contrast. The tilted composition amplifies the sense of explosive movement and championship-level intensity. Player's face simplified to bold flat shadow mask, expression conveyed through the twisted body language and peak-action moment rather than facial detail. Motion blur shapes trail the bat's arc at angles that complement the Dutch tilt orientation. Hard-edged flat shadow shapes define the character's form with no gradients or 3D effects. Full figure fits within the rotated frame with all limbs and extremities visible. Rich dark orange background #CC3300 provides maximum contrast and premium feel, completely clean with no shadows or effects behind the character for seamless cutout capability.\n\nApply Dutch tilt composition with bold contrasting colors, maintaining flat graphic treatment and clean background separation while maximizing visual tension through the tilted perspective and explosive color choices.",
+    "referenceInstructions": "Apply Dutch tilt composition with bold contrasting colors, maintaining flat graphic treatment and clean background separation while maximizing visual tension through the tilted perspective and explosive color choices."
+  },
+  "variantLabel": "C",
+  "referencePaths": {},
+  "referencesUsed": [
+    "vault-004",
+    "vault-006",
+    "vault-008"
+  ]
+}

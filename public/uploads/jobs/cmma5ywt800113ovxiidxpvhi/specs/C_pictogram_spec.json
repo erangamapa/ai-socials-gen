@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "cta": "Rule the Game",
+    "subhead": "CB royalty redefined",
+    "headline": "Purple Crown",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "bold, modern, branded, sleek, contemporary",
+    "style": "3d-icon",
+    "palette": [
+      "#8D52DA",
+      "#C47EFF",
+      "#FFD700",
+      "#6B2C91",
+      "#A066CC"
+    ],
+    "solidBackground": "#F8F5FC",
+    "backgroundPrompt": "An bold experimental crown interpretation featuring a modern minimalist three-point design with dominant CB purple coloring (#8D52DA) and selective gold accent highlights. The crown adopts a sleek contemporary aesthetic with geometric precision, featuring sharp angular peaks and clean linear band construction. Purple gradient fills create depth from light lavender (#C47EFF) on illuminated surfaces to deep royal purple (#6B2C91) in shadowed recesses. Strategic gold detailing (#FFD700) appears as thin accent lines along edges and small ornamental elements, creating premium contrast without overwhelming the purple dominance. Three-dimensional isometric rendering maintains soft lighting from top-left with subtle ambient shadows that ground the object. The modernized form balances traditional crown symbolism with contemporary digital aesthetics, featuring smoother curves and less ornate decoration for cleaner icon recognition. Surface treatment combines matte purple base with selective metallic gold highlights that catch light elegantly. Proportions favor bold geometric clarity over intricate royal detail, ensuring strong visual impact and perfect scalability. The experimental approach maintains regal authority while embracing CB's signature brand identity through dominant purple palette implementation.\n\nvault-pictograms-chips-cb provides the dominant purple coloring and modern 3D aesthetic, while vault-pictograms-vip-1 informs the essential crown structure and selective gold accent integration for premium appeal.",
+    "referenceInstructions": "vault-pictograms-chips-cb provides the dominant purple coloring and modern 3D aesthetic, while vault-pictograms-vip-1 informs the essential crown structure and selective gold accent integration for premium appeal."
+  },
+  "variantLabel": "C",
+  "referencePaths": {
+    "vault-pictograms-vip-1": "assets/vault/pictograms/VIP-1.png",
+    "vault-pictograms-chips-cb": "assets/vault/pictograms/Chips-cb.png"
+  },
+  "referencesUsed": [
+    "vault-pictograms-chips-cb",
+    "vault-pictograms-vip-1"
+  ]
+}

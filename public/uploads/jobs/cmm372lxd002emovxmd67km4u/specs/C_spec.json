@@ -1,0 +1,38 @@
+{
+  "id": "champions-league-semis-c",
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "content": {
+    "cta": "Join Now",
+    "subhead": "Enhanced first goalscorer odds. Real Madrid meets Bayern Munich tonight.",
+    "headline": "SEMI-FINAL SHOWDOWN",
+    "disclaimer": "18+ | Gamble responsibly"
+  },
+  "template": "tpl-promo-overlay",
+  "references": [
+    "vault-previous-posts-slide-4-ig-new",
+    "vault-previous-posts-slide-3-ig-new02"
+  ],
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "premium",
+    "style": "overlay-promo",
+    "palette": [
+      "#DFFD51",
+      "#300931",
+      "#FF6B2F",
+      "#FFFFFF",
+      "#141114"
+    ],
+    "backgroundPrompt": "Complete finished Champions League promotional social post. Bright yellow #DFFD51 background with dark purple #300931 geometric overlay shapes creating depth. Center-focused composition with large 'SEMI-FINAL SHOWDOWN' headline in Midnight Sans ST 48 Heavy all caps, displayed in white #FFFFFF with dark shadow for contrast. Positioned in center with smaller subhead below: 'Enhanced first goalscorer odds. Real Madrid meets Bayern Munich tonight.' in Inter font, dark purple text. Orange #FF6B2F accent elements frame the text area. Prominent white 'JOIN NOW' button with orange border at bottom center. Small CB logo in bottom-right corner in dark purple. Champions League themed with subtle football iconography, premium overlay design with strong color contrast and clear text hierarchy."
+  },
+  "variantLabel": "C",
+  "referencesUsed": [
+    "vault-previous-posts-slide-4-ig-new",
+    "vault-previous-posts-slide-3-ig-new02"
+  ]
+}

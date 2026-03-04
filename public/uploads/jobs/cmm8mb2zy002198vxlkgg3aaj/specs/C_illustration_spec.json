@@ -1,0 +1,27 @@
+{
+  "copy": {
+    "cta": "BET ON THE BEST",
+    "subhead": "Power, precision, perfection",
+    "headline": "EXPLOSIVE TECHNIQUE",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "editorial premium, kinetic tension, explosive rotation, high-end combat sports",
+    "style": "flat-vector",
+    "palette": [
+      "#DFFD51",
+      "#FF6B2F",
+      "#2D4BE6",
+      "#0F0F23"
+    ],
+    "solidBackground": "#0F0F23",
+    "backgroundPrompt": "Dutch tilt camera angle rotated 25 degrees creating diagonal tension as Dakota throws a devastating hook punch, shot from extreme low angle with camera positioned below her lead knee looking up. The tilted horizon line adds editorial premium energy and instability to the composition. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style. Her punching arm sweeps in a wide arc with her fist positioned at the peak moment of the hook, rendered 2x larger than normal due to proximity and perspective distortion. Her face shows in three-quarter view with simplified flat geometric features - strong cheekbone defined by angular shadow shapes, minimal eye detail suggested by bold flat color blocks, expression conveyed through the explosive rotational body mechanics rather than facial detail. Her core torates powerfully into the strike with her hips and shoulders generating maximum torque, athletic wear rendered in vibrant flat color segments. Her supporting leg bears her full weight while her rear leg shows the pivotal rotation that drives the punch's power. The tilted composition creates dynamic diagonal lines throughout her silhouette. Speed lines curve along the arc of her punch path, creating rotational motion energy. Hard-edged geometric shadows fall diagonally due to the camera tilt, emphasizing the off-balance premium editorial feel. Bold accent colors highlight key impact points - glove, shoulder rotation, and pivot foot. Full body contained within tilted frame with generous space on all sides.\n\nApply illustration-01's dramatic shadow effects and motion-focused composition. Use illustration-05's smooth vector edges and dynamic pose treatment. Reference illustration-11's bold color integration and athletic proportions for the rotational striking motion.",
+    "referenceInstructions": "Apply illustration-01's dramatic shadow effects and motion-focused composition. Use illustration-05's smooth vector edges and dynamic pose treatment. Reference illustration-11's bold color integration and athletic proportions for the rotational striking motion."
+  },
+  "variantLabel": "C",
+  "referencesUsed": [
+    "vault-illustrations-illustration-01",
+    "vault-illustrations-illustration-05",
+    "vault-illustrations-illustration-11"
+  ]
+}

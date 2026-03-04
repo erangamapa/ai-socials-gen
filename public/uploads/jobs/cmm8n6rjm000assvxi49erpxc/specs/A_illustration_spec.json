@@ -1,0 +1,28 @@
+{
+  "copy": {
+    "cta": "Race Forward",
+    "subhead": "Premium motorsport intensity",
+    "headline": "Championship Drive",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "heroic, commanding, premium motorsport",
+    "style": "flat-vector",
+    "palette": [
+      "#DC143C",
+      "#4A90E2",
+      "#FFFFFF",
+      "#2C3E50",
+      "#FFD700"
+    ],
+    "solidBackground": "#1a1a1a",
+    "backgroundPrompt": "Extreme worm's-eye view from ground level looking steeply up at a Formula 1 driver in dramatic side profile, helmet with visor down creating a powerful heroic silhouette against the sky. The driver's head and shoulders dominate the upper portion of the frame, appearing massive and imposing from this low perspective. Racing helmet rendered in flat vector style with bold geometric faceting, visor as a single flat dark reflective surface with subtle flat highlight shapes, no gradual reflections. The driver's racing suit features bold geometric panel designs in flat primary colors - vibrant racing red, electric blue, and crisp white sections with hard-edged color blocking. Body positioned in three-quarter turn showing the iconic racing suit's aerodynamic cut and sponsor patches as simple flat geometric shapes. Flat vector illustration, bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style, clean solid background with no shadow or glow behind the character. Simplified flat features with helmet completely obscuring facial details, expression conveyed through powerful body positioning and the commanding scale from the worm's-eye perspective. The driver's shoulders and torso appear monumentally scaled due to extreme foreshortening, creating maximum heroic impact. Racing suit fabric rendered as clean flat panels with subtle flat shadow shapes defining the suit's structure and folds. Color treatment emphasizes bold contrast with flat hard-edged shadow shapes on the character's suit and helmet only, never projected onto the background. Full figure contained within frame with generous breathing room on all sides.\n\nUse illustration-03 and illustration-04 for bold flat color blocking approach and clean geometric helmet treatment. Apply illustration-10's minimal shadow style for suit definition.",
+    "referenceInstructions": "Use illustration-03 and illustration-04 for bold flat color blocking approach and clean geometric helmet treatment. Apply illustration-10's minimal shadow style for suit definition."
+  },
+  "variantLabel": "A",
+  "referencesUsed": [
+    "vault-illustrations-illustration-03",
+    "vault-illustrations-illustration-04",
+    "vault-illustrations-illustration-10"
+  ]
+}

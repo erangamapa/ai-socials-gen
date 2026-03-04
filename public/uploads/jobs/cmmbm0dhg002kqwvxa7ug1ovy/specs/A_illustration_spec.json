@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Gravitational rebellion frozen at the moment physics surrenders to pure will",
+    "style": "flat-vector",
+    "palette": [
+      "#DFFD51",
+      "#FF6B2F",
+      "#FFFFFF",
+      "#0F1032",
+      "#2D4BE6"
+    ],
+    "solidBackground": "#0F1032",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view from ground level looking steeply up at Ronaldo's legendary bicycle kick frozen at the impossible apex, his entire muscular frame inverted in mid-air with both legs scissored skyward in perfect technical form. The Portuguese striker's body is completely airborne, twisted with surgical precision as his right foot connects with the ball while his left leg extends for balance, arms spread wide to maintain aerial control. Foreshortening makes his elevated boots enormous in the foreground, dominating the frame as they slice through space, while his torso and head recede dramatically upward, emphasizing the heroic impossibility of the moment. His iconic white kit renders in crisp flat vector shapes with bold CB gold accents on jersey numbers and trim, vibrant orange highlights catching imaginary stadium lights across shorts and socks. Face simplified to bold shadow mask with minimal detail, expression conveyed entirely through the gravity-defying body language and decades of elite precision condensed into this single breath-holding instant. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, clean geometric forms that capture raw athletic power. Hard-edged shadow shapes exist only on the character's uniform and muscular definition, creating dramatic contrast without any backdrop effects. Clean solid navy background with no shadow, glow, or halo behind the floating figure - pure cutout-ready composition emphasizing the separation between mortal and legend.",
+    "referenceInstructions": "vault-gen-cmmbg4kx90026r0vxq2nel790 provides the geometric low-poly approach with sharp angular forms and bold color blocking for athletic motion capture. vault-illustrations-illustration-31 informs the clean vector treatment of sports uniforms with smooth color fills and professional sports branding aesthetic for the white kit details."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-gen-cmmbg4kx90026r0vxq2nel790": "/uploads/jobs/cmmbg30pz0023r0vxxejz7eyf/illustrations/A_illustration.png",
+    "vault-illustrations-illustration-02": "assets/vault/illustrations/illustration-02.png",
+    "vault-illustrations-illustration-31": "assets/vault/illustrations/illustration-31.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbg4kx90026r0vxq2nel790",
+    "vault-illustrations-illustration-31",
+    "vault-illustrations-illustration-02"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Clutch-moment detonation — decades of muscle memory crystallized into one perfect click",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#300931",
+      "#2D4BE6",
+      "#8D52DA",
+      "#DFFD51"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Foreshortened lunge perspective capturing the Counter-Strike pro's mouse hand thrusting directly toward the camera in the explosive moment before executing the clutch play. The gaming mouse appears 3x oversized in the extreme foreground, fingers wrapped around it with tactical precision, while the player's body dramatically recedes behind this dominant focal point. Dutch tilt angle rotated 20 degrees adds editorial tension and instability to the composition, suggesting the high-stakes pressure of the competitive moment. The player's torso twists dynamically as they lean into the decisive click, headset slightly askew from the intense forward momentum, secondary hand hovering over WASD keys in perfect tactical positioning. Monitor glows create dramatic rim lighting on the player's profile, casting hard-edged geometric shadow shapes across their esports jersey and gaming chair. The foreshortened perspective makes the mouse hand the gravitational center of the image, with motion blur geometric shapes integrated into the mouse cable and wrist movement. Flat vector illustration style with bold solid color fills, no gradients, sharp angular geometric forms defining all gaming peripherals and furniture. Face rendered as simplified flat mask with minimal detail, tactical intensity conveyed through the coiled body language and precise hand positioning rather than facial expression. Clean solid #300931 dark purple background providing maximum contrast for the subject, with zero drop shadows, glows, or effects projected behind the character. Orange accent colors pop on gaming peripheral details while blue monitor light creates cool temperature contrast. Speed lines and motion energy contained entirely within the character design - jersey fabric, cable dynamics, chair ergonomics - never extending into the background space. Full body contained within frame with generous breathing room despite the dramatic close-up mouse perspective.",
+    "referenceInstructions": "vault-gen-cmmbn3n940036qwvxueus6fri establishes the motion blur effects on gaming peripherals, bold angular art style, and neon accent color integration for competitive gaming energy. vault-gen-cmmbbitqoz001bqwvxlion8s0i provides the dramatic perspective techniques with strong geometric shadows, angular shading, and professional esports jersey treatment. vault-gen-cmmbg52of0028r0vxbcrlz5wx contributes the dynamic motion line integration and flowing details that enhance the foreshortened lunge energy without cluttering the composition."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-gen-cmmbg52of0028r0vxbcrlz5wx": "/uploads/jobs/cmmbg30pz0023r0vxxejz7eyf/illustrations/B_illustration.png",
+    "vault-gen-cmmbn3n940036qwvxueus6fri": "/uploads/jobs/cmmbn21kb0033qwvxq40a5qwb/illustrations/A_illustration.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbn3n940036qwvxueus6fri",
+    "vault-gen-cmmbbitqoz001bqwvxlion8s0i",
+    "vault-gen-cmmbg52of0028r0vxbcrlz5wx"
+  ]
+}

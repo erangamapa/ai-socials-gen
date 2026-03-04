@@ -1,0 +1,64 @@
+{
+  "channel": "twitter",
+  "variantLabel": "B",
+  "templateId": "tpl-centered-hero",
+  "copy": {
+    "cta": "Play Now",
+    "disclaimer": "18+ | Gamble responsibly",
+    "headline": "CHAMPIONS LEAGUE SHOWDOWN",
+    "subhead": "Real Madrid vs Bayern Munich. Enhanced first goalscorer odds."
+  },
+  "artDirection": {
+    "backgroundPrompt": "",
+    "composition": "Centered hero layout with premium metallic elements and clean typography zones",
+    "mood": "Luxurious and sophisticated Champions League elegance with metallic accents",
+    "palette": [
+      "#8D52DA",
+      "#DFFD51",
+      "#000000",
+      "#FFFFFF"
+    ],
+    "style": "Elevated premium betting experience with sophisticated color interplay"
+  },
+  "textOverlays": [
+    {
+      "text": "CHAMPIONS LEAGUE SHOWDOWN",
+      "x": 240,
+      "y": 270,
+      "width": 1120,
+      "fontSize": 54,
+      "color": "#FFFFFF",
+      "fontWeight": "bold",
+      "textAnchor": "middle"
+    },
+    {
+      "text": "Real Madrid vs Bayern Munich. Enhanced first goalscorer odds.",
+      "x": 320,
+      "y": 468,
+      "width": 960,
+      "fontSize": 27,
+      "color": "#E0E0E0",
+      "textAnchor": "middle"
+    },
+    {
+      "text": "Play Now",
+      "x": 480,
+      "y": 612,
+      "width": 640,
+      "fontSize": 36,
+      "color": "#000000",
+      "fontWeight": "bold",
+      "textAnchor": "middle"
+    }
+  ],
+  "notchOverlay": {
+    "x": 64,
+    "y": 36,
+    "width": 192,
+    "height": 72
+  },
+  "qaResult": {
+    "passed": true,
+    "issues": []
+  }
+}

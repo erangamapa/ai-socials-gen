@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "direct kinetic impact",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#8D52DA",
+      "#DFFD51",
+      "#1A1A1A",
+      "#2D4BE6"
+    ],
+    "solidBackground": "#1A1A1A",
+    "backgroundPrompt": "Foreshortened lunge perspective of a bold flat-vector fighter character inspired by Zeb Powell's explosive energy, captured as he drives his dominant fist directly toward the camera in a devastating power punch. His striking fist fills the entire foreground, rendered 3x oversized through extreme perspective distortion, while his muscular torso and determined face recede dramatically behind the impact point. The fighter's athletic build is translated into minimal geometric forms with hard-edged flat color fills, his recognizable intensity conveyed through aggressive body mechanics rather than facial detail. His face appears as simplified flat shapes with bold shadow mask treatment, the raw competitive spirit emanating from his forward-driving motion and coiled body tension. Dynamic motion blur shapes and angular speed lines radiate outward from his extended arm, creating kinetic energy trails that amplify the sense of explosive movement. His form alternates between bold orange primary fills and deep purple shadow shapes that define his muscular contours without gradients or soft blending. The composition captures the peak moment of athletic power, with his entire body committed to the forward strike, back leg planted for maximum force transfer. Yellow accent shapes punctuate key impact points and joint articulations, adding explosive energy highlights. Flat vector illustration style with bold solid color fills, hard edges, no gradients, no 3D rendering, creating maximum kinetic impact. Clean solid dark background with no shadow projections or glow effects behind the character.\n\nvault-illustrations-illustration-14 guides the athletic motion treatment and clean vector approach to sports figures; vault-illustrations-illustration-52 provides the bold color contrast methodology and dramatic perspective composition techniques",
+    "referenceInstructions": "vault-illustrations-illustration-14 guides the athletic motion treatment and clean vector approach to sports figures; vault-illustrations-illustration-52 provides the bold color contrast methodology and dramatic perspective composition techniques"
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-illustrations-illustration-14": "assets/vault/illustrations/illustration-14.png",
+    "vault-illustrations-illustration-52": "assets/vault/illustrations/illustration-52.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-14",
+    "vault-illustrations-illustration-52"
+  ]
+}

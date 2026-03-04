@@ -1,0 +1,29 @@
+{
+  "id": "weekend_btc_bonus_c",
+  "copy": {
+    "cta": "Get Bonus",
+    "subhead": "First deposit bonus up to 5 BTC for new players",
+    "headline": "MEGA WEEKEND MATCH",
+    "disclaimer": "18+ | Gamble responsibly"
+  },
+  "template": "tpl-promo-overlay",
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "bold_promotional_excitement",
+    "style": "",
+    "palette": [
+      "#FF6B2F",
+      "#DFFD51",
+      "#300931",
+      "#FFFFFF",
+      "#1A1C1E"
+    ],
+    "backgroundPrompt": "High-energy promotional social media post with dark gradient background (#300931 to #1A1C1E). Central overlay design featuring bright orange (#FF6B2F) geometric frame with rounded corners. Inside the frame: bold white headline 'MEGA WEEKEND MATCH' in Midnight Sans ST 48 Heavy ALL CAPS at top. White Inter subhead 'First deposit bonus up to 5 BTC for new players' in center. Electric yellow (#DFFD51) rounded button with dark purple text 'Get Bonus' at bottom of frame. CB logo in small white version positioned in bottom-right corner outside the frame. Dynamic Bitcoin symbol graphics in yellow and orange scattered around the overlay frame. Modern, promotional style with strong visual hierarchy and excitement."
+  },
+  "influencedBy": [
+    "vault-previous-posts-slide-3-ig-new02",
+    "vault-illustrations-illustration-10"
+  ],
+  "variantLabel": "C",
+  "referencesUsed": []
+}

@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "cta": "Bet Now",
+    "subhead": "Where legends are forged in combat",
+    "headline": "Clash of Titans",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Championship collision imminent — two apex predators claiming their battleground",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#DFFD51",
+      "#2D4BE6",
+      "#8D52DA",
+      "#300931"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Eye-level side-profile angle showing two elite MMA fighters in pre-fight confrontation stance, mirroring the reference photo composition. Left fighter (van Steenis) with athletic build and shorter hair in combat stance with wrapped hands raised defensively, right fighter (Edwards) with muscular frame and defined facial structure in aggressive forward posture. Both fighters positioned side by side facing each other in the octagon, creating dynamic tension through opposing body language. Extreme foreshortening on the closest fighter's leading shoulder and raised fists, making them appear 2.5x larger than normal proportions. The trailing fighter's torso and legs appear compressed in the background depth. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, clean geometric muscle definition through flat shadow shapes. Minimal facial detail - simplified flat features with bold shadow masks on faces, expressions conveyed through aggressive body postures and fighting stances. Edwards wearing black MMA shorts with neon green accents, van Steenis in orange and black fight shorts. Both fighters shirtless showing defined musculature rendered as flat geometric shadow shapes. Speed lines emanating from their movement create kinetic energy without cluttering the background. Clean solid background with no shadow or glow behind the characters, suitable for professional cutout use.\n\nvault-gen-cmmbe5rqv0008r0vxwm3f6h0z provides the MMA fighter stance dynamics and geometric muscle definition approach. vault-illustrations-illustration-03 informs the bold flat color blocking and clean vector line treatment.",
+    "referenceInstructions": "vault-gen-cmmbe5rqv0008r0vxwm3f6h0z provides the MMA fighter stance dynamics and geometric muscle definition approach. vault-illustrations-illustration-03 informs the bold flat color blocking and clean vector line treatment."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-gen-cmmbe5rqv0008r0vxwm3f6h0z": "/uploads/jobs/cmmbdu2k30005r0vxsiun56zz/illustrations/A_illustration.png",
+    "vault-illustrations-illustration-03": "assets/vault/illustrations/illustration-03.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbe5rqv0008r0vxwm3f6h0z",
+    "vault-illustrations-illustration-03"
+  ]
+}

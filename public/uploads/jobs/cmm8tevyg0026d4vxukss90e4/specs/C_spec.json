@@ -1,0 +1,32 @@
+{
+  "copy": {
+    "cta": "GET IN",
+    "subhead": "ATP Women's Championship Weekend",
+    "headline": "FINALS FEVER HITS HARD",
+    "disclaimer": ""
+  },
+  "variantId": "C",
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "Composite the tennis player illustration dramatically positioned in the upper-left quadrant of the warm orange and brown geometric template, scaled to 70% to create an unconventional asymmetrical composition. The player should be captured mid-leap with both feet off the ground during an overhead smash, racquet positioned for maximum impact, creating explosive athletic energy that contrasts beautifully with the template's sophisticated curved geometric shapes. This bold placement allows the template's warm brown and orange overlapping elements to flow around and beneath the player, creating visual depth and movement. The negative space in the lower-right becomes a powerful design element, balancing the dynamic action in the upper-left. Subtle design accents enhance the composition: angular speed lines emanating from the racquet that echo the template's geometric language, small orange accent particles that tie into the template's color story, and dramatic cast shadows that anchor the airborne figure to the composition. The warm color palette creates an energetic, premium feel that differentiates from typical tennis imagery. Lighting is dramatic and directional, coming from the right to create strong contrast against the template's warm gradient background, ensuring the CB logo and template notch remain completely visible while the player creates bold visual impact.\n\nvault-illustrations-illustration-12: Reference the athletic precision and clean vector style with effective use of negative space\nvault-illustrations-illustration-03: Apply the bold geometric forms and dramatic contrast against dark backgrounds for visual impact\nvault-previous-posts-slide-1-twitter-new: Study the asymmetrical composition and how athletic figures can create dynamic energy in unconventional layouts\nvault-illustrations-illustration-04: Borrow the clean geometric approach and how bold color blocking creates sophisticated sports graphics",
+    "referenceInstructions": "vault-illustrations-illustration-12: Reference the athletic precision and clean vector style with effective use of negative space\nvault-illustrations-illustration-03: Apply the bold geometric forms and dramatic contrast against dark backgrounds for visual impact\nvault-previous-posts-slide-1-twitter-new: Study the asymmetrical composition and how athletic figures can create dynamic energy in unconventional layouts\nvault-illustrations-illustration-04: Borrow the clean geometric approach and how bold color blocking creates sophisticated sports graphics"
+  },
+  "variantLabel": "C",
+  "referencesUsed": [
+    "vault-illustrations-illustration-12",
+    "vault-illustrations-illustration-03",
+    "vault-previous-posts-slide-1-twitter-new",
+    "vault-illustrations-illustration-04"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-02",
+  "backgroundPrompt": "Composite the tennis player illustration dramatically positioned in the upper-left quadrant of the warm orange and brown geometric template, scaled to 70% to create an unconventional asymmetrical composition. The player should be captured mid-leap with both feet off the ground during an overhead smash, racquet positioned for maximum impact, creating explosive athletic energy that contrasts beautifully with the template's sophisticated curved geometric shapes. This bold placement allows the template's warm brown and orange overlapping elements to flow around and beneath the player, creating visual depth and movement. The negative space in the lower-right becomes a powerful design element, balancing the dynamic action in the upper-left. Subtle design accents enhance the composition: angular speed lines emanating from the racquet that echo the template's geometric language, small orange accent particles that tie into the template's color story, and dramatic cast shadows that anchor the airborne figure to the composition. The warm color palette creates an energetic, premium feel that differentiates from typical tennis imagery. Lighting is dramatic and directional, coming from the right to create strong contrast against the template's warm gradient background, ensuring the CB logo and template notch remain completely visible while the player creates bold visual impact.",
+  "referenceInstructions": {
+    "vault-illustrations-illustration-03": "Apply the bold geometric forms and dramatic contrast against dark backgrounds for visual impact",
+    "vault-illustrations-illustration-04": "Borrow the clean geometric approach and how bold color blocking creates sophisticated sports graphics",
+    "vault-illustrations-illustration-12": "Reference the athletic precision and clean vector style with effective use of negative space",
+    "vault-previous-posts-slide-1-twitter-new": "Study the asymmetrical composition and how athletic figures can create dynamic energy in unconventional layouts"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Neural-pathway precision channeling millisecond advantage into tournament destiny",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#8D52DA",
+      "#300931",
+      "#DFFD51"
+    ],
+    "solidBackground": "#2D4BE6",
+    "backgroundPrompt": "Dutch tilt low-angle view with camera tilted 25 degrees and positioned below subject, looking up at a CS2 esports competitor in peak competitive flow. The tilted perspective creates visual tension and editorial energy, with the player's frame angled diagonally across the composition. Hands thrust forward toward camera in extreme foreshortening - right hand gripping mouse appears 3x oversized in immediate foreground, knuckles and fingertips dominating the lower frame. Left hand hovers over keyboard in secondary plane, fingers arched in tactical readiness. The player's torso and head recede behind the enormous hands, creating dramatic depth and motion energy. Head tilted forward with laser focus, shoulders hunched slightly in concentrated intensity. The figure embodies strategic mastery through body language - every muscle coiled for instant reaction, posture radiating the mental fortress required for high-stakes competition. Gaming headset visible with clean geometric forms, jersey with #FF6B2F accent stripes rendered in flat color blocks. Flat vector illustration with bold solid fills, hard-edged shadow shapes on character only, no gradients, no 3D depth, clean graphic approach. Minimal facial features with simplified flat shapes, energy channeled through dynamic hand positioning and tilted composition. Rich #2D4BE6 solid background provides contrast without any decorative elements, shadows, or glows. Full body contained within tilted frame boundaries with proper spacing for cutout use.",
+    "referenceInstructions": "vault-gen-cmmbg4kx90026r0vxq2nel790 provides the geometric low-poly approach with faceted surfaces and dynamic positioning. vault-illustrations-illustration-31 guides the motion blur effects and professional sports aesthetic with clean vector treatment. vault-gen-cmmbg52of0028r0vxbcrlz5wx informs the flowing motion lines and dramatic contrast between warm and cool colors."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-gen-cmmbg4kx90026r0vxq2nel790": "/uploads/jobs/cmmbg30pz0023r0vxxejz7eyf/illustrations/A_illustration.png",
+    "vault-gen-cmmbg52of0028r0vxbcrlz5wx": "/uploads/jobs/cmmbg30pz0023r0vxxejz7eyf/illustrations/B_illustration.png",
+    "vault-illustrations-illustration-31": "assets/vault/illustrations/illustration-31.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbg4kx90026r0vxq2nel790",
+    "vault-illustrations-illustration-31",
+    "vault-gen-cmmbg52of0028r0vxbcrlz5wx"
+  ]
+}

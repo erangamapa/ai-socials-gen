@@ -1,0 +1,32 @@
+{
+  "copy": {
+    "cta": "Dominate the Field",
+    "subhead": "Precision meets perfection",
+    "headline": "Angle of Attack",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Tilted battlefield supremacy — gravity-defying dominance in the chaos zone",
+    "style": "flat-vector",
+    "palette": [
+      "#8D52DA",
+      "#2D4BE6",
+      "#FF6B2F",
+      "#DFFD51"
+    ],
+    "solidBackground": "#2D4BE6",
+    "backgroundPrompt": "Dutch tilt camera angled 25 degrees clockwise with low-angle perspective, capturing the CS2 sniper in ghillie suit from below at the moment of perfect rifle recoil, creating maximum tension and editorial drama. The tilted composition makes the prone marksman appear to slide diagonally across the frame, with the rifle's recoil energy emphasized by the unstable camera angle. The sniper's ghillie-hooded silhouette cuts a bold diagonal line from lower left to upper right, with the weapon's stock braced against the shoulder and barrel extended toward the tilted horizon. The scope assembly appears prominent in the middle distance, with #FF6B2F lens reflection as a flat circular accent. Muzzle flash bursts as #DFFD51 geometric shapes aligned with the tilted perspective. The marksman's eye dominates through the scope eyepiece, rendered as simplified flat features with surgical focus, minimal facial detail beneath the textured ghillie fabric. Face appears as bold shadow mask with angular cheekbone definition through flat dark shapes. Flat vector illustration with solid color fills, hard geometric edges, no gradients or 3D rendering. Ghillie suit uses rich #8D52DA base with flat shadow patches creating camouflage through color blocking technique. Full prone shooting position contained within the tilted frame boundaries, complete body visible with generous breathing room. Background is clean solid #2D4BE6 blue with no shadow effects, halos, or backdrop elements behind the character, suitable for instant cutout compositing.",
+    "referenceInstructions": "Reference vault-gen-cmmbg52of0028r0vxbcrlz5wx's dynamic angle work for the tilted perspective energy. Use vault-illustrations-illustration-53's bold color contrast approach for the enhanced palette. Apply vault-illustrations-illustration-15's clean geometric form treatment for the character silhouette."
+  },
+  "variantLabel": "C",
+  "referencePaths": {
+    "vault-gen-cmmbg52of0028r0vxbcrlz5wx": "/uploads/jobs/cmmbg30pz0023r0vxxejz7eyf/illustrations/B_illustration.png",
+    "vault-illustrations-illustration-15": "assets/vault/illustrations/illustration-15.png",
+    "vault-illustrations-illustration-53": "assets/vault/illustrations/illustration-53.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbg52of0028r0vxbcrlz5wx",
+    "vault-illustrations-illustration-53",
+    "vault-illustrations-illustration-15"
+  ]
+}

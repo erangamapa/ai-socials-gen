@@ -1,0 +1,27 @@
+{
+  "copy": {
+    "cta": "Experience Greatness",
+    "subhead": "The ultimate submission finish",
+    "headline": "Decisive Victory",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "dynamic tension, editorial premium, decisive moment",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#8D52DA",
+      "#2D4BE6",
+      "#DFFD51"
+    ],
+    "solidBackground": "#FF6B2F",
+    "backgroundPrompt": "Dutch tilt low-angle view tilted 25 degrees, creating dynamic instability as Khabib Nurmagomedov applies the rear naked choke with McGregor trapped beneath him on the octagon floor. The tilted perspective adds editorial tension and premium energy to the decisive submission moment. Khabib's muscular frame positioned diagonally across the tilted frame, his powerful shoulders and arms rendered with bold flat color shapes as he maintains the choking grip. His simplified flat facial features show controlled aggression through geometric shadow shapes, bearded jawline defined by hard edges. Signature curly hair stylized as flat interlocking shapes. McGregor compressed in the lower diagonal, his body language showing the effects of the submission. Both fighters in flat-colored MMA gear - Khabib in rich orange shorts with purple accents, McGregor in deep blue. Flat vector illustration with bold solid color fills, clean hard edges, no gradients, no 3D effects, no cartoonish treatment. Explosive yellow kinetic lines slash diagonally across the composition, emphasizing the tilted energy and crushing force. Motion blur shapes in vibrant orange and electric purple create dynamic trails, suggesting explosive grappling movement. All shading achieved through flat hard-edged shadow shapes on characters only. Full bodies completely contained within tilted frame with breathing room on all sides. Solid bright orange background with no drop shadows, no backdrop glows, no decorative elements - clean flat color for seamless cutout capability.\n\nEmploy premium editorial illustration techniques with dramatic dutch tilt and bold flat-vector treatment for maximum visual impact",
+    "referenceInstructions": "Employ premium editorial illustration techniques with dramatic dutch tilt and bold flat-vector treatment for maximum visual impact"
+  },
+  "variantLabel": "C",
+  "referencePaths": {},
+  "referencesUsed": [
+    "flat-vector-005",
+    "flat-vector-006"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "channel": "ig_feed",
+  "variantLabel": "B",
+  "templateId": "tpl-centered-hero",
+  "copy": {
+    "cta": "Play Now",
+    "disclaimer": "18+ | New players only | Terms apply",
+    "headline": "WEEKEND BITCOIN BOOST",
+    "subhead": "Match your first deposit 100% up to 5 BTC"
+  },
+  "artDirection": {
+    "backgroundPrompt": "",
+    "composition": "dynamic split layout with tech-forward geometric elements",
+    "mood": "energetic and optimistic with crypto tech vibes",
+    "palette": [
+      "#FF6B2F",
+      "#DFFD51",
+      "#8D52DA",
+      "#000000",
+      "#FFFFFF"
+    ],
+    "style": "",
+    "visualHierarchy": "bright orange primary with yellow highlights, purple accents on black base, white text contrast"
+  },
+  "textOverlays": [
+    {
+      "text": "WEEKEND BITCOIN BOOST",
+      "x": 162,
+      "y": 405,
+      "width": 756,
+      "fontSize": 64,
+      "color": "#FFFFFF",
+      "fontWeight": "bold",
+      "textAnchor": "middle"
+    },
+    {
+      "text": "Match your first deposit 100% up to 5 BTC",
+      "x": 216,
+      "y": 702,
+      "width": 648,
+      "fontSize": 28,
+      "color": "#E0E0E0",
+      "textAnchor": "middle"
+    },
+    {
+      "text": "Play Now",
+      "x": 324,
+      "y": 918,
+      "width": 432,
+      "fontSize": 36,
+      "color": "#8D52DA",
+      "fontWeight": "bold",
+      "textAnchor": "middle"
+    }
+  ],
+  "notchOverlay": {
+    "x": 43,
+    "y": 54,
+    "width": 130,
+    "height": 108
+  },
+  "qaResult": {
+    "passed": true,
+    "issues": []
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "cta": "Make Your Move",
+    "subhead": "Seize the moment when fortune comes calling",
+    "headline": "Lightning Strikes Twice",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "direct kinetic impact",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#8D52DA",
+      "#DFFD51",
+      "#2D4BE6",
+      "#4A1B4A"
+    ],
+    "solidBackground": "#4A1B4A",
+    "backgroundPrompt": "Foreshortened lunge perspective with leprechaun's coin-filled fist thrusting directly toward camera, appearing enormously oversized in extreme foreground while his body recedes dramatically behind it. The explosive moment captures his arm extended at full reach with golden coins bursting from his grasp in kinetic shower patterns, each coin rendered as flat yellow geometric shapes with hard-edged motion blur trails. His wild orange beard whips sideways from the throwing motion's momentum while his purple hat tilts at dynamic angle from the force. Second arm pulls back in powerful throwing preparation, creating asymmetrical energy flow through his silhouette. One boot plants firmly on moss rock for leverage while coattails stream behind him in fabric motion lines. Foreshortening makes his throwing hand appear 2.5x larger than his head, creating intense depth and impact energy directed at viewer. Face simplified to bold flat shadow shapes with minimal detail, expression conveyed through aggressive forward body lean and spread-leg athletic stance. Flat vector illustration with bold solid color fills, clean hard edges, no gradients or 3D rendering effects. Blue directional energy lines explode outward from coin trajectories while orange beard details and vest trim create vibrant contrast against purple hat and earth-tone leprechaun garments. Motion blur shapes trail behind coins in geometric patterns. Full character fits within frame boundaries with adequate spacing. Clean solid deep purple background with zero shadow, glow, or decorative elements behind the character.\n\nvault-illustrations-illustration-14 provides motion blur treatment for dynamic objects and clean geometric shape rendering with athletic energy. vault-illustrations-illustration-27 informs explosive coin-burst patterns and celebratory gesture dynamics with bold flat color applications.",
+    "referenceInstructions": "vault-illustrations-illustration-14 provides motion blur treatment for dynamic objects and clean geometric shape rendering with athletic energy. vault-illustrations-illustration-27 informs explosive coin-burst patterns and celebratory gesture dynamics with bold flat color applications."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-illustrations-illustration-14": "assets/vault/illustrations/illustration-14.png",
+    "vault-illustrations-illustration-27": "assets/vault/illustrations/illustration-27.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-14",
+    "vault-illustrations-illustration-27"
+  ]
+}

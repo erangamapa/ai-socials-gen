@@ -1,0 +1,30 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Fortune's unstoppable avalanche — mythic treasure flooding into mortal hands",
+    "style": "flat-vector",
+    "palette": [
+      "#DFFD51",
+      "#2D4BE6",
+      "#FF6B2F",
+      "#8D52DA"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Dutch tilt camera angle tilted 20 degrees with low positioning, creating tension and editorial energy as the leprechaun thrusts his pot of gold coins directly toward the camera in a foreshortened lunge. The golden pot appears 2.5x oversized in the extreme foreground, overflowing with gleaming coins that seem to spill toward the viewer, while his body recedes behind it in dramatic perspective distortion. His emerald green coat sleeve extends along the pot handle, creating a strong diagonal leading line through the tilted composition. One leg is planted firmly while the other is caught mid-stride, body twisted in dynamic motion as he presents his jackpot prize. The tilted horizon adds instability and premium editorial feel, suggesting movement and kinetic energy. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style. His face shows simplified flat features with bold shadow mask, minimal facial detail as the pot and action carry the visual impact. Vibrant yellow coins create explosive accent color against his green coat, while his traditional top hat maintains classic leprechaun silhouette despite the dramatic angle. Clean solid #300931 dark purple background with no shadow or glow behind the character, creating strong contrast for cutout use. No drop shadows projected onto background, no decorative backdrop elements, no text or branding. Full character body including extended arm and pot contained within frame boundaries with adequate spacing.",
+    "referenceInstructions": "Adopting vault-illustrations-illustration-27's vibrant color treatment and glowing coin effects translated to flat vector approach. Incorporating vault-illustrations-illustration-26's dynamic pose energy and clean vector art aesthetic for the foreshortened lunge composition."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-illustrations-illustration-26": "assets/vault/illustrations/illustration-26.png",
+    "vault-illustrations-illustration-27": "assets/vault/illustrations/illustration-27.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-27",
+    "vault-illustrations-illustration-26"
+  ]
+}

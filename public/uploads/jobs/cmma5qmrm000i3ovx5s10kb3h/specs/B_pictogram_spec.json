@@ -1,0 +1,30 @@
+{
+  "copy": {
+    "cta": "Unlock Skin",
+    "subhead": "Elite tactical variant",
+    "headline": "Purple Asimov",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "tactical, premium, bold, distinctive",
+    "style": "3d-icon",
+    "palette": [
+      "#300931",
+      "#FF6B2F",
+      "#FFFFFF",
+      "#E8E8E8"
+    ],
+    "solidBackground": "#F8F5FC",
+    "backgroundPrompt": "A 3D isometric AK-47 rendered with dominant deep purple (#300931) body and bright orange (#FF6B2F) geometric Asimov pattern accents. The rifle is positioned at a subtle 20-degree angle with slight upward tilt to showcase the full profile including the distinctive curved magazine and wooden stock details. The deep purple base creates a premium tactical appearance while the orange angular segments form the signature Asimov pattern along the barrel shroud, stock, and receiver housing. White highlight accents define the geometric pattern edges and create additional depth. The 3D form features matte surface treatment with subtle gradient shading from the consistent top-left light source. Soft beveled edges and smooth surface quality maintain the premium game-asset aesthetic. The geometric overlay consists of sharp triangular white and orange segments that flow organically across the weapon's surface. Minimal drop shadow with low opacity provides subtle grounding against the light background.\n\nApply vault-pictograms-crypto's dark navy 3D coin approach but adapted to purple rifle body, using vault-pictograms-chips-bitcoin-2's orange gradient treatment for the geometric pattern segments",
+    "referenceInstructions": "Apply vault-pictograms-crypto's dark navy 3D coin approach but adapted to purple rifle body, using vault-pictograms-chips-bitcoin-2's orange gradient treatment for the geometric pattern segments"
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-pictograms-crypto": "assets/vault/pictograms/Crypto.png",
+    "vault-pictograms-chips-bitcoin-2": "assets/vault/pictograms/Chips-bitcoin-2.png"
+  },
+  "referencesUsed": [
+    "vault-pictograms-crypto",
+    "vault-pictograms-chips-bitcoin-2"
+  ]
+}

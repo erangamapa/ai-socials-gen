@@ -1,0 +1,34 @@
+{
+  "copy": {
+    "cta": "Feel the Energy",
+    "subhead": "Pure goal celebration power",
+    "headline": "Electric Moment",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "editorial premium, kinetic tension, explosive celebration",
+    "style": "flat-vector",
+    "palette": [
+      "#DFFD51",
+      "#2D4BE6",
+      "#FF6B2F",
+      "#1a1a1a"
+    ],
+    "solidBackground": "#b8c441",
+    "backgroundPrompt": "Dutch tilt extreme low-angle of Zeb Powell as a footballer in dramatic knee slide celebration, camera tilted 25 degrees creating instability and editorial tension. The character captures Zeb Powell's natural athletic proportions and movement characteristics - his distinctive lean build and explosive celebration style. He's positioned in a dynamic sliding pose with right knee down, left leg extended, both arms spread wide in a powerful victory gesture that fills the tilted frame. The dutch tilt angle creates visual tension as his sliding form appears to defy gravity, with the entire composition rotating around his core. His celebration kit features bold yellow primary jersey with electric blue lightning-style accent panels, white shorts with blue trim, and boots that show clear stud detail from the ground contact. The tilted perspective makes his spread arms appear to stretch beyond the frame boundaries while his sliding lower body anchors the composition. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style. His face is rendered as simplified flat geometric shapes with strong shadow masking, emotional intensity communicated through the explosive spread-eagle body positioning rather than facial detail. Kinetic energy lines trail from his sliding motion and fabric ripples show the power of his celebration movement. All shadow treatment consists of flat dark-tone shapes internal to the character defining kit details and body form. Clean solid dark yellow background with no shadow or glow behind the character, optimized for seamless cutout application.\n\nLeveraging vault-illustrations-illustration-08 and illustration-09 for the bold yellow color integration and flat illustration approach. Vault-illustrations-illustration-02 informs the clean vector style and athletic form simplification. The minimal shading technique and geometric shape construction from illustration-03 guides the character rendering while maintaining the premium flat vector aesthetic.",
+    "referenceInstructions": "Leveraging vault-illustrations-illustration-08 and illustration-09 for the bold yellow color integration and flat illustration approach. Vault-illustrations-illustration-02 informs the clean vector style and athletic form simplification. The minimal shading technique and geometric shape construction from illustration-03 guides the character rendering while maintaining the premium flat vector aesthetic."
+  },
+  "variantLabel": "C",
+  "referencePaths": {
+    "vault-illustrations-illustration-02": "assets/vault/illustrations/illustration-02.png",
+    "vault-illustrations-illustration-03": "assets/vault/illustrations/illustration-03.png",
+    "vault-illustrations-illustration-08": "assets/vault/illustrations/illustration-08.png",
+    "vault-illustrations-illustration-09": "assets/vault/illustrations/illustration-09.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-08",
+    "vault-illustrations-illustration-09",
+    "vault-illustrations-illustration-02",
+    "vault-illustrations-illustration-03"
+  ]
+}

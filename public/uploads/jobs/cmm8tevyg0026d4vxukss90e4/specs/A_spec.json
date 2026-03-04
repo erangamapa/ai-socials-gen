@@ -1,0 +1,32 @@
+{
+  "copy": {
+    "cta": "BET NOW",
+    "subhead": "ATP Women's Finals This Weekend",
+    "headline": "QUEENS OF THE COURT",
+    "disclaimer": ""
+  },
+  "variantId": "A",
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "Composite the pre-styled female tennis player illustration positioned center-right of the purple gradient template canvas, scaled at approximately 75% to maintain prominence while preserving the template's elegant geometric heart shape. The tennis player should be captured mid-swing with racquet extended in a powerful forehand motion, body positioned diagonally to create dynamic energy against the rich purple backdrop. Her athletic form fills the right two-thirds of the composition, leaving generous negative space on the left for headline overlay. Subtle atmospheric elements surround the player: delicate motion lines radiating from the racquet impact point, small geometric fragments echoing the template's angular design language, and soft purple particle effects that complement rather than compete with the background gradient. The player's positioning respects the template's sophisticated layered purple tones while adding kinetic tennis energy. Light source comes from upper left, creating dramatic shadows that enhance the three-dimensional quality against the flat geometric background. The composition maintains clean edges suitable for seamless integration with the template's premium branding aesthetic, ensuring the CB logo notch remains completely visible and unobstructed at the top center.\n\nvault-illustrations-illustration-12: Borrow the clean athletic pose and dynamic swing motion, plus the minimal purple color integration that matches our template\nvault-previous-posts-slide-5-ig-new: Reference the energetic diagonal composition and how the tennis player is positioned to leave space for text overlay\nvault-previous-posts-slide-5-twitter-new: Study the dramatic lighting effects and how the tennis elements create visual hierarchy\nvault-illustrations-illustration-02: Apply the clean vector style with smooth gradients and the dynamic diagonal movement across the canvas",
+    "referenceInstructions": "vault-illustrations-illustration-12: Borrow the clean athletic pose and dynamic swing motion, plus the minimal purple color integration that matches our template\nvault-previous-posts-slide-5-ig-new: Reference the energetic diagonal composition and how the tennis player is positioned to leave space for text overlay\nvault-previous-posts-slide-5-twitter-new: Study the dramatic lighting effects and how the tennis elements create visual hierarchy\nvault-illustrations-illustration-02: Apply the clean vector style with smooth gradients and the dynamic diagonal movement across the canvas"
+  },
+  "variantLabel": "A",
+  "referencesUsed": [
+    "vault-illustrations-illustration-12",
+    "vault-previous-posts-slide-5-ig-new",
+    "vault-previous-posts-slide-5-twitter-new",
+    "vault-illustrations-illustration-02"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-03",
+  "backgroundPrompt": "Composite the pre-styled female tennis player illustration positioned center-right of the purple gradient template canvas, scaled at approximately 75% to maintain prominence while preserving the template's elegant geometric heart shape. The tennis player should be captured mid-swing with racquet extended in a powerful forehand motion, body positioned diagonally to create dynamic energy against the rich purple backdrop. Her athletic form fills the right two-thirds of the composition, leaving generous negative space on the left for headline overlay. Subtle atmospheric elements surround the player: delicate motion lines radiating from the racquet impact point, small geometric fragments echoing the template's angular design language, and soft purple particle effects that complement rather than compete with the background gradient. The player's positioning respects the template's sophisticated layered purple tones while adding kinetic tennis energy. Light source comes from upper left, creating dramatic shadows that enhance the three-dimensional quality against the flat geometric background. The composition maintains clean edges suitable for seamless integration with the template's premium branding aesthetic, ensuring the CB logo notch remains completely visible and unobstructed at the top center.",
+  "referenceInstructions": {
+    "vault-illustrations-illustration-02": "Apply the clean vector style with smooth gradients and the dynamic diagonal movement across the canvas",
+    "vault-illustrations-illustration-12": "Borrow the clean athletic pose and dynamic swing motion, plus the minimal purple color integration that matches our template",
+    "vault-previous-posts-slide-5-ig-new": "Reference the energetic diagonal composition and how the tennis player is positioned to leave space for text overlay",
+    "vault-previous-posts-slide-5-twitter-new": "Study the dramatic lighting effects and how the tennis elements create visual hierarchy"
+  }
+}

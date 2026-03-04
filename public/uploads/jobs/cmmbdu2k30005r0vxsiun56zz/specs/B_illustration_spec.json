@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "direct kinetic impact",
+    "style": "flat-vector",
+    "palette": [
+      "#DFFD51",
+      "#FF6B2F",
+      "#2D4BE6",
+      "#8D52DA",
+      "#300931"
+    ],
+    "solidBackground": "#2D4BE6",
+    "backgroundPrompt": "Foreshortened lunge composition with both MMA fighters AJ McKee and Adam Borics lunging forward toward the camera in synchronized striking poses. AJ McKee's right fist and Adam Borics' left fist thrust dramatically toward the viewer, appearing 2-3x oversized in extreme foreshortening while their bodies recede behind the massive foreground fists. Both fighters captured at the peak instant of their punch delivery - McKee's lean frame coiled with explosive energy, Borics' compact powerful build driving forward with equal intensity. Camera positioned to catch both fighters' extended arms filling the foreground frame, their wrapped knuckles and clenched fists dominating the composition. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, creating premium athletic graphic energy. Simplified flat facial features with bold shadow masks, their aggression communicated through body language and forward momentum rather than detailed expressions. Clean geometric muscle definition using flat hard-edged shadow shapes exclusively on the fighters' bodies. Speed lines and motion blur shapes integrated into their forms to amplify the kinetic energy directed at the camera. Both complete figures contained within frame despite the dramatic foreshortening perspective. Clean solid background with no shadow or glow behind the characters, ensuring perfect cutout capability for compositing.\n\nvault-illustrations-illustration-01 provides the dynamic action pose and dramatic shadow effects approach. vault-illustrations-illustration-18 informs the foreshortened proportions and motion blur integration. vault-illustrations-illustration-12 guides the clean vector motion effects and athletic positioning.",
+    "referenceInstructions": "vault-illustrations-illustration-01 provides the dynamic action pose and dramatic shadow effects approach. vault-illustrations-illustration-18 informs the foreshortened proportions and motion blur integration. vault-illustrations-illustration-12 guides the clean vector motion effects and athletic positioning."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-illustrations-illustration-01": "assets/vault/illustrations/illustration-01.png",
+    "vault-illustrations-illustration-12": "assets/vault/illustrations/illustration-12.png",
+    "vault-illustrations-illustration-18": "assets/vault/illustrations/illustration-18.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-01",
+    "vault-illustrations-illustration-18",
+    "vault-illustrations-illustration-12"
+  ]
+}

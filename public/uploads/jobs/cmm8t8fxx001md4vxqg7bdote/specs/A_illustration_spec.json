@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "towering, dominant, explosive power",
+    "style": "flat-vector",
+    "palette": [
+      "#2D4BE6",
+      "#8D52DA",
+      "#FFFFFF",
+      "#0F1032",
+      "#FF6B2F"
+    ],
+    "solidBackground": "#0F1032",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view looking up steeply at Dakota Ditcheva transformed as a tennis player captured at the explosive peak of her serve. The camera positioned at ground level transforms her into a towering athletic silhouette against the stadium lights above. Her muscular fighter's build translated into tennis form with racquet raised high in full extension overhead, arm stretched to maximum reach creating dramatic foreshortening where her serving arm and racquet head appear enormous in the upper frame while her lower body recedes below. Her athletic MMA conditioning shows through powerful leg stance and core rotation. She wears crisp white tennis dress with electric blue #2D4BE6 accent trim, the fabric caught mid-motion with sharp angular folds. Her face simplified to bold flat shadow mask with determined expression implied through aggressive body language rather than detailed facial features. Racquet head dominates the top of frame with motion blur shapes trailing the extended arm, speed lines radiating from strings to emphasize raw serving power. Her fighter's intensity channeled into tennis dominance. Flat vector illustration with bold solid color fills on dark stadium ground #0F1032, hard edges throughout, no gradients on character, no 3D rendering, clean geometric tennis racquet design. Purple #8D52DA highlights on shoes and racquet grip. Full body contained within frame with generous breathing room, character clearly separated from solid background for cutout use with no drop shadows or backdrop effects.\n\nvault-illustrations-illustration-01 provides dynamic athletic pose structure and gradient shadow techniques. vault-illustrations-illustration-03 informs bold vector silhouette approach and clean geometric uniform details. vault-illustrations-illustration-32 guides motion-focused positioning and clean tennis equipment rendering.",
+    "referenceInstructions": "vault-illustrations-illustration-01 provides dynamic athletic pose structure and gradient shadow techniques. vault-illustrations-illustration-03 informs bold vector silhouette approach and clean geometric uniform details. vault-illustrations-illustration-32 guides motion-focused positioning and clean tennis equipment rendering."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-illustrations-illustration-01": "assets/vault/illustrations/illustration-01.png",
+    "vault-illustrations-illustration-03": "assets/vault/illustrations/illustration-03.png",
+    "vault-illustrations-illustration-32": "assets/vault/illustrations/illustration-32.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-01",
+    "vault-illustrations-illustration-03",
+    "vault-illustrations-illustration-32"
+  ]
+}

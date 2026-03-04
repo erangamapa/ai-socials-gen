@@ -1,0 +1,32 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "Lucky multipliers drop all weekend",
+    "headline": "ST PATRICK'S MULTIPLIER FLASH",
+    "disclaimer": ""
+  },
+  "variant": "A",
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "Composite the pre-styled St. Patrick's Day multiplier hero illustration positioned center-right of the blue gradient template canvas, sized to occupy 65% of the vertical space while leaving generous left-side area for text overlay. The hero character should maintain their existing stylization and colors completely unchanged. Surround the hero with festive St. Patrick's Day atmospheric elements: floating shamrock leaves in vibrant emerald green with subtle glow effects, golden coins with shamrock emblems scattered around the composition, and sparkly multiplier symbols (2x, 5x, 10x) in bright yellow-gold floating near the character. Add subtle rainbow light rays emanating from behind the hero, creating depth without overwhelming the clean template aesthetic. Include small clover particles drifting upward with soft motion blur. The overall composition should feel celebratory and energetic while maintaining premium brand quality. Color palette emphasizes rich emerald greens, golden yellows, and subtle rainbow accents that complement but don't compete with the template's blue gradient background. All decorative elements use bold solid colors with dramatic shadows, no gradients or soft shading, maintaining CB's signature illustration style with clean crisp edges.\n\nvault-illustrations-illustration-26: Borrow the celebratory energy and floating coin elements style - apply similar glowing effects to shamrock coins\nvault-illustrations-illustration-24: Reference the euphoric celebration mood and dynamic floating elements composition around the hero\nvault-illustrations-illustration-13: Use the clean vector illustration style with dramatic motion blur effects for shamrock particles\nvault-pictograms-chips-cb-1: Apply the 3D rendered coin style and soft lighting to the floating shamrock coins",
+    "referenceInstructions": "vault-illustrations-illustration-26: Borrow the celebratory energy and floating coin elements style - apply similar glowing effects to shamrock coins\nvault-illustrations-illustration-24: Reference the euphoric celebration mood and dynamic floating elements composition around the hero\nvault-illustrations-illustration-13: Use the clean vector illustration style with dramatic motion blur effects for shamrock particles\nvault-pictograms-chips-cb-1: Apply the 3D rendered coin style and soft lighting to the floating shamrock coins"
+  },
+  "variantLabel": "A",
+  "referencesUsed": [
+    "vault-illustrations-illustration-26",
+    "vault-illustrations-illustration-24",
+    "vault-illustrations-illustration-13",
+    "vault-pictograms-chips-cb-1"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-01",
+  "backgroundPrompt": "Composite the pre-styled St. Patrick's Day multiplier hero illustration positioned center-right of the blue gradient template canvas, sized to occupy 65% of the vertical space while leaving generous left-side area for text overlay. The hero character should maintain their existing stylization and colors completely unchanged. Surround the hero with festive St. Patrick's Day atmospheric elements: floating shamrock leaves in vibrant emerald green with subtle glow effects, golden coins with shamrock emblems scattered around the composition, and sparkly multiplier symbols (2x, 5x, 10x) in bright yellow-gold floating near the character. Add subtle rainbow light rays emanating from behind the hero, creating depth without overwhelming the clean template aesthetic. Include small clover particles drifting upward with soft motion blur. The overall composition should feel celebratory and energetic while maintaining premium brand quality. Color palette emphasizes rich emerald greens, golden yellows, and subtle rainbow accents that complement but don't compete with the template's blue gradient background. All decorative elements use bold solid colors with dramatic shadows, no gradients or soft shading, maintaining CB's signature illustration style with clean crisp edges.",
+  "referenceInstructions": {
+    "vault-pictograms-chips-cb-1": "Apply the 3D rendered coin style and soft lighting to the floating shamrock coins",
+    "vault-illustrations-illustration-13": "Use the clean vector illustration style with dramatic motion blur effects for shamrock particles",
+    "vault-illustrations-illustration-24": "Reference the euphoric celebration mood and dynamic floating elements composition around the hero",
+    "vault-illustrations-illustration-26": "Borrow the celebratory energy and floating coin elements style - apply similar glowing effects to shamrock coins"
+  }
+}

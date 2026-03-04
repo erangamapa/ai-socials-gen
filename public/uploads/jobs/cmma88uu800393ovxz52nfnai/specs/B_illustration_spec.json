@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "Feel The Impact",
+    "subhead": "Elite technique meets explosive force",
+    "headline": "POWER COLLISION",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "direct kinetic impact",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#8D52DA",
+      "#DFFD51",
+      "#1A1A1A",
+      "#2D4BE6"
+    ],
+    "solidBackground": "#8D52DA",
+    "backgroundPrompt": "Foreshortened lunge perspective with Van Steenis's devastating right hook thrust directly toward camera, his orange-gloved fist appearing enormous in the foreground, dominating 40% of the frame. Behind the massive fist, his muscular torso in orange fight gear recedes dramatically, while Edwards appears in purple (#8D52DA) to the right, his uppercut creating a dynamic counter-angle. The extreme foreshortening makes Van Steenis's striking arm appear 3x normal size, with his shoulder and chest compressed behind it. Edwards's purple-clad body shows similar dramatic perspective with his uppercut arm extended, creating a scissoring effect of opposing forces. Both fighters rendered as flat vector illustrations with bold solid color fills, hard edges, no gradients. Facial features are minimal flat shadow masks - expression conveyed entirely through body language and the violent precision of their techniques. Van Steenis's orange shorts, hand wraps, and gloves create bold color blocks against his darker skin, while Edwards's purple fight gear provides electric contrast. Motion energy flows from both fighters toward the collision point, with flat hard-edged shadow shapes defining muscle definition on their bodies only. The camera angle captures the split-second before impact, emphasizing the geometric violence of elite MMA. Clean solid dark purple background (#8D52DA) with no drop shadows, glows, or backdrop effects. Full bodies contained within frame despite the dramatic foreshortening, creating maximum kinetic impact while maintaining professional cutout suitability.\n\nApply vault-24's exaggerated proportions and dramatic foreshortening to the striking limbs. Use vault-28's bold gesture emphasis for the hook and uppercut collision. Incorporate vault-53's clean character separation and bold color blocking for the dual fighter composition.",
+    "referenceInstructions": "Apply vault-24's exaggerated proportions and dramatic foreshortening to the striking limbs. Use vault-28's bold gesture emphasis for the hook and uppercut collision. Incorporate vault-53's clean character separation and bold color blocking for the dual fighter composition."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-illustrations-illustration-24": "assets/vault/illustrations/illustration-24.png",
+    "vault-illustrations-illustration-28": "assets/vault/illustrations/illustration-28.png",
+    "vault-illustrations-illustration-53": "assets/vault/illustrations/illustration-53.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-24",
+    "vault-illustrations-illustration-28",
+    "vault-illustrations-illustration-53"
+  ]
+}

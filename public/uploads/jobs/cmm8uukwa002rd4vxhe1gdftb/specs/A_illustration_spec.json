@@ -1,0 +1,29 @@
+{
+  "copy": {
+    "cta": "Place Your Bet",
+    "subhead": "Cricket betting at its finest",
+    "headline": "Master the Sweep",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive kinetic power",
+    "style": "flat-vector",
+    "palette": [
+      "#8D52DA",
+      "#FF6B2F",
+      "#DFFD51",
+      "#300931",
+      "#FFFFFF"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Extreme worm's-eye view from ground level looking up steeply at a cricket batsman at the explosive peak of a sweep shot, the camera positioned almost underneath the player as they execute the shot. The batsman's body is dramatically foreshortened with legs and lower torso appearing enormous in the foreground, one knee planted firmly on the ground creating a powerful anchor point, while the upper body recedes into the background. The cricket bat extends diagonally across the frame toward the upper right, captured at the precise moment of ball contact with motion blur shapes trailing behind the bat's arc. Sharp geometric fragments burst from the contact point suggesting the explosive impact. The player's form is rendered in flat vector illustration style with bold solid color fills - cricket pads and uniform in rich purple #8D52DA, bat handle and uniform accents in vibrant orange #FF6B2F, with brilliant yellow #DFFD51 speed lines radiating outward from the ball contact zone. The batsman's face is simplified to flat shadow shapes and bold geometric features, expression implied through the dynamic twisted body language rather than detailed facial expression. Hard-edged shadow shapes define the musculature and uniform creases ON the character only, with no gradients or 3D rendering. The entire figure fits completely within the frame with generous breathing room on all sides. Clean solid dark purple background #300931 with no drop shadows, glows, or backdrop effects behind the character, suitable for instant cutout use.\n\nApply bold flat color blocking with hard edges, dramatic foreshortening perspective, and kinetic motion elements while maintaining clean graphic silhouette suitable for sports branding.",
+    "referenceInstructions": "Apply bold flat color blocking with hard edges, dramatic foreshortening perspective, and kinetic motion elements while maintaining clean graphic silhouette suitable for sports branding."
+  },
+  "variantLabel": "A",
+  "referencePaths": {},
+  "referencesUsed": [
+    "vault-001",
+    "vault-003",
+    "vault-007"
+  ]
+}

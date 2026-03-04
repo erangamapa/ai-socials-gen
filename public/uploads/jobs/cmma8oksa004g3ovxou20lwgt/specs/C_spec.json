@@ -1,0 +1,32 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "St. Patrick's exclusive event",
+    "headline": "MEGA MULTIPLIERS UNLEASHED",
+    "disclaimer": ""
+  },
+  "variant": "C",
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "Composite the pre-styled St. Patrick's Day multiplier hero illustration positioned center of the dark purple-black gradient template canvas, sized to occupy 60% of the vertical space for balanced composition. The hero maintains their existing design unchanged. Create an explosive St. Patrick's Day multiplier celebration with geometric shamrock shapes in neon green radiating outward from behind the character in sharp angular bursts. Large crystalline multiplier gems (4x, 8x, 20x) in electric green and gold hover in orbital patterns around the hero, each casting dramatic prismatic light beams across the dark template. Add stylized four-leaf clovers rendered as glowing geometric icons scattered throughout the negative space, pulsing with energy. Lightning-like energy lines in bright shamrock green zigzag between the multiplier elements, connecting them visually. The composition feels electric and high-energy, like a digital St. Patrick's Day celebration in cyberspace. All elements use bold solid fills with hard-edge shadows and dramatic contrast lighting - no soft gradients. The color palette emphasizes electric greens, metallic golds, and bright whites that pop dramatically against the dark template background, creating maximum visual impact for the promotional event.\n\nvault-illustrations-illustration-12: Borrow the clean geometric shapes and minimal shading approach for the shamrock elements\nvault-illustrations-illustration-06: Reference the bold color blocking and clean vector style for the multiplier gems\nvault-illustrations-illustration-31: Use the dynamic motion blur and energy line techniques for the lightning effects\nvault-pictograms-chips-cb-1: Apply the 3D gradient and highlighting style to the crystalline multiplier gems",
+    "referenceInstructions": "vault-illustrations-illustration-12: Borrow the clean geometric shapes and minimal shading approach for the shamrock elements\nvault-illustrations-illustration-06: Reference the bold color blocking and clean vector style for the multiplier gems\nvault-illustrations-illustration-31: Use the dynamic motion blur and energy line techniques for the lightning effects\nvault-pictograms-chips-cb-1: Apply the 3D gradient and highlighting style to the crystalline multiplier gems"
+  },
+  "variantLabel": "C",
+  "referencesUsed": [
+    "vault-illustrations-illustration-12",
+    "vault-illustrations-illustration-06",
+    "vault-illustrations-illustration-31",
+    "vault-pictograms-chips-cb-1"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-09",
+  "backgroundPrompt": "Composite the pre-styled St. Patrick's Day multiplier hero illustration positioned center of the dark purple-black gradient template canvas, sized to occupy 60% of the vertical space for balanced composition. The hero maintains their existing design unchanged. Create an explosive St. Patrick's Day multiplier celebration with geometric shamrock shapes in neon green radiating outward from behind the character in sharp angular bursts. Large crystalline multiplier gems (4x, 8x, 20x) in electric green and gold hover in orbital patterns around the hero, each casting dramatic prismatic light beams across the dark template. Add stylized four-leaf clovers rendered as glowing geometric icons scattered throughout the negative space, pulsing with energy. Lightning-like energy lines in bright shamrock green zigzag between the multiplier elements, connecting them visually. The composition feels electric and high-energy, like a digital St. Patrick's Day celebration in cyberspace. All elements use bold solid fills with hard-edge shadows and dramatic contrast lighting - no soft gradients. The color palette emphasizes electric greens, metallic golds, and bright whites that pop dramatically against the dark template background, creating maximum visual impact for the promotional event.",
+  "referenceInstructions": {
+    "vault-pictograms-chips-cb-1": "Apply the 3D gradient and highlighting style to the crystalline multiplier gems",
+    "vault-illustrations-illustration-06": "Reference the bold color blocking and clean vector style for the multiplier gems",
+    "vault-illustrations-illustration-12": "Borrow the clean geometric shapes and minimal shading approach for the shamrock elements",
+    "vault-illustrations-illustration-31": "Use the dynamic motion blur and energy line techniques for the lightning effects"
+  }
+}

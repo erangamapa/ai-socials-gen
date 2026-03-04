@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "DOMINATE NOW",
+    "subhead": "Explosive martial arts power meets precision striking",
+    "headline": "UNLEASH THE BEAST",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive heroic dominance",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#DFFD51",
+      "#FFFFFF",
+      "#1A1A1A"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Extreme worm's-eye view from ground level looking up at a massive bear mid-flying kick, captured at the explosive peak moment of a devastating karate strike. The bear's muscular frame towers overhead with dramatic foreshortening - the extended striking leg appears enormous in the foreground, dominating the frame at 3x normal size, while the coiled supporting leg creates a powerful geometric foundation below. The bear wears traditional white karate gi pants that flow with motion blur shapes, his massive torso and arms positioned in perfect martial arts form with fists clenched and shoulders squared for maximum impact. The bear's head appears smaller due to extreme perspective, with simplified flat facial features reduced to bold shadow shapes - minimal detail on eyes and muzzle, expression implied through the aggressive body language and strike positioning. Flat vector illustration with bold solid color fills and hard edges, no gradients or 3D rendering, clean minimalist approach focused on explosive kinetic energy. The striking leg features bright yellow accent shapes suggesting energy burst at point of impact, while orange speed lines radiate outward from the kick in flat geometric streaks. Blue motion blur shapes trail behind the bear's movement as flat angular forms, creating layers of kinetic intensity. All shading exists only as flat dark-tone shadow shapes on the character's gi pants, fur, and muscular definition - no shadows cast onto the background. The entire bear fits completely within frame with generous breathing room, full body visible from head to both feet. Clean solid dark purple background with no additional elements, suitable for instant cutout use.\n\nvault-03 informs the bold athletic silhouette with clean geometric forms and minimal shading approach. vault-10 provides the dynamic motion-focused positioning and flat color treatment. vault-12 contributes the motion blur effects and purple brand integration for kinetic energy visualization.",
+    "referenceInstructions": "vault-03 informs the bold athletic silhouette with clean geometric forms and minimal shading approach. vault-10 provides the dynamic motion-focused positioning and flat color treatment. vault-12 contributes the motion blur effects and purple brand integration for kinetic energy visualization."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-illustrations-illustration-03": "assets/vault/illustrations/illustration-03.png",
+    "vault-illustrations-illustration-10": "assets/vault/illustrations/illustration-10.png",
+    "vault-illustrations-illustration-12": "assets/vault/illustrations/illustration-12.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-03",
+    "vault-illustrations-illustration-10",
+    "vault-illustrations-illustration-12"
+  ]
+}

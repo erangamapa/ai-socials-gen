@@ -1,0 +1,28 @@
+{
+  "copy": {
+    "cta": "Rotate Your Odds",
+    "subhead": "Defy Every Angle",
+    "headline": "Spin Into Victory",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "editorial premium, kinetic tension, experimental energy",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#DFFD51",
+      "#8D52DA",
+      "#FFFFFF",
+      "#0a0a0a"
+    ],
+    "solidBackground": "#1a2a4a",
+    "backgroundPrompt": "Dutch tilt low-angle perspective with camera tilted 25 degrees, creating dynamic instability as snowboarder executes a spinning frontside 360 grab trick in mid-air. The tilted horizon line adds editorial tension while the low angle makes the rider appear to float powerfully overhead. Extreme stylization with the snowboarder's spinning body creating a bold graphic silhouette against the angled composition. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style. Most experimental color palette featuring electric orange jacket, bright yellow snow pants, and purple helmet rendered as flat geometric shapes. Face simplified to bold flat shadow mask, minimal detail, energy conveyed through twisted body position mid-spin. Board appears as sleek flat shape caught mid-rotation, with trailing motion lines suggesting centrifugal force. Arms extended in opposite directions for rotational balance, creating dynamic negative space within the tilted frame. Sharp cast shadows fall as flat solid color shapes, following the tilted perspective angle. Clean athletic proportions with bold stylistic exaggeration for premium graphic impact. Rich deep navy blue background as single solid color, no patterns or gradients. Dutch angle creates premium editorial feel while maintaining full body containment within frame borders. Generous breathing room despite dynamic tilt. No text, no logos, no brand elements.\n\nExtract vault-01's dynamic shadow effects but flatten to solid shapes. Use vault-02's gradient-free color blocking approach. Apply vault-04's clean geometric forms to snowboard and gear, maintaining flat vector aesthetic throughout.",
+    "referenceInstructions": "Extract vault-01's dynamic shadow effects but flatten to solid shapes. Use vault-02's gradient-free color blocking approach. Apply vault-04's clean geometric forms to snowboard and gear, maintaining flat vector aesthetic throughout."
+  },
+  "variantLabel": "C",
+  "referencesUsed": [
+    "vault-illustrations-illustration-01",
+    "vault-illustrations-illustration-02",
+    "vault-illustrations-illustration-04"
+  ]
+}

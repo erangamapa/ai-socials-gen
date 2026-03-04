@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "Experience Elite Fighting",
+    "subhead": "When titans clash in premium combat",
+    "headline": "COLLISION COURSE",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive heroic dominance",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#8D52DA",
+      "#2D4BE6",
+      "#DFFD51",
+      "#1A1A1A"
+    ],
+    "solidBackground": "#2D4BE6",
+    "backgroundPrompt": "Extreme worm's-eye view from ground level looking up steeply at two MMA fighters locked in explosive combat - Costello van Steenis and Fabian Edwards captured at the precise moment of their collision. Van Steenis dominates the left side of frame throwing a devastating right hook, his muscular frame rendered in bold orange (#FF6B2F) with dramatic foreshortening making his torso and shoulders appear massive as they tower overhead. Edwards counters from the right in electric purple (#8D52DA), his body twisted in maximum torque delivering an uppercut, his lower body appearing enormous in the foreground due to the extreme low angle. Both fighters' silhouettes are sharp and angular with minimal facial detail - faces reduced to bold shadow masks and simplified flat features, letting their explosive body language convey the raw intensity. Their muscular frames show extreme perspective distortion with closest limbs appearing 2-3x oversized. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering. Van Steenis's orange shorts and gloves pop against his darker skin tones, while Edwards's purple fight gear creates striking contrast. Motion energy radiates from their twisted spines and extended limbs, with flat hard-edged shadow shapes defining muscle definition only on their bodies. Clean solid dark blue background (#2D4BE6) with no shadows, glows, or effects behind the fighters. Full bodies contained within frame with generous breathing room. The collision point between their techniques creates the visual focal point, emphasizing the geometric precision of elite combat sports.\n\nUse vault-31's athletic body proportions and dynamic motion energy for both fighters. Apply vault-28's bold celebratory gesture emphasis to capture the explosive hook and uppercut techniques. Incorporate vault-12's clean vector approach and motion blur concepts for the striking limbs.",
+    "referenceInstructions": "Use vault-31's athletic body proportions and dynamic motion energy for both fighters. Apply vault-28's bold celebratory gesture emphasis to capture the explosive hook and uppercut techniques. Incorporate vault-12's clean vector approach and motion blur concepts for the striking limbs."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-illustrations-illustration-12": "assets/vault/illustrations/illustration-12.png",
+    "vault-illustrations-illustration-28": "assets/vault/illustrations/illustration-28.png",
+    "vault-illustrations-illustration-31": "assets/vault/illustrations/illustration-31.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-31",
+    "vault-illustrations-illustration-28",
+    "vault-illustrations-illustration-12"
+  ]
+}

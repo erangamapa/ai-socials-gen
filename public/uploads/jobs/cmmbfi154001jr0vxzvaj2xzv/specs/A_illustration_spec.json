@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "cta": "Bet Now",
+    "subhead": "Two Belts. One Octagon. Pure Dominance.",
+    "headline": "Championship Collision",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Championship tension — two apex predators measuring each other's soul",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#DFFD51",
+      "#2D4BE6",
+      "#300931",
+      "#8D52DA"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Eye-level side-profile angle showing two elite MMA fighters in combat stance facing each other in perfect symmetrical balance. The left fighter is a muscular Black athlete with close-cropped hair, defined beard, and championship belt around his waist, rendered in flat vector style with bold geometric muscle definition and simplified facial features showing determination. The right fighter is a lean, athletic mixed-race athlete with buzz-cut hair, also wearing championship gold around his waist, positioned in mirror stance with hands up in defensive guard position. Both fighters wear MMA shorts - the left fighter in black with orange accent trim, the right fighter in dark navy with lime green highlights. Their bodies are rendered with flat solid color fills and hard-edged shadow shapes defining musculature, no gradients or 3D rendering. The scene captures the tense pre-fight moment with both athletes in classic orthodox stances, weight balanced on balls of feet, hands positioned for striking and defense. Championship belts gleam with flat metallic gold color treatment. Hand wraps visible on both fighters' wrists in cream white flat color. Facial features are minimalist geometric shapes - eyes as simple dark shapes, jawlines defined by flat shadow areas. Energy radiates through their coiled body language and perfect fighting postures. Clean flat vector illustration with bold outlines, premium athletic aesthetic, no background elements beyond solid color canvas.\n\nUse vault-gen-cmmbe5rqv0008r0vxwm3f6h0z for geometric muscle definition and dramatic angular shading approach. Apply vault-illustrations-illustration-03 clean vector style for flat color blocking and minimal shading technique.",
+    "referenceInstructions": "Use vault-gen-cmmbe5rqv0008r0vxwm3f6h0z for geometric muscle definition and dramatic angular shading approach. Apply vault-illustrations-illustration-03 clean vector style for flat color blocking and minimal shading technique."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-gen-cmmbe5rqv0008r0vxwm3f6h0z": "/uploads/jobs/cmmbdu2k30005r0vxsiun56zz/illustrations/A_illustration.png",
+    "vault-illustrations-illustration-03": "assets/vault/illustrations/illustration-03.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbe5rqv0008r0vxwm3f6h0z",
+    "vault-illustrations-illustration-03"
+  ]
+}

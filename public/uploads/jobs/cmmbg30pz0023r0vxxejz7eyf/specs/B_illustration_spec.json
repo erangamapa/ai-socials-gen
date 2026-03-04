@@ -1,0 +1,32 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Kinetic thunderstrike — unstoppable force channeled through pure anatomical precision",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#300931",
+      "#DFFD51"
+    ],
+    "solidBackground": "#2D4BE6",
+    "backgroundPrompt": "Foreshortened lunge toward camera capturing the basketball player's dunking hand and basketball thrust directly at the viewer, with the clenched fist and ball appearing 2-3x oversized in extreme close-up perspective while the athlete's body recedes dramatically behind. The powerful dunking arm dominates the entire foreground, muscles bulging with explosive force as fingers grip the basketball with crushing intensity. The athlete's torso and legs appear compressed and smaller due to the extreme foreshortening effect, creating a tunnel of kinetic energy directed straight at the camera. Flat vector illustration with bold solid color fills, hard edges, and no gradients on the character. The oversized hand and basketball blaze in electric orange (#FF6B2F) with blue (#2D4BE6) uniform details visible on the receding body. Clean flat shadow shapes define the muscular definition only on the character's body, never projected onto the background. Face barely visible in the compressed background perspective, rendered as simplified flat geometric shapes with minimal detail - the raw power emanates from the thrust of the dunking motion toward the viewer. Motion blur shapes and speed lines integrated into the character's form suggest tremendous velocity. The basketball's texture rendered in flat geometric segments, emphasizing its spherical power as it lunges forward. Full body visible within frame despite the dramatic perspective compression. Background is solid electric blue (#2D4BE6) with absolutely no shadow, glow, or backdrop effects - clean flat color suitable for professional cutout use.\n\nvault-illustrations-illustration-18 guides the oversized proportions and emphasis technique. vault-illustrations-illustration-16 informs the motion blur effects integrated into the character form. vault-illustrations-illustration-31 provides the clean minimalist approach with focus on movement and athletic precision.",
+    "referenceInstructions": "vault-illustrations-illustration-18 guides the oversized proportions and emphasis technique. vault-illustrations-illustration-16 informs the motion blur effects integrated into the character form. vault-illustrations-illustration-31 provides the clean minimalist approach with focus on movement and athletic precision."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-illustrations-illustration-16": "assets/vault/illustrations/illustration-16.png",
+    "vault-illustrations-illustration-18": "assets/vault/illustrations/illustration-18.png",
+    "vault-illustrations-illustration-31": "assets/vault/illustrations/illustration-31.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-18",
+    "vault-illustrations-illustration-16",
+    "vault-illustrations-illustration-31"
+  ]
+}

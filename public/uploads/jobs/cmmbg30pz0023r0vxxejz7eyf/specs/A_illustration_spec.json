@@ -1,0 +1,32 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Gravitational supremacy — apex predator redefining the laws of physics",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#300931",
+      "#DFFD51"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view from directly beneath the basketball hoop looking steeply upward, capturing a basketball player at the absolute apex of a thunderous dunk. The athlete's body is fully extended in mid-air with explosive power, one muscular arm driving the basketball downward through the hoop with crushing force while the other arm spreads wide for balance and dominance. The player towers overhead like a colossus of athletic supremacy, their legs bent and coiled with kinetic energy, sneakers appearing massive in the extreme foreshortened perspective. Flat vector illustration with bold solid color fills and hard edges, no gradients or 3D rendering. The uniform blazes in electric orange (#FF6B2F) with blue (#2D4BE6) accents on shorts and sneakers, muscles defined by flat hard-edged shadow shapes that exist only on the character's body. Face rendered as simplified flat features with a bold shadow mask, expression implied through the raw power of body language rather than detailed facial expression. The basketball appears oversized due to foreshortening as it's driven toward the camera viewpoint. Clean geometric forms define every muscle fiber and uniform detail with surgical precision. Motion energy radiates through the athlete's suspended form, capturing that split-second of pure kinetic triumph frozen in time. Full body contained within frame with generous breathing room. Background is solid deep purple (#300931) with no shadow, glow, or backdrop effects behind the character - suitable for instant cutout use.\n\nvault-illustrations-illustration-03 provides the bold flat vector approach with minimal shading and clean geometric forms. vault-illustrations-illustration-01 informs the dramatic shadow casting and athletic proportions. vault-illustrations-illustration-04 guides the simplified uniform details and professional sports aesthetic.",
+    "referenceInstructions": "vault-illustrations-illustration-03 provides the bold flat vector approach with minimal shading and clean geometric forms. vault-illustrations-illustration-01 informs the dramatic shadow casting and athletic proportions. vault-illustrations-illustration-04 guides the simplified uniform details and professional sports aesthetic."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-illustrations-illustration-01": "assets/vault/illustrations/illustration-01.png",
+    "vault-illustrations-illustration-03": "assets/vault/illustrations/illustration-03.png",
+    "vault-illustrations-illustration-04": "assets/vault/illustrations/illustration-04.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-03",
+    "vault-illustrations-illustration-01",
+    "vault-illustrations-illustration-04"
+  ]
+}

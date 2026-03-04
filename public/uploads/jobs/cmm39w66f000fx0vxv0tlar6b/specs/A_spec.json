@@ -1,0 +1,27 @@
+{
+  "id": "A",
+  "cta": "Claim Now",
+  "copy": {
+    "cta": "Claim Now",
+    "subhead": "Extra $230 bonus waiting for new players this weekend",
+    "headline": "WEEKEND WELCOME PACKAGE",
+    "disclaimer": ""
+  },
+  "subhead": "Extra $230 bonus waiting for new players this weekend",
+  "headline": "WEEKEND WELCOME PACKAGE",
+  "template": "tpl-promo-overlay",
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "Create a dynamic weekend celebration promo image with a rich dark purple (#300931) to orange (#FF6B2F) gradient background that radiates energy from center outward. The composition should feature bold geometric shapes and energy lines that create movement and excitement. Place the headline 'WEEKEND WELCOME PACKAGE' in dominant Midnight Sans ST Heavy typography, all caps, positioned in the upper third with high contrast white text that pops against the gradient. Below it, display 'Extra $230 bonus waiting for new players this weekend' in clean Inter font. Add subtle sparkle and glow effects around the '$230' to make it the focal point. Include dynamic weekend energy elements like clock elements showing Friday-Sunday or calendar highlights. Place the CB notch logo in top-left corner in white. The overall mood should be premium, exciting, and urgently inviting - perfect for a limited-time weekend offer. Add subtle tech-inspired geometric patterns that don't compete with text readability.\n\nReference vault-previous-posts-slide-1-ig-new-a: Use this post's dynamic gradient background treatment and bold text hierarchy as the foundation layout, adapting the color scheme to our dark purple to orange gradient. Reference vault-previous-posts-slide-3-ig-new: Incorporate similar energetic geometric elements and promotional styling cues, particularly how bonus amounts are highlighted and the overall premium promo aesthetic."
+  },
+  "variantLabel": "A",
+  "referencesUsed": [
+    "vault-previous-posts-slide-1-ig-new-a",
+    "vault-previous-posts-slide-3-ig-new"
+  ],
+  "backgroundPrompt": "Create a dynamic weekend celebration promo image with a rich dark purple (#300931) to orange (#FF6B2F) gradient background that radiates energy from center outward. The composition should feature bold geometric shapes and energy lines that create movement and excitement. Place the headline 'WEEKEND WELCOME PACKAGE' in dominant Midnight Sans ST Heavy typography, all caps, positioned in the upper third with high contrast white text that pops against the gradient. Below it, display 'Extra $230 bonus waiting for new players this weekend' in clean Inter font. Add subtle sparkle and glow effects around the '$230' to make it the focal point. Include dynamic weekend energy elements like clock elements showing Friday-Sunday or calendar highlights. Place the CB notch logo in top-left corner in white. The overall mood should be premium, exciting, and urgently inviting - perfect for a limited-time weekend offer. Add subtle tech-inspired geometric patterns that don't compete with text readability.",
+  "referenceInstructions": "Reference vault-previous-posts-slide-1-ig-new-a: Use this post's dynamic gradient background treatment and bold text hierarchy as the foundation layout, adapting the color scheme to our dark purple to orange gradient. Reference vault-previous-posts-slide-3-ig-new: Incorporate similar energetic geometric elements and promotional styling cues, particularly how bonus amounts are highlighted and the overall premium promo aesthetic."
+}

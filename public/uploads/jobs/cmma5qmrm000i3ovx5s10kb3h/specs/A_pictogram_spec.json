@@ -1,0 +1,28 @@
+{
+  "copy": {
+    "cta": "Equip Now",
+    "subhead": "Signature geometric skin design",
+    "headline": "Asimov AK-47",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "tactical, futuristic, premium, geometric",
+    "style": "3d-icon",
+    "palette": [
+      "#FF6B2F",
+      "#FFFFFF",
+      "#F0F0F0",
+      "#E0E0E0"
+    ],
+    "solidBackground": "#F8F5FC",
+    "backgroundPrompt": "A 3D isometric AK-47 rifle rendered in premium matte finish, positioned at a 15-degree tilt against a soft light background. The rifle body features a dominant orange (#FF6B2F) color with clean geometric Asimov-style white angular pattern segments overlaying the barrel, stock, and receiver areas. The weapon maintains its iconic silhouette with distinctive curved magazine, angled grip, and forward-swept barrel. Subtle gradient shading creates dimensionality with a top-left light source casting soft shadows on the bottom-right edges. The geometric pattern overlay consists of sharp triangular and polygonal white shapes that follow the rifle's contours, creating the signature futuristic Asimov skin aesthetic. The 3D form has smooth beveled edges and matte surface quality, avoiding harsh reflections while maintaining premium game-asset polish. Soft drop shadow grounds the icon beneath with minimal opacity offset.\n\nUse vault-pictograms-others-11's 3D beveled rendering approach and dimensional shadows for the rifle form, applying clean geometric overlay patterns similar to the grid distortion effect but adapted as Asimov skin segments",
+    "referenceInstructions": "Use vault-pictograms-others-11's 3D beveled rendering approach and dimensional shadows for the rifle form, applying clean geometric overlay patterns similar to the grid distortion effect but adapted as Asimov skin segments"
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-pictograms-others-11": "assets/vault/pictograms/Others-11.png"
+  },
+  "referencesUsed": [
+    "vault-pictograms-others-11"
+  ]
+}

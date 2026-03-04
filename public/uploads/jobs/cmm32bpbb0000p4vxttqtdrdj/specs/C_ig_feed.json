@@ -1,0 +1,63 @@
+{
+  "channel": "ig_feed",
+  "variantLabel": "C",
+  "templateId": "tpl-split-right",
+  "copy": {
+    "cta": "Play Now",
+    "headline": "Win Big With  Weekend",
+    "subhead": "Your next big win starts here — fast payouts, top odds, crypto-first"
+  },
+  "artDirection": {
+    "backgroundPrompt": "Vibrant neon-lit background with warm red and gold, dynamic energy, event atmosphere",
+    "mood": "Dynamic & Vibrant",
+    "palette": [
+      "#1A1A2E",
+      "#E94560",
+      "#FFD700",
+      "#16213E"
+    ],
+    "style": "neon-sport",
+    "subjectPrompt": "Vibrant illustration of  Weekend deposit bonus — Get 100% matched on your first BTC deposit up to 5 BTC. Limited time crypto welcome offer., neon style, no text"
+  },
+  "textOverlays": [
+    {
+      "text": "Win Big With  Weekend",
+      "x": 54,
+      "y": 270,
+      "width": 475,
+      "fontSize": 64,
+      "color": "#FFFFFF",
+      "fontWeight": "bold",
+      "textAnchor": "middle"
+    },
+    {
+      "text": "Your next big win starts here — fast payouts, top odds, crypto-first",
+      "x": 54,
+      "y": 567,
+      "width": 475,
+      "fontSize": 28,
+      "color": "#E0E0E0",
+      "textAnchor": "middle"
+    },
+    {
+      "text": "Play Now",
+      "x": 54,
+      "y": 810,
+      "width": 432,
+      "fontSize": 36,
+      "color": "#FFD700",
+      "fontWeight": "bold",
+      "textAnchor": "middle"
+    }
+  ],
+  "notchOverlay": {
+    "x": 43,
+    "y": 54,
+    "width": 130,
+    "height": 108
+  },
+  "qaResult": {
+    "passed": true,
+    "issues": []
+  }
+}

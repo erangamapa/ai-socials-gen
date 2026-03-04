@@ -1,0 +1,27 @@
+{
+  "copy": {
+    "cta": "Witness the Power",
+    "subhead": "The moment of ultimate control",
+    "headline": "Submission Dominance",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "dominant, crushing, controlled aggression",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#8D52DA",
+      "#2D4BE6",
+      "#DFFD51"
+    ],
+    "solidBackground": "#1A0B2E",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view looking up from the octagon floor, capturing Khabib Nurmagomedov securing a rear naked choke on Conor McGregor in a dominant ground position. Khabib's muscular frame towers overhead, his broad shoulders and powerful arms appearing 3x oversized due to extreme foreshortening as they wrap around McGregor's neck. Khabib's torso fills the upper portion of the frame, his legs positioned for leverage behind McGregor who appears compressed and smaller in the lower portion. Flat vector illustration with bold solid color fills, no gradients, no 3D rendering, clean hard edges throughout. Khabib's simplified flat facial features show determination through bold shadow shapes across his bearded face, eyes narrowed in concentration. His signature papakha-style hair rendered as flat geometric shapes. Both fighters wear flat-colored MMA shorts - Khabib in deep purple with orange accents, McGregor in dark blue. Sharp yellow kinetic motion lines radiate from the submission hold, suggesting crushing force and controlled aggression. Motion blur shapes in orange and purple surround the fighters, conveying explosive takedown energy. Flat hard-edged shadow shapes define muscle definition and clothing folds on the characters only. The entire scene contained within frame with full body visibility, no limbs cropped. Dark purple solid background with no drop shadows, no glows, no backdrop effects - clean flat color suitable for instant cutout.\n\nUse flat-vector sports illustration techniques with bold solid fills and hard-edged shadow shapes for maximum impact",
+    "referenceInstructions": "Use flat-vector sports illustration techniques with bold solid fills and hard-edged shadow shapes for maximum impact"
+  },
+  "variantLabel": "A",
+  "referencePaths": {},
+  "referencesUsed": [
+    "flat-vector-001",
+    "flat-vector-002"
+  ]
+}

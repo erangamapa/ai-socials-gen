@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "Place Your Bet",
+    "subhead": "Madrid's Finest Face Off",
+    "headline": "Collision Course",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Synchronized strike convergence — double impact milliseconds from collision",
+    "style": "flat-vector",
+    "palette": [
+      "#DFFD51",
+      "#FF6B2F",
+      "#2D4BE6",
+      "#8D52DA",
+      "#1A1A1A"
+    ],
+    "solidBackground": "#1A1A1A",
+    "backgroundPrompt": "Foreshortened dynamic composition of MMA fighters Costello van Steenis and Fabian Edwards lunging forward simultaneously toward the camera in synchronized attacking motion. Van Steenis's long lean frame extends from the left side, his leading shoulder and extended arm appearing 2.5x oversized in the foreground, his tall athletic build creating dramatic depth as his body recedes behind the thrust. Edwards mirrors the action from the right, his more compact muscular frame generating equal forward momentum, his leading fist dominating his side of the frame through extreme perspective distortion. Both fighters' faces show simplified flat features with bold shadow masks, their intensity conveyed through the explosive forward drive of their bodies rather than facial detail. Flat vector illustration with clean hard edges, bold solid color fills, no gradients or 3D rendering. Their fight shorts and gloves feature contrasting CB brand accent colors - electric orange on van Steenis, vibrant purple on Edwards. Flat hard-edged shadow shapes define their musculature and create dramatic form separation. Motion blur shapes and speed lines integrated into their silhouettes suggest kinetic energy without cluttering the clean background. Full bodies contained within frame despite the aggressive forward positioning, breathing room maintained on all sides.\n\nvault-gen-cmmbe6m9p000ar0vx05l5vmqh provides the foreshortened lunge perspective and motion line integration technique. vault-illustrations-illustration-01 guides the dramatic action pose and shadow casting approach. vault-illustrations-illustration-18 informs the clean geometric forms and motion blur effects.",
+    "referenceInstructions": "vault-gen-cmmbe6m9p000ar0vx05l5vmqh provides the foreshortened lunge perspective and motion line integration technique. vault-illustrations-illustration-01 guides the dramatic action pose and shadow casting approach. vault-illustrations-illustration-18 informs the clean geometric forms and motion blur effects."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-gen-cmmbe6m9p000ar0vx05l5vmqh": "/uploads/jobs/cmmbdu2k30005r0vxsiun56zz/illustrations/B_illustration.png",
+    "vault-illustrations-illustration-01": "assets/vault/illustrations/illustration-01.png",
+    "vault-illustrations-illustration-18": "assets/vault/illustrations/illustration-18.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbe6m9p000ar0vx05l5vmqh",
+    "vault-illustrations-illustration-01",
+    "vault-illustrations-illustration-18"
+  ]
+}

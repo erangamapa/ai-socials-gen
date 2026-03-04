@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Olympian lightning-forge fury — centuries of godly power concentrated into single bolt",
+    "style": "flat-vector",
+    "palette": [
+      "#8D52DA",
+      "#DFFD51",
+      "#FF6B2F",
+      "#FFFFFF",
+      "#2D4BE6"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Foreshortened lunge toward camera with Zeus's massive lightning bolt thrust directly at the viewer, appearing 3x oversized in the immediate foreground while his powerful torso and bearded head recede behind it. The crackling electrical weapon dominates the frame with golden energy sparks and white-hot lightning core, his muscular right arm and shoulder following the bolt's trajectory with dramatic perspective distortion. The god's left arm is pulled back for maximum throwing power, white robes twisted with the violent motion, golden accessories catching light as flat accent shapes. His legendary bearded face shows simplified features with bold shadow patterns, expression of divine fury implied through his aggressive forward-lunging body language rather than detailed facial rendering. The lightning bolt extends from immediate foreground deep into the frame, with Zeus's heroic physique arranged behind it in perfect throwing form. White fabric of his robes shows flat geometric shadow areas that define the motion and muscle tension beneath, golden belt and arm guards rendered as clean metallic flat fills. This captures the exact microsecond of Zeus hurling his signature thunderbolt weapon, all the accumulated power of Olympus focused into this single devastating projectile launch. Flat vector illustration with bold solid color fills, hard-edged shadows on character only, no gradients or 3D effects, clean graphic silhouette with maximum kinetic energy. The god's anatomy shows proper proportions despite the extreme foreshortening, full body contained within frame with generous breathing room. Background is solid deep purple with zero decorative elements, suitable for clean cutout and professional compositing use.",
+    "referenceInstructions": "Drawing from vault-illustrations-illustration-25 for clean vector graphics and bright saturated color treatment, vault-gen-cmmbn8n53003lqwvxtw0634ly for angular faceted surfaces and strong contrast lighting, and vault-illustrations-illustration-06 for flat design approach and bold color blocking on character elements."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-gen-cmmbn8n53003lqwvxtw0634ly": "/uploads/jobs/cmmbn75ok003iqwvx8r1epu66/illustrations/A_illustration.png",
+    "vault-illustrations-illustration-06": "assets/vault/illustrations/illustration-06.png",
+    "vault-illustrations-illustration-25": "assets/vault/illustrations/illustration-25.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-25",
+    "vault-gen-cmmbn8n53003lqwvxtw0634ly",
+    "vault-illustrations-illustration-06"
+  ]
+}

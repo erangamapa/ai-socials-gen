@@ -1,0 +1,29 @@
+{
+  "cta": "PLACE BETS NOW",
+  "copy": {
+    "cta": "PLACE BETS NOW",
+    "subhead": "Bet on the world's best CS2 teams",
+    "headline": "COUNTER STRIKE CHAMPIONSHIP WEEKEND",
+    "disclaimer": ""
+  },
+  "subhead": "Bet on the world's best CS2 teams",
+  "headline": "COUNTER STRIKE CHAMPIONSHIP WEEKEND",
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "A stylized Counter-Strike 2 character positioned center-right of the canvas, captured mid-action in a dynamic tactical stance. The character is a skilled operative wearing modern tactical gear - dark navy combat uniform with orange accent stripes and purple utility pouches, tactical helmet with visor, and body armor. They're gripping a sleek assault rifle in a professional shooting position, finger on trigger guard, weapon angled diagonally across their body. The character's pose suggests they're clearing a corner or advancing through a competitive map. Bold solid color fills with dramatic cast shadows creating depth - no gradients or soft photographic shading. The illustration style matches CB's premium vector aesthetic: clean sharp edges, stylized proportions slightly heroic, and high contrast lighting. Dynamic low-angle perspective looking slightly up at the operative, creating an impressive competitive gaming feel. Subtle geometric fragments and tactical HUD-style elements float around the character, suggesting digital interfaces and gaming overlays. Color palette emphasizes CB brand colors: deep purple shadows (#300931), electric orange highlights (#FF6B2F), navy uniform base (#0F1032), with white tactical gear accents. The composition leaves generous space on the left side for text overlay, with the character cleanly cut against the template background for perfect compositing.\n\nFrom illustration-01: Borrow the dynamic action pose with clean vector illustration style, bold color blocking, and dramatic shadow casting technique. From illustration-03: Use the bold graphic vector art style with simplified forms, clean geometric shapes, and strong contrast against dark backgrounds. From illustration-06: Apply the flat design approach with minimal shading, contemporary sports graphic style, and clean geometric character forms. From slide-3-twitter-new: Reference the tactical character styling, flat illustration technique with clean lines, and the gaming-focused aesthetic with angular background integration.",
+    "referenceInstructions": "From illustration-01: Borrow the dynamic action pose with clean vector illustration style, bold color blocking, and dramatic shadow casting technique. From illustration-03: Use the bold graphic vector art style with simplified forms, clean geometric shapes, and strong contrast against dark backgrounds. From illustration-06: Apply the flat design approach with minimal shading, contemporary sports graphic style, and clean geometric character forms. From slide-3-twitter-new: Reference the tactical character styling, flat illustration technique with clean lines, and the gaming-focused aesthetic with angular background integration."
+  },
+  "variantLabel": "A",
+  "referencesUsed": [
+    "vault-illustrations-illustration-01",
+    "vault-illustrations-illustration-03",
+    "vault-illustrations-illustration-06",
+    "vault-previous-posts-slide-3-twitter-new"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-03",
+  "backgroundPrompt": "A stylized Counter-Strike 2 character positioned center-right of the canvas, captured mid-action in a dynamic tactical stance. The character is a skilled operative wearing modern tactical gear - dark navy combat uniform with orange accent stripes and purple utility pouches, tactical helmet with visor, and body armor. They're gripping a sleek assault rifle in a professional shooting position, finger on trigger guard, weapon angled diagonally across their body. The character's pose suggests they're clearing a corner or advancing through a competitive map. Bold solid color fills with dramatic cast shadows creating depth - no gradients or soft photographic shading. The illustration style matches CB's premium vector aesthetic: clean sharp edges, stylized proportions slightly heroic, and high contrast lighting. Dynamic low-angle perspective looking slightly up at the operative, creating an impressive competitive gaming feel. Subtle geometric fragments and tactical HUD-style elements float around the character, suggesting digital interfaces and gaming overlays. Color palette emphasizes CB brand colors: deep purple shadows (#300931), electric orange highlights (#FF6B2F), navy uniform base (#0F1032), with white tactical gear accents. The composition leaves generous space on the left side for text overlay, with the character cleanly cut against the template background for perfect compositing.",
+  "referenceInstructions": "From illustration-01: Borrow the dynamic action pose with clean vector illustration style, bold color blocking, and dramatic shadow casting technique. From illustration-03: Use the bold graphic vector art style with simplified forms, clean geometric shapes, and strong contrast against dark backgrounds. From illustration-06: Apply the flat design approach with minimal shading, contemporary sports graphic style, and clean geometric character forms. From slide-3-twitter-new: Reference the tactical character styling, flat illustration technique with clean lines, and the gaming-focused aesthetic with angular background integration."
+}

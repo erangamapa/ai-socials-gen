@@ -45,8 +45,8 @@ next-env.d.ts
 # prisma generated client
 src/generated/
 
-# local blob uploads
-public/uploads/*
-!public/uploads/.gitkeep
+# local blob uploads — track all generated assets so deployed instances have full history
+# public/uploads/*
+# !public/uploads/.gitkeep
 
 /src/generated/prisma

@@ -1,0 +1,30 @@
+{
+  "id": "C",
+  "copy": {
+    "cta": "WIN BIG",
+    "subhead": "Victory odds shifting fast",
+    "headline": "CHAMPION CROWNED TONIGHT",
+    "disclaimer": ""
+  },
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "A single dominant MMA fighter emerging from darkness in a powerful victory pose, arms raised triumphantly above their head. The figure is positioned center-bottom of the canvas, creating a bold silhouette effect against the template background. Rendered in striking bold vector style with minimal but impactful color usage - primarily deep blacks and brilliant whites with strategic orange (#FF6B2F) and yellow (#DFFD51) highlights on the championship belt and glove accents. The illustration uses dramatic chiaroscuro lighting with the fighter partially illuminated from above, creating strong contrast between light and shadow areas. Clean geometric forms define the muscular physique with stylized proportions that emphasize power and dominance. Small geometric fragments and energy particles float around the raised fists, suggesting the moment of victory announcement. The style is sophisticated and editorial, matching CB's premium illustration aesthetic with clean sharp edges and bold color blocking. No soft gradients or photorealistic elements - pure graphic impact through strategic color placement and dramatic negative space usage. The fighter's pose suggests championship celebration with confident body language and triumphant energy radiating throughout the composition.\n\nvault-illustrations-illustration-03: Adopt the bold graphic vector style and dramatic black background treatment. Use the clean geometric forms and minimal shading approach.\nvault-illustrations-illustration-06: Borrow the flat design vector illustration style and contemporary sports graphic approach. Use the bold color blocking technique.\nvault-previous-posts-slide-1-twitter-new-b: Reference the dramatic lighting with strong shadows and dark premium mood. Use the intense competitive energy and professional aesthetic.",
+    "referenceInstructions": "vault-illustrations-illustration-03: Adopt the bold graphic vector style and dramatic black background treatment. Use the clean geometric forms and minimal shading approach.\nvault-illustrations-illustration-06: Borrow the flat design vector illustration style and contemporary sports graphic approach. Use the bold color blocking technique.\nvault-previous-posts-slide-1-twitter-new-b: Reference the dramatic lighting with strong shadows and dark premium mood. Use the intense competitive energy and professional aesthetic."
+  },
+  "variantLabel": "C",
+  "referencesUsed": [
+    "vault-illustrations-illustration-03",
+    "vault-illustrations-illustration-06",
+    "vault-previous-posts-slide-1-twitter-new-b"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-04",
+  "backgroundPrompt": "A single dominant MMA fighter emerging from darkness in a powerful victory pose, arms raised triumphantly above their head. The figure is positioned center-bottom of the canvas, creating a bold silhouette effect against the template background. Rendered in striking bold vector style with minimal but impactful color usage - primarily deep blacks and brilliant whites with strategic orange (#FF6B2F) and yellow (#DFFD51) highlights on the championship belt and glove accents. The illustration uses dramatic chiaroscuro lighting with the fighter partially illuminated from above, creating strong contrast between light and shadow areas. Clean geometric forms define the muscular physique with stylized proportions that emphasize power and dominance. Small geometric fragments and energy particles float around the raised fists, suggesting the moment of victory announcement. The style is sophisticated and editorial, matching CB's premium illustration aesthetic with clean sharp edges and bold color blocking. No soft gradients or photorealistic elements - pure graphic impact through strategic color placement and dramatic negative space usage. The fighter's pose suggests championship celebration with confident body language and triumphant energy radiating throughout the composition.",
+  "referenceInstructions": {
+    "vault-illustrations-illustration-03": "Adopt the bold graphic vector style and dramatic black background treatment. Use the clean geometric forms and minimal shading approach.",
+    "vault-illustrations-illustration-06": "Borrow the flat design vector illustration style and contemporary sports graphic approach. Use the bold color blocking technique.",
+    "vault-previous-posts-slide-1-twitter-new-b": "Reference the dramatic lighting with strong shadows and dark premium mood. Use the intense competitive energy and professional aesthetic."
+  }
+}

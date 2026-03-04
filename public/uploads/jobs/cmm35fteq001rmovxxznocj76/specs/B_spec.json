@@ -1,0 +1,27 @@
+{
+  "variantLabel": "B",
+  "copy": {
+    "cta": "Play Now",
+    "disclaimer": "18+ | Gamble responsibly",
+    "headline": "REAL VS BAYERN BOOST",
+    "subhead": "First goalscorer odds enhanced for tonight's semi-final clash"
+  },
+  "artDirection": {
+    "backgroundPrompt": "Complete social media post with split composition - left side features bright orange (#FF6B2F) background with abstract football-inspired geometric patterns. Right side has black (#000000) background. Large white headline 'REAL VS BAYERN BOOST' in Midnight Sans ST Heavy caps spans both sides at top. White Inter subhead 'First goalscorer odds enhanced for tonight's semi-final clash' positioned on right black section. Bright yellow (#DFFD51) 'Play Now' CTA badge on bottom-right. Small white CB logo on top-left orange section. Green (#4B7C39) accent elements add energy. Modern split-screen sports betting design with dynamic contrast.",
+    "mood": "split composition with football energy and crypto-forward styling",
+    "palette": [
+      "#FF6B2F",
+      "#DFFD51",
+      "#000000",
+      "#FFFFFF",
+      "#4B7C39"
+    ],
+    "style": "",
+    "vaultReferences": [
+      "vault-fonts-midnight-sans-st-48-heavy-pro",
+      "vault-illustrations-illustration-03"
+    ]
+  },
+  "templateId": "tpl-split-left",
+  "referencesUsed": []
+}

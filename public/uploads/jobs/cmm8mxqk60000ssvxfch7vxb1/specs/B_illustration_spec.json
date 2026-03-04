@@ -1,0 +1,28 @@
+{
+  "copy": {
+    "cta": "Make Your Move",
+    "subhead": "Push Beyond Limits",
+    "headline": "Grab Every Moment",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive action, kinetic energy, in-your-face intensity",
+    "style": "flat-vector",
+    "palette": [
+      "#DFFD51",
+      "#8D52DA",
+      "#FF6B2F",
+      "#FFFFFF",
+      "#1a1a1a"
+    ],
+    "solidBackground": "#8D52DA",
+    "backgroundPrompt": "Foreshortened lunge perspective with snowboarder's outstretched grabbing hand and snowboard thrusting directly toward camera in extreme close-up. The rider's gloved hand appears 3x oversized in immediate foreground, gripping the board edge in a melon grab, while their body recedes dramatically behind due to intense foreshortening. Board edge dominates the frame as a bold geometric shape with flat orange and purple color blocking. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering. Snowboarder wears electric yellow jacket and deep purple pants, rendered as clean flat shapes with sharp color transitions. Face barely visible behind the massive foreground elements, reduced to simple flat shadow shapes under helmet. Body twisted in mid-rotation, back leg kicked high and away from camera creating dynamic negative space. Speed lines and motion blur shapes radiate from the board edges and trailing arm, suggesting explosive rotational energy. Cast shadows are flat solid color cutouts, no soft blending. Athletic build with slightly exaggerated proportions for graphic punch. Rich deep purple background as single solid color with no patterns or textures. Entire figure contained within frame despite dramatic foreshortening, with breathing room around all edges. No text, no logos, no brand elements.\n\nBorrow vault-02's smooth color blocking technique and simplified anatomical forms. Apply vault-03's flat color approach and bold geometric treatment to snowboard and gear shapes. Use vault-04's clean line approach for equipment definition.",
+    "referenceInstructions": "Borrow vault-02's smooth color blocking technique and simplified anatomical forms. Apply vault-03's flat color approach and bold geometric treatment to snowboard and gear shapes. Use vault-04's clean line approach for equipment definition."
+  },
+  "variantLabel": "B",
+  "referencesUsed": [
+    "vault-illustrations-illustration-02",
+    "vault-illustrations-illustration-03",
+    "vault-illustrations-illustration-04"
+  ]
+}

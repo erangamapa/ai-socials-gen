@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Lightning-strike fortune fever — raw Celtic chaos unleashed in microsecond victory",
+    "style": "flat-vector",
+    "palette": [
+      "#DFFD51",
+      "#FF6B2F",
+      "#228B22",
+      "#300931",
+      "#000000"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Dutch tilt camera angle tilted 20 degrees counterclockwise combined with low-angle perspective, capturing the leprechaun mid-celebration with his right fist thrust directly toward the camera in a foreshortened lunge motion. His clenched fist appears 2-3x oversized in the foreground, knuckles and fingers rendered in bold geometric shapes that dominate the frame while his body recedes dramatically behind it. His left arm extends skyward at an opposing angle, creating dynamic tension through the tilted composition. One leg kicks high with knee bent while the other pushes off powerfully from an implied surface below frame. His traditional hat flies off his head due to the explosive motion, captured mid-flight with sharp angular lines suggesting its trajectory. Coat tails stream behind him in jagged geometric shapes that echo the tilted camera angle. His face shows simplified flat features with bold shadow mask, minimal detail allowing the body language to carry the triumphant energy. Vest rendered in electric #DFFD51 yellow while his coat blazes in #FF6B2F orange with deep shadow shapes for contrast. The foreshortened fist creates extreme depth through size variation - massive knuckles in foreground contrasting with smaller torso and limbs behind. Flat vector illustration with hard-edged shadow shapes ON the character only, no gradients, bold solid color fills throughout. The tilted angle adds cinematic tension and editorial premium feel while the foreshortened punch creates aggressive forward momentum. Background is pure solid #300931 with zero drop shadows, glows, or decorative elements behind the character.",
+    "referenceInstructions": "Apply angular geometric form language and dramatic perspective distortion from vault-gen-cmmbg4kx90026r0vxq2nel790. Extract clean vector style with motion blur shape integration from vault-gen-cmmbg52of0028r0vxbcrlz5wx. Use bold contrast color treatment and sharp shadow definition from vault-illustrations-illustration-03."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-gen-cmmbg4kx90026r0vxq2nel790": "/uploads/jobs/cmmbg30pz0023r0vxxejz7eyf/illustrations/A_illustration.png",
+    "vault-gen-cmmbg52of0028r0vxbcrlz5wx": "/uploads/jobs/cmmbg30pz0023r0vxxejz7eyf/illustrations/B_illustration.png",
+    "vault-illustrations-illustration-03": "assets/vault/illustrations/illustration-03.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbg4kx90026r0vxq2nel790",
+    "vault-gen-cmmbg52of0028r0vxbcrlz5wx",
+    "vault-illustrations-illustration-03"
+  ]
+}

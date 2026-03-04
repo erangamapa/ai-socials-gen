@@ -1,0 +1,32 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "St. Patrick's flash event live",
+    "headline": "LUCKY MULTIPLIERS ACTIVATED",
+    "disclaimer": ""
+  },
+  "variant": "B",
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "Composite the pre-styled St. Patrick's Day multiplier hero illustration positioned center-left of the dark purple gradient template canvas, scaled to fill 70% of the frame height while preserving ample right-side space for copy placement. The character retains their original styling completely. Create a more dramatic, night-time St. Patrick's celebration atmosphere with deep emerald green shamrock silhouettes floating in the background, illuminated by golden spotlight beams cutting through the purple darkness. Large translucent multiplier badges (3x, 7x, 15x) in metallic gold with shamrock borders hover around the hero with subtle pulsing glow effects. Add wisps of magical green mist curling around the composition's edges, and scattered leprechaun gold coins catching dramatic side-lighting. The mood is mysterious yet festive, like an exclusive late-night St. Patrick's gaming event. The illustration style maintains bold solid colors and sharp dramatic shadows, with high contrast lighting effects that create depth without soft gradients. All decorative elements complement the template's dark sophisticated mood while adding St. Patrick's Day celebration energy through strategic color pops of emerald and gold.\n\nvault-illustrations-illustration-07: Reference the protective hands motif but adapt as shamrock leaves creating a magical canopy effect\nvault-illustrations-illustration-09: Borrow the dramatic lighting and bold color blocking style for the multiplier badges\nvault-illustrations-illustration-31: Use the dynamic energy and motion blur techniques for the floating mist effects\nvault-pictograms-others-12: Apply the authoritative pointing gesture energy to how the hero commands the magical elements",
+    "referenceInstructions": "vault-illustrations-illustration-07: Reference the protective hands motif but adapt as shamrock leaves creating a magical canopy effect\nvault-illustrations-illustration-09: Borrow the dramatic lighting and bold color blocking style for the multiplier badges\nvault-illustrations-illustration-31: Use the dynamic energy and motion blur techniques for the floating mist effects\nvault-pictograms-others-12: Apply the authoritative pointing gesture energy to how the hero commands the magical elements"
+  },
+  "variantLabel": "B",
+  "referencesUsed": [
+    "vault-illustrations-illustration-07",
+    "vault-illustrations-illustration-09",
+    "vault-illustrations-illustration-31",
+    "vault-pictograms-others-12"
+  ],
+  "templateAssetId": "vault-template-twitter-twitter-08",
+  "backgroundPrompt": "Composite the pre-styled St. Patrick's Day multiplier hero illustration positioned center-left of the dark purple gradient template canvas, scaled to fill 70% of the frame height while preserving ample right-side space for copy placement. The character retains their original styling completely. Create a more dramatic, night-time St. Patrick's celebration atmosphere with deep emerald green shamrock silhouettes floating in the background, illuminated by golden spotlight beams cutting through the purple darkness. Large translucent multiplier badges (3x, 7x, 15x) in metallic gold with shamrock borders hover around the hero with subtle pulsing glow effects. Add wisps of magical green mist curling around the composition's edges, and scattered leprechaun gold coins catching dramatic side-lighting. The mood is mysterious yet festive, like an exclusive late-night St. Patrick's gaming event. The illustration style maintains bold solid colors and sharp dramatic shadows, with high contrast lighting effects that create depth without soft gradients. All decorative elements complement the template's dark sophisticated mood while adding St. Patrick's Day celebration energy through strategic color pops of emerald and gold.",
+  "referenceInstructions": {
+    "vault-pictograms-others-12": "Apply the authoritative pointing gesture energy to how the hero commands the magical elements",
+    "vault-illustrations-illustration-07": "Reference the protective hands motif but adapt as shamrock leaves creating a magical canopy effect",
+    "vault-illustrations-illustration-09": "Borrow the dramatic lighting and bold color blocking style for the multiplier badges",
+    "vault-illustrations-illustration-31": "Use the dynamic energy and motion blur techniques for the floating mist effects"
+  }
+}

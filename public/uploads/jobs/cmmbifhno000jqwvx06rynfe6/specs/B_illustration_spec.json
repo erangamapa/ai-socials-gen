@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Surgical strike precision — crosshairs locked on inevitable target acquisition",
+    "style": "flat-vector",
+    "palette": [
+      "#2D4BE6",
+      "#FF6B2F",
+      "#300931",
+      "#DFFD51",
+      "#8D52DA"
+    ],
+    "solidBackground": "#2D4BE6",
+    "backgroundPrompt": "Foreshortened lunge capturing the tactical operative's rifle and gloved hands thrust directly toward camera in perfect two-handed shooting grip. The weapon and extended arms dominate the foreground appearing 2-3x oversized due to extreme perspective distortion while the masked head and torso recede behind in compressed space. SWAT operator in full tactical gear displays wide-stance readiness with authoritative posture - protective vest loaded with equipment pouches, tactical gas mask with prominent circular eyepieces, combat boots planted in aggressive shooting stance. Angular body positioning emphasizes equipment silhouettes that read as commanding presence through gear-defined form. The rifle muzzle and tactical attachments fill the immediate foreground with bold geometric shapes while gloved trigger finger and weapon grip show surgical precision. Flat vector illustration with solid color fills, hard edges, and no gradients or 3D rendering techniques. Gas mask face simplified to bold flat shapes - circular eyepieces and breathing apparatus components rendered as clean geometric forms with minimal facial detail beneath. Motion energy comes from forward-thrusting weapon positioning and coiled body language rather than expression. Bold flat shadow shapes exist only on character's tactical gear, creating depth through hard-edged dark tones on vest straps, weapon components, and uniform fabric without any background projection. Clean solid background color suitable for professional cutout use with zero environmental elements, shadows, or backdrop effects. Full tactical operator body contained within frame boundaries with adequate breathing room on all sides for clean compositing.",
+    "referenceInstructions": "vault-illustrations-illustration-31 for clean vector approach and smooth geometric forms. vault-gen-cmmbfmgzz001mr0vx for sharp angular rendering and bold shadow work. vault-gen-cmmbg52of0028r0vx for dynamic positioning and dramatic foreshortening effects."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-gen-cmmbfmgzz001mr0vxmcap70pa": "/uploads/jobs/cmmbfi154001jr0vxzvaj2xzv/illustrations/B_illustration.png",
+    "vault-gen-cmmbg52of0028r0vxbcrlz5wx": "/uploads/jobs/cmmbg30pz0023r0vxxejz7eyf/illustrations/B_illustration.png",
+    "vault-illustrations-illustration-31": "assets/vault/illustrations/illustration-31.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-31",
+    "vault-gen-cmmbfmgzz001mr0vxmcap70pa",
+    "vault-gen-cmmbg52of0028r0vxbcrlz5wx"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "copy": {
+    "cta": "PLAY NOW",
+    "subhead": "Women's ATP Finals Weekend",
+    "headline": "CHAMPIONSHIP SUNDAY AWAITS",
+    "disclaimer": ""
+  },
+  "variantId": "B",
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "Position the pre-styled tennis player illustration in the lower-center portion of the blue geometric template, scaled to 85% to create a powerful ground-up perspective. The player should be captured in a low-angle serve stance with racquet raised high above her head, creating an upward diagonal line that leads the eye toward the template's triangular geometric shapes. This heroic perspective makes the athlete appear larger-than-life against the layered blue background. The composition balances the template's existing geometric triangular overlays with the player's athletic silhouette, creating visual harmony between brand elements and sports action. Surrounding the player, incorporate subtle design flourishes: thin geometric line work that echoes the template's angular aesthetic, small translucent circles that mirror tennis ball shapes, and gradient light effects that enhance the dimensional depth already present in the blue template. The player occupies the bottom 60% of the canvas, allowing the top geometric elements and logo notch to remain prominent and unobstructed. Lighting comes from above, creating strong contrast between the player's form and the sophisticated blue gradient layers, maintaining the template's premium professional mood while adding athletic dynamism.\n\nvault-illustrations-illustration-12: Use the athletic stance and clean vector illustration approach with minimal but effective shading\nvault-illustrations-illustration-06: Reference the centered positioning and how shadows ground the subject against geometric backgrounds\nvault-previous-posts-slide-1-ig-new: Apply the dramatic low-angle perspective and how athletic figures interact with geometric design elements\nvault-illustrations-illustration-11: Borrow the smooth gradient shading technique and dynamic motion positioning",
+    "referenceInstructions": "vault-illustrations-illustration-12: Use the athletic stance and clean vector illustration approach with minimal but effective shading\nvault-illustrations-illustration-06: Reference the centered positioning and how shadows ground the subject against geometric backgrounds\nvault-previous-posts-slide-1-ig-new: Apply the dramatic low-angle perspective and how athletic figures interact with geometric design elements\nvault-illustrations-illustration-11: Borrow the smooth gradient shading technique and dynamic motion positioning"
+  },
+  "variantLabel": "B",
+  "referencesUsed": [
+    "vault-illustrations-illustration-12",
+    "vault-illustrations-illustration-06",
+    "vault-previous-posts-slide-1-ig-new",
+    "vault-illustrations-illustration-11"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-01",
+  "backgroundPrompt": "Position the pre-styled tennis player illustration in the lower-center portion of the blue geometric template, scaled to 85% to create a powerful ground-up perspective. The player should be captured in a low-angle serve stance with racquet raised high above her head, creating an upward diagonal line that leads the eye toward the template's triangular geometric shapes. This heroic perspective makes the athlete appear larger-than-life against the layered blue background. The composition balances the template's existing geometric triangular overlays with the player's athletic silhouette, creating visual harmony between brand elements and sports action. Surrounding the player, incorporate subtle design flourishes: thin geometric line work that echoes the template's angular aesthetic, small translucent circles that mirror tennis ball shapes, and gradient light effects that enhance the dimensional depth already present in the blue template. The player occupies the bottom 60% of the canvas, allowing the top geometric elements and logo notch to remain prominent and unobstructed. Lighting comes from above, creating strong contrast between the player's form and the sophisticated blue gradient layers, maintaining the template's premium professional mood while adding athletic dynamism.",
+  "referenceInstructions": {
+    "vault-illustrations-illustration-06": "Reference the centered positioning and how shadows ground the subject against geometric backgrounds",
+    "vault-illustrations-illustration-11": "Borrow the smooth gradient shading technique and dynamic motion positioning",
+    "vault-illustrations-illustration-12": "Use the athletic stance and clean vector illustration approach with minimal but effective shading",
+    "vault-previous-posts-slide-1-ig-new": "Apply the dramatic low-angle perspective and how athletic figures interact with geometric design elements"
+  }
+}

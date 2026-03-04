@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Tactical supremacy frozen at the decisive clutch moment",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#8D52DA",
+      "#300931",
+      "#2D4BE6",
+      "#DFFD51"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view from ground level looking steeply upward at a CS2 esports competitor captured at the moment of tactical supremacy. The camera is positioned near floor level, angling sharply upward to create a towering, heroic perspective. The player's torso and shoulders dominate the upper frame, with hands positioned with surgical precision over a mechanical keyboard that appears in sharp foreshortening at the bottom of the composition. The keyboard keys are closest to camera and appear 2x oversized, while the player's head recedes into the background, creating dramatic depth. Shoulders are squared with unshakeable focus, head tilted slightly forward in concentrated authority, jaw set in methodical determination. The figure radiates calculated discipline through every gesture - left hand hovering over WASD keys with fingertips barely touching, right hand gripping mouse with controlled tension. Body language screams methodical precision over impulsive reaction, every angle optimized for peak performance. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style. The player wears a gaming jersey with #FF6B2F accent panels, dark base fabric rendered in flat shadow shapes. Minimal facial detail with simplified flat features, expression implied through rigid posture and tactical stillness. Clean solid #300931 background with no shadow or glow behind the character. The entire figure fits within frame with generous breathing room, suitable for professional cutout use.",
+    "referenceInstructions": "vault-gen-cmmbigrrn000mqwvx8odnqrfd provides the bold angular vector approach with dramatic lighting contrasts and tactical precision stance. vault-illustrations-illustration-04 informs the clean geometric forms and flat shading treatment for sports uniforms. vault-illustrations-illustration-03 guides the simplified vector style with minimal shading and bold color blocking."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-gen-cmmbigrrn000mqwvx8odnqrfd": "/uploads/jobs/cmmbifhno000jqwvx06rynfe6/illustrations/A_illustration.png",
+    "vault-illustrations-illustration-03": "assets/vault/illustrations/illustration-03.png",
+    "vault-illustrations-illustration-04": "assets/vault/illustrations/illustration-04.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbigrrn000mqwvx8odnqrfd",
+    "vault-illustrations-illustration-04",
+    "vault-illustrations-illustration-03"
+  ]
+}

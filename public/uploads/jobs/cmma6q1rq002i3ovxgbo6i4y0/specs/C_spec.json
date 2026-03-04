@@ -1,0 +1,30 @@
+{
+  "copy": {
+    "cta": "WIN BIG",
+    "subhead": "Premium combat meets crypto precision",
+    "headline": "ELITE WARRIORS CLASH",
+    "disclaimer": ""
+  },
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "Integrate the pre-styled dual fighter illustration as the dominant center focal point against the warm orange-brown template gradient, sizing it to 75% of canvas height for maximum visual impact. The dramatic worm's-eye perspective and crossing strikes create a powerful silhouette against the template's sophisticated warm tones, with the orange fighter naturally harmonizing with the background while the purple-shadowed opponent provides striking contrast. Rather than traditional speed lines, surround the fighters with premium atmospheric effects - subtle geometric light rays in white and pale yellow that emanate from behind the collision point, creating a championship spotlight effect. These rays are rendered as clean angular beams that respect the template's elegant aesthetic while suggesting the explosive energy of elite combat. Small hexagonal tech-inspired accent shapes in dark purple (#300931) float at the periphery, adding a modern crypto-gaming edge that aligns with CB's digital sophistication. The fighters' muscular forms cast dramatic shadows that integrate seamlessly with the template's warm gradient flow. Position the illustration slightly toward the upper center to maintain text-safe space in the lower third, creating a composition that balances raw athletic intensity with the template's premium brand sophistication, perfect for high-stakes championship marketing.\n\nvault-illustrations-illustration-52: Reference the dramatic purple stage lighting and premium exclusive atmosphere - adapt this sophisticated lighting approach for the championship spotlight effect behind the fighters\nvault-illustrations-illustration-55: Borrow the clean 3D aesthetic and tech-forward elements - use this for the hexagonal accent shapes that add digital sophistication around the composition\nvault-illustrations-illustration-57: Use the professional clean vector approach and sophisticated color integration - maintain this level of premium brand presentation in the overall composition treatment",
+    "referenceInstructions": "vault-illustrations-illustration-52: Reference the dramatic purple stage lighting and premium exclusive atmosphere - adapt this sophisticated lighting approach for the championship spotlight effect behind the fighters\nvault-illustrations-illustration-55: Borrow the clean 3D aesthetic and tech-forward elements - use this for the hexagonal accent shapes that add digital sophistication around the composition\nvault-illustrations-illustration-57: Use the professional clean vector approach and sophisticated color integration - maintain this level of premium brand presentation in the overall composition treatment"
+  },
+  "variantLabel": "C",
+  "variantLetter": "C",
+  "referencesUsed": [
+    "vault-illustrations-illustration-52",
+    "vault-illustrations-illustration-55",
+    "vault-illustrations-illustration-57"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-02",
+  "backgroundPrompt": "Integrate the pre-styled dual fighter illustration as the dominant center focal point against the warm orange-brown template gradient, sizing it to 75% of canvas height for maximum visual impact. The dramatic worm's-eye perspective and crossing strikes create a powerful silhouette against the template's sophisticated warm tones, with the orange fighter naturally harmonizing with the background while the purple-shadowed opponent provides striking contrast. Rather than traditional speed lines, surround the fighters with premium atmospheric effects - subtle geometric light rays in white and pale yellow that emanate from behind the collision point, creating a championship spotlight effect. These rays are rendered as clean angular beams that respect the template's elegant aesthetic while suggesting the explosive energy of elite combat. Small hexagonal tech-inspired accent shapes in dark purple (#300931) float at the periphery, adding a modern crypto-gaming edge that aligns with CB's digital sophistication. The fighters' muscular forms cast dramatic shadows that integrate seamlessly with the template's warm gradient flow. Position the illustration slightly toward the upper center to maintain text-safe space in the lower third, creating a composition that balances raw athletic intensity with the template's premium brand sophistication, perfect for high-stakes championship marketing.",
+  "referenceInstructions": {
+    "vault-illustrations-illustration-52": "Reference the dramatic purple stage lighting and premium exclusive atmosphere - adapt this sophisticated lighting approach for the championship spotlight effect behind the fighters",
+    "vault-illustrations-illustration-55": "Borrow the clean 3D aesthetic and tech-forward elements - use this for the hexagonal accent shapes that add digital sophistication around the composition",
+    "vault-illustrations-illustration-57": "Use the professional clean vector approach and sophisticated color integration - maintain this level of premium brand presentation in the overall composition treatment"
+  }
+}

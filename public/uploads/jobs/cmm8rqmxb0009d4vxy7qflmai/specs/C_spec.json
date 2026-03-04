@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "cta": "PLAY NOW",
+    "subhead": "Score big with every celebration",
+    "headline": "VICTORY SLIDES INTO VIEW",
+    "disclaimer": ""
+  },
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "Feature the pre-styled footballer celebration illustration as a powerful central focal point, positioned slightly right of center and scaled to dominate the middle portion of the blue gradient canvas. The sliding knee celebration maintains its existing brand styling while the dramatic arms-wide pose creates sweeping visual movement that complements the template's geometric triangular shapes. The hero figure integrates seamlessly with the layered blue background (#1a237e, #3f51b5, #5c6bc0), creating depth and sophistication. Enhance the composition with carefully placed geometric accent elements: thin angular lines and small triangular fragments that echo the template's existing shapes, positioned to frame and amplify the celebration without competing. These supporting elements use the template's blue gradient palette with subtle transparency effects. Add minimal motion lines trailing from the sliding knee position, rendered in lighter blue tones to suggest the explosive energy of the goal celebration moment. The left side of the composition maintains generous negative space for typography, while the geometric layers naturally create visual depth. Subtle lighting effects highlight the hero figure's silhouette against the premium blue gradient background. The overall treatment balances the raw emotion of football celebration with CB's sophisticated brand aesthetic, ensuring the hero illustration commands attention while maintaining design elegance.\n\nvault-illustrations-illustration-02: Reference the diagonal action pose composition and athletic excitement that creates strong visual movement\nvault-illustrations-illustration-10: Borrow the clean minimalist approach and dynamic positioning that emphasizes athletic competition\nvault-illustrations-illustration-39: Use the dramatic proportions and professional sports graphics aesthetic for brand consistency\nvault-illustrations-illustration-40: Apply the 3D-style vector approach and exaggerated proportions that create heroic dramatic impact",
+    "referenceInstructions": "vault-illustrations-illustration-02: Reference the diagonal action pose composition and athletic excitement that creates strong visual movement\nvault-illustrations-illustration-10: Borrow the clean minimalist approach and dynamic positioning that emphasizes athletic competition\nvault-illustrations-illustration-39: Use the dramatic proportions and professional sports graphics aesthetic for brand consistency\nvault-illustrations-illustration-40: Apply the 3D-style vector approach and exaggerated proportions that create heroic dramatic impact"
+  },
+  "variantLabel": "C",
+  "referencesUsed": [
+    "vault-illustrations-illustration-02",
+    "vault-illustrations-illustration-10",
+    "vault-illustrations-illustration-39",
+    "vault-illustrations-illustration-40"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-01",
+  "backgroundPrompt": "Feature the pre-styled footballer celebration illustration as a powerful central focal point, positioned slightly right of center and scaled to dominate the middle portion of the blue gradient canvas. The sliding knee celebration maintains its existing brand styling while the dramatic arms-wide pose creates sweeping visual movement that complements the template's geometric triangular shapes. The hero figure integrates seamlessly with the layered blue background (#1a237e, #3f51b5, #5c6bc0), creating depth and sophistication. Enhance the composition with carefully placed geometric accent elements: thin angular lines and small triangular fragments that echo the template's existing shapes, positioned to frame and amplify the celebration without competing. These supporting elements use the template's blue gradient palette with subtle transparency effects. Add minimal motion lines trailing from the sliding knee position, rendered in lighter blue tones to suggest the explosive energy of the goal celebration moment. The left side of the composition maintains generous negative space for typography, while the geometric layers naturally create visual depth. Subtle lighting effects highlight the hero figure's silhouette against the premium blue gradient background. The overall treatment balances the raw emotion of football celebration with CB's sophisticated brand aesthetic, ensuring the hero illustration commands attention while maintaining design elegance.",
+  "referenceInstructions": {
+    "vault-illustrations-illustration-02": "Reference the diagonal action pose composition and athletic excitement that creates strong visual movement",
+    "vault-illustrations-illustration-10": "Borrow the clean minimalist approach and dynamic positioning that emphasizes athletic competition",
+    "vault-illustrations-illustration-39": "Use the dramatic proportions and professional sports graphics aesthetic for brand consistency",
+    "vault-illustrations-illustration-40": "Apply the 3D-style vector approach and exaggerated proportions that create heroic dramatic impact"
+  }
+}

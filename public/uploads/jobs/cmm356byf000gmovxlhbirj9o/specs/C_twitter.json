@@ -1,0 +1,70 @@
+{
+  "channel": "twitter",
+  "variantLabel": "C",
+  "templateId": "tpl-centered-hero",
+  "copy": {
+    "cta": "Bet Now",
+    "disclaimer": "18+ | Gamble responsibly",
+    "headline": "JACKPOTS LOADING NOW",
+    "subhead": "New crypto slots with progressive rewards"
+  },
+  "artDirection": {
+    "backgroundPrompt": "",
+    "brandElements": [
+      "vault-brand-brandmark-element-slots-3",
+      "vault-brand-brandmark-element-perspective-right"
+    ],
+    "composition": "dynamic diagonal energy with loading/progress elements",
+    "mood": "high-energy action, loading/launching theme, tech-forward",
+    "palette": [
+      "#0F1032",
+      "#DFFD51",
+      "#FF6B2F",
+      "#8D52DA",
+      "#FFFFFF"
+    ],
+    "style": "",
+    "visualHierarchy": "deep blue base with dominant yellow primary, orange energy accents, purple depth"
+  },
+  "textOverlays": [
+    {
+      "text": "JACKPOTS LOADING NOW",
+      "x": 240,
+      "y": 270,
+      "width": 1120,
+      "fontSize": 54,
+      "color": "#FFFFFF",
+      "fontWeight": "bold",
+      "textAnchor": "middle"
+    },
+    {
+      "text": "New crypto slots with progressive rewards",
+      "x": 320,
+      "y": 468,
+      "width": 960,
+      "fontSize": 27,
+      "color": "#E0E0E0",
+      "textAnchor": "middle"
+    },
+    {
+      "text": "Bet Now",
+      "x": 480,
+      "y": 612,
+      "width": 640,
+      "fontSize": 36,
+      "color": "#FF6B2F",
+      "fontWeight": "bold",
+      "textAnchor": "middle"
+    }
+  ],
+  "notchOverlay": {
+    "x": 64,
+    "y": 36,
+    "width": 192,
+    "height": 72
+  },
+  "qaResult": {
+    "passed": true,
+    "issues": []
+  }
+}

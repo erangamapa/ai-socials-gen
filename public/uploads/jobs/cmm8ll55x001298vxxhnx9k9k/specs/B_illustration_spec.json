@@ -1,0 +1,28 @@
+{
+  "copy": {
+    "cta": "Start Winning",
+    "subhead": "Premium sports betting with crypto power",
+    "headline": "Rise Above the Rest",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "premium athletic excellence",
+    "style": "3D stylized",
+    "palette": [
+      "#FF6B2F",
+      "#8D52DA",
+      "#6B4AA0",
+      "#1A2B4C",
+      "#FFFFFF"
+    ],
+    "solidBackground": "#1A2B4C",
+    "backgroundPrompt": "A basketball player captured mid-flight in a stylized 3D rendered illustration, frozen at the peak moment of a thunderous dunk. The athlete is positioned at a three-quarter angle, body twisted dynamically as they drive the orange basketball downward through the hoop with tremendous force. The player's physique is rendered with subtle volumetric shading and smooth surfaces that catch dramatic rim lighting from multiple angles. They wear a modern basketball uniform in gradient purple tones that shift from deep violet (#8D52DA) to lighter lavender highlights. The jersey features subtle geometric pattern details and flowing fabric simulation. The player's face shows intense focus, with detailed facial features and realistic expression work. Strong backlighting creates a glowing rim light effect around the player's silhouette, while key lighting from the front-right illuminates their determined expression. The basketball shows realistic leather texture and seam details, rendered in vibrant orange (#FF6B2F) with subtle highlight and shadow gradients. The player's sneakers are pristine white with orange and purple accent strokes. Motion blur effects trail behind the extended limbs to suggest explosive movement. The composition places the player slightly right of center, with generous breathing room on all sides. The entire scene sits against a solid deep blue background (#1A2B4C) that contrasts beautifully with the warm orange basketball and cool purple uniform tones.\n\nApply smooth 3D rendering techniques with subtle gradients and volumetric lighting. Create realistic fabric simulation and material textures while maintaining stylized proportions.",
+    "referenceInstructions": "Apply smooth 3D rendering techniques with subtle gradients and volumetric lighting. Create realistic fabric simulation and material textures while maintaining stylized proportions."
+  },
+  "variantLabel": "B",
+  "referencesUsed": [
+    "vault-3d-sport-008",
+    "vault-premium-017",
+    "vault-athlete-033"
+  ]
+}

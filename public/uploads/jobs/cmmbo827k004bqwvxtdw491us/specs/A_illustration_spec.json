@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Jackpot euphoria — fortune's lightning strike crystallized into pure kinetic joy",
+    "style": "flat-vector",
+    "palette": [
+      "#DFFD51",
+      "#FF6B2F",
+      "#228B22",
+      "#300931",
+      "#000000"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view from ground level looking steeply upward at a leprechaun caught at the absolute peak of his triumphant celebratory leap, one knee tucked high toward his chest while the other leg extends powerfully downward with his boot appearing massive in the foreground due to foreshortening. Both arms thrust skyward in pure victorious joy, hands appearing smaller as they recede into the upper frame. His traditional green hat tilts at a jaunty angle from the dynamic motion, threatening to fly off his head, while his emerald coat tails flare dramatically behind him like wings frozen at the moment of maximum extension. The leprechaun's face is rendered with simplified flat features and bold shadow mask, expression conveyed entirely through his explosive body language rather than detailed facial features. His vest glows in vibrant #FF6B2F orange while his coat and hat are rendered in rich emerald green with sharp contrast shadows. The boot closest to camera dominates the foreground, appearing 2-3x larger than anatomically correct due to extreme perspective distortion. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, clean geometric shapes with thick black outlines. The figure appears to tower overhead with heroic scale amplified by the low camera angle. Motion energy radiates from every limb through sharp angular positioning and speed-line shapes integrated into his clothing folds. Background is solid #300931 with no shadow, glow, or backdrop effects behind the character.",
+    "referenceInstructions": "Extract bold outline treatment and dramatic low-angle heroic scaling from vault-gen-cmmbmujz0002uqwvxav3lht5s. Apply clean flat color fills and sharp geometric shape language from vault-gen-cmmbn40sh0038qwvx9vha8qee. Use vibrant accent color treatment and motion-blur shape integration from vault-gen-cmmbn3n940036qwvxueus6fri."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-gen-cmmbmujz0002uqwvxav3lht5s": "/uploads/jobs/cmmbmt3n9002rqwvxl2fvwk50/illustrations/A_illustration.png",
+    "vault-gen-cmmbn3n940036qwvxueus6fri": "/uploads/jobs/cmmbn21kb0033qwvxq40a5qwb/illustrations/A_illustration.png",
+    "vault-gen-cmmbn40sh0038qwvx9vha8qee": "/uploads/jobs/cmmbn21kb0033qwvxq40a5qwb/illustrations/B_illustration.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbmujz0002uqwvxav3lht5s",
+    "vault-gen-cmmbn40sh0038qwvx9vha8qee",
+    "vault-gen-cmmbn3n940036qwvxueus6fri"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "copy": {
+    "cta": "Join the Winners",
+    "subhead": "Rise above the competition",
+    "headline": "Victory Within Reach",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive heroic dominance",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#DFFD51",
+      "#2D4BE6",
+      "#300931",
+      "#FFFFFF",
+      "#1A1A1A"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Extreme worm's-eye view from ground level looking steeply up at a triumphant figure with arms thrust skyward in victory celebration. The character towers overhead with dramatic foreshortening - their raised fists and forearms appear 3x larger than natural scale, dominating the upper frame while their torso and legs recede into the background. Body language radiates pure excitement with chest expanded, back arched, head tilted back in triumph. Arms are fully extended upward with clenched fists breaking the skyline. Dynamic orange energy bursts explode outward from behind the figure like stellar networks, with sharp geometric fragments in blue scattered around their silhouette creating kinetic motion trails. Bold geometric shapes fracture and spiral around the character suggesting ripple effects of success. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering. Character rendered in flat tones with hard-edged shadow shapes on their body only - simplified flat facial features with expression conveyed through powerful body language rather than detailed face. Full figure contained within frame with generous breathing room. Clean solid dark purple background with no shadows, glows, or effects projected behind the character. Bold orange and yellow energy elements contrast against rich purple backdrop.\n\nUse vault references to establish bold line weight, graphic shadow placement on character body, and clean separation between subject and background for professional cutout use",
+    "referenceInstructions": "Use vault references to establish bold line weight, graphic shadow placement on character body, and clean separation between subject and background for professional cutout use"
+  },
+  "variantLabel": "A",
+  "referencePaths": {},
+  "referencesUsed": [
+    "vault-hero-01",
+    "vault-dynamic-02",
+    "vault-celebration-03"
+  ]
+}

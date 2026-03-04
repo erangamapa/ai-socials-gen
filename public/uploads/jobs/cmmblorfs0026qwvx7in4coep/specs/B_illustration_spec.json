@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Kinetic precision unleashed — decades of experience channeled into one perfect moment",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#300931",
+      "#8D52DA",
+      "#DFFD51"
+    ],
+    "solidBackground": "#2D4BE6",
+    "backgroundPrompt": "Foreshortened lunge perspective capturing the rugged fisherman character from the reference photo in the explosive moment of the cast, with his fishing rod thrust directly toward the camera creating dramatic perspective distortion. The angler's weathered face and distinctive features from the photo are simplified into bold flat shapes with minimal detail, his characteristic baseball cap and olive fishing vest rendered in clean geometric forms. His casting arm extends massively toward the viewer, the fishing rod appearing 2-3x oversized in the foreground while his torso and legs recede behind, creating powerful depth through extreme foreshortening. The fisherman's body shows dynamic tension - back foot planted for leverage, opposite shoulder pulled back, core muscles engaged through his fishing gear as the casting motion reaches its peak energy transfer point. His free hand maintains perfect balance, tackle box and gear positioned to show his tactical preparation and experience. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, featuring the angler's face as a simplified shadow mask with expression conveyed entirely through his explosive body language and casting form. The composition emphasizes kinetic breakthrough energy frozen at the moment of maximum power transfer, with flat hard-edged shadow shapes exclusively on the character's clothing and equipment, never projected onto the background. Color treatment features #FF6B2F on his fishing vest and primary gear, #2D4BE6 accents on his clothing and cap, with #DFFD51 highlights on the rod tip and fishing line. Full body contained within frame against solid #2D4BE6 background, no drop shadows or environmental effects, clean separation for professional cutout use.",
+    "referenceInstructions": "vault-gen-cmmbg4kx90026r0vxq2nel790 provides the geometric angular approach and dynamic motion capture; vault-illustrations-illustration-04 guides the clean vector athletic positioning and bold color blocking; vault-gen-cmmbfmwsu001or0vxik0ol34m informs the powerful body tension and muscular definition through geometric shading"
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-gen-cmmbfmwsu001or0vxik0ol34m": "/uploads/jobs/cmmbfi154001jr0vxzvaj2xzv/illustrations/A_illustration.png",
+    "vault-gen-cmmbg4kx90026r0vxq2nel790": "/uploads/jobs/cmmbg30pz0023r0vxxejz7eyf/illustrations/A_illustration.png",
+    "vault-illustrations-illustration-04": "assets/vault/illustrations/illustration-04.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbg4kx90026r0vxq2nel790",
+    "vault-illustrations-illustration-04",
+    "vault-gen-cmmbfmwsu001or0vxik0ol34m"
+  ]
+}

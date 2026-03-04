@@ -1,0 +1,70 @@
+{
+  "channel": "ig_feed",
+  "variantLabel": "A",
+  "templateId": "tpl-centered-hero",
+  "copy": {
+    "cta": "Play Now",
+    "disclaimer": "18+ | Gamble responsibly",
+    "headline": "NEW CRYPTO SLOTS DROPPED",
+    "subhead": "Progressive jackpots and daily free spins await"
+  },
+  "artDirection": {
+    "backgroundPrompt": "",
+    "brandElements": [
+      "vault-brand-brandmark-element-slots-1",
+      "vault-brand-brandmark-glow-1"
+    ],
+    "composition": "left-focused dynamic composition with glowing slot machine elements",
+    "mood": "premium casino, high-energy, exclusive launch",
+    "palette": [
+      "#300931",
+      "#8D52DA",
+      "#DFFD51",
+      "#FF6B2F",
+      "#FFFFFF"
+    ],
+    "style": "",
+    "visualHierarchy": "dominant purple background with yellow accent highlights and orange energy bursts"
+  },
+  "textOverlays": [
+    {
+      "text": "NEW CRYPTO SLOTS DROPPED",
+      "x": 162,
+      "y": 405,
+      "width": 756,
+      "fontSize": 64,
+      "color": "#FFFFFF",
+      "fontWeight": "bold",
+      "textAnchor": "middle"
+    },
+    {
+      "text": "Progressive jackpots and daily free spins await",
+      "x": 216,
+      "y": 702,
+      "width": 648,
+      "fontSize": 28,
+      "color": "#E0E0E0",
+      "textAnchor": "middle"
+    },
+    {
+      "text": "Play Now",
+      "x": 324,
+      "y": 918,
+      "width": 432,
+      "fontSize": 36,
+      "color": "#DFFD51",
+      "fontWeight": "bold",
+      "textAnchor": "middle"
+    }
+  ],
+  "notchOverlay": {
+    "x": 43,
+    "y": 54,
+    "width": 130,
+    "height": 108
+  },
+  "qaResult": {
+    "passed": true,
+    "issues": []
+  }
+}

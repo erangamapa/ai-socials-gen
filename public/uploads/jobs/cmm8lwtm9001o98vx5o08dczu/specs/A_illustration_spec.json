@@ -1,0 +1,28 @@
+{
+  "copy": {
+    "cta": "Enter the Ring",
+    "subhead": "Explosive combination strikes",
+    "headline": "Power Punch",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive, powerful, intense",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#8D52DA",
+      "#DFFD51",
+      "#2D4BE6",
+      "#1A1A1A"
+    ],
+    "solidBackground": "#1A1A1A",
+    "backgroundPrompt": "Flat vector illustration of a powerful boxer mid-combination punch, captured at the explosive moment of a right hook with his left jab already extended. The boxer has athletic muscular build with defined shoulders and arms, wearing bright red boxing gloves that dominate the composition. Sweat droplets are stylized as small flat yellow shapes flying off his face and shoulders, frozen in motion. His face shows intense concentration with gritted teeth and focused eyes, rendered in flat solid skin tones. The boxer wears dark purple boxing shorts with yellow trim, matching the CB brand palette. His stance is dynamic with bent knees and twisted torso showing the rotational power of the combination. The lighting creates bold flat shadow shapes across his ribcage and face - no gradients, just clean geometric shadow fills in darker purple tones. Low-angle perspective makes the boxer look heroic and dominant, with dramatic foreshortening on the extended gloves coming toward the viewer. The entire figure fits completely within the frame with generous breathing room on all sides. Bold solid color fills only - red gloves, purple shorts, yellow sweat drops, dark skin shadows. Hard edges throughout, no soft blending or 3D rendering. The composition centers the boxer slightly off-center with his punching motion creating diagonal energy across the canvas.\n\nFrom vault-illustrations-illustration-03: bold flat color blocking with minimal shading and clean geometric forms against solid dark background. From vault-illustrations-illustration-06: flat design approach with clean geometric shapes and simple shadow treatment. From vault-illustrations-illustration-10: dynamic athletic pose with minimal flat shading and motion-focused positioning.",
+    "referenceInstructions": "From vault-illustrations-illustration-03: bold flat color blocking with minimal shading and clean geometric forms against solid dark background. From vault-illustrations-illustration-06: flat design approach with clean geometric shapes and simple shadow treatment. From vault-illustrations-illustration-10: dynamic athletic pose with minimal flat shading and motion-focused positioning."
+  },
+  "variantLabel": "A",
+  "referencesUsed": [
+    "vault-illustrations-illustration-03",
+    "vault-illustrations-illustration-06",
+    "vault-illustrations-illustration-10"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Gravitational crypto-magnetism — fingertips inches from fortune's electric threshold",
+    "style": "flat-vector",
+    "palette": [
+      "#8D52DA",
+      "#FF6B2F",
+      "#2D4BE6",
+      "#300931"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view of a simplified hand stretching upward toward a towering stack of glowing crypto coins positioned just beyond reach in the upper right portion of the frame. The camera is positioned below looking steeply up, making the reaching hand appear heroically scaled as it dominates the lower portion of the composition while the coins loom majestically above. The hand emerges from a deep purple sleeve rendered in flat vector style with bold solid color fills and hard edges, no gradients or 3D rendering. Fingers are fully extended in that universal gesture of anticipation, with extreme foreshortening making the fingertips appear 2-3x larger than the wrist as they thrust toward the viewer. The crypto coins gleam in vibrant flat orange fills with sharp electric blue highlight shapes, creating bold geometric forms that catch the eye with magnetic pull. Each coin is rendered as clean circular shapes with flat shadow areas to suggest dimension without gradients. The reaching gesture captures that perfect moment of casino curiosity with kinetic energy frozen at peak extension. Minimal facial detail if any face is visible - simplified flat features implied by bold shadow shapes rather than detailed expression. The composition radiates championship-forged supremacy through elegant tension between desire and restraint, with the dramatic low angle emphasizing the monumental nature of the reach. Motion energy is conveyed through the stretched pose and dynamic angle rather than speed lines. Full hand and sleeve contained within frame with generous breathing room. Clean solid background with no shadow, glow, or backdrop effects behind the character.",
+    "referenceInstructions": "Use vault-gen-cmmbmujz0002uqwvxav3lht5s for bold vector style with flat color fills and dramatic contrast between orange and blue elements. Apply vault-gen-cmmbpsolt000pq0vxb33iqr8i's clean geometric approach and dynamic energy lines radiating from the central action. Reference vault-gen-cmmbn3n940036qwvxueus6fri's angular shapes and strong directional composition for the reaching gesture."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-gen-cmmbmujz0002uqwvxav3lht5s": "/uploads/jobs/cmmbmt3n9002rqwvxl2fvwk50/illustrations/A_illustration.png",
+    "vault-gen-cmmbn3n940036qwvxueus6fri": "/uploads/jobs/cmmbn21kb0033qwvxq40a5qwb/illustrations/A_illustration.png",
+    "vault-gen-cmmbpsolt000pq0vxb33iqr8i": "/uploads/jobs/cmmbpr2ua000mq0vxu2hsmbyv/illustrations/A_illustration.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbmujz0002uqwvxav3lht5s",
+    "vault-gen-cmmbpsolt000pq0vxb33iqr8i",
+    "vault-gen-cmmbn3n940036qwvxueus6fri"
+  ]
+}

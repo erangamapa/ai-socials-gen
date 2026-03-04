@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "Strike Now",
+    "subhead": "Direct impact force",
+    "headline": "POWER DELIVERY",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "direct kinetic impact",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#DFFD51",
+      "#FFFFFF",
+      "#1A1A1A"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Foreshortened lunge perspective with the footballer's striking leg and boot thrust directly toward the camera, creating maximum kinetic impact as the oversized foot fills the immediate foreground. The boot appears 2.5x larger than natural proportions, with every cleat and texture detail rendered in bold flat vector shapes. The leg extends dramatically from the compressed body behind, showing incredible extension and power transfer. Camera positioned at ball level, capturing the precise moment of contact with extreme foreshortening that makes the striking limb dominate 60% of the composition. The player's torso and supporting leg recede into compressed perspective behind the massive striking leg. Orange jersey (#FF6B2F) rendered in bold solid fills with sharp-edged flat shadow shapes defining ribcage expansion and shoulder tension. Electric blue shorts (#2D4BE6) create sharp contrast against the vibrant orange. Face simplified to basic geometric mask with minimal features - energy communicated entirely through explosive body positioning and muscle definition. Yellow (#DFFD51) speed lines streak from the boot in geometric lightning-bolt shapes, creating visual impact trails that emphasize the direction of power delivery. The football shows compression distortion at contact point. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style. Clean solid dark purple background (#300931) with no shadow or glow behind the character. Full body contained within frame including extended arms and supporting leg, with breathing room on all sides for professional cutout use.\n\nApply vault-illustrations-illustration-42 foreshortened kicking technique and separated cleat emphasis for impact focus. Use vault-illustrations-illustration-14 motion blur geometric effects and clean vector treatment. Reference vault-illustrations-illustration-31 for dynamic athletic body positioning and motion energy.",
+    "referenceInstructions": "Apply vault-illustrations-illustration-42 foreshortened kicking technique and separated cleat emphasis for impact focus. Use vault-illustrations-illustration-14 motion blur geometric effects and clean vector treatment. Reference vault-illustrations-illustration-31 for dynamic athletic body positioning and motion energy."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-illustrations-illustration-14": "assets/vault/illustrations/illustration-14.png",
+    "vault-illustrations-illustration-31": "assets/vault/illustrations/illustration-31.png",
+    "vault-illustrations-illustration-42": "assets/vault/illustrations/illustration-42.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-42",
+    "vault-illustrations-illustration-14",
+    "vault-illustrations-illustration-31"
+  ]
+}

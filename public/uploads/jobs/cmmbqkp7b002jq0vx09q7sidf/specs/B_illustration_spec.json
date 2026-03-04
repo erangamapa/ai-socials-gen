@@ -1,0 +1,32 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Fortune's electric threshold — millimeters from life-changing contact",
+    "style": "flat-vector",
+    "palette": [
+      "#8D52DA",
+      "#FF6B2F",
+      "#2D4BE6",
+      "#2D1B69"
+    ],
+    "solidBackground": "#2D1B69",
+    "backgroundPrompt": "Foreshortened lunge composition with the simplified hand thrusting directly toward camera, creating extreme perspective distortion where the reaching fingertips fill the foreground at 3x normal scale while the purple sleeve recedes dramatically behind. The camera captures the precise moment of maximum extension with the hand appearing to breach the picture plane. The crypto coins are positioned in the middle distance to the right, rendered as bold flat orange circular shapes with hard-edged electric blue accent shapes for highlights, creating geometric forms that pulse with magnetic energy. The deep purple sleeve shows dramatic foreshortening with flat vector rendering - solid color fills and clean hard edges throughout, no gradients or volumetric shading. Bold shadow shapes exist only on the hand and sleeve surfaces to suggest form without soft blending. The reaching fingers are spread in perfect anticipation gesture, with the index finger closest to camera appearing massively oversized due to perspective. Minimal detail on any visible skin areas - simplified flat flesh tones with bold shadow masks rather than detailed rendering. The composition captures that electric moment of casino curiosity through pure kinetic body language and dramatic perspective rather than facial expression. Energy radiates from the reaching pose and scale distortion, embodying championship-forged supremacy through the tension between desire and elegant restraint. Full hand and sleeve contained completely within frame boundaries with breathing room on all sides. Background is single flat color only - no drop shadows, halos, or backdrop effects projected behind the character.",
+    "referenceInstructions": "Apply vault-gen-cmmbmujz0002uqwvxav3lht5s's bold outline treatment and dramatic orange-blue color contrast for the coins. Use vault-gen-cmmbigrrn000mqwvx8odnqrfd's sharp angular geometric forms and strong directional composition for the reaching gesture. Reference vault-gen-cmmbn3n940036qwvxueus6fri's motion blur effects and dynamic hand positioning for the foreshortened lunge toward camera."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-gen-cmmbigrrn000mqwvx8odnqrfd": "/uploads/jobs/cmmbifhno000jqwvx06rynfe6/illustrations/A_illustration.png",
+    "vault-gen-cmmbmujz0002uqwvxav3lht5s": "/uploads/jobs/cmmbmt3n9002rqwvxl2fvwk50/illustrations/A_illustration.png",
+    "vault-gen-cmmbn3n940036qwvxueus6fri": "/uploads/jobs/cmmbn21kb0033qwvxq40a5qwb/illustrations/A_illustration.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbmujz0002uqwvxav3lht5s",
+    "vault-gen-cmmbigrrn000mqwvx8odnqrfd",
+    "vault-gen-cmmbn3n940036qwvxueus6fri"
+  ]
+}

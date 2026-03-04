@@ -1,0 +1,30 @@
+{
+  "copy": {
+    "cta": "PLACE BETS",
+    "subhead": "Ultimate striking power meets unstoppable force",
+    "headline": "CHAMPIONSHIP COLLISION AWAITS",
+    "disclaimer": ""
+  },
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "Position the pre-styled PFL fighter duo illustration center-right of the vibrant blue gradient template, scaled to 65% height to create dramatic presence while preserving substantial text-safe area on the left third of the canvas. The explosive simultaneous strike moment is captured with the orange-silhouetted fighter emerging from the template's bright blue backdrop while his opponent materializes from deeper purple shadows. Surrounding the fighters, implement bold geometric accent shapes in yellow (#DFFD51) and orange (#FF6B2F) that echo the kinetic energy without forming traditional motion lines - instead, use angular crystalline fragments that appear to shatter outward from the collision point. These geometric elements are positioned strategically to flow toward the left margin, creating visual movement that guides the eye to the text area. The composition leverages the template's energetic blue-to-purple gradient as a natural spotlight effect, with the fighters positioned where the color intensity peaks. Subtle white highlights accent the muscle definition and striking poses, while maintaining the existing flat vector aesthetic. The overall placement creates a powerful right-weighted composition that balances explosive action with clean, professional brand presentation, using the template's digital energy to amplify the raw intensity of championship-level MMA combat.\n\nvault-illustrations-illustration-27: Adopt the vibrant celebratory energy and floating geometric elements approach - use this for the crystalline fragments that radiate from the fighter collision\nvault-illustrations-illustration-12: Reference the clean motion lines and dynamic diagonal composition - apply this structured approach to the geometric accent shapes around the fighters\nvault-illustrations-illustration-50: Borrow the athletic dynamism and professional uniform detailing treatment - maintain this level of sport-specific authenticity in the fighter presentation",
+    "referenceInstructions": "vault-illustrations-illustration-27: Adopt the vibrant celebratory energy and floating geometric elements approach - use this for the crystalline fragments that radiate from the fighter collision\nvault-illustrations-illustration-12: Reference the clean motion lines and dynamic diagonal composition - apply this structured approach to the geometric accent shapes around the fighters\nvault-illustrations-illustration-50: Borrow the athletic dynamism and professional uniform detailing treatment - maintain this level of sport-specific authenticity in the fighter presentation"
+  },
+  "variantLabel": "B",
+  "variantLetter": "B",
+  "referencesUsed": [
+    "vault-illustrations-illustration-27",
+    "vault-illustrations-illustration-12",
+    "vault-illustrations-illustration-50"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-06",
+  "backgroundPrompt": "Position the pre-styled PFL fighter duo illustration center-right of the vibrant blue gradient template, scaled to 65% height to create dramatic presence while preserving substantial text-safe area on the left third of the canvas. The explosive simultaneous strike moment is captured with the orange-silhouetted fighter emerging from the template's bright blue backdrop while his opponent materializes from deeper purple shadows. Surrounding the fighters, implement bold geometric accent shapes in yellow (#DFFD51) and orange (#FF6B2F) that echo the kinetic energy without forming traditional motion lines - instead, use angular crystalline fragments that appear to shatter outward from the collision point. These geometric elements are positioned strategically to flow toward the left margin, creating visual movement that guides the eye to the text area. The composition leverages the template's energetic blue-to-purple gradient as a natural spotlight effect, with the fighters positioned where the color intensity peaks. Subtle white highlights accent the muscle definition and striking poses, while maintaining the existing flat vector aesthetic. The overall placement creates a powerful right-weighted composition that balances explosive action with clean, professional brand presentation, using the template's digital energy to amplify the raw intensity of championship-level MMA combat.",
+  "referenceInstructions": {
+    "vault-illustrations-illustration-12": "Reference the clean motion lines and dynamic diagonal composition - apply this structured approach to the geometric accent shapes around the fighters",
+    "vault-illustrations-illustration-27": "Adopt the vibrant celebratory energy and floating geometric elements approach - use this for the crystalline fragments that radiate from the fighter collision",
+    "vault-illustrations-illustration-50": "Borrow the athletic dynamism and professional uniform detailing treatment - maintain this level of sport-specific authenticity in the fighter presentation"
+  }
+}

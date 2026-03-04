@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Olympian supremacy frozen at the moment of cosmic dominion",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#FFD700",
+      "#2D4BE6",
+      "#8D52DA",
+      "#300931"
+    ],
+    "solidBackground": "#2D1B69",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view from ground level looking steeply upward at Zeus, the mighty Greek god of thunder and sky, captured at the peak moment of divine power manifestation. The camera positions at floor level, creating massive foreshortening where Zeus's muscular legs and sandaled feet dominate the extreme foreground, appearing 2-3x oversized while his torso and head recede dramatically behind them. His powerful physique fills the frame as he stands in a commanding stance, one foot slightly forward, massive arms crossed or gesturing with divine authority. Lightning bolt crackling in one oversized hand closest to camera, the electrical energy rendered as bold angular shapes with flat yellow and white fills. His iconic flowing beard and wild hair stream with kinetic energy, depicted as simplified flat shapes with hard-edged shadow patterns defining the volume. Face rendered with minimal detail - strong jawline, piercing eyes as simple geometric shapes, expression conveyed through powerful body language rather than facial features. Draped in classic Greek robes that flow around his form, fabric rendered as clean geometric folds with flat shadow shapes defining the drapery. The entire figure towers overhead with godlike presence, his silhouette reading as instantly recognizable divine authority. Flat vector illustration style with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style. All shading exists only on Zeus's body through flat darker tone shapes - no shadows cast onto the background. Clean solid background with no shadow or glow behind the character, suitable for professional cutout use.",
+    "referenceInstructions": "vault-gen-cmmbitqoz001bqwvxlion8s0i provides the extreme low-angle perspective technique and dramatic uplighting approach. vault-illustrations-illustration-01 contributes the heroic stance proportions and clean vector treatment with minimal shading. vault-gen-cmmbn3n940036qwvxueus6fri informs the bold geometric shadow approach and saturated color blocking method."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-gen-cmmbitqoz001bqwvxlion8s0i": "/uploads/jobs/cmmbirx7r0016qwvxnc970isb/illustrations/A_illustration.png",
+    "vault-gen-cmmbn3n940036qwvxueus6fri": "/uploads/jobs/cmmbn21kb0033qwvxq40a5qwb/illustrations/A_illustration.png",
+    "vault-illustrations-illustration-01": "assets/vault/illustrations/illustration-01.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbitqoz001bqwvxlion8s0i",
+    "vault-illustrations-illustration-01",
+    "vault-gen-cmmbn3n940036qwvxueus6fri"
+  ]
+}

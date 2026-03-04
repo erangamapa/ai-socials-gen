@@ -1,0 +1,35 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Microsecond tactical omniscience — neural pathways firing at championship velocity",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#4A1A5C",
+      "#2D4BE6",
+      "#F97316",
+      "#8B4FBF"
+    ],
+    "solidBackground": "#2D1B69",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view from beneath the gaming desk, looking steeply upward at a Counter-Strike professional esports player locked in the decisive clutch moment. The camera is positioned at floor level, creating dramatic foreshortening where the player's forearms and hands dominating the mouse and keyboard appear 2-3x oversized in the extreme foreground, while their head and shoulders recede into the background. The player leans forward with intense concentration, their gaming headset framing a simplified flat-featured face rendered as bold shadow masks rather than detailed expression. Their finger hovers millimeters above the left mouse button in the split-second before executing the game-changing play. Multiple monitor screens glow behind them, casting angular blue light across their jersey and setup. The player's body language screams tactical supremacy - shoulders hunched forward, spine curved in total focus, every muscle fiber committed to this singular moment. Flat vector illustration style with bold solid color fills, hard edges, no gradients, no 3D rendering, clean geometric shapes defining the gaming peripherals and chair. The headset cable creates dynamic curves, while speed lines emanate from the poised mouse hand to emphasize the tension of the moment. Angular flat shadow shapes define the player's form, concentrated on their torso and arms only, never extending to the background. Clean solid dark purple background with no shadow or glow behind the character, suitable for instant cutout use.",
+    "referenceInstructions": "vault-gen-cmmbn3n940036qwvxueus6fri provides the angular geometric approach with strong directional lighting and motion blur effects on hands. vault-gen-cmmbn40sh0038qwvx9vha8qee contributes the flat vector style with dramatic perspective and exaggerated proportions focused on gaming peripherals. vault-gen-cmmbitqoz001bqwvxlion8s0i supplies the esports jersey treatment and geometric shadow placement techniques."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-gen-cmmbitqoz001bqwvxlion8s0i": "/uploads/jobs/cmmbirx7r0016qwvxnc970isb/illustrations/A_illustration.png",
+    "vault-gen-cmmbn3n940036qwvxueus6fri": "/uploads/jobs/cmmbn21kb0033qwvxq40a5qwb/illustrations/A_illustration.png",
+    "vault-gen-cmmbn40sh0038qwvx9vha8qee": "/uploads/jobs/cmmbn21kb0033qwvxq40a5qwb/illustrations/B_illustration.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbn3n940036qwvxueus6fri",
+    "vault-gen-cmmbn40sh0038qwvx9vha8qee",
+    "vault-gen-cmmbitqoz001bqwvxlion8s0i",
+    "vault-gen-cmmbg4kx90026r0vxq2nel790",
+    "vault-gen-cmmbmujz0002uqwvxav3lht5s"
+  ]
+}

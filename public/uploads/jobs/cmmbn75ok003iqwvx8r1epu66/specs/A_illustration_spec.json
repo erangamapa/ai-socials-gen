@@ -1,0 +1,34 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Microsecond tactical omniscience — neural pathways firing at championship velocity",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#8D52DA",
+      "#4A1A5C",
+      "#F97316"
+    ],
+    "solidBackground": "#2D1B69",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view from beneath the gaming desk, looking steeply upward at a Counter-Strike professional esports player frozen in the decisive clutch moment. The camera positioned at floor level captures the player towering overhead in maximum heroic scale, leaning intensely forward into their gaming setup with finger poised microseconds before the game-changing click. The player's body fills the frame from this dramatic upward angle - headset-framed profile silhouetted against multiple monitor glows, gaming mouse gripped with surgical precision, mechanical keyboard positioned below. Extreme foreshortening makes the mouse hand appear 2.5x larger than normal proportions, dominating the foreground while the torso and head recede into the background. The player's posture shows tactical supremacy - shoulders hunched forward with predatory focus, free hand hovering over keyboard shortcuts, entire body language radiating calculated authority. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, geometric angular shapes defining the gaming chair, desk setup, and monitor bezels. Simplified flat features on the face with bold shadow mask, expression implied through body tension rather than detailed facial features. Clean solid #2D1B69 deep purple background with no shadow, glow, or effects behind the character - pure flat color suitable for instant cutout. Motion energy conveyed through angular geometric speed lines integrated into the character's clothing and chair design, not projected into the background. Bold contrast between warm orange gaming peripheral accents and cool blue monitor light reflections on the player's jersey.",
+    "referenceInstructions": "vault-gen-cmmbn3n940036qwvxueus6fri provides the core esports gaming aesthetic with geometric angular shapes, strong directional monitor lighting, and purple-dominant color scheme. vault-gen-cmmbn40sh0038qwvx9vha8qee establishes the flat vector illustration approach with geometric angular forms, dramatic perspective with exaggerated proportions on gaming peripherals, and clean lighting without harsh background shadows. vault-gen-cmmbg4kx90026r0vxq2nel790 contributes the low-poly geometric style with faceted surfaces, sharp angles, and flat lighting treatment perfect for the worm's-eye heroic scale perspective."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-gen-cmmbg4kx90026r0vxq2nel790": "/uploads/jobs/cmmbg30pz0023r0vxxejz7eyf/illustrations/A_illustration.png",
+    "vault-gen-cmmbn3n940036qwvxueus6fri": "/uploads/jobs/cmmbn21kb0033qwvxq40a5qwb/illustrations/A_illustration.png",
+    "vault-gen-cmmbn40sh0038qwvx9vha8qee": "/uploads/jobs/cmmbn21kb0033qwvxq40a5qwb/illustrations/B_illustration.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbn3n940036qwvxueus6fri",
+    "vault-gen-cmmbn40sh0038qwvx9vha8qee",
+    "vault-gen-cmmbg4kx90026r0vxq2nel790",
+    "vault-gen-cmmbmujz0002uqwvxav3lht5s"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Clutch-moment detonation — decades of muscle memory crystallized into one perfect click",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#8D52DA",
+      "#2D4BE6",
+      "#4A1A5C",
+      "#F97316"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Foreshortened lunge perspective with the gaming mouse thrust directly toward camera, appearing 3x oversized in the extreme foreground while the Counter-Strike pro player's body recedes dramatically behind it. The player's right hand dominates the frame, fingers positioned with surgical precision over the mouse buttons, knuckles and fingertips rendered in bold geometric shapes with flat shadow detailing. Their left hand rests on the mechanical keyboard in the middle ground, while their head and torso appear compressed in the deep background. The camera angle captures the intensity from a dutch tilt position, tilted 15 degrees to add editorial tension and instability to the composition. The player wears a professional esports headset that frames their simplified face - bold flat shadow shapes suggest focused concentration without detailed facial features. RGB lighting from the keyboard creates angular color accents across their gaming jersey in flat geometric patches. Motion lines radiate from the mouse to emphasize the critical moment of execution, while the player's posture demonstrates complete tactical control. The gaming chair and monitor setup provide structural elements in flattened perspective. Flat vector illustration with bold solid color fills, hard-edged shadow shapes contained entirely within the character's form, no gradients on surfaces, geometric precision in all gaming peripheral details. Clean angular silhouette reads immediately as elite esports athlete. Solid dark background provides clean cutout-ready composition with no drop shadows, glows, or background elements extending from the character.",
+    "referenceInstructions": "vault-gen-cmmbn9ewq003nqwvx7qinb8am provides the dramatic perspective approach with rim lighting effects and glossy surface treatment on gaming equipment. vault-gen-cmmbn8n53003lqwvxtw0634ly contributes the low-poly geometric style with angular faceted surfaces and strong contrast lighting. vault-gen-cmmbn3n940036qwvxueus6fri supplies the motion blur techniques and purple-dominant gaming aesthetic."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-gen-cmmbn3n940036qwvxueus6fri": "/uploads/jobs/cmmbn21kb0033qwvxq40a5qwb/illustrations/A_illustration.png",
+    "vault-gen-cmmbn8n53003lqwvxtw0634ly": "/uploads/jobs/cmmbn75ok003iqwvx8r1epu66/illustrations/A_illustration.png",
+    "vault-gen-cmmbn9ewq003nqwvx7qinb8am": "/uploads/jobs/cmmbn75ok003iqwvx8r1epu66/illustrations/B_illustration.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbn9ewq003nqwvx7qinb8am",
+    "vault-gen-cmmbn8n53003lqwvxtw0634ly",
+    "vault-gen-cmmbn3n940036qwvxueus6fri"
+  ]
+}

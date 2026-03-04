@@ -1,0 +1,28 @@
+{
+  "id": "A",
+  "cta": "Bet Now",
+  "copy": {
+    "cta": "Bet Now",
+    "subhead": "Lock in this weekend's best lines before tipoff",
+    "headline": "NBA EARLY ODDS LIVE",
+    "disclaimer": ""
+  },
+  "subhead": "Lock in this weekend's best lines before tipoff",
+  "headline": "NBA EARLY ODDS LIVE",
+  "disclaimer": "18+ T&Cs apply",
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "A dynamic basketball player mid-dribble in stylized illustration style, wearing a generic NBA uniform, positioned center-right of the canvas. Bold orange and purple accents on the uniform details. Dramatic perspective with clean edges suitable for compositing. The player should have confident expression and athletic pose, with basketball spinning off fingertips.\n\nUse the clean illustration style and dynamic character positioning from the hockey player reference, combined with the energetic athletic pose and bold color treatment from the tennis player reference. Apply the same stylized approach but with basketball-specific elements."
+  },
+  "variantLabel": "A",
+  "referencesUsed": [
+    "vault-previous-posts-slide-1-ig-new",
+    "vault-previous-posts-slide-5-ig-new"
+  ],
+  "templateAssetId": "tpl-centered-hero",
+  "backgroundPrompt": "A dynamic basketball player mid-dribble in stylized illustration style, wearing a generic NBA uniform, positioned center-right of the canvas. Bold orange and purple accents on the uniform details. Dramatic perspective with clean edges suitable for compositing. The player should have confident expression and athletic pose, with basketball spinning off fingertips.",
+  "referenceInstructions": "Use the clean illustration style and dynamic character positioning from the hockey player reference, combined with the energetic athletic pose and bold color treatment from the tennis player reference. Apply the same stylized approach but with basketball-specific elements."
+}

@@ -1,0 +1,28 @@
+{
+  "copy": {
+    "cta": "Accelerate Now",
+    "subhead": "Next-level racing intensity",
+    "headline": "Speed Revolution",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "editorial premium, futuristic racing, kinetic tension",
+    "style": "flat-vector",
+    "palette": [
+      "#8B5CF6",
+      "#DFFD51",
+      "#2C3E50",
+      "#FFFFFF",
+      "#FF6B2F"
+    ],
+    "solidBackground": "#2D4BE6",
+    "backgroundPrompt": "Dutch tilt camera angle rotated 25 degrees with low perspective creating unstable, editorial premium composition of Formula 1 driver in dramatic side profile, helmet visor down, positioned at dynamic diagonal across the frame. The tilted perspective adds kinetic tension and high-end motorsport magazine energy to the heroic racing figure. Driver's helmet rendered in experimental color palette featuring deep motorsport purple, electric lime yellow, and metallic silver flat geometric panels creating a futuristic racing aesthetic. Racing suit designed with bold angular flat color blocking in vibrant lime yellow, deep purple, and stark black sections arranged in diagonal racing stripes and geometric sponsor patches. The Dutch angle creates visual instability that mirrors the high-speed racing environment, with the driver appearing to lean into an invisible turn. Flat vector illustration, bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style, clean solid background with no shadow or glow behind the character. Helmet visor as single flat dark surface with subtle flat highlight shapes reflecting the experimental color scheme, completely obscuring facial features with all character conveyed through powerful racing posture. Body positioned in three-quarter side profile with shoulders and torso showing the aerodynamic racing suit design as clean flat geometric shapes. The tilted composition creates premium editorial tension while maintaining the heroic motorsport silhouette. Color treatment emphasizes bold experimental racing palette with flat hard-edged shadow shapes on suit and helmet defining form without any background projection. Racing suit details include flat geometric air vents, sponsor logos as simple shapes, and panel seaming as clean hard lines. Full character contained within tilted frame with breathing room, creating maximum visual impact through the combination of heroic scale and unstable dynamic angle.\n\nUse illustration-11's smooth flat color approach and illustration-05's dynamic energy. Apply illustration-12's clean geometric style for helmet and suit panel definition.",
+    "referenceInstructions": "Use illustration-11's smooth flat color approach and illustration-05's dynamic energy. Apply illustration-12's clean geometric style for helmet and suit panel definition."
+  },
+  "variantLabel": "C",
+  "referencesUsed": [
+    "vault-illustrations-illustration-11",
+    "vault-illustrations-illustration-05",
+    "vault-illustrations-illustration-12"
+  ]
+}

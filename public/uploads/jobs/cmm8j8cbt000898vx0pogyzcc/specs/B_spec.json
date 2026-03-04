@@ -1,0 +1,30 @@
+{
+  "id": "B",
+  "copy": {
+    "cta": "PLACE BETS",
+    "subhead": "Championship odds heating up",
+    "headline": "FIGHT NIGHT FEVER",
+    "disclaimer": ""
+  },
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "Two MMA fighters in a dynamic face-off moment, positioned in the center-left of the canvas with dramatic tension between them. Both fighters are rendered in bold stylized illustration style with exaggerated proportions and clean vector aesthetics. The left fighter wears red shorts with black gloves raised defensively, while the right fighter sports blue shorts in an aggressive striking pose. Bold solid color fills throughout with dramatic cast shadows creating depth - no soft gradients or photo-realistic textures. The composition captures the split-second before impact, with geometric energy lines and small angular fragments radiating from the tension point between them. Fish-eye perspective slightly distorts the scene for added drama and intensity. Each fighter's expression shows pure competitive focus and determination. The illustration style emphasizes clean sharp edges suitable for compositing, with sophisticated color treatment using brand palette: electric blue (#2D4BE6), vibrant orange (#FF6B2F), and deep purple (#8D52DA) accents. Dramatic lighting creates strong contrast between highlighted muscle definition and deep navy shadows. The overall mood is explosive pre-fight energy captured in premium editorial illustration style.\n\nvault-illustrations-illustration-01: Use the dynamic athletic action pose and clean vector illustration style. Adopt the dramatic shadow casting and realistic proportions.\nvault-illustrations-illustration-24: Borrow the exaggerated expressions and vibrant energetic style. Use the bold cartoon illustration approach and clean rendering.\nvault-previous-posts-slide-1-ig-new-b: Reference the dramatic lighting with strong shadows and intense competitive mood. Use the premium athletic presentation style.",
+    "referenceInstructions": "vault-illustrations-illustration-01: Use the dynamic athletic action pose and clean vector illustration style. Adopt the dramatic shadow casting and realistic proportions.\nvault-illustrations-illustration-24: Borrow the exaggerated expressions and vibrant energetic style. Use the bold cartoon illustration approach and clean rendering.\nvault-previous-posts-slide-1-ig-new-b: Reference the dramatic lighting with strong shadows and intense competitive mood. Use the premium athletic presentation style."
+  },
+  "variantLabel": "B",
+  "referencesUsed": [
+    "vault-illustrations-illustration-01",
+    "vault-illustrations-illustration-24",
+    "vault-previous-posts-slide-1-ig-new-b"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-05",
+  "backgroundPrompt": "Two MMA fighters in a dynamic face-off moment, positioned in the center-left of the canvas with dramatic tension between them. Both fighters are rendered in bold stylized illustration style with exaggerated proportions and clean vector aesthetics. The left fighter wears red shorts with black gloves raised defensively, while the right fighter sports blue shorts in an aggressive striking pose. Bold solid color fills throughout with dramatic cast shadows creating depth - no soft gradients or photo-realistic textures. The composition captures the split-second before impact, with geometric energy lines and small angular fragments radiating from the tension point between them. Fish-eye perspective slightly distorts the scene for added drama and intensity. Each fighter's expression shows pure competitive focus and determination. The illustration style emphasizes clean sharp edges suitable for compositing, with sophisticated color treatment using brand palette: electric blue (#2D4BE6), vibrant orange (#FF6B2F), and deep purple (#8D52DA) accents. Dramatic lighting creates strong contrast between highlighted muscle definition and deep navy shadows. The overall mood is explosive pre-fight energy captured in premium editorial illustration style.",
+  "referenceInstructions": {
+    "vault-illustrations-illustration-01": "Use the dynamic athletic action pose and clean vector illustration style. Adopt the dramatic shadow casting and realistic proportions.",
+    "vault-illustrations-illustration-24": "Borrow the exaggerated expressions and vibrant energetic style. Use the bold cartoon illustration approach and clean rendering.",
+    "vault-previous-posts-slide-1-ig-new-b": "Reference the dramatic lighting with strong shadows and intense competitive mood. Use the premium athletic presentation style."
+  }
+}

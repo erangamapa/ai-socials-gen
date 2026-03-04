@@ -1,0 +1,29 @@
+{
+  "A": {
+    "cta": "BET NOW",
+    "subhead": "International tournament epic clash - place your bets now",
+    "headline": "NAVI VS ALBATROS DOTA SHOWDOWN",
+    "template": "tpl-centered-hero",
+    "referencesUsed": [
+      "vault-previous-posts-slide-1-ig-new-a",
+      "vault-previous-posts-slide-3-ig-new"
+    ],
+    "backgroundPrompt": "Create a dynamic esports tournament poster featuring the NAVI vs ALBATROS Dota 2 matchup. Center the image with a dark purple-to-black gradient background (#300931 fading to black). Feature bold geometric overlays with the iconic Dota 2 game aesthetic - angular crystalline structures and mystical energy effects in CB's signature colors. Place 'NAVI VS ALBATROS DOTA SHOWDOWN' as the dominant headline in Midnight Sans ST 48 Heavy, ALL CAPS, positioned centrally with high contrast white text. Below, add the subhead 'International tournament epic clash - place your bets now' in Inter font, smaller and in light gray. Include subtle Dota 2 hero silhouettes or magical spell effects around the text. Add the CB notch logo in the top-right corner in bright orange (#FF6B2F). Create an energetic tournament atmosphere with stadium lighting effects and crowd energy suggested in the background. Bottom-right corner features 'BET NOW' CTA in a bright yellow (#DFFD51) rectangular button with rounded corners. Overall mood: intense, competitive, premium gaming excitement.",
+    "referenceInstructions": "Reference vault-previous-posts-slide-1-ig-new-a: Match this post's centered text layout structure and overall composition balance, adapting the color scheme to darker purple tones for esports energy. Reference vault-previous-posts-slide-3-ig-new: Use similar bold headline treatment and geometric background elements, but adapt with Dota 2 gaming aesthetics and tournament atmosphere instead of the original theme."
+  },
+  "copy": {
+    "cta": "BET NOW",
+    "subhead": "International tournament epic clash - place your bets now",
+    "headline": "NAVI VS ALBATROS DOTA SHOWDOWN",
+    "disclaimer": ""
+  },
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "Create a dynamic esports tournament poster featuring the NAVI vs ALBATROS Dota 2 matchup. Center the image with a dark purple-to-black gradient background (#300931 fading to black). Feature bold geometric overlays with the iconic Dota 2 game aesthetic - angular crystalline structures and mystical energy effects in CB's signature colors. Place 'NAVI VS ALBATROS DOTA SHOWDOWN' as the dominant headline in Midnight Sans ST 48 Heavy, ALL CAPS, positioned centrally with high contrast white text. Below, add the subhead 'International tournament epic clash - place your bets now' in Inter font, smaller and in light gray. Include subtle Dota 2 hero silhouettes or magical spell effects around the text. Add the CB notch logo in the top-right corner in bright orange (#FF6B2F). Create an energetic tournament atmosphere with stadium lighting effects and crowd energy suggested in the background. Bottom-right corner features 'BET NOW' CTA in a bright yellow (#DFFD51) rectangular button with rounded corners. Overall mood: intense, competitive, premium gaming excitement.\n\nReference vault-previous-posts-slide-1-ig-new-a: Match this post's centered text layout structure and overall composition balance, adapting the color scheme to darker purple tones for esports energy. Reference vault-previous-posts-slide-3-ig-new: Use similar bold headline treatment and geometric background elements, but adapt with Dota 2 gaming aesthetics and tournament atmosphere instead of the original theme."
+  },
+  "variantLabel": "A",
+  "referencesUsed": []
+}

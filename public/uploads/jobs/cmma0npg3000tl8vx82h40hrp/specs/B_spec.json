@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "Explosive World Cup moments demand bold crypto bets",
+    "headline": "ALL IN ON IMPACT",
+    "disclaimer": ""
+  },
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "The hero footballer illustration is centrally positioned on the dark gradient template, scaled to fill 75% of the available space while preserving the top logo area and bottom text zone. Against the sophisticated dark purple-to-black gradient background, the player's orange and blue uniform creates striking color contrast that pops dramatically. Yellow kinetic energy lines (#DFFD51) burst outward from the ball impact in clean geometric patterns, styled as sharp angular rays that complement the template's minimalist aesthetic. The composition emphasizes the worm's-eye view perspective by adding subtle atmospheric depth cues: graduated shadow planes in deep navy extend behind the player, creating layers of dimensional space. Small geometric accent shapes in electric blue (#2D4BE6) and orange (#FF6B2F) float strategically around the action zone, maintaining the template's clean geometric language while adding visual excitement. The hero's explosive striking motion is enhanced with subtle motion trails in purple gradients that echo the background's sophisticated color treatment. Hard-edged triangular frame elements in brand orange create subtle borders that guide the eye toward the central action without cluttering the composition. The overall placement creates perfect balance between the dramatic athletic moment and the template's premium minimalist design philosophy, with ample breathing room for text overlay zones.\n\nFrom illustration-02: Use the diagonal action composition and smooth gradient shading approach for dimensional depth. From illustration-03: Adopt the bold graphic vector style with flat colors and the way geometric forms create clean definition. From illustration-11: Borrow the smooth vector illustration technique with clean lines and dynamic motion positioning.",
+    "referenceInstructions": "From illustration-02: Use the diagonal action composition and smooth gradient shading approach for dimensional depth. From illustration-03: Adopt the bold graphic vector style with flat colors and the way geometric forms create clean definition. From illustration-11: Borrow the smooth vector illustration technique with clean lines and dynamic motion positioning."
+  },
+  "variantLabel": "B",
+  "referencesUsed": [
+    "vault-illustrations-illustration-02",
+    "vault-illustrations-illustration-03",
+    "vault-illustrations-illustration-11"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-08",
+  "backgroundPrompt": "The hero footballer illustration is centrally positioned on the dark gradient template, scaled to fill 75% of the available space while preserving the top logo area and bottom text zone. Against the sophisticated dark purple-to-black gradient background, the player's orange and blue uniform creates striking color contrast that pops dramatically. Yellow kinetic energy lines (#DFFD51) burst outward from the ball impact in clean geometric patterns, styled as sharp angular rays that complement the template's minimalist aesthetic. The composition emphasizes the worm's-eye view perspective by adding subtle atmospheric depth cues: graduated shadow planes in deep navy extend behind the player, creating layers of dimensional space. Small geometric accent shapes in electric blue (#2D4BE6) and orange (#FF6B2F) float strategically around the action zone, maintaining the template's clean geometric language while adding visual excitement. The hero's explosive striking motion is enhanced with subtle motion trails in purple gradients that echo the background's sophisticated color treatment. Hard-edged triangular frame elements in brand orange create subtle borders that guide the eye toward the central action without cluttering the composition. The overall placement creates perfect balance between the dramatic athletic moment and the template's premium minimalist design philosophy, with ample breathing room for text overlay zones.",
+  "referenceInstructions": "From illustration-02: Use the diagonal action composition and smooth gradient shading approach for dimensional depth. From illustration-03: Adopt the bold graphic vector style with flat colors and the way geometric forms create clean definition. From illustration-11: Borrow the smooth vector illustration technique with clean lines and dynamic motion positioning."
+}

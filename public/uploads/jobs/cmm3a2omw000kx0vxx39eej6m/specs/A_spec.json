@@ -1,0 +1,37 @@
+{
+  "id": "A",
+  "cta": "Bet Now",
+  "copy": {
+    "cta": "Bet Now",
+    "subhead": "Back your favorite MMA warriors and win big",
+    "headline": "FUND THE FIGHT",
+    "disclaimer": ""
+  },
+  "colors": {
+    "accent": "#DFFD51",
+    "primary": "#FF6B2F",
+    "secondary": "#300931"
+  },
+  "subhead": "Back your favorite MMA warriors and win big",
+  "headline": "FUND THE FIGHT",
+  "template": "tpl-centered-hero",
+  "templateId": "tpl-centered-hero",
+  "typography": {
+    "cta": "Inter Bold 16px",
+    "subhead": "Inter Medium 18px",
+    "headline": "Midnight Sans ST Heavy 48px"
+  },
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "Create a powerful Instagram post featuring a stylized MMA fighter illustration in CB's signature orange (#FF6B2F) and purple (#300931) fighting gear. The fighter should be in an aggressive fighting stance - either throwing a devastating right hook or in a defensive crouch with gloves up. Use the same bold, geometric vector art style from the football references but adapted for MMA combat sports. Place the fighter against a dramatic black background with subtle purple gradient accents. Add dynamic shadow effects beneath the fighter and energy lines around the action pose to convey explosive power. Position 'FUND THE FIGHT' in large white Midnight Sans Heavy caps at the top, with the yellow (#DFFD51) subhead text below, and place the orange CTA button prominently at the bottom. Include the CB logo/notch in the top corner. The overall mood should be intense, competitive, and premium - capturing the raw energy of MMA while maintaining the clean, modern brand aesthetic.\n\nReference vault-illustrations-illustration-03: Adapt this bold, dynamic running pose and clean geometric art style, but transform the American football player into an MMA fighter in fighting stance with gloves and shorts. Use the same dramatic black background treatment and confident athletic energy. Reference vault-illustrations-illustration-01: Incorporate the dramatic shadow effects and action-oriented composition, adapting the leaping motion into an MMA fighter throwing a punch or in a fighting pose with similar dynamic movement."
+  },
+  "variantLabel": "A",
+  "referencesUsed": [
+    "vault-illustrations-illustration-03",
+    "vault-illustrations-illustration-01"
+  ],
+  "backgroundPrompt": "Create a powerful Instagram post featuring a stylized MMA fighter illustration in CB's signature orange (#FF6B2F) and purple (#300931) fighting gear. The fighter should be in an aggressive fighting stance - either throwing a devastating right hook or in a defensive crouch with gloves up. Use the same bold, geometric vector art style from the football references but adapted for MMA combat sports. Place the fighter against a dramatic black background with subtle purple gradient accents. Add dynamic shadow effects beneath the fighter and energy lines around the action pose to convey explosive power. Position 'FUND THE FIGHT' in large white Midnight Sans Heavy caps at the top, with the yellow (#DFFD51) subhead text below, and place the orange CTA button prominently at the bottom. Include the CB logo/notch in the top corner. The overall mood should be intense, competitive, and premium - capturing the raw energy of MMA while maintaining the clean, modern brand aesthetic.",
+  "referenceInstructions": "Reference vault-illustrations-illustration-03: Adapt this bold, dynamic running pose and clean geometric art style, but transform the American football player into an MMA fighter in fighting stance with gloves and shorts. Use the same dramatic black background treatment and confident athletic energy. Reference vault-illustrations-illustration-01: Incorporate the dramatic shadow effects and action-oriented composition, adapting the leaping motion into an MMA fighter throwing a punch or in a fighting pose with similar dynamic movement."
+}

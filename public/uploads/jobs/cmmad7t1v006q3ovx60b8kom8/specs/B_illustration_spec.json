@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "cta": "Feel the Energy",
+    "subhead": "The Equalizer's Impact",
+    "headline": "Power Unleashed",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive, kinetic, victorious, powerful",
+    "style": "flat-vector",
+    "palette": [
+      "#DC143C",
+      "#FF6B2F",
+      "#DFFD51",
+      "#FFFFFF",
+      "#1A1A1A"
+    ],
+    "solidBackground": "#2D4BE6",
+    "backgroundPrompt": "Foreshortened lunge perspective with the Wrexham player's celebration thrust dramatically toward the camera. One powerful fist punches directly at the viewer, appearing 2-3x oversized in the foreground due to extreme foreshortening, while the player's body recedes behind it creating intense depth and kinetic energy. The raised arm dominates the frame, red jersey sleeve with orange trim rendered in bold flat vector shapes with hard-edged shadow definition. The player's torso appears at three-quarter angle, white shorts and yellow socks creating striking color contrast through flat geometric forms. Second arm extends skyward but appears smaller due to distance from camera. Head tilted back in euphoria, mouth open in victorious roar, face simplified to essential flat features with dramatic shadow mask. The celebration pose captures the explosive instant of scoring the equalizer, every line conveying raw underdog triumph through powerful graphic silhouette. Body language radiates pure athletic joy and defiant energy. Flat vector illustration style with bold solid color fills, clean hard edges, no gradients or 3D rendering effects. Orange accents on jersey details and boot trim pop against the red uniform base. Internal shadow shapes define muscle tension and fabric folds on the character only. Clean solid dark blue background with no shadow or glow behind the character. Full body contained within frame showing complete figure from head to boots.\n\nvault-illustrations-illustration-03 provides the bold football uniform color treatment and geometric form approach. vault-illustrations-illustration-31 informs the dynamic athletic motion capture and clean vector aesthetics with focus on powerful body positioning and movement energy.",
+    "referenceInstructions": "vault-illustrations-illustration-03 provides the bold football uniform color treatment and geometric form approach. vault-illustrations-illustration-31 informs the dynamic athletic motion capture and clean vector aesthetics with focus on powerful body positioning and movement energy."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-illustrations-illustration-03": "assets/vault/illustrations/illustration-03.png",
+    "vault-illustrations-illustration-31": "assets/vault/illustrations/illustration-31.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-03",
+    "vault-illustrations-illustration-31"
+  ]
+}

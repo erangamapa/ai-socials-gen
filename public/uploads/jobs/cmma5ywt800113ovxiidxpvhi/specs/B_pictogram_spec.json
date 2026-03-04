@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "cta": "Ascend to Glory",
+    "subhead": "Exclusive championship status",
+    "headline": "Crown Royale",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "dynamic, premium, vibrant, exclusive, energetic",
+    "style": "3d-icon",
+    "palette": [
+      "#FFD700",
+      "#8D52DA",
+      "#FFA500",
+      "#C47EFF",
+      "#B8860B"
+    ],
+    "solidBackground": "#F8F5FC",
+    "backgroundPrompt": "A dynamic three-point crown rendered in 3D isometric perspective with subtle rotational tilt for energetic presentation. The crown combines lustrous gold base (#FFD700) with vibrant CB purple accent gems (#8D52DA) adorning each peak. Three-dimensional form features beveled edges and smooth curved transitions between the pointed spires and circular base band. Purple gemstones create striking color contrast against the golden metallic surface while maintaining royal elegance. Gradient shading flows from golden highlights on upper surfaces to deeper amber shadows in recessed areas. Soft volumetric lighting from top-left emphasizes the dimensional depth and material luxury. The crown's ornamental details include embossed patterns along the band and crystalline faceting on the purple accent stones. Surface finish balances polished gold reflectivity with subtle texture that prevents visual overload. Transparent background allows the crown to float majestically with minimal drop shadow for grounding. The slight dynamic angle adds movement while preserving the iconic three-peak silhouette that reads clearly at thumbnail resolution.\n\nvault-pictograms-vip-1 defines the golden crown structure and metallic rendering approach, while vault-pictograms-vip-2 demonstrates how to integrate CB purple accents with gold for premium brand cohesion.",
+    "referenceInstructions": "vault-pictograms-vip-1 defines the golden crown structure and metallic rendering approach, while vault-pictograms-vip-2 demonstrates how to integrate CB purple accents with gold for premium brand cohesion."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-pictograms-vip-1": "assets/vault/pictograms/VIP-1.png",
+    "vault-pictograms-vip-2": "assets/vault/pictograms/VIP-2.png"
+  },
+  "referencesUsed": [
+    "vault-pictograms-vip-1",
+    "vault-pictograms-vip-2"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "cta": "BET NOW",
+  "copy": {
+    "cta": "BET NOW",
+    "subhead": "Back the best teams in Europe's elite competition",
+    "headline": "CHAMPIONS LEAGUE THRILLS AWAIT",
+    "disclaimer": ""
+  },
+  "subhead": "Back the best teams in Europe's elite competition",
+  "headline": "CHAMPIONS LEAGUE THRILLS AWAIT",
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "A dynamic illustration of a soccer player mid-celebration after scoring, arms raised triumphantly in the air, wearing a vibrant royal blue Champions League kit with subtle orange trim details. The player is captured from a dramatic low-angle perspective, creating a heroic larger-than-life presence. Bold solid color fills with dramatic cast shadows in deep purple and navy tones - no gradients or soft shading. The figure is positioned center-right of the canvas, leaving generous white space on the left for text overlay. The illustration style matches CB's bold vector aesthetic: clean geometric forms, stylized athletic proportions, and sharp crisp edges suitable for compositing. Dynamic energy lines and small geometric fragments radiate outward from the player, suggesting explosive celebration energy. The soccer ball sits at the player's feet, rendered with the same bold flat color treatment. Color palette emphasizes CB brand colors: electric blue (#2D4BE6), vibrant orange (#FF6B2F), deep purple shadows (#300931), and bright white highlights. The composition maintains clean text-safe zones in the top 20% and bottom 30% for headline and CTA overlay. Style references the premium editorial illustration approach with sophisticated color blocking and dramatic lighting effects that create depth without gradients.\n\nFrom illustration-01: Borrow the dramatic shadow casting technique, clean vector lines, and dynamic athletic pose with outstretched limbs that creates powerful movement. From illustration-02: Adopt the smooth gradient shading approach, simplified anatomical forms, and diagonal composition that creates strong visual flow across the canvas. From illustration-06: Use the flat design vector style, clean geometric shapes, bold color blocking, and contemporary sports graphic aesthetic with minimal but effective shading. From illustration-11: Apply the smooth vector illustration technique, clean lines without harsh shadows, and the energetic dynamic motion that creates visual excitement while maintaining professional polish.",
+    "referenceInstructions": "From illustration-01: Borrow the dramatic shadow casting technique, clean vector lines, and dynamic athletic pose with outstretched limbs that creates powerful movement. From illustration-02: Adopt the smooth gradient shading approach, simplified anatomical forms, and diagonal composition that creates strong visual flow across the canvas. From illustration-06: Use the flat design vector style, clean geometric shapes, bold color blocking, and contemporary sports graphic aesthetic with minimal but effective shading. From illustration-11: Apply the smooth vector illustration technique, clean lines without harsh shadows, and the energetic dynamic motion that creates visual excitement while maintaining professional polish."
+  },
+  "variantLabel": "A",
+  "referencesUsed": [
+    "vault-illustrations-illustration-01",
+    "vault-illustrations-illustration-02",
+    "vault-illustrations-illustration-06",
+    "vault-illustrations-illustration-11"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-03",
+  "backgroundPrompt": "A dynamic illustration of a soccer player mid-celebration after scoring, arms raised triumphantly in the air, wearing a vibrant royal blue Champions League kit with subtle orange trim details. The player is captured from a dramatic low-angle perspective, creating a heroic larger-than-life presence. Bold solid color fills with dramatic cast shadows in deep purple and navy tones - no gradients or soft shading. The figure is positioned center-right of the canvas, leaving generous white space on the left for text overlay. The illustration style matches CB's bold vector aesthetic: clean geometric forms, stylized athletic proportions, and sharp crisp edges suitable for compositing. Dynamic energy lines and small geometric fragments radiate outward from the player, suggesting explosive celebration energy. The soccer ball sits at the player's feet, rendered with the same bold flat color treatment. Color palette emphasizes CB brand colors: electric blue (#2D4BE6), vibrant orange (#FF6B2F), deep purple shadows (#300931), and bright white highlights. The composition maintains clean text-safe zones in the top 20% and bottom 30% for headline and CTA overlay. Style references the premium editorial illustration approach with sophisticated color blocking and dramatic lighting effects that create depth without gradients.",
+  "referenceInstructions": "From illustration-01: Borrow the dramatic shadow casting technique, clean vector lines, and dynamic athletic pose with outstretched limbs that creates powerful movement. From illustration-02: Adopt the smooth gradient shading approach, simplified anatomical forms, and diagonal composition that creates strong visual flow across the canvas. From illustration-06: Use the flat design vector style, clean geometric shapes, bold color blocking, and contemporary sports graphic aesthetic with minimal but effective shading. From illustration-11: Apply the smooth vector illustration technique, clean lines without harsh shadows, and the energetic dynamic motion that creates visual excitement while maintaining professional polish."
+}

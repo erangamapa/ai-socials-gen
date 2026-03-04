@@ -1,0 +1,64 @@
+{
+  "channel": "twitter",
+  "variantLabel": "C",
+  "templateId": "tpl-centered-hero",
+  "copy": {
+    "cta": "Join Now",
+    "disclaimer": "18+ | Gamble responsibly",
+    "headline": "FIRST GOAL BOOST",
+    "subhead": "Real Madrid vs Bayern Munich tonight. Enhanced odds live now."
+  },
+  "artDirection": {
+    "backgroundPrompt": "",
+    "composition": "Action-packed football scene with center overlay promo treatment",
+    "mood": "Explosive football action with dynamic energy and movement",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#DFFD51",
+      "#1A1C1E"
+    ],
+    "style": "High-impact sports action with vibrant color blocking and motion blur effects"
+  },
+  "textOverlays": [
+    {
+      "text": "FIRST GOAL BOOST",
+      "x": 240,
+      "y": 270,
+      "width": 1120,
+      "fontSize": 54,
+      "color": "#FFFFFF",
+      "fontWeight": "bold",
+      "textAnchor": "middle"
+    },
+    {
+      "text": "Real Madrid vs Bayern Munich tonight. Enhanced odds live now.",
+      "x": 320,
+      "y": 468,
+      "width": 960,
+      "fontSize": 27,
+      "color": "#E0E0E0",
+      "textAnchor": "middle"
+    },
+    {
+      "text": "Join Now",
+      "x": 480,
+      "y": 612,
+      "width": 640,
+      "fontSize": 36,
+      "color": "#DFFD51",
+      "fontWeight": "bold",
+      "textAnchor": "middle"
+    }
+  ],
+  "notchOverlay": {
+    "x": 64,
+    "y": 36,
+    "width": 192,
+    "height": 72
+  },
+  "qaResult": {
+    "passed": true,
+    "issues": []
+  }
+}

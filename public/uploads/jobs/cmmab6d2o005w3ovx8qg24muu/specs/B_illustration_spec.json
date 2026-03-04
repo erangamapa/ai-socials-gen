@@ -1,0 +1,30 @@
+{
+  "copy": {
+    "cta": "Make Your Move",
+    "subhead": "Power your success forward",
+    "headline": "Breakthrough Moment",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "direct kinetic impact",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#DFFD51",
+      "#2D4BE6",
+      "#300931",
+      "#FFFFFF",
+      "#1A1A1A"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Foreshortened lunge perspective with the triumphant figure thrusting both clenched fists directly toward the camera in explosive celebration. The raised fists and forearms fill the immediate foreground at 2.5x natural scale, creating dramatic depth as the torso and legs compress behind them. Character captured at the peak moment of victory with arms driving forward, chest expanded, shoulders squared in triumph. Head visible behind the prominent fists with simplified flat features showing determined joy through bold shadow shapes rather than detailed expression. Dynamic orange energy networks burst outward from the figure's silhouette, with sharp blue geometric fragments spinning around their form suggesting kinetic motion and community ripple effects. Yellow accent bursts punctuate key energy points. Flat vector illustration with solid color fills, hard edges, no gradients or 3D rendering. Character body features flat shadow shapes and bold outline definition with clean graphic treatment. Full figure contained within frame boundaries with complete visibility of head, hands, torso and legs. Clean solid dark purple background with zero drop shadows, glows, halos or backdrop effects - pure flat color suitable for seamless cutout and compositing use. Bold CB palette creates premium athletic energy.\n\nApply vault reference techniques for bold foreshortening effects, clean flat color application, and maintaining graphic punch without photorealistic depth",
+    "referenceInstructions": "Apply vault reference techniques for bold foreshortening effects, clean flat color application, and maintaining graphic punch without photorealistic depth"
+  },
+  "variantLabel": "B",
+  "referencePaths": {},
+  "referencesUsed": [
+    "vault-action-04",
+    "vault-dynamic-02",
+    "vault-energy-05"
+  ]
+}

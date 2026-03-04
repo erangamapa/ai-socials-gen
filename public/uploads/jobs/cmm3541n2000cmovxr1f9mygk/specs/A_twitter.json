@@ -1,0 +1,64 @@
+{
+  "channel": "twitter",
+  "variantLabel": "A",
+  "templateId": "tpl-centered-hero",
+  "copy": {
+    "cta": "Bet Now",
+    "disclaimer": "18+ | Gamble responsibly",
+    "headline": "REAL VS BAYERN TONIGHT",
+    "subhead": "Boosted odds on first goalscorer. Don't miss out."
+  },
+  "artDirection": {
+    "backgroundPrompt": "",
+    "composition": "Dynamic split composition with bold contrast, clean text areas on right",
+    "mood": "High-energy Champions League atmosphere with dramatic stadium lighting and electric anticipation",
+    "palette": [
+      "#FF6B2F",
+      "#300931",
+      "#FFFFFF",
+      "#141114"
+    ],
+    "style": "Premium sports betting aesthetic with strong geometric elements"
+  },
+  "textOverlays": [
+    {
+      "text": "REAL VS BAYERN TONIGHT",
+      "x": 240,
+      "y": 270,
+      "width": 1120,
+      "fontSize": 54,
+      "color": "#FFFFFF",
+      "fontWeight": "bold",
+      "textAnchor": "middle"
+    },
+    {
+      "text": "Boosted odds on first goalscorer. Don't miss out.",
+      "x": 320,
+      "y": 468,
+      "width": 960,
+      "fontSize": 27,
+      "color": "#E0E0E0",
+      "textAnchor": "middle"
+    },
+    {
+      "text": "Bet Now",
+      "x": 480,
+      "y": 612,
+      "width": 640,
+      "fontSize": 36,
+      "color": "#FFFFFF",
+      "fontWeight": "bold",
+      "textAnchor": "middle"
+    }
+  ],
+  "notchOverlay": {
+    "x": 64,
+    "y": 36,
+    "width": 192,
+    "height": 72
+  },
+  "qaResult": {
+    "passed": true,
+    "issues": []
+  }
+}

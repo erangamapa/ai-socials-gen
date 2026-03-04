@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "World Cup 2026 intensity meets crypto betting power",
+    "headline": "STRIKE FOR GLORY",
+    "disclaimer": ""
+  },
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "The pre-styled CB footballer illustration is positioned center-right of the canvas, scaled to occupy approximately 70% of the vertical space while maintaining generous negative space on the left for copy overlay. The hero character maintains their explosive low-angle striking pose with orange jersey and blue shorts intact, positioned to create maximum dramatic impact against the purple gradient template background. Subtle atmospheric effects enhance the composition: kinetic yellow speed lines (#DFFD51) radiate from the ball contact point in sharp geometric rays, creating motion energy without overwhelming the hero subject. Small angular geometric fragments in brand colors scatter around the impact zone, echoing the template's geometric language. A subtle cast shadow pools beneath the player in deep purple (#300931) tones, grounding the figure and adding dimensional depth. The composition reserves the top 20% and bottom 30% as clean text-safe zones, with the hero illustration's dynamic pose creating natural flow toward the left-side negative space. Hard-edged geometric frame elements in orange (#FF6B2F) accent the scene's corners without competing with the central action. The overall treatment amplifies the raw athletic power through careful placement and complementary design flourishes that match the template's sophisticated gradient aesthetic.\n\nFrom illustration-01: Borrow the clean vector illustration approach with bold color blocking and dramatic athletic pose composition. From illustration-39: Adopt the dynamic diagonal action positioning and the way the subject creates strong movement across the frame. From illustration-50: Use the motion blur effects concept and the professional sports uniform detailing treatment.",
+    "referenceInstructions": "From illustration-01: Borrow the clean vector illustration approach with bold color blocking and dramatic athletic pose composition. From illustration-39: Adopt the dynamic diagonal action positioning and the way the subject creates strong movement across the frame. From illustration-50: Use the motion blur effects concept and the professional sports uniform detailing treatment."
+  },
+  "variantLabel": "A",
+  "referencesUsed": [
+    "vault-illustrations-illustration-01",
+    "vault-illustrations-illustration-39",
+    "vault-illustrations-illustration-50"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-03",
+  "backgroundPrompt": "The pre-styled CB footballer illustration is positioned center-right of the canvas, scaled to occupy approximately 70% of the vertical space while maintaining generous negative space on the left for copy overlay. The hero character maintains their explosive low-angle striking pose with orange jersey and blue shorts intact, positioned to create maximum dramatic impact against the purple gradient template background. Subtle atmospheric effects enhance the composition: kinetic yellow speed lines (#DFFD51) radiate from the ball contact point in sharp geometric rays, creating motion energy without overwhelming the hero subject. Small angular geometric fragments in brand colors scatter around the impact zone, echoing the template's geometric language. A subtle cast shadow pools beneath the player in deep purple (#300931) tones, grounding the figure and adding dimensional depth. The composition reserves the top 20% and bottom 30% as clean text-safe zones, with the hero illustration's dynamic pose creating natural flow toward the left-side negative space. Hard-edged geometric frame elements in orange (#FF6B2F) accent the scene's corners without competing with the central action. The overall treatment amplifies the raw athletic power through careful placement and complementary design flourishes that match the template's sophisticated gradient aesthetic.",
+  "referenceInstructions": "From illustration-01: Borrow the clean vector illustration approach with bold color blocking and dramatic athletic pose composition. From illustration-39: Adopt the dynamic diagonal action positioning and the way the subject creates strong movement across the frame. From illustration-50: Use the motion blur effects concept and the professional sports uniform detailing treatment."
+}

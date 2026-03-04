@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "Experience the Rush",
+    "subhead": "When David Stuns Goliath",
+    "headline": "Moment of Glory",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "triumphant, heroic, explosive, euphoric",
+    "style": "flat-vector",
+    "palette": [
+      "#DC143C",
+      "#FF6B2F",
+      "#DFFD51",
+      "#FFFFFF",
+      "#000000"
+    ],
+    "solidBackground": "#2D1B69",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view of a Wrexham football player captured at the explosive peak moment of celebration after scoring the equalizer. Camera positioned at ground level looking up steeply, transforming the player into a towering heroic figure that dominates the frame. The player's arms are thrust triumphantly skyward, creating dramatic foreshortening where the raised fists appear massive in the foreground while the head tilts back in pure euphoria. Bold red jersey with crisp white shorts, the uniform rendered in flat vector illustration style with solid color fills and hard-edged shadow shapes defining the fabric folds and muscle definition. Orange accents highlight jersey collar, sleeve trim, and boot details with flat geometric precision. Bright yellow socks create a defiant flash of color at the base of the composition. The player's mouth is open in a victorious roar, face simplified to bold flat features with a dramatic shadow mask emphasizing the tilted-back angle. Every muscle is taut with explosive joy, body language conveying the raw emotion of David stunning Goliath through powerful silhouette and dynamic positioning. Flat vector illustration, bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style. Clean solid dark purple background with no shadow or glow behind the character. Full body contained within frame with generous breathing room.\n\nvault-illustrations-illustration-03 and vault-illustrations-illustration-10 inform the bold geometric football uniform treatment with clean lines and flat color blocking. vault-illustrations-illustration-12 provides the dynamic athletic pose energy with motion focus and minimal shading approach.",
+    "referenceInstructions": "vault-illustrations-illustration-03 and vault-illustrations-illustration-10 inform the bold geometric football uniform treatment with clean lines and flat color blocking. vault-illustrations-illustration-12 provides the dynamic athletic pose energy with motion focus and minimal shading approach."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-illustrations-illustration-03": "assets/vault/illustrations/illustration-03.png",
+    "vault-illustrations-illustration-10": "assets/vault/illustrations/illustration-10.png",
+    "vault-illustrations-illustration-12": "assets/vault/illustrations/illustration-12.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-03",
+    "vault-illustrations-illustration-10",
+    "vault-illustrations-illustration-12"
+  ]
+}

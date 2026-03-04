@@ -1,0 +1,32 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Neural-pathway precision channeling split-second advantage into tournament destiny",
+    "style": "flat-vector",
+    "palette": [
+      "#DFFD51",
+      "#2D4BE6",
+      "#300931",
+      "#FF6B2F"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Foreshortened lunge composition with the gamer's dominant hand and mechanical keyboard thrust directly toward camera in extreme close-up, fingers appearing 3x oversized as they fill the immediate foreground. The keystroke action is captured at the precise millisecond of contact, with the gaming keyboard's sleek surface dominating the frame while the competitor's torso recedes dramatically behind due to aggressive perspective compression. Camera positioned at desk level looking up at slight dutch tilt of 15 degrees, creating dynamic tension and editorial energy. The esports athlete's body language radiates competitive intensity - shoulders hunched forward, opposite arm braced for stability, spine curved in focused concentration. Head appears smaller in background due to foreshortening, rendered as simplified flat geometric features with bold shadow shapes defining the face structure rather than detailed expression. Gaming headset visible but minimal, focus entirely on the surgical precision of finger placement and mechanical control. Flat vector illustration using neon-bright #DFFD51 for keyboard backlighting and key highlights, electric #2D4BE6 for jersey and equipment details, bold solid color fills with hard-edged flat shadow shapes applied only ON the character's body and gear. Clean geometric forms with sharp vector outlines, no gradients or 3D rendering. Full figure contained within frame despite dramatic foreshortening. Background is solid obsidian #300931 with zero decorative elements, shadows, or glows - pristine for professional cutout applications.",
+    "referenceInstructions": "vault-gen-cmmbitqoz001bqwvxlion8s0i establishes the core esports competitor aesthetic and geometric shadow treatment. vault-gen-cmmbg4kx90026r0vxq2nel790 provides guidance for dramatic foreshortening and bold angular vector styling. vault-illustrations-illustration-03 informs the clean flat color approach and professional sports illustration technique with minimal shading complexity."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-gen-cmmbg4kx90026r0vxq2nel790": "/uploads/jobs/cmmbg30pz0023r0vxxejz7eyf/illustrations/A_illustration.png",
+    "vault-gen-cmmbitqoz001bqwvxlion8s0i": "/uploads/jobs/cmmbirx7r0016qwvxnc970isb/illustrations/A_illustration.png",
+    "vault-illustrations-illustration-03": "assets/vault/illustrations/illustration-03.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbitqoz001bqwvxlion8s0i",
+    "vault-gen-cmmbg4kx90026r0vxq2nel790",
+    "vault-illustrations-illustration-03"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "copy": {
+    "cta": "Unleash Your Strength",
+    "subhead": "Devastating uppercut power",
+    "headline": "Rising Thunder",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "aggressive, upward-driving, fierce",
+    "style": "flat-vector",
+    "palette": [
+      "#DC143C",
+      "#8D52DA",
+      "#FF6B2F",
+      "#DFFD51",
+      "#2D2D2D"
+    ],
+    "solidBackground": "#2D2D2D",
+    "backgroundPrompt": "Flat vector illustration of an aggressive boxer throwing a devastating uppercut, captured from a low-angle perspective that emphasizes his power and reach. The boxer's entire body is coiled like a spring - legs bent deep, back arched, right arm driving upward in a classic uppercut motion while his left glove guards his face. Bright red boxing gloves are the focal point, with the uppercut glove oversized through dramatic foreshortening. His muscular frame is defined through flat color shapes - lighter flesh tone base with flat purple shadow shapes creating definition on his chest, abs, and arms. No gradients anywhere, just clean hard-edged shadow fills. Orange boxing shorts with purple trim sit low on his hips, and bright yellow sweat particles explode outward from his face and torso in stylized geometric drops. His expression is fierce with mouth open in exertion, eyes locked on his target above. The dramatic upward angle makes his extended uppercut arm appear massive and threatening. Clean vector line work throughout with bold outlines defining each muscle group and clothing element. The composition places the boxer centrally but his uppercut motion creates strong vertical energy. Entire figure contained within frame with ample breathing room. Flat solid color fills only - no blending, no 3D effects, no volumetric lighting. Sharp cast shadows rendered as flat geometric shapes, not soft gradients.\n\nFrom vault-illustrations-illustration-04: clean geometric forms with flat shading and bold athletic positioning. From vault-illustrations-illustration-12: minimal shading approach with motion effects and clean vector style. From vault-illustrations-illustration-01: dynamic action pose with dramatic shadow effects rendered as flat shapes.",
+    "referenceInstructions": "From vault-illustrations-illustration-04: clean geometric forms with flat shading and bold athletic positioning. From vault-illustrations-illustration-12: minimal shading approach with motion effects and clean vector style. From vault-illustrations-illustration-01: dynamic action pose with dramatic shadow effects rendered as flat shapes."
+  },
+  "variantLabel": "B",
+  "referencesUsed": [
+    "vault-illustrations-illustration-04",
+    "vault-illustrations-illustration-12",
+    "vault-illustrations-illustration-01"
+  ]
+}

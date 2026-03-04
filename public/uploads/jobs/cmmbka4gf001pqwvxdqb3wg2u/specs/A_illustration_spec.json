@@ -1,0 +1,38 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "specEdits": {
+    "solidBackground": {
+      "to": "#a500a8",
+      "from": "#300931"
+    }
+  },
+  "artDirection": {
+    "mood": "Tactical supremacy frozen at the decisive clutch moment",
+    "style": "flat-vector",
+    "palette": [
+      "#2D4BE6",
+      "#DFFD51",
+      "#300931",
+      "#FF6B2F"
+    ],
+    "solidBackground": "#a500a8",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view from ground level looking steeply upward at an elite esports competitor captured at the apex of mechanical precision. The gamer towers overhead from this dramatic ground perspective, torso leaning forward with tactical intensity, shoulders squared and spine coiled with competitive focus. Fingers are poised in mid-keystroke above a sleek gaming keyboard, wrist locked in perfect form with hand appearing 2x oversized due to extreme foreshortening as it dominates the foreground. Head tilted slightly downward toward unseen screens, face rendered as simplified flat geometric shapes with bold shadow mask across features - expression implied entirely through powerful body language rather than detailed facial features. The keyboard and mouse setup appear massive in the immediate foreground, creating dramatic scale contrast with the receding torso. Flat vector illustration with bold solid color fills using electric #2D4BE6 for the gaming jersey and equipment, neon-bright #DFFD51 accent highlights on keyboard keys and headset details, hard-edged flat shadow shapes in darker tones layered ON the character's body only. No gradients, no 3D rendering, clean geometric forms with sharp outlines. Full body contained within frame with generous breathing room. Background is pure solid #300931 obsidian with absolutely no drop shadows, glows, or decorative elements behind the character - perfectly clean for cutout use.",
+    "referenceInstructions": "vault-gen-cmmbitqoz001bqwvxlion8s0i provides the core esports competitor styling with angular geometric shadows and dramatic uplighting perspective. vault-gen-cmmbigrrn000mqwvx8odnqrfd informs the tactical precision posturing and bold angular edge treatment. vault-illustrations-illustration-04 guides the clean vector forms and professional sports aesthetic with flat color blocking."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-gen-cmmbigrrn000mqwvx8odnqrfd": "/uploads/jobs/cmmbifhno000jqwvx06rynfe6/illustrations/A_illustration.png",
+    "vault-gen-cmmbitqoz001bqwvxlion8s0i": "/uploads/jobs/cmmbirx7r0016qwvxnc970isb/illustrations/A_illustration.png",
+    "vault-illustrations-illustration-04": "assets/vault/illustrations/illustration-04.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbitqoz001bqwvxlion8s0i",
+    "vault-gen-cmmbigrrn000mqwvx8odnqrfd",
+    "vault-illustrations-illustration-04"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Morning ritual triumph — caffeine-fueled biological victory achieved",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#8D52DA",
+      "#2D4BE6",
+      "#DFFD51",
+      "#FFFFFF"
+    ],
+    "solidBackground": "#2D1B69",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view of Ben, a tall British man with dirty blonde hair, captured at the peak moment of pure relief and satisfaction after his morning routine. The camera is positioned at floor level looking steeply upward, making Ben appear towering and dominant in the frame. He stands with one hand on his hip in a confident stance, the other hand adjusting his shirt, his body language radiating complete satisfaction and accomplishment. His tall frame fills the vertical composition, with his feet appearing oversized in the extreme foreground due to the dramatic foreshortening perspective. Ben wears casual morning attire - a comfortable t-shirt and relaxed pants - rendered in flat vector illustration style with bold solid color fills and hard edges. His face shows simplified flat features with minimal detail, expression conveyed through his relaxed shoulders and confident posture rather than facial specifics. The illustration uses clean geometric shapes with no gradients on the character, employing flat hard-edged shadow shapes only on Ben's body and clothing to define form and dimension. Motion lines and energy streaks suggest the sense of relief and accomplishment radiating from his stance. The color treatment features bold CB palette colors with flat solid fills throughout, using orange and purple accents on his clothing details. The entire figure is contained within the frame with generous breathing room, set against a clean solid background with no shadow, glow, or decorative elements behind the character - suitable for instant cutout use.",
+    "referenceInstructions": "Use vault-illustrations-illustration-49 for clean flat vector style with bold color treatment and minimal shading approach. Apply vault-illustrations-illustration-31's confident athletic stance and body language energy. Reference vault-illustrations-illustration-44's geometric form simplification and solid color fill technique for clean professional rendering."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-illustrations-illustration-31": "assets/vault/illustrations/illustration-31.png",
+    "vault-illustrations-illustration-44": "assets/vault/illustrations/illustration-44.png",
+    "vault-illustrations-illustration-49": "assets/vault/illustrations/illustration-49.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-49",
+    "vault-illustrations-illustration-31",
+    "vault-illustrations-illustration-44"
+  ]
+}

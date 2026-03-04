@@ -1,0 +1,32 @@
+{
+  "copy": {
+    "cta": "Enter the Zone",
+    "subhead": "Every shot counts in the arena",
+    "headline": "Precision Perfected",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Surgical elimination precision — the microsecond between crosshairs and confirmed kill",
+    "style": "flat-vector",
+    "palette": [
+      "#8D52DA",
+      "#300931",
+      "#FF6B2F",
+      "#DFFD51"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view from directly beneath the sniper looking steeply upward, capturing the CS2 marksman in ghillie suit at the exact moment of rifle recoil after executing the perfect headshot. The camera is positioned at ground level looking up at a steep 70-degree angle, making the sniper's crouched silhouette tower overhead with dramatic foreshortening. The rifle barrel and scope assembly appear massive in the foreground, thrust toward the upper frame, while the ghillie-hooded head recedes behind it. The marksman's eye dominates the composition through the scope's eyepiece, rendered as a simplified flat shape with surgical focus, minimal facial detail beneath the textured ghillie hood. The weapon kicks back in anatomically precise recoil mechanics, with the stock pulled tight against the shoulder and muzzle flash creating a #DFFD51 accent burst. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, clean geometric forms with dramatic shadow shapes cast ON the character only. The ghillie suit is rendered in muted #8D52DA fabric tones with flat dark shadow patches creating camouflage texture through solid color blocking. The rifle scope reflects #FF6B2F light as a flat circular accent. Full body contained within frame showing complete prone shooting position with breathing room on all sides. Background is clean solid #300931 with no shadow, glow, or halo effects behind the character.",
+    "referenceInstructions": "Use vault-illustrations-illustration-15's clean vector approach and geometric form simplification for the character silhouette. Apply vault-gen-cmmbg52of0028r0vxbcrlz5wx's dramatic angle perspective and motion line energy for the recoil action. Reference vault-illustrations-illustration-57's flat color blocking technique for the ghillie suit texture pattern."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-gen-cmmbg52of0028r0vxbcrlz5wx": "/uploads/jobs/cmmbg30pz0023r0vxxejz7eyf/illustrations/B_illustration.png",
+    "vault-illustrations-illustration-15": "assets/vault/illustrations/illustration-15.png",
+    "vault-illustrations-illustration-57": "assets/vault/illustrations/illustration-57.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-15",
+    "vault-gen-cmmbg52of0028r0vxbcrlz5wx",
+    "vault-illustrations-illustration-57"
+  ]
+}

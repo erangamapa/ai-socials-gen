@@ -1,0 +1,27 @@
+{
+  "copy": {
+    "cta": "PLAY LIVE",
+    "subhead": "Live Nations League betting",
+    "headline": "SERVE UP BIG WINS",
+    "disclaimer": ""
+  },
+  "variant": "B",
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "A stylized volleyball server captured at the peak of their serving motion, positioned center-left with dramatic upward perspective. The athlete is rendered in clean vector style with bold solid colors - wearing a striking purple and yellow uniform that pops against the template background. Their left arm extends high overhead, palm open and fingers spread, while their right arm pulls back in classic serving position. A volleyball floats in the upper-right corner, rendered with geometric panel details in bright yellow and orange segments. The illustration uses dramatic cast shadows and high contrast lighting - no soft gradients or realistic shading. Clean, sharp edges throughout for perfect template compositing. The player's expression shows focused intensity with simplified but expressive facial features. Small motion lines trail from the serving hand, suggesting the powerful wind-up. The composition creates strong diagonal energy from bottom-left to upper-right. Bold athletic proportions with slightly oversized hands for visual impact. Color palette dominated by deep purple (#8D52DA), vibrant yellow (#DFFD51), and orange (#FF6B2F) accents. The right side maintains negative space for text placement while the dynamic pose fills the left two-thirds of the frame.\n\nFrom illustration-51: Use the dynamic athletic pose and clean vector treatment with bold colors. From illustration-50: Borrow the volleyball rendering style and motion line details. From illustration-30: Apply the dramatic perspective and bold proportions for visual impact. From illustration-08: Reference the simplified facial features and clean line work approach.",
+    "referenceInstructions": "From illustration-51: Use the dynamic athletic pose and clean vector treatment with bold colors. From illustration-50: Borrow the volleyball rendering style and motion line details. From illustration-30: Apply the dramatic perspective and bold proportions for visual impact. From illustration-08: Reference the simplified facial features and clean line work approach."
+  },
+  "variantLabel": "B",
+  "referencesUsed": [
+    "vault-illustrations-illustration-51",
+    "vault-illustrations-illustration-50",
+    "vault-illustrations-illustration-30",
+    "vault-illustrations-illustration-08"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-04",
+  "backgroundPrompt": "A stylized volleyball server captured at the peak of their serving motion, positioned center-left with dramatic upward perspective. The athlete is rendered in clean vector style with bold solid colors - wearing a striking purple and yellow uniform that pops against the template background. Their left arm extends high overhead, palm open and fingers spread, while their right arm pulls back in classic serving position. A volleyball floats in the upper-right corner, rendered with geometric panel details in bright yellow and orange segments. The illustration uses dramatic cast shadows and high contrast lighting - no soft gradients or realistic shading. Clean, sharp edges throughout for perfect template compositing. The player's expression shows focused intensity with simplified but expressive facial features. Small motion lines trail from the serving hand, suggesting the powerful wind-up. The composition creates strong diagonal energy from bottom-left to upper-right. Bold athletic proportions with slightly oversized hands for visual impact. Color palette dominated by deep purple (#8D52DA), vibrant yellow (#DFFD51), and orange (#FF6B2F) accents. The right side maintains negative space for text placement while the dynamic pose fills the left two-thirds of the frame.",
+  "referenceInstructions": "From illustration-51: Use the dynamic athletic pose and clean vector treatment with bold colors. From illustration-50: Borrow the volleyball rendering style and motion line details. From illustration-30: Apply the dramatic perspective and bold proportions for visual impact. From illustration-08: Reference the simplified facial features and clean line work approach."
+}

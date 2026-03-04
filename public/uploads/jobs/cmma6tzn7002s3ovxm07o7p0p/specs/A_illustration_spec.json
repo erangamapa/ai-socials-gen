@@ -1,0 +1,29 @@
+{
+  "copy": {
+    "cta": "Feel the Power",
+    "subhead": "Championship Violence Unleashed",
+    "headline": "Explosive Impact",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive heroic dominance",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#8D52DA",
+      "#2D4BE6",
+      "#DFFD51",
+      "#1A1A1A"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view of MMA fighter Costello van Steenis captured in the explosive split-second of launching a devastating overhand right punch. Camera positioned at ground level looking steeply upward, transforming van Steenis into a towering force of nature as he lunges forward with predatory intensity. His muscular athletic build dominates the frame with dramatic foreshortening - his tattooed fist cuts through the upper portion of the composition in a diagonal thrust, appearing 2.5x oversized relative to his torqued torso. His planted rear leg anchors the bottom of the frame in massive proportion, creating powerful geometric shadows in deep blue. The fighter's coiled physique displays championship-level conditioning with defined muscle groups rendered as bold flat shadow shapes across his torso and arms. Motion blur shapes in vibrant orange trail behind his striking fist, while speed lines in electric yellow radiate from the point of impact emphasis. His minimal facial features are obscured by dramatic shadow masking, expression implied entirely through aggressive forward momentum and controlled violence body language. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, clean geometric shapes defining the athletic silhouette. Background is pure solid dark purple with no shadow projection, glow effects, or decorative elements behind the character.\n\nUse vault-illustrations-illustration-14 for clean geometric shape construction and bold athletic silhouette approach, applying minimal line weight and flat shadow treatment to define van Steenis' muscular fighter physique.",
+    "referenceInstructions": "Use vault-illustrations-illustration-14 for clean geometric shape construction and bold athletic silhouette approach, applying minimal line weight and flat shadow treatment to define van Steenis' muscular fighter physique."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-illustrations-illustration-14": "assets/vault/illustrations/illustration-14.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-14"
+  ]
+}

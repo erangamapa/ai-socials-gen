@@ -1,0 +1,32 @@
+{
+  "copy": {
+    "cta": "BET NOW",
+    "subhead": "Epic dunks deserve epic rewards",
+    "headline": "SLAM YOUR WAY TO VICTORY",
+    "disclaimer": ""
+  },
+  "variantId": "A",
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "Composite the pre-styled basketball player dunk illustration as the dominant centerpiece, positioned center-right of the blue gradient template canvas, scaled to occupy approximately 75% of the vertical space while maintaining clear text-safe zones in the top 20% and bottom 30%. The heroic dunker should be angled slightly toward the viewer with their powerful downward slam creating visual energy that flows from upper-right toward lower-left. Surround the athlete with minimal geometric accent elements: three small orange (#FF6B2F) angular fragments radiating from the basketball impact point, and two subtle purple (#8D52DA) speed lines trailing behind the player's extended arm. Add a soft circular highlight zone in electric blue (#2D4BE6) behind the player's torso to create depth separation from the template's gradient background. The composition maintains clean vector aesthetics with sharp edges and bold color contrast - no gradients on the accent elements, no glows, no particles. Position the basketball hoop slightly off-frame to the right edge, keeping the focus purely on the athlete's moment of athletic supremacy. The overall effect should feel like a premium sports poster with the pre-styled illustration commanding center stage against the branded template backdrop.\n\nvault-gen-cmmbg52of0028r0vxbcrlz5wx: Borrow the clean vector illustration style with strong contrast between athlete and background, and the dynamic energy of the basketball action pose\nvault-illustrations-illustration-18: Apply the minimalist approach with smooth gradients and oversized proportions for visual impact, plus the purple uniform color treatment\nvault-illustrations-illustration-16: Use the diagonal action composition and the way the basketball becomes a focal element in the scene\nvault-illustrations-illustration-31: Adopt the motion blur effects and professional sports illustration aesthetic with clean vector rendering",
+    "referenceInstructions": "vault-gen-cmmbg52of0028r0vxbcrlz5wx: Borrow the clean vector illustration style with strong contrast between athlete and background, and the dynamic energy of the basketball action pose\nvault-illustrations-illustration-18: Apply the minimalist approach with smooth gradients and oversized proportions for visual impact, plus the purple uniform color treatment\nvault-illustrations-illustration-16: Use the diagonal action composition and the way the basketball becomes a focal element in the scene\nvault-illustrations-illustration-31: Adopt the motion blur effects and professional sports illustration aesthetic with clean vector rendering"
+  },
+  "variantLabel": "A",
+  "referencesUsed": [
+    "vault-gen-cmmbg52of0028r0vxbcrlz5wx",
+    "vault-illustrations-illustration-18",
+    "vault-illustrations-illustration-16",
+    "vault-illustrations-illustration-31"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-06",
+  "backgroundPrompt": "Composite the pre-styled basketball player dunk illustration as the dominant centerpiece, positioned center-right of the blue gradient template canvas, scaled to occupy approximately 75% of the vertical space while maintaining clear text-safe zones in the top 20% and bottom 30%. The heroic dunker should be angled slightly toward the viewer with their powerful downward slam creating visual energy that flows from upper-right toward lower-left. Surround the athlete with minimal geometric accent elements: three small orange (#FF6B2F) angular fragments radiating from the basketball impact point, and two subtle purple (#8D52DA) speed lines trailing behind the player's extended arm. Add a soft circular highlight zone in electric blue (#2D4BE6) behind the player's torso to create depth separation from the template's gradient background. The composition maintains clean vector aesthetics with sharp edges and bold color contrast - no gradients on the accent elements, no glows, no particles. Position the basketball hoop slightly off-frame to the right edge, keeping the focus purely on the athlete's moment of athletic supremacy. The overall effect should feel like a premium sports poster with the pre-styled illustration commanding center stage against the branded template backdrop.",
+  "referenceInstructions": {
+    "vault-gen-cmmbg52of0028r0vxbcrlz5wx": "Borrow the clean vector illustration style with strong contrast between athlete and background, and the dynamic energy of the basketball action pose",
+    "vault-illustrations-illustration-16": "Use the diagonal action composition and the way the basketball becomes a focal element in the scene",
+    "vault-illustrations-illustration-18": "Apply the minimalist approach with smooth gradients and oversized proportions for visual impact, plus the purple uniform color treatment",
+    "vault-illustrations-illustration-31": "Adopt the motion blur effects and professional sports illustration aesthetic with clean vector rendering"
+  }
+}

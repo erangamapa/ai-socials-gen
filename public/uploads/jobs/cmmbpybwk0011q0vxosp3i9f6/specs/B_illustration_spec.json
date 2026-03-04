@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Thunderbolt detonation — centuries of divine rage crystallized into electric vengeance",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#FFD700",
+      "#2D4BE6",
+      "#8D52DA",
+      "#DFFD51"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Foreshortened lunge perspective with Zeus thrusting his legendary lightning bolt dramatically toward the camera in a moment of divine wrath unleashed. The electric weapon dominates the extreme foreground, appearing 3x oversized as it lunges directly at the viewer, crackling with angular bolt-shaped energy rendered in flat yellow and white geometric forms. His mighty arm extends behind the weapon, foreshortened dramatically as his muscular body recedes into the background. Zeus positioned in a powerful attack stance, his opposite hand raised in commanding gesture, flowing robes whipping around his form with kinetic energy depicted through hard-edged fabric shapes. His legendary beard and wild hair stream backward from the force of his motion, rendered as simplified flat geometric shapes with bold shadow patterns defining volume and movement. Face shows minimal detail - strong divine features reduced to bold flat shapes, piercing eyes as simple geometric forms, expression conveyed through the explosive body language of divine fury rather than facial complexity. Camera angle creates intense perspective distortion where the lightning bolt and extended arm create a powerful diagonal composition leading the eye from foreground weapon to his towering divine presence. Muscular physique defined through flat color fills and hard-edged shadow shapes that exist only on his body - no cast shadows on background. Draped in traditional Greek divine robes that flow and twist with motion, fabric rendered as clean angular folds with flat shadow definition. Flat vector illustration style with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish approach. Clean solid background color with no drop shadow, glow, or halo effects behind Zeus - pure flat color suitable for professional cutout compositing.",
+    "referenceInstructions": "vault-illustrations-illustration-04 provides the dynamic lunge pose energy and clean geometric form treatment. vault-gen-cmmbn9ewq003nqwvx7qinb8am contributes the dramatic lighting approach with orange and blue accent techniques. vault-illustrations-illustration-10 informs the simplified form language and flat color blocking method with minimal shadow complexity."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-gen-cmmbn9ewq003nqwvx7qinb8am": "/uploads/jobs/cmmbn75ok003iqwvx8r1epu66/illustrations/B_illustration.png",
+    "vault-illustrations-illustration-04": "assets/vault/illustrations/illustration-04.png",
+    "vault-illustrations-illustration-10": "assets/vault/illustrations/illustration-10.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-04",
+    "vault-gen-cmmbn9ewq003nqwvx7qinb8am",
+    "vault-illustrations-illustration-10"
+  ]
+}

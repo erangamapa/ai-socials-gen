@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "cta": "Claim Your Pot",
+    "subhead": "Strike gold when luck meets opportunity",
+    "headline": "Fortune Favors The Bold",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive heroic dominance",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#8D52DA",
+      "#DFFD51",
+      "#2D4BE6",
+      "#1A1A1A"
+    ],
+    "solidBackground": "#2F5F2F",
+    "backgroundPrompt": "Extreme worm's-eye view from ground level looking steeply up at a leprechaun character captured in the explosive peak moment of hurling golden coins skyward. The camera positioned at boot level creates maximum heroic scale as the leprechaun towers overhead with one oversized boot planted on a moss-covered rock in extreme foreground, appearing 3x larger than his torso due to dramatic foreshortening perspective. His wild orange beard flows dynamically as both arms spread wide in mid-throw motion, coattails whipping behind him in kinetic energy trails. Cascading golden coins burst from his outstretched hands in explosive trajectories, each coin rendered as flat geometric shapes with electric yellow fills and motion blur silhouettes. His iconic purple hat sits at a dramatic angle, with hard-edged shadow shapes defining the crown. Body language radiates pure kinetic dominance through wide-spread stance and powerful throwing gesture. Flat vector illustration style with bold solid color fills, hard edges, no gradients, no 3D rendering, minimal facial features rendered as simple flat shadow mask with expression conveyed entirely through dynamic body positioning. Clean geometric motion lines in blue trail behind the airborne coins, creating directional energy bursts. Orange beard details and vest trim pop against the dark purple hat and earth-tone clothing. Full character contained within frame with generous breathing room. Clean solid dark forest green background with no shadow, glow, or backdrop effects behind the character.\n\nvault-illustrations-illustration-57 provides clean flat vector line weight with minimal shading approach and professional character silhouette structure. vault-illustrations-illustration-27 informs the dynamic coin-tossing energy and celebratory gesture positioning with bold color contrast treatment.",
+    "referenceInstructions": "vault-illustrations-illustration-57 provides clean flat vector line weight with minimal shading approach and professional character silhouette structure. vault-illustrations-illustration-27 informs the dynamic coin-tossing energy and celebratory gesture positioning with bold color contrast treatment."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-illustrations-illustration-27": "assets/vault/illustrations/illustration-27.png",
+    "vault-illustrations-illustration-57": "assets/vault/illustrations/illustration-57.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-57",
+    "vault-illustrations-illustration-27"
+  ]
+}

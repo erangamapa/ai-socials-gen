@@ -1,0 +1,24 @@
+{
+  "id": "A",
+  "copy": {
+    "cta": "BET NOW",
+    "subhead": "Get ahead of the competition this weekend",
+    "headline": "CS2 EARLY ODDS LIVE",
+    "disclaimer": ""
+  },
+  "template": "tpl-split-left",
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "Create a high-energy Counter-Strike 2 themed Instagram post with a split-left layout. Left side: Bold typography featuring 'CS2 EARLY ODDS LIVE' in Midnight Sans Heavy white text on a dynamic purple (#8D52DA) to dark purple (#300931) gradient background with subtle geometric tech patterns. Right side: Dramatic CS2 game scene with weapon silhouettes (AK-47, AWP) in orange (#FF6B2F) accents, tactical crosshairs, and futuristic HUD elements. Center the subhead 'Get ahead of the competition this weekend' in Inter font below the main headline. Place 'BET NOW' CTA in a bright yellow (#DFFD51) rounded button at bottom. Include small CB notch logo in top-right corner. Overall mood: intense gaming energy with premium esports tournament atmosphere, using sharp angles and neon-style highlights that blend gaming aesthetics with sports betting excitement.\n\nReference vault-previous-posts-slide-1-ig-new-a: Use this post's dynamic layout structure with bold text placement and energetic visual composition as the foundation. Reference vault-previous-posts-slide-3-ig-new: Adapt the color treatment and graphic style approach, incorporating similar high-contrast elements and modern gaming aesthetic."
+  },
+  "variantLabel": "A",
+  "referencesUsed": [
+    "vault-previous-posts-slide-1-ig-new-a",
+    "vault-previous-posts-slide-3-ig-new"
+  ],
+  "backgroundPrompt": "Create a high-energy Counter-Strike 2 themed Instagram post with a split-left layout. Left side: Bold typography featuring 'CS2 EARLY ODDS LIVE' in Midnight Sans Heavy white text on a dynamic purple (#8D52DA) to dark purple (#300931) gradient background with subtle geometric tech patterns. Right side: Dramatic CS2 game scene with weapon silhouettes (AK-47, AWP) in orange (#FF6B2F) accents, tactical crosshairs, and futuristic HUD elements. Center the subhead 'Get ahead of the competition this weekend' in Inter font below the main headline. Place 'BET NOW' CTA in a bright yellow (#DFFD51) rounded button at bottom. Include small CB notch logo in top-right corner. Overall mood: intense gaming energy with premium esports tournament atmosphere, using sharp angles and neon-style highlights that blend gaming aesthetics with sports betting excitement.",
+  "referenceInstructions": "Reference vault-previous-posts-slide-1-ig-new-a: Use this post's dynamic layout structure with bold text placement and energetic visual composition as the foundation. Reference vault-previous-posts-slide-3-ig-new: Adapt the color treatment and graphic style approach, incorporating similar high-contrast elements and modern gaming aesthetic."
+}

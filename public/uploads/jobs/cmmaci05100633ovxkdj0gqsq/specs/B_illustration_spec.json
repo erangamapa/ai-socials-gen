@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "Feel the Control",
+    "subhead": "When every turn demands perfection",
+    "headline": "Grip the Moment",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "direct kinetic impact, technical precision, racing focus",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#8D52DA",
+      "#2D4BE6",
+      "#FFFFFF",
+      "#000000"
+    ],
+    "solidBackground": "#2D4BE6",
+    "backgroundPrompt": "Foreshortened lunge perspective with the driver's gloved hands and steering wheel thrust dramatically toward camera, hands appearing 2.5x oversized in extreme foreground while the helmeted head and torso recede behind. The driver's racing position shows coiled intensity as they navigate the corner, body language screaming focus and control. Steering wheel dominates the frame with intricate details - carbon fiber texture rendered as bold flat shapes, control buttons as geometric color blocks. The driver's orange racing gloves #FF6B2F grip the wheel with white knuckles, purple accent details #8D52DA running along the glove seams and steering wheel rim. Helmet positioned behind the hands shows sleek aerodynamic profile with minimal visor details, face simplified to dark shadow shapes beneath. Racing suit visible in mid-ground displays natural fabric tension and creases rendered as hard-edged shadow shapes, no soft gradients. Flat vector illustration style with bold outlines, solid color fills throughout, motion lines integrated subtly into glove design and suit sleeves. Body positioning suggests the exact moment of turn apex, every muscle engaged for maximum control. Clean geometric rendering of all technical elements - suit zippers, helmet vents, wheel spokes as flat graphic shapes. Full figure contained within frame showing complete steering wheel, both hands, helmet, and upper torso. Background is rich dark blue #2D4BE6 as single flat color, zero backdrop elements or character shadows projected outward.\n\nApply illustration-57's clean line work and flat color approach for technical racing gear details. Use illustration-12's motion blur technique adapted to speed lines in gloves and wheel elements. Incorporate illustration-27's bold geometric shapes and solid fills for steering wheel construction and helmet form.",
+    "referenceInstructions": "Apply illustration-57's clean line work and flat color approach for technical racing gear details. Use illustration-12's motion blur technique adapted to speed lines in gloves and wheel elements. Incorporate illustration-27's bold geometric shapes and solid fills for steering wheel construction and helmet form."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-illustrations-illustration-12": "assets/vault/illustrations/illustration-12.png",
+    "vault-illustrations-illustration-27": "assets/vault/illustrations/illustration-27.png",
+    "vault-illustrations-illustration-57": "assets/vault/illustrations/illustration-57.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-57",
+    "vault-illustrations-illustration-12",
+    "vault-illustrations-illustration-27"
+  ]
+}

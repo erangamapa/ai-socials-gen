@@ -1,0 +1,32 @@
+{
+  "copy": {
+    "cta": "PLAY BIG",
+    "subhead": "Power moves pay off big",
+    "headline": "DOMINATE THE COURT TODAY",
+    "disclaimer": ""
+  },
+  "variantId": "B",
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "Feature the pre-styled basketball dunker illustration positioned center-left of the olive-to-black gradient template, scaled to fill 80% of the vertical canvas while preserving essential text overlay zones at top and bottom. The athlete should be oriented facing slightly right, creating a powerful diagonal thrust from lower-left toward upper-right that plays against the template's vertical gradient flow. Behind the dunker, add a subtle geometric frame effect: two thin orange (#FF6B2F) angular brackets flanking the player at shoulder height, and a single yellow (#DFFD51) accent stripe running vertically behind their extended dunking arm. Include three small purple (#8D52DA) diamond shapes scattered in the negative space around the player's legs, maintaining the clean vector aesthetic without any soft effects or glows. The basketball should catch a subtle highlight treatment with a thin white outline to make it pop against the darker gradient background. Position the composition so the player's head aligns with the upper third of the canvas, leaving the sophisticated gradient background visible in strategic areas. The overall mood should feel like a premium nighttime arena moment - intense, focused, and dramatically lit with the pre-styled illustration as the undisputed focal point against the elegant template backdrop.\n\nvault-gen-cmmbg52of0028r0vxbcrlz5wx: Follow the dramatic contrast approach and the way the player dominates the composition with athletic power\nvault-illustrations-illustration-17: Use the clean vector style with simplified geometric forms and bold color application\nvault-illustrations-illustration-03: Borrow the way the athlete fills the frame with dynamic energy against a solid background\nvault-illustrations-illustration-52: Apply the dramatic lighting concept and premium nightlife aesthetic with sophisticated color treatment",
+    "referenceInstructions": "vault-gen-cmmbg52of0028r0vxbcrlz5wx: Follow the dramatic contrast approach and the way the player dominates the composition with athletic power\nvault-illustrations-illustration-17: Use the clean vector style with simplified geometric forms and bold color application\nvault-illustrations-illustration-03: Borrow the way the athlete fills the frame with dynamic energy against a solid background\nvault-illustrations-illustration-52: Apply the dramatic lighting concept and premium nightlife aesthetic with sophisticated color treatment"
+  },
+  "variantLabel": "B",
+  "referencesUsed": [
+    "vault-gen-cmmbg52of0028r0vxbcrlz5wx",
+    "vault-illustrations-illustration-17",
+    "vault-illustrations-illustration-03",
+    "vault-illustrations-illustration-52"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-04",
+  "backgroundPrompt": "Feature the pre-styled basketball dunker illustration positioned center-left of the olive-to-black gradient template, scaled to fill 80% of the vertical canvas while preserving essential text overlay zones at top and bottom. The athlete should be oriented facing slightly right, creating a powerful diagonal thrust from lower-left toward upper-right that plays against the template's vertical gradient flow. Behind the dunker, add a subtle geometric frame effect: two thin orange (#FF6B2F) angular brackets flanking the player at shoulder height, and a single yellow (#DFFD51) accent stripe running vertically behind their extended dunking arm. Include three small purple (#8D52DA) diamond shapes scattered in the negative space around the player's legs, maintaining the clean vector aesthetic without any soft effects or glows. The basketball should catch a subtle highlight treatment with a thin white outline to make it pop against the darker gradient background. Position the composition so the player's head aligns with the upper third of the canvas, leaving the sophisticated gradient background visible in strategic areas. The overall mood should feel like a premium nighttime arena moment - intense, focused, and dramatically lit with the pre-styled illustration as the undisputed focal point against the elegant template backdrop.",
+  "referenceInstructions": {
+    "vault-gen-cmmbg52of0028r0vxbcrlz5wx": "Follow the dramatic contrast approach and the way the player dominates the composition with athletic power",
+    "vault-illustrations-illustration-03": "Borrow the way the athlete fills the frame with dynamic energy against a solid background",
+    "vault-illustrations-illustration-17": "Use the clean vector style with simplified geometric forms and bold color application",
+    "vault-illustrations-illustration-52": "Apply the dramatic lighting concept and premium nightlife aesthetic with sophisticated color treatment"
+  }
+}

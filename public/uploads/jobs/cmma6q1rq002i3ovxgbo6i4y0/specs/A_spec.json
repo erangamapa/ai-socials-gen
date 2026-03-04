@@ -1,0 +1,30 @@
+{
+  "copy": {
+    "cta": "BET NOW",
+    "subhead": "Two titans collide in championship fury",
+    "headline": "MADRID MADNESS UNLEASHED",
+    "disclaimer": ""
+  },
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "Composite the pre-styled dual PFL fighter illustration positioned center-left of the blue gradient template canvas, sized to occupy 70% of the vertical space while leaving clean negative space on the right side for text overlay. The dramatic worm's-eye perspective emphasizes the explosive crossing punches with one fighter in bold orange against deep blue shadows. The illustration maintains its existing flat vector style with hard-edged geometric forms and minimal facial detail, focusing on aggressive body language and muscular silhouettes. Subtle atmospheric elements radiate outward from the fighters - thin geometric speed lines in white and yellow (#DFFD51) extending toward the right margin, creating kinetic energy without overwhelming the composition. Small angular fragments in CB brand colors (#FF6B2F, #8D52DA) scatter from the impact zone, suggesting explosive force. The fighters' positioning creates a strong diagonal focal line that draws the eye while maintaining clear hierarchy with the template's existing blue gradient background. Motion blur shapes in translucent white follow the arc of their strikes, adding dynamic flow. The overall composition balances the intense fighting action on the left with spacious text-safe area on the right, using the template's professional blue tones to ground the vibrant fighter illustration.\n\nvault-illustrations-illustration-50: Borrow the dynamic athletic energy and clean vector style with motion blur effects that suggest speed and power - apply this kinetic treatment to the speed lines around the fighters\nvault-illustrations-illustration-15: Use the diagonal action pose composition and motion trail effects on projectiles - adapt this for geometric fragments and energy lines radiating from the punch impact zone\nvault-illustrations-illustration-14: Reference the minimalist vector approach with simplified geometric shapes and clean motion lines - maintain this sophisticated flat color treatment for atmospheric effects",
+    "referenceInstructions": "vault-illustrations-illustration-50: Borrow the dynamic athletic energy and clean vector style with motion blur effects that suggest speed and power - apply this kinetic treatment to the speed lines around the fighters\nvault-illustrations-illustration-15: Use the diagonal action pose composition and motion trail effects on projectiles - adapt this for geometric fragments and energy lines radiating from the punch impact zone\nvault-illustrations-illustration-14: Reference the minimalist vector approach with simplified geometric shapes and clean motion lines - maintain this sophisticated flat color treatment for atmospheric effects"
+  },
+  "variantLabel": "A",
+  "variantLetter": "A",
+  "referencesUsed": [
+    "vault-illustrations-illustration-50",
+    "vault-illustrations-illustration-15",
+    "vault-illustrations-illustration-14"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-01",
+  "backgroundPrompt": "Composite the pre-styled dual PFL fighter illustration positioned center-left of the blue gradient template canvas, sized to occupy 70% of the vertical space while leaving clean negative space on the right side for text overlay. The dramatic worm's-eye perspective emphasizes the explosive crossing punches with one fighter in bold orange against deep blue shadows. The illustration maintains its existing flat vector style with hard-edged geometric forms and minimal facial detail, focusing on aggressive body language and muscular silhouettes. Subtle atmospheric elements radiate outward from the fighters - thin geometric speed lines in white and yellow (#DFFD51) extending toward the right margin, creating kinetic energy without overwhelming the composition. Small angular fragments in CB brand colors (#FF6B2F, #8D52DA) scatter from the impact zone, suggesting explosive force. The fighters' positioning creates a strong diagonal focal line that draws the eye while maintaining clear hierarchy with the template's existing blue gradient background. Motion blur shapes in translucent white follow the arc of their strikes, adding dynamic flow. The overall composition balances the intense fighting action on the left with spacious text-safe area on the right, using the template's professional blue tones to ground the vibrant fighter illustration.",
+  "referenceInstructions": {
+    "vault-illustrations-illustration-14": "Reference the minimalist vector approach with simplified geometric shapes and clean motion lines - maintain this sophisticated flat color treatment for atmospheric effects",
+    "vault-illustrations-illustration-15": "Use the diagonal action pose composition and motion trail effects on projectiles - adapt this for geometric fragments and energy lines radiating from the punch impact zone",
+    "vault-illustrations-illustration-50": "Borrow the dynamic athletic energy and clean vector style with motion blur effects that suggest speed and power - apply this kinetic treatment to the speed lines around the fighters"
+  }
+}

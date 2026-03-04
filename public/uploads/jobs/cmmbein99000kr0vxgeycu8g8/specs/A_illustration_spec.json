@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "Watch Live",
+    "subhead": "van Steenis vs Edwards",
+    "headline": "PFL Madrid Showdown",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Towering gladiatorial presence — two apex predators claiming their arena",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#8D52DA",
+      "#2D4BE6",
+      "#DFFD51",
+      "#300931"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "two elite MMA fighters Costello van Steenis and Fabian Edwards standing side by side in powerful pre-fight stance, camera positioned at ground level looking steeply upward. Van Steenis on the left displays his tall lean frame with defined shoulders and long reach, wearing dark fight shorts, his body language showing controlled aggression. Edwards on the right exhibits his compact muscular build with broader shoulders, wearing contrasting fight gear, both fighters' legs appearing enormous in the foreground due to extreme foreshortening perspective. Their torsos recede dramatically upward creating towering heroic silhouettes against the frame. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, simplified flat facial features with bold shadow masks, expressions conveyed through dominant body language rather than detailed faces. Clean geometric shapes define their athletic builds, flat hard-edged shadow shapes cast only on their bodies and shorts, creating dramatic contrast. Bold CB brand colors accent their gear - electric orange and purple highlights on gloves and shorts. Full bodies contained within frame with generous breathing room. Motion energy implied through their coiled stances and the dramatic scale created by the low camera angle.\n\nvault-gen-cmmbe5rqv0008r0vxwm3f6h0z provides geometric angular shading technique and muscular definition approach. vault-illustrations-illustration-03 informs the bold flat color blocking and clean vector line work. vault-illustrations-illustration-04 guides the simplified geometric forms and professional sports aesthetic.",
+    "referenceInstructions": "vault-gen-cmmbe5rqv0008r0vxwm3f6h0z provides geometric angular shading technique and muscular definition approach. vault-illustrations-illustration-03 informs the bold flat color blocking and clean vector line work. vault-illustrations-illustration-04 guides the simplified geometric forms and professional sports aesthetic."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-gen-cmmbe5rqv0008r0vxwm3f6h0z": "/uploads/jobs/cmmbdu2k30005r0vxsiun56zz/illustrations/A_illustration.png",
+    "vault-illustrations-illustration-03": "assets/vault/illustrations/illustration-03.png",
+    "vault-illustrations-illustration-04": "assets/vault/illustrations/illustration-04.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbe5rqv0008r0vxwm3f6h0z",
+    "vault-illustrations-illustration-03",
+    "vault-illustrations-illustration-04"
+  ]
+}

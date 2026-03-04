@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Table-stakes magnetism — the irresistible pull of cards about to change everything",
+    "style": "flat-vector",
+    "palette": [
+      "#2D4BE6",
+      "#FF6B2F",
+      "#DFFD51",
+      "#FFFFFF",
+      "#300931"
+    ],
+    "solidBackground": "#2D1B69",
+    "backgroundPrompt": "Foreshortened lunge toward camera with the casino dealer's card-dealing hand thrust directly at the viewer in extreme close-up perspective. The dealer's right hand dominates the entire foreground, appearing 3x oversized as it extends playing cards toward camera, fingers spread in the precise moment of the reveal. Behind this massive foreground hand, the dealer's body recedes into the background with dramatic perspective compression - torso, shoulders and head appearing smaller and further away. The character maintains the professional casino aesthetic with black vest, white shirt, and bow tie rendered in flat vector style with bold solid color fills and zero gradients. Face is simplified to basic shadow shapes and geometric forms, minimal facial detail with expression conveyed through the authoritative card-dealing gesture. Multiple playing cards fan out from the oversized hand, some face-up revealing suits and numbers in bold graphic treatment. The motion energy flows directly toward the viewer through this aggressive foreshortening technique. Clean flat vector illustration approach throughout - hard edges, geometric shapes, internal flat shadow tones ON the character only. No 3D rendering effects, no gradients, no soft shading. The dealer appears suspended on the solid color background with no drop shadows, no glows, no ambient lighting effects. The background remains completely clean for professional cutout use. Full character silhouette contained within frame bounds with adequate spacing around all edges.",
+    "referenceInstructions": "vault-illustrations-illustration-55 establishes the casino dealer character foundation with professional styling and confident presentation, adapting the formal attire and authoritative presence. vault-illustrations-illustration-41 provides guidance for the extreme foreshortening technique and dramatic hand positioning, translating the soccer kick energy to precision card-dealing motion. vault-illustrations-illustration-35 informs the bold geometric shape treatment and clean color blocking approach for maximum visual impact."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-illustrations-illustration-35": "assets/vault/illustrations/illustration-35.png",
+    "vault-illustrations-illustration-41": "assets/vault/illustrations/illustration-41.png",
+    "vault-illustrations-illustration-55": "assets/vault/illustrations/illustration-55.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-55",
+    "vault-illustrations-illustration-41",
+    "vault-illustrations-illustration-35"
+  ]
+}

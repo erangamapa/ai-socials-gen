@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "cta": "Place Bet",
+    "subhead": "Precision meets power in the cage",
+    "headline": "Strike Force",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Millisecond before impact — surgical precision meets explosive force",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#DFFD51",
+      "#8D52DA",
+      "#1A1A2E"
+    ],
+    "solidBackground": "#1A1A2E",
+    "backgroundPrompt": "Eye-level side-profile angle capturing the fighters in active engagement moment, maintaining the reference composition with both athletes clearly visible. Van Steenis (left) throwing a powerful right cross with extreme foreshortening making his striking fist appear massive in the foreground, Edwards (right) weaving backward in defensive counter-position. The striking arm dominates the frame at 3x normal size while the rest of van Steenis' body recedes dramatically. Edwards' lean-back defensive posture creates dynamic negative space between the fighters. Both fighters maintain their characteristic builds from the reference photos - van Steenis with compact athletic frame, Edwards with longer reach and defined muscle structure. Flat vector illustration with bold solid color fills, hard edges, no gradients, geometric shadow shapes defining musculature only on the fighters' bodies. Minimal facial detail with bold flat shadow masks conveying intensity through simplified features rather than detailed expressions. Van Steenis in bright orange MMA shorts with black trim, Edwards in dark navy shorts with electric blue highlights. Motion blur shapes trailing behind the striking fist create kinetic energy without affecting the clean background. Speed lines integrated into the fighters' forms only, not extending into the backdrop. Clean solid background color with zero drop shadows, halos, or environmental effects behind the characters.\n\nvault-gen-cmmbe6m9p000ar0vx05l5vmqh guides the foreshortened striking pose with enlarged fist perspective. vault-illustrations-illustration-01 provides the athletic motion dynamics and clean vector treatment.",
+    "referenceInstructions": "vault-gen-cmmbe6m9p000ar0vx05l5vmqh guides the foreshortened striking pose with enlarged fist perspective. vault-illustrations-illustration-01 provides the athletic motion dynamics and clean vector treatment."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-gen-cmmbe6m9p000ar0vx05l5vmqh": "/uploads/jobs/cmmbdu2k30005r0vxsiun56zz/illustrations/B_illustration.png",
+    "vault-illustrations-illustration-01": "assets/vault/illustrations/illustration-01.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbe6m9p000ar0vx05l5vmqh",
+    "vault-illustrations-illustration-01"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive, kinetic, power delivery",
+    "style": "flat-vector",
+    "palette": [
+      "#2D4BE6",
+      "#8D52DA",
+      "#FFFFFF",
+      "#FF6B2F",
+      "#0F1032"
+    ],
+    "solidBackground": "#2D4BE6",
+    "backgroundPrompt": "Foreshortened lunge composition with Dakota Ditcheva as tennis player thrusting her racquet directly toward the camera at the moment of explosive serve contact. Her fighter's muscular frame adapted to tennis form with the racquet and serving arm filling the foreground at 2-3x normal size while her body recedes behind in dramatic perspective distortion. The racquet head and strings dominate the immediate foreground with kinetic motion blur trails and speed lines emphasizing the raw power transfer. Her athletic MMA build shows through powerful shoulder rotation and core engagement, wearing white tennis outfit with deep purple #8D52DA piping details. Face simplified to flat geometric shadow shapes with intensity conveyed through aggressive forward-lunging body language rather than detailed expression. Her rear leg planted with explosive push-off energy, front leg extended in classic serve follow-through creating dynamic diagonal composition. Motion blur shapes trail from her serving shoulder through extended arm to racquet, emphasizing the violent snap of serve delivery. Flat vector illustration with bold solid color fills against electric blue #2D4BE6 background, hard clean edges throughout, no gradients on character, no cartoonish proportions. White tennis dress with sharp angular fabric motion, geometric racquet design with string pattern detail. Orange #FF6B2F accent on tennis balls scattered in mid-frame. Full body contained with dramatic foreshortening effect, clean background separation for professional cutout use with no shadows or glows projected behind character.\n\nvault-illustrations-illustration-02 guides dramatic diving pose structure and gradient shading approach. vault-illustrations-illustration-04 provides clean geometric athletic form rendering and bold color blocking. vault-illustrations-illustration-06 informs contemporary sports graphic style and minimal shadow technique.",
+    "referenceInstructions": "vault-illustrations-illustration-02 guides dramatic diving pose structure and gradient shading approach. vault-illustrations-illustration-04 provides clean geometric athletic form rendering and bold color blocking. vault-illustrations-illustration-06 informs contemporary sports graphic style and minimal shadow technique."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-illustrations-illustration-02": "assets/vault/illustrations/illustration-02.png",
+    "vault-illustrations-illustration-04": "assets/vault/illustrations/illustration-04.png",
+    "vault-illustrations-illustration-06": "assets/vault/illustrations/illustration-06.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-02",
+    "vault-illustrations-illustration-04",
+    "vault-illustrations-illustration-06"
+  ]
+}

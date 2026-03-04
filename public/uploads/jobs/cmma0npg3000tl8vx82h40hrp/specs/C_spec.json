@@ -1,0 +1,25 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "Championship moments meet premium crypto action",
+    "headline": "POWER PLAY AWAITS",
+    "disclaimer": ""
+  },
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "The footballer hero illustration is positioned center-left of the blue gradient template canvas, sized to occupy 65% of the vertical space while creating dynamic asymmetrical balance. The character's orange jersey creates bold complementary contrast against the rich blue gradient background, while their explosive striking pose generates visual energy that flows across the composition. Electric yellow speed lines (#DFFD51) explode from the ball contact point in sharp, angular bursts that mirror the template's geometric triangular shapes, creating cohesive design language throughout. The low-angle worm's-eye perspective is enhanced with dramatic shadow casting in deep navy (#0F1032) that pools and extends beneath the player, adding sculptural dimension. Geometric accent elements in orange (#FF6B2F) and bright blue create subtle framing devices that echo the template's layered triangular motifs without competing for attention. Kinetic motion blur trails in gradient blue tones stream behind the player's extended leg, amplifying the sense of explosive power and speed. The composition deliberately creates substantial negative space in the upper-right quadrant for headline placement, while the bottom third remains clean for CTA overlay. Small geometric fragments in brand yellow scatter around the impact zone, maintaining the template's sophisticated geometric aesthetic while adding athletic energy. The overall treatment celebrates both the raw athletic intensity and the premium crypto gaming brand identity through careful color harmony and compositional balance.\n\nFrom illustration-06: Adopt the clean geometric shapes approach and bold color blocking technique with minimal shading. From illustration-10: Use the flat vector illustration style and the way motion-focused poses create dynamic positioning. From slide-4-ig-new: Borrow the dramatic lighting effects and the way geometric elements create visual energy around athletic action.",
+    "referenceInstructions": "From illustration-06: Adopt the clean geometric shapes approach and bold color blocking technique with minimal shading. From illustration-10: Use the flat vector illustration style and the way motion-focused poses create dynamic positioning. From slide-4-ig-new: Borrow the dramatic lighting effects and the way geometric elements create visual energy around athletic action."
+  },
+  "variantLabel": "C",
+  "referencesUsed": [
+    "vault-illustrations-illustration-06",
+    "vault-illustrations-illustration-10",
+    "vault-previous-posts-slide-4-ig-new"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-01",
+  "backgroundPrompt": "The footballer hero illustration is positioned center-left of the blue gradient template canvas, sized to occupy 65% of the vertical space while creating dynamic asymmetrical balance. The character's orange jersey creates bold complementary contrast against the rich blue gradient background, while their explosive striking pose generates visual energy that flows across the composition. Electric yellow speed lines (#DFFD51) explode from the ball contact point in sharp, angular bursts that mirror the template's geometric triangular shapes, creating cohesive design language throughout. The low-angle worm's-eye perspective is enhanced with dramatic shadow casting in deep navy (#0F1032) that pools and extends beneath the player, adding sculptural dimension. Geometric accent elements in orange (#FF6B2F) and bright blue create subtle framing devices that echo the template's layered triangular motifs without competing for attention. Kinetic motion blur trails in gradient blue tones stream behind the player's extended leg, amplifying the sense of explosive power and speed. The composition deliberately creates substantial negative space in the upper-right quadrant for headline placement, while the bottom third remains clean for CTA overlay. Small geometric fragments in brand yellow scatter around the impact zone, maintaining the template's sophisticated geometric aesthetic while adding athletic energy. The overall treatment celebrates both the raw athletic intensity and the premium crypto gaming brand identity through careful color harmony and compositional balance.",
+  "referenceInstructions": "From illustration-06: Adopt the clean geometric shapes approach and bold color blocking technique with minimal shading. From illustration-10: Use the flat vector illustration style and the way motion-focused poses create dynamic positioning. From slide-4-ig-new: Borrow the dramatic lighting effects and the way geometric elements create visual energy around athletic action."
+}

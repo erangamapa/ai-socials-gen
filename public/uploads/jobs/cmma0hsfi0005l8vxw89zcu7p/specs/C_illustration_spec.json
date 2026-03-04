@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "Join the Game",
+    "subhead": "Premium power unleashed",
+    "headline": "UNSTOPPABLE FORCE",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "premium editorial tension",
+    "style": "flat-vector",
+    "palette": [
+      "#8D52DA",
+      "#FF6B2F",
+      "#DFFD51",
+      "#FFFFFF",
+      "#1A1A1A"
+    ],
+    "solidBackground": "#2D4BE6",
+    "backgroundPrompt": "Dutch tilt camera angle at 25-degree rotation combined with dramatic low-angle perspective, creating maximum tension and instability as the footballer executes the explosive shot. The tilted horizon line adds editorial premium energy while the low angle maintains heroic scale. Player positioned diagonally across the tilted frame, with the striking leg extending toward the lower-left corner and the body stretching toward upper-right, creating powerful diagonal motion flow. Extreme foreshortening shows the boot oversized in foreground with body compressed behind. Bold experimental color palette: jersey in electric purple (#8D52DA) with yellow (#DFFD51) accent stripes, shorts in deep orange (#FF6B2F), creating maximum color intensity against the rich blue background. Face rendered as simplified geometric planes with bold flat shadow shapes - no detailed features, energy comes from aggressive body silhouette and tensed muscle definition. Geometric speed lines in white and yellow explode from ball contact point in sharp angular bursts, following the dutch tilt angle for enhanced visual dynamism. The tilted composition creates asymmetrical balance that feels unstable and energetic. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style. Clean solid electric blue background (#2D4BE6) with no shadow or glow behind the character. Complete footballer contained within tilted frame boundaries with generous margins for cutout flexibility, emphasizing premium sports editorial aesthetic with maximum color impact.\n\nUse vault-illustrations-illustration-03 bold graphic style and dramatic solid background contrast. Apply vault-illustrations-illustration-39 oversized ball proportion technique and geometric vector treatment. Reference vault-illustrations-illustration-11 smooth color blocking and athletic proportion balance.",
+    "referenceInstructions": "Use vault-illustrations-illustration-03 bold graphic style and dramatic solid background contrast. Apply vault-illustrations-illustration-39 oversized ball proportion technique and geometric vector treatment. Reference vault-illustrations-illustration-11 smooth color blocking and athletic proportion balance."
+  },
+  "variantLabel": "C",
+  "referencePaths": {
+    "vault-illustrations-illustration-03": "assets/vault/illustrations/illustration-03.png",
+    "vault-illustrations-illustration-11": "assets/vault/illustrations/illustration-11.png",
+    "vault-illustrations-illustration-39": "assets/vault/illustrations/illustration-39.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-03",
+    "vault-illustrations-illustration-39",
+    "vault-illustrations-illustration-11"
+  ]
+}

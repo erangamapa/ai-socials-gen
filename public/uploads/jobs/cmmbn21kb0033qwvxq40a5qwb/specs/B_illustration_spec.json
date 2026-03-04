@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Clutch-moment detonation — decades of muscle memory crystallized into one perfect click",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#300931",
+      "#8D52DA",
+      "#DFFD51"
+    ],
+    "solidBackground": "#2D4BE6",
+    "backgroundPrompt": "Foreshortened lunge perspective with the gaming mouse thrust directly toward camera in extreme close-up, capturing the Counter-Strike pro's decisive moment frozen at peak concentration. The mouse-gripping hand dominates the foreground, appearing 3x oversized and detailed with flat geometric shadow shapes defining each knuckle and finger position. The mouse itself becomes a hero element - ergonomic curves rendered as bold flat shapes with RGB lighting strips as thin accent lines in brand colors. Behind the massive foreground hand, the player's body recedes dramatically through foreshortening - torso compressed, shoulders angled, gaming chair barely visible in deep background. Their profile face appears in middle distance, simplified to essential flat shadow shapes with headset creating strong geometric silhouette against the monitor array. The other arm extends toward keyboard in supporting gesture, rendered smaller due to perspective but maintaining clean flat color treatment. Professional esports jersey features team branding as flat graphic patches, with fabric folds suggested through hard-edged shadow shapes only. Multiple monitors create backdrop geometry as simple rectangular light sources, their glow contained within screen boundaries. Speed lines radiate from the mouse hand toward camera, emphasizing the explosive moment of the game-changing click. Camera angle tilted 15 degrees for added tension and editorial energy. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, geometric shadow shapes cast only ON the character and equipment. Clean solid background color with no environmental shadows, glows, or effects. Full figure composition with generous frame breathing room despite dramatic foreshortening focus.",
+    "referenceInstructions": "Draw from vault-gen-cmmbg4kx90026r0vxq2nel790's geometric angular approach and dynamic foreshortening technique for powerful perspective distortion. Apply vault-gen-cmmbmujz0002uqwvxav3lht5s's tactical color blocking and bold outline treatment for clean esports aesthetic. Use vault-illustrations-illustration-12's flat vector style and motion blur effects to capture the split-second timing of competitive gaming action."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-gen-cmmbg4kx90026r0vxq2nel790": "/uploads/jobs/cmmbg30pz0023r0vxxejz7eyf/illustrations/A_illustration.png",
+    "vault-gen-cmmbmujz0002uqwvxav3lht5s": "/uploads/jobs/cmmbmt3n9002rqwvxl2fvwk50/illustrations/A_illustration.png",
+    "vault-illustrations-illustration-12": "assets/vault/illustrations/illustration-12.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbg4kx90026r0vxq2nel790",
+    "vault-gen-cmmbmujz0002uqwvxav3lht5s",
+    "vault-illustrations-illustration-12"
+  ]
+}

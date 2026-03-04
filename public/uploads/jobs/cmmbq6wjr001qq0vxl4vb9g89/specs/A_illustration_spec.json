@@ -1,0 +1,34 @@
+{
+  "copy": {
+    "cta": "Race to Win",
+    "subhead": "Peak performance meets ultimate triumph",
+    "headline": "Victory Unleashed",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Championship-forged supremacy — titanium will crystallized into sky-splitting triumph",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#8D52DA",
+      "#DFFD51",
+      "#FFFFFF"
+    ],
+    "solidBackground": "#2D1B69",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view of an F1 driver at the peak moment of victory celebration, stepping out of his racing cockpit with one fist raised triumphantly toward the sky. The camera is positioned at ground level looking steeply upward, making the driver tower overhead with heroic monumentality. His raised fist dominates the upper portion of the frame, appearing oversized due to foreshortening as it extends closest to the camera. The driver's body is captured mid-motion as he emerges from the sleek cockpit, one leg still inside the car while the other plants firmly on the ground. His racing suit features bold flat color panels in vibrant orange and blue, with clean geometric sponsor patches rendered as simple flat shapes. The helmet reflects the cockpit's interior lighting with hard-edged highlight shapes rather than realistic reflections. His face beneath the visor is simplified to bold shadow mask shapes, with the expression of triumph conveyed entirely through his powerful body language and raised fist gesture. The F1 car's cockpit shows clean mechanical details rendered in flat geometric forms - steering wheel, dashboard displays, and carbon fiber textures all simplified to bold graphic elements. Flat vector illustration style with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style. The driver's suit casting flat triangular shadow shapes across his torso and legs, while motion lines radiate from his raised fist to emphasize the explosive energy of victory. Clean solid dark purple background with no shadow or glow behind the character, suitable for instant cutout compositing.",
+    "referenceInstructions": "Use vault-gen-cmmbpsolt000pq0vxb33iqr8i for the bold geometric vector style with dynamic radiating motion lines and professional sports aesthetic. Apply vault-gen-cmmbmujz0002uqwvxav3lht5s for the flat color treatment with bold outlines and dramatic orange-blue contrast. Reference vault-illustrations-illustration-28 for the triumphant raised fist gesture and celebratory body language with exaggerated proportions on the key gesture."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-gen-cmmbmujz0002uqwvxav3lht5s": "/uploads/jobs/cmmbmt3n9002rqwvxl2fvwk50/illustrations/A_illustration.png",
+    "vault-gen-cmmbpsolt000pq0vxb33iqr8i": "/uploads/jobs/cmmbpr2ua000mq0vxu2hsmbyv/illustrations/A_illustration.png",
+    "vault-illustrations-illustration-28": "assets/vault/illustrations/illustration-28.png"
+  },
+  "referencesUsed": [
+    "vault-gen-cmmbpsolt000pq0vxb33iqr8i",
+    "vault-gen-cmmbmujz0002uqwvxav3lht5s",
+    "vault-illustrations-illustration-28",
+    "vault-gen-cmmbphmye0006q0vx7yagcppr"
+  ]
+}

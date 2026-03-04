@@ -1,0 +1,29 @@
+{
+  "copy": {
+    "cta": "Bet Now",
+    "subhead": "Explosive cricket action",
+    "headline": "Power Play",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "direct kinetic impact",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#8D52DA",
+      "#DFFD51",
+      "#2D4BE6",
+      "#FFFFFF"
+    ],
+    "solidBackground": "#2D4BE6",
+    "backgroundPrompt": "Foreshortened lunge composition capturing a cricket batsman's sweep shot with the bat thrusting directly toward the camera, the cricket bat appearing 2-3x oversized in the extreme foreground while the player's body recedes dramatically behind it. The camera angle is positioned at the receiving end of the shot, creating maximum visual impact as the bat dominates the lower portion of the frame. The batsman is captured mid-swing with arms fully extended through the follow-through, body twisted in a powerful crouch with one knee planted and the other leg extended for balance. The player's torso and head appear significantly smaller due to the extreme foreshortening effect. Rendered in flat vector illustration with bold solid color treatment - the oversized bat in vibrant orange #FF6B2F fills the foreground, cricket uniform and protective gear in deep purple #8D52DA, with explosive yellow #DFFD51 speed lines and motion streaks radiating from the bat's surface toward the viewer. Sharp angular fragments suggest the moment of ball contact bursting outward. The batsman's face is reduced to simplified flat geometric shapes with minimal detail, energy conveyed entirely through the dramatic body positioning and explosive action moment. Hard-edged flat shadow shapes define form and depth ON the character only, no gradients or soft shading. Motion blur trails follow the bat's arc creating kinetic energy. Full figure contained within frame including extended limbs. Solid bright blue background #2D4BE6 with no drop shadows, halos, or backdrop elements, maintaining clean cutout capability.\n\nEmphasize dramatic scale relationships through foreshortening, bold graphic shapes, and explosive motion elements while keeping background completely clean for professional cutout use.",
+    "referenceInstructions": "Emphasize dramatic scale relationships through foreshortening, bold graphic shapes, and explosive motion elements while keeping background completely clean for professional cutout use."
+  },
+  "variantLabel": "B",
+  "referencePaths": {},
+  "referencesUsed": [
+    "vault-002",
+    "vault-005",
+    "vault-009"
+  ]
+}

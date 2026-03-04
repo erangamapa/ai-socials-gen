@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Alpine conquest fury — oxygen-starved lungs driving titanium will through granite peaks",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#DFFD51",
+      "#8D52DA",
+      "#300931"
+    ],
+    "solidBackground": "#2D1B69",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view of a Tour de France cyclist captured at the peak moment of maximum power output on the final mountain pitch. The camera is positioned near ground level looking steeply upward, making the cyclist tower overhead with dramatic heroic scale. The athlete is out of the saddle, standing on the pedals with legs at full extension and maximum muscular engagement, body leaning forward aggressively over the handlebars. The cyclist's closest leg appears enormously foreshortened toward the camera, dominating the lower frame, while the torso and head recede dramatically upward. Cobalt blue and yellow crowd color streaks blur horizontally on both sides of the frame, suggesting speed and spectator energy without defining individual figures. The cyclist wears professional racing kit in vibrant colors, with simplified flat features on the face - bold shadow mask defining the expression through body language rather than detailed facial features. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, clean geometric shapes with flat hard-edged shadow shapes only on the cyclist's body and gear. The bicycle frame shows sleek aerodynamic lines with minimal mechanical detail. Full body contained within frame with generous breathing room. Clean solid background with no shadow, glow, or ground contact effects behind the character.",
+    "referenceInstructions": "Use vault-illustrations-illustration-31's motion blur on legs to suggest explosive pedaling power, apply vault-illustrations-illustration-50's clean vector treatment with flat color blocking for the racing kit, implement vault-illustrations-illustration-12's minimal shading approach for streamlined athletic forms, and adopt the dynamic action capture from these references while maintaining flat solid color fills throughout."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-illustrations-illustration-12": "assets/vault/illustrations/illustration-12.png",
+    "vault-illustrations-illustration-31": "assets/vault/illustrations/illustration-31.png",
+    "vault-illustrations-illustration-50": "assets/vault/illustrations/illustration-50.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-31",
+    "vault-illustrations-illustration-50",
+    "vault-illustrations-illustration-12"
+  ]
+}

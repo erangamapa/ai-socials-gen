@@ -1,0 +1,26 @@
+{
+  "variantLabel": "A",
+  "copy": {
+    "cta": "Bet Now",
+    "disclaimer": "18+ | Gamble responsibly",
+    "headline": "CHAMPIONS LEAGUE BOOST",
+    "subhead": "Enhanced odds on first goalscorer for Real Madrid vs Bayern Munich"
+  },
+  "artDirection": {
+    "backgroundPrompt": "Complete social media post image with dark purple (#300931) background featuring dynamic geometric shapes and subtle Champions League football elements. Large bold headline 'CHAMPIONS LEAGUE BOOST' in white Midnight Sans ST Heavy caps positioned center-top. Below, smaller Inter font subhead 'Enhanced odds on first goalscorer for Real Madrid vs Bayern Munich' in light text. Bright orange (#FF6B2F) 'Bet Now' CTA button positioned bottom-center. Small CB logo in top-left corner. Yellow (#DFFD51) accent shapes and purple (#8D52DA) geometric elements create movement. High contrast, premium sports betting aesthetic with clean composition and strong hierarchy.",
+    "mood": "high-energy Champions League excitement with premium dark aesthetic",
+    "palette": [
+      "#300931",
+      "#FF6B2F",
+      "#DFFD51",
+      "#FFFFFF",
+      "#8D52DA"
+    ],
+    "style": "",
+    "vaultReferences": [
+      "vault-fonts-midnight-sans-st-48-heavy-pro"
+    ]
+  },
+  "templateId": "tpl-centered-hero",
+  "referencesUsed": []
+}

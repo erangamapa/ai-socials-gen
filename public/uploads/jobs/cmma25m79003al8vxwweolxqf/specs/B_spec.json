@@ -1,0 +1,29 @@
+{
+  "copy": {
+    "cta": "ALL IN",
+    "subhead": "Every strike defines champions",
+    "headline": "CRUSHING FORCE UNLEASHED",
+    "disclaimer": ""
+  },
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "Position the pre-styled bear warrior illustration center-right on the vibrant blue gradient template, scaled to 70% frame height to create maximum visual impact while maintaining text-safe zones on the left side. The bear's flying kick should extend dramatically across the middle portion of the canvas, with the muscular torso positioned slightly right of center. Surround the bear with premium atmospheric elements including geometric energy burst patterns emanating from the kick impact point, rendered in complementary orange (#FF6B35) and purple (#8A2BE2) accent colors that harmonize with the template's blue gradient. Add subtle floating particle effects around the bear's gi pants and extended limbs, suggesting the explosive power of elite martial arts competition. The composition uses the template's diagonal curved element as a natural flow guide, directing viewer attention from the upper left toward the bear's dominant form. Apply sophisticated lighting effects with dramatic rim lighting along the bear's muscular silhouette using bright highlights and deep shadow contrast. The bear maintains its bold vector styling with clean geometric forms and professional sports illustration aesthetic. Motion blur effects trail behind the kicking leg to emphasize devastating speed and precision, while maintaining crisp edges suitable for template compositing.\n\nvault-illustrations-illustration-27: Use the vibrant celebration energy with floating elements and dynamic particle effects around the subject\nvault-illustrations-illustration-31: Borrow the clean vector sports illustration style with motion blur effects and professional athletic aesthetics\nvault-illustrations-illustration-53: Apply the premium luxury styling with dramatic lighting effects and sophisticated gradient treatments",
+    "referenceInstructions": "vault-illustrations-illustration-27: Use the vibrant celebration energy with floating elements and dynamic particle effects around the subject\nvault-illustrations-illustration-31: Borrow the clean vector sports illustration style with motion blur effects and professional athletic aesthetics\nvault-illustrations-illustration-53: Apply the premium luxury styling with dramatic lighting effects and sophisticated gradient treatments"
+  },
+  "variantLabel": "B",
+  "referencesUsed": [
+    "vault-illustrations-illustration-27",
+    "vault-illustrations-illustration-31",
+    "vault-illustrations-illustration-53"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-05",
+  "backgroundPrompt": "Position the pre-styled bear warrior illustration center-right on the vibrant blue gradient template, scaled to 70% frame height to create maximum visual impact while maintaining text-safe zones on the left side. The bear's flying kick should extend dramatically across the middle portion of the canvas, with the muscular torso positioned slightly right of center. Surround the bear with premium atmospheric elements including geometric energy burst patterns emanating from the kick impact point, rendered in complementary orange (#FF6B35) and purple (#8A2BE2) accent colors that harmonize with the template's blue gradient. Add subtle floating particle effects around the bear's gi pants and extended limbs, suggesting the explosive power of elite martial arts competition. The composition uses the template's diagonal curved element as a natural flow guide, directing viewer attention from the upper left toward the bear's dominant form. Apply sophisticated lighting effects with dramatic rim lighting along the bear's muscular silhouette using bright highlights and deep shadow contrast. The bear maintains its bold vector styling with clean geometric forms and professional sports illustration aesthetic. Motion blur effects trail behind the kicking leg to emphasize devastating speed and precision, while maintaining crisp edges suitable for template compositing.",
+  "referenceInstructions": {
+    "vault-illustrations-illustration-27": "Use the vibrant celebration energy with floating elements and dynamic particle effects around the subject",
+    "vault-illustrations-illustration-31": "Borrow the clean vector sports illustration style with motion blur effects and professional athletic aesthetics",
+    "vault-illustrations-illustration-53": "Apply the premium luxury styling with dramatic lighting effects and sophisticated gradient treatments"
+  }
+}

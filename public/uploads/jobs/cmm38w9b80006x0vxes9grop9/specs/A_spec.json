@@ -1,0 +1,32 @@
+{
+  "id": "A",
+  "cta": "Join Now",
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "subhead": "Create your World Cup bracket and compete for epic prizes",
+  "headline": "PREDICT THE CHAMPION",
+  "disclaimer": "18+ | Gamble responsibly",
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "energetic, competitive, premium",
+    "style": "",
+    "palette": [
+      "#300931",
+      "#FF6B2F",
+      "#DFFD51",
+      "#FFFFFF",
+      "#AD99AD"
+    ],
+    "references": [
+      "vault-previous-posts-slide-1-ig-new-a",
+      "vault-previous-posts-slide-2-ig-new"
+    ],
+    "backgroundPrompt": "Complete finished social media post for Instagram feed. Dark purple background (#300931) with subtle geometric football-pattern overlay in darker purple. Center composition with bold white text hierarchy: Main headline 'PREDICT THE CHAMPION' in large Midnight Sans Heavy ALL CAPS at top center, bright orange (#FF6B2F) accent text 'Create your World Cup bracket and compete for epic prizes' in medium Inter below headline, bright yellow (#DFFD51) CTA button 'Join Now' at bottom center with rounded corners. Small CB logo in white positioned in top-left corner. Central visual element: stylized bracket tournament tree graphic in white/light grey outlines with football icons, overlaid with subtle glow effects. Bottom disclaimer '18+ | Gamble responsibly' in small grey (#AD99AD) text. High contrast, sports-dynamic energy with clean modern layout. Square 1080x1080 Instagram format."
+  },
+  "variantLabel": "A",
+  "referencesUsed": []
+}

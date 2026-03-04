@@ -1,0 +1,27 @@
+{
+  "copy": {
+    "cta": "PLACE YOUR BET",
+    "subhead": "Technique perfected, victory delivered",
+    "headline": "KNOCKOUT POWER",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "aggressive, focused, technical precision, premium combat sports",
+    "style": "flat-vector",
+    "palette": [
+      "#8D52DA",
+      "#DFFD51",
+      "#FF6B2F",
+      "#2A2A2A"
+    ],
+    "solidBackground": "#2A2A2A",
+    "backgroundPrompt": "Foreshortened lunge composition with Dakota's punching fist thrust directly toward the camera, the gloved hand filling the immediate foreground at 3x normal scale while her body and legs recede dramatically behind. Camera positioned at chest level catching the exact moment of impact as her lead hand rockets forward. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style. Her face appears in profile behind the enormous fist, rendered with simplified flat features - strong jawline defined by geometric shadow shapes, minimal eye detail, fierce determination expressed through body tension rather than facial expression. The oversized glove dominates the composition showing detailed flat color segments - knuckle protection, wrist wrap, and thumb positioning all clearly defined with hard-edged shadow cutouts. Her rear arm cocked back for additional power shows proper boxing form with elbow tight to her ribs. Her torso rotates into the punch with her shoulders angled, core engaged, wearing form-fitting athletic wear in bold flat color blocks. Her legs are positioned in orthodox fighting stance with front foot planted and rear foot pivoted on the ball. Explosive speed lines emanate from the point of impact, creating radiating energy vectors. Sharp geometric shadows cast by her body create depth without soft blending. Motion blur shapes trail from her rear hand and supporting leg. Full body visible within frame boundaries with substantial breathing room.\n\nBorrow illustration-04's clean geometric forms and professional sports aesthetic. Use illustration-06's bold color blocking and minimal shading technique. Apply illustration-12's motion blur effects and dynamic energy treatment to the striking motion.",
+    "referenceInstructions": "Borrow illustration-04's clean geometric forms and professional sports aesthetic. Use illustration-06's bold color blocking and minimal shading technique. Apply illustration-12's motion blur effects and dynamic energy treatment to the striking motion."
+  },
+  "variantLabel": "B",
+  "referencesUsed": [
+    "vault-illustrations-illustration-04",
+    "vault-illustrations-illustration-06",
+    "vault-illustrations-illustration-12"
+  ]
+}

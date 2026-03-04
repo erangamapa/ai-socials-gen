@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive heroic dominance",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#300931",
+      "#DFFD51",
+      "#8D52DA"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "f two MMA fighters AJ McKee and Adam Borics standing side by side in a powerful face-off stance. Camera positioned at ground level looking steeply upward, making both fighters tower overhead with dramatic heroic scale. AJ McKee on the left in his characteristic fighting stance - lean athletic build, defined musculature, wearing black and orange fight shorts with tape-wrapped hands in guard position. Adam Borics on the right in mirror stance - compact powerful frame, wearing dark fight shorts, hands also wrapped and raised defensively. Both fighters appear massive from this worm's-eye perspective, their torsos and shoulders dominating the upper frame while their feet and lower legs loom large in the foreground. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style. Simplified flat features on both faces - bold shadow masks across their faces, expressions implied by aggressive body language rather than detailed facial features. Clean geometric muscle definition using flat hard-edged shadow shapes ON the fighters' bodies only. Dynamic tension between the two athletes, their stances suggesting imminent explosive movement. Full bodies contained within frame with generous breathing room. Clean solid background with no shadow or glow behind the characters, suitable for instant cutout use.\n\nvault-illustrations-illustration-03 provides the bold geometric forms and clean vector approach with minimal shading. vault-illustrations-illustration-10 informs the simplified anatomical structure and motion-focused positioning. vault-illustrations-illustration-06 guides the flat design vector style with clean color blocking.",
+    "referenceInstructions": "vault-illustrations-illustration-03 provides the bold geometric forms and clean vector approach with minimal shading. vault-illustrations-illustration-10 informs the simplified anatomical structure and motion-focused positioning. vault-illustrations-illustration-06 guides the flat design vector style with clean color blocking."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-illustrations-illustration-03": "assets/vault/illustrations/illustration-03.png",
+    "vault-illustrations-illustration-06": "assets/vault/illustrations/illustration-06.png",
+    "vault-illustrations-illustration-10": "assets/vault/illustrations/illustration-10.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-03",
+    "vault-illustrations-illustration-10",
+    "vault-illustrations-illustration-06"
+  ]
+}

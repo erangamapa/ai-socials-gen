@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "UNLEASH POWER",
+    "subhead": "Unstoppable force meets immovable technique",
+    "headline": "COMBAT CHAOS",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "towering dominant explosive power",
+    "style": "flat-vector",
+    "palette": [
+      "#8D52DA",
+      "#DFFD51",
+      "#FF6B2F",
+      "#FFFFFF",
+      "#1A1A1A"
+    ],
+    "solidBackground": "#FF6B2F",
+    "backgroundPrompt": "Dutch tilt perspective at 25-degree angle combined with dramatic low-angle view, capturing the massive bear in mid-flying kick with maximum tension and instability. The tilted camera creates dynamic diagonal energy lines throughout the composition as the bear's muscular frame cuts across the frame at an aggressive slant. This is the peak explosive moment of a devastating karate strike, with the bear's powerful extended leg positioned along the upper diagonal while his coiled supporting leg anchors the lower portion of the tilted frame. The bear's massive torso twists through the angled composition, arms positioned in perfect martial arts form with the entire silhouette creating bold diagonal geometry. Traditional white karate gi pants flow with the tilted motion, fabric rendered in sharp angular shapes that follow the camera's skewed perspective. The bear's head sits at the upper corner of the composition with simplified flat features - geometric shadow shapes define the muzzle and brow, minimal facial detail allowing the dynamic body language to dominate the visual impact. Flat vector illustration with bold solid fills and hard edges, no gradients or 3D elements, experimental color treatment with high contrast combinations. Vibrant purple speed lines slash diagonally across the composition from the striking leg, while electric yellow energy bursts accent the impact point as angular starburst shapes. Orange motion blur forms trail behind the bear's movement in bold geometric streaks that follow the tilted perspective. All shadow shapes exist only on the character's body as flat dark tones - no background shadows or glows. The entire bear fits completely within the tilted frame boundaries with full body visible and breathing room on all sides. Clean solid bright orange background with no additional elements, creating maximum contrast against the purple and yellow accent colors.\n\nvault-57 informs the bold color contrast approach and clean geometric character definition. vault-56 provides the sophisticated color palette integration and flat shape treatment. vault-52 contributes the dramatic lighting effects and premium visual tension through experimental color combinations.",
+    "referenceInstructions": "vault-57 informs the bold color contrast approach and clean geometric character definition. vault-56 provides the sophisticated color palette integration and flat shape treatment. vault-52 contributes the dramatic lighting effects and premium visual tension through experimental color combinations."
+  },
+  "variantLabel": "C",
+  "referencePaths": {
+    "vault-illustrations-illustration-52": "assets/vault/illustrations/illustration-52.png",
+    "vault-illustrations-illustration-56": "assets/vault/illustrations/illustration-56.png",
+    "vault-illustrations-illustration-57": "assets/vault/illustrations/illustration-57.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-57",
+    "vault-illustrations-illustration-56",
+    "vault-illustrations-illustration-52"
+  ]
+}

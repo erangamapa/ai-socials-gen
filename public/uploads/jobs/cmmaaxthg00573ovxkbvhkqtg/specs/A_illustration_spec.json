@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive heroic dominance",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#DFFD51",
+      "#300931",
+      "#FFFFFF"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Extreme worm's-eye view from ground level looking steeply up at two athletes captured in the explosive peak moment of a celebratory high-five leap. The primary athlete dominates the foreground in vibrant orange #FF6B2F, with massive foreshortened legs and torso filling the lower portion of the frame as they rocket upward. Their extended arm reaches toward the secondary athlete in electric blue #2D4BE6, positioned higher and smaller in the background due to perspective. Both figures are rendered in flat vector illustration style with bold solid color fills, hard edges, no gradients, and no 3D rendering. The primary athlete's body shows powerful upward thrust with geometric motion shapes in yellow #DFFD51 trailing from their legs and torso, emphasizing kinetic energy. Their face features simplified flat geometric shapes with a bold shadow mask, expression conveyed through dynamic body language rather than facial detail. The secondary athlete appears smaller due to distance, also simplified with flat color treatment and minimal facial features. Speed lines radiate outward from the point where their hands are about to connect, creating explosive energy vectors in bright yellow. Both athletes' silhouettes create bold angular shapes against the deep purple #300931 solid background, with no drop shadows, glows, or backdrop effects. The entire composition fits within frame with generous breathing room, showing full bodies from head to feet with no limbs cropped at edges.\n\nUse vault-illustrations-illustration-14 for the clean geometric body construction and dynamic athletic poses with simplified forms. Apply vault-illustrations-illustration-27's bold color treatment and energetic motion language with floating dynamic elements around the subjects.",
+    "referenceInstructions": "Use vault-illustrations-illustration-14 for the clean geometric body construction and dynamic athletic poses with simplified forms. Apply vault-illustrations-illustration-27's bold color treatment and energetic motion language with floating dynamic elements around the subjects."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-illustrations-illustration-14": "assets/vault/illustrations/illustration-14.png",
+    "vault-illustrations-illustration-27": "assets/vault/illustrations/illustration-27.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-14",
+    "vault-illustrations-illustration-27"
+  ]
+}

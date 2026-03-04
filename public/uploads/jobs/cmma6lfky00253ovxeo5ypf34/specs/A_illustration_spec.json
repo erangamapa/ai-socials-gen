@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive heroic dominance",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#8D52DA",
+      "#2D1B42",
+      "#1A1A1A",
+      "#DFFD51"
+    ],
+    "solidBackground": "#2D1B42",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view of a bold flat-vector fighter character inspired by Zeb Powell's distinctive athletic presence, captured from ground level looking steeply upward as he dominates the frame with his powerful stance. The fighter towers overhead in an aggressive ready position, fists raised and body coiled with kinetic energy, his muscular frame rendered in hard-edged geometric shapes with bold solid color fills. His face is simplified into minimal flat features with a bold shadow mask, expression conveyed purely through his intimidating body language and commanding posture. Extreme foreshortening makes his fists and forearms appear 2.5x oversized in the foreground, while his torso and head recede dramatically behind them, creating maximum visual impact. His athletic build is defined through flat shadow shapes that contour his muscles without gradients, using dark purple tones against his primary orange silhouette. Motion energy radiates through angular speed line shapes integrated into his form, suggesting explosive movement even in stillness. The composition emphasizes his larger-than-life presence through the steep upward angle, making him appear ready to unleash devastating power. Flat vector illustration style with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish elements. Clean dark purple solid background with no shadows, glows, or effects behind the character.\n\nvault-illustrations-illustration-14 provides the clean geometric approach to athletic figures with minimal shadows and bold silhouettes; vault-illustrations-illustration-52 informs the dramatic angle composition and bold color contrast techniques against dark backgrounds",
+    "referenceInstructions": "vault-illustrations-illustration-14 provides the clean geometric approach to athletic figures with minimal shadows and bold silhouettes; vault-illustrations-illustration-52 informs the dramatic angle composition and bold color contrast techniques against dark backgrounds"
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-illustrations-illustration-14": "assets/vault/illustrations/illustration-14.png",
+    "vault-illustrations-illustration-52": "assets/vault/illustrations/illustration-52.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-14",
+    "vault-illustrations-illustration-52"
+  ]
+}

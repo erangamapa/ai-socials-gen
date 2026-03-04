@@ -1,0 +1,31 @@
+{
+  "copy": {
+    "cta": "BET NOW",
+    "subhead": "Victory tastes sweeter with CB",
+    "headline": "GOAL CELEBRATION UNLOCKED",
+    "disclaimer": ""
+  },
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "",
+    "style": "",
+    "palette": [],
+    "backgroundPrompt": "Position the pre-styled footballer celebration illustration as the dominant center-stage hero element, scaled to occupy approximately 70% of the canvas height. The sliding knee celebration pose should be positioned center-right, allowing the dramatic arms-wide gesture to flow across the composition. The illustration maintains its existing CB brand styling with bold solid colors and clean vector edges. Surround the hero figure with subtle atmospheric design flourishes: thin geometric accent lines radiating from behind the player's silhouette in complementary brand colors, creating energy without competing for attention. Add small scattered geometric fragments and particles floating around the celebration moment, using the template's warm orange and brown color palette (#D2691E, #8B4513) to create visual cohesion. The left third of the composition remains deliberately clean and open, providing premium negative space for copy overlay. The hero illustration sits prominently against the template's warm gradient background, with the geometric shapes naturally framing the action. Subtle glow effects beneath the sliding knee add depth without harsh shadows. The overall composition balances the dynamic celebration energy with sophisticated brand presentation, ensuring the footballer remains the undisputed focal point while the surrounding elements enhance rather than distract.\n\nvault-illustrations-illustration-39: Borrow the clean vector illustration approach with bold color blocking and smooth professional sports graphics aesthetic for consistency with the hero asset\nvault-illustrations-illustration-40: Reference the dynamic energy and dramatic proportions that create heroic impact, plus the clean composition balance\nvault-illustrations-illustration-02: Use the gradient shading technique and simplified anatomical forms that emphasize athletic action\nvault-illustrations-illustration-01: Apply the dramatic shadow casting approach and motion-focused composition principles for maximum impact",
+    "referenceInstructions": "vault-illustrations-illustration-39: Borrow the clean vector illustration approach with bold color blocking and smooth professional sports graphics aesthetic for consistency with the hero asset\nvault-illustrations-illustration-40: Reference the dynamic energy and dramatic proportions that create heroic impact, plus the clean composition balance\nvault-illustrations-illustration-02: Use the gradient shading technique and simplified anatomical forms that emphasize athletic action\nvault-illustrations-illustration-01: Apply the dramatic shadow casting approach and motion-focused composition principles for maximum impact"
+  },
+  "variantLabel": "A",
+  "referencesUsed": [
+    "vault-illustrations-illustration-39",
+    "vault-illustrations-illustration-40",
+    "vault-illustrations-illustration-02",
+    "vault-illustrations-illustration-01"
+  ],
+  "templateAssetId": "vault-template-ig_feed-ig-02",
+  "backgroundPrompt": "Position the pre-styled footballer celebration illustration as the dominant center-stage hero element, scaled to occupy approximately 70% of the canvas height. The sliding knee celebration pose should be positioned center-right, allowing the dramatic arms-wide gesture to flow across the composition. The illustration maintains its existing CB brand styling with bold solid colors and clean vector edges. Surround the hero figure with subtle atmospheric design flourishes: thin geometric accent lines radiating from behind the player's silhouette in complementary brand colors, creating energy without competing for attention. Add small scattered geometric fragments and particles floating around the celebration moment, using the template's warm orange and brown color palette (#D2691E, #8B4513) to create visual cohesion. The left third of the composition remains deliberately clean and open, providing premium negative space for copy overlay. The hero illustration sits prominently against the template's warm gradient background, with the geometric shapes naturally framing the action. Subtle glow effects beneath the sliding knee add depth without harsh shadows. The overall composition balances the dynamic celebration energy with sophisticated brand presentation, ensuring the footballer remains the undisputed focal point while the surrounding elements enhance rather than distract.",
+  "referenceInstructions": {
+    "vault-illustrations-illustration-01": "Apply the dramatic shadow casting approach and motion-focused composition principles for maximum impact",
+    "vault-illustrations-illustration-02": "Use the gradient shading technique and simplified anatomical forms that emphasize athletic action",
+    "vault-illustrations-illustration-39": "Borrow the clean vector illustration approach with bold color blocking and smooth professional sports graphics aesthetic for consistency with the hero asset",
+    "vault-illustrations-illustration-40": "Reference the dynamic energy and dramatic proportions that create heroic impact, plus the clean composition balance"
+  }
+}

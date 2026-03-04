@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "Witness Perfection",
+    "subhead": "Where art meets combat precision",
+    "headline": "GEOMETRIC VIOLENCE",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive heroic dominance",
+    "style": "flat-vector",
+    "palette": [
+      "#DFFD51",
+      "#FF6B2F",
+      "#1A1A1A",
+      "#8D52DA",
+      "#2D4BE6"
+    ],
+    "solidBackground": "#1A1A1A",
+    "backgroundPrompt": "Dutch tilt camera angle rotated 25 degrees with extreme low perspective capturing Van Steenis and Edwards in their explosive collision moment, creating premium editorial tension and instability. The tilted frame adds cinematic drama as both fighters appear locked in geometric combat - Van Steenis in dominant electric yellow (#DFFD51) fight gear throwing his right hook, while Edwards counters in deep orange (#FF6B2F) with his uppercut. The dutch tilt makes their muscular frames appear to slice diagonally across the composition, emphasizing the violent beauty of elite MMA technique. Extreme foreshortening shows Van Steenis's hook-throwing arm massive in the tilted foreground, while Edwards's uppercut creates a bold counter-diagonal. Both fighters rendered as sharp, angular flat vector silhouettes with minimal facial detail - faces reduced to bold geometric shadow shapes that read as intensity masks. Their bodies show dramatic perspective distortion with closest elements appearing 2-3x oversized. Bold solid color fills with hard edges, no gradients, no 3D rendering. Van Steenis's yellow shorts and gloves create electric contrast against his darker skin tones, while Edwards's orange gear provides warm counterpoint. Flat hard-edged shadow shapes define muscle definition only on their bodies, never projected onto background. The tilted composition creates premium combat editorial energy, transforming the fight into high-art brutality. Motion energy flows along the diagonal created by the camera tilt, emphasizing the rotational torque both fighters generate. Clean solid dark background (#1A1A1A) with no effects, perfectly suited for professional cutout use. Full bodies contained within the tilted frame.\n\nUse vault-53's premium character styling and clean separation techniques for the dual fighter composition. Apply vault-31's athletic proportions and dynamic energy to both fighters. Incorporate vault-12's minimalist flat vector approach with bold color accent integration for the experimental yellow-orange palette.",
+    "referenceInstructions": "Use vault-53's premium character styling and clean separation techniques for the dual fighter composition. Apply vault-31's athletic proportions and dynamic energy to both fighters. Incorporate vault-12's minimalist flat vector approach with bold color accent integration for the experimental yellow-orange palette."
+  },
+  "variantLabel": "C",
+  "referencePaths": {
+    "vault-illustrations-illustration-12": "assets/vault/illustrations/illustration-12.png",
+    "vault-illustrations-illustration-31": "assets/vault/illustrations/illustration-31.png",
+    "vault-illustrations-illustration-53": "assets/vault/illustrations/illustration-53.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-53",
+    "vault-illustrations-illustration-31",
+    "vault-illustrations-illustration-12"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "copy": {
+    "cta": "Experience the Hit",
+    "subhead": "Unstoppable Force Incoming",
+    "headline": "Direct Impact",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "direct kinetic impact",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#DFFD51",
+      "#8D52DA",
+      "#1A1A1A"
+    ],
+    "solidBackground": "#1A1A1A",
+    "backgroundPrompt": "Dramatic foreshortened lunge perspective of MMA fighter Costello van Steenis with his tattooed overhand right fist thrusting directly toward camera, dominating the entire foreground at 3x normal scale. The striking fist fills the left third of the composition with bold geometric shadows and flat orange highlights, knuckles rendered as hard-edged geometric shapes. His muscular torso recedes behind the massive fist, creating extreme perspective distortion as his coiled fighter physique twists through the punch. Van Steenis' planted rear leg anchors the background portion, rendered in deep blue shadow shapes that define his championship-level conditioning. Motion blur streaks in electric yellow and vibrant purple emanate from the point of kinetic energy transfer, emphasizing the devastating power behind the strike. His minimal facial features exist as simplified flat shadow mask, aggressive determination expressed purely through predatory body language and controlled violence positioning. Speed lines radiate outward from the impact zone in sharp geometric patterns, creating explosive kinetic energy throughout the composition. Athletic build showcased through bold flat color fills with hard-edged internal shadow shapes defining muscle groups and movement. Flat vector illustration style with clean geometric construction, no gradients, no 3D rendering, bold solid color treatment throughout. Pure dark background provides clean separation for professional cutout use with zero projection effects or decorative backdrop elements.\n\nApply vault-illustrations-illustration-14's motion blur technique and clean geometric shape philosophy to render van Steenis' explosive punch mechanics with bold athletic dimensionality.",
+    "referenceInstructions": "Apply vault-illustrations-illustration-14's motion blur technique and clean geometric shape philosophy to render van Steenis' explosive punch mechanics with bold athletic dimensionality."
+  },
+  "variantLabel": "B",
+  "referencePaths": {
+    "vault-illustrations-illustration-14": "assets/vault/illustrations/illustration-14.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-14"
+  ]
+}

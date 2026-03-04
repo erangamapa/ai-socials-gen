@@ -1,0 +1,70 @@
+{
+  "channel": "ig_feed",
+  "variantLabel": "B",
+  "templateId": "tpl-centered-hero",
+  "copy": {
+    "cta": "Join Now",
+    "disclaimer": "18+ | Gamble responsibly",
+    "headline": "EXCLUSIVE SLOTS ARE HERE",
+    "subhead": "Unlock progressive jackpots with daily spins"
+  },
+  "artDirection": {
+    "backgroundPrompt": "",
+    "brandElements": [
+      "vault-brand-brandmark-element-slots-2",
+      "vault-brand-brandmark-element-framing"
+    ],
+    "composition": "centered hero layout with geometric slot symbols and crypto elements",
+    "mood": "bold, centered impact, modern crypto aesthetic",
+    "palette": [
+      "#141114",
+      "#FF6B2F",
+      "#DFFD51",
+      "#8D52DA",
+      "#FFFFFF"
+    ],
+    "style": "",
+    "visualHierarchy": "dark background with bright orange primary, yellow highlights, and purple depth accents"
+  },
+  "textOverlays": [
+    {
+      "text": "EXCLUSIVE SLOTS ARE HERE",
+      "x": 162,
+      "y": 405,
+      "width": 756,
+      "fontSize": 64,
+      "color": "#FFFFFF",
+      "fontWeight": "bold",
+      "textAnchor": "middle"
+    },
+    {
+      "text": "Unlock progressive jackpots with daily spins",
+      "x": 216,
+      "y": 702,
+      "width": 648,
+      "fontSize": 28,
+      "color": "#E0E0E0",
+      "textAnchor": "middle"
+    },
+    {
+      "text": "Join Now",
+      "x": 324,
+      "y": 918,
+      "width": 432,
+      "fontSize": 36,
+      "color": "#DFFD51",
+      "fontWeight": "bold",
+      "textAnchor": "middle"
+    }
+  ],
+  "notchOverlay": {
+    "x": 43,
+    "y": 54,
+    "width": 130,
+    "height": 108
+  },
+  "qaResult": {
+    "passed": true,
+    "issues": []
+  }
+}

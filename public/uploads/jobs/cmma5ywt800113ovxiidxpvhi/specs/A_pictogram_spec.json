@@ -1,0 +1,29 @@
+{
+  "copy": {
+    "cta": "Claim Your Throne",
+    "subhead": "Premium VIP status symbol",
+    "headline": "Royal Crown",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "regal, luxurious, prestigious, premium, authoritative",
+    "style": "3d-icon",
+    "palette": [
+      "#FFD700",
+      "#FFA500",
+      "#B8860B",
+      "#FF8C00",
+      "#FFEB3B"
+    ],
+    "solidBackground": "#F8F5FC",
+    "backgroundPrompt": "A majestic three-point golden crown rendered in premium 3D isometric style with glossy metallic finish. The crown features three prominent triangular peaks with ornate spherical jewels at each tip, creating perfect symmetry. Rich gradient fills transition from deep gold (#B8860B) in the recessed areas to brilliant highlighted gold (#FFD700) on raised surfaces. Soft directional lighting from top-left creates natural volumetric shadows on the right side and base. The crown's band displays intricate relief patterns and gemstone details that catch light beautifully. Surface treatment combines polished gold with subtle texture variations, giving premium luxury feel. The form sits confidently on transparent background with gentle ambient occlusion shadow beneath. Proportions emphasize regal authority while maintaining clear iconographic readability at small sizes. Light reflections and metallic specularity enhance the three-dimensional depth without overwhelming the clean royal silhouette.\n\nvault-pictograms-vip-1 provides the exact golden crown styling with glossy 3D rendering, gradient metallic fills, and premium royal aesthetic that defines this iconic representation.",
+    "referenceInstructions": "vault-pictograms-vip-1 provides the exact golden crown styling with glossy 3D rendering, gradient metallic fills, and premium royal aesthetic that defines this iconic representation."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-pictograms-vip-1": "assets/vault/pictograms/VIP-1.png"
+  },
+  "referencesUsed": [
+    "vault-pictograms-vip-1"
+  ]
+}

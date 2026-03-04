@@ -1,0 +1,33 @@
+{
+  "copy": {
+    "cta": "Feel the Impact",
+    "subhead": "Peak power delivery",
+    "headline": "EXPLOSIVE STRIKE",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "explosive heroic dominance",
+    "style": "flat-vector",
+    "palette": [
+      "#FF6B2F",
+      "#2D4BE6",
+      "#DFFD51",
+      "#FFFFFF",
+      "#1A1A1A"
+    ],
+    "solidBackground": "#300931",
+    "backgroundPrompt": "Extreme worm's-eye view looking up from ground level at a footballer in the explosive peak moment of unleashing a powerful shot. The camera is positioned directly below and behind the ball, creating maximum heroic scale as the player towers overhead against the dark purple sky. The footballer's striking leg extends dramatically toward the viewer with extreme foreshortening - the boot and lower leg appear 3x oversized in the foreground, dominating the frame with kinetic power. The player's body recedes behind the massive leg, creating incredible depth and impact. Arms spread wide for balance, jersey billowing with motion energy, face simplified to bold flat shadow mask with determined expression implied through aggressive body language rather than detailed features. The orange jersey (#FF6B2F) uses bold solid color fills with hard-edged flat shadow shapes defining muscle tension and fabric creases. Electric blue shorts (#2D4BE6) contrast sharply against the vibrant jersey. Yellow (#DFFD51) kinetic speed lines and geometric motion blur shapes explode from the point of ball contact, radiating outward in sharp angular forms. The football appears compressed and distorted at the moment of impact. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style. Clean solid dark purple background (#300931) with no shadow or glow behind the character. The entire footballer - head to toe - fits completely within frame with generous breathing room on all sides. Motion energy conveyed through internal shadow shapes on the player only, creating explosive World Cup intensity through pure graphic power.\n\nUse vault-illustrations-illustration-06 for clean geometric body forms and bold color blocking approach. Apply vault-illustrations-illustration-37 angular geometric style for sharp motion energy. Reference vault-illustrations-illustration-42 for dynamic kicking pose structure and motion-implied positioning.",
+    "referenceInstructions": "Use vault-illustrations-illustration-06 for clean geometric body forms and bold color blocking approach. Apply vault-illustrations-illustration-37 angular geometric style for sharp motion energy. Reference vault-illustrations-illustration-42 for dynamic kicking pose structure and motion-implied positioning."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-illustrations-illustration-06": "assets/vault/illustrations/illustration-06.png",
+    "vault-illustrations-illustration-37": "assets/vault/illustrations/illustration-37.png",
+    "vault-illustrations-illustration-42": "assets/vault/illustrations/illustration-42.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-06",
+    "vault-illustrations-illustration-37",
+    "vault-illustrations-illustration-42"
+  ]
+}

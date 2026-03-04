@@ -1,0 +1,27 @@
+{
+  "variantLabel": "C",
+  "copy": {
+    "cta": "Sign Up",
+    "disclaimer": "18+ | Gamble responsibly",
+    "headline": "SEMI FINAL SUPERBOOST",
+    "subhead": "Score big with boosted first goalscorer markets tonight"
+  },
+  "artDirection": {
+    "backgroundPrompt": "Complete social media post featuring deep purple (#8D52DA) gradient background with electric yellow (#DFFD51) lightning-style geometric accents. Central overlay panel in dark grey (#141114) with subtle transparency. Large white headline 'SEMI FINAL SUPERBOOST' in Midnight Sans ST Heavy caps positioned center within overlay. White Inter subhead 'Score big with boosted first goalscorer markets tonight' below headline. Bright orange (#FF6B2F) 'Sign Up' CTA button at bottom of overlay panel. Small white CB logo in top-left corner outside overlay. Dynamic yellow accent shapes create energy around the central focus. Premium promo-style composition with strong central hierarchy and electric sports energy.",
+    "mood": "overlay promotion style with electric Champions League atmosphere",
+    "palette": [
+      "#8D52DA",
+      "#DFFD51",
+      "#FF6B2F",
+      "#FFFFFF",
+      "#141114"
+    ],
+    "style": "",
+    "vaultReferences": [
+      "vault-fonts-midnight-sans-st-48-heavy-pro",
+      "vault-illustrations-illustration-05"
+    ]
+  },
+  "templateId": "tpl-promo-overlay",
+  "referencesUsed": []
+}

@@ -1,0 +1,29 @@
+{
+  "copy": {
+    "cta": "",
+    "subhead": "",
+    "headline": "",
+    "disclaimer": ""
+  },
+  "artDirection": {
+    "mood": "Jackpot supremacy — centuries of Irish luck crystallized into one golden moment",
+    "style": "flat-vector",
+    "palette": [
+      "#2D4BE6",
+      "#DFFD51",
+      "#FF6B2F",
+      "#300931"
+    ],
+    "solidBackground": "#8D52DA",
+    "backgroundPrompt": "Extreme low-angle worm's-eye view of a leprechaun in triumphant celebration, camera positioned at ground level looking steeply up. The leprechaun towers overhead with maximum heroic scale, one fist thrust high toward the sky in victory while his other hand grips a gleaming pot overflowing with gold coins. His stocky frame is planted in a wide power stance, back slightly arched, chest puffed out in pure winning confidence. The emerald green coat and top hat dominate the frame with bold flat color fills, while vibrant yellow coin pot and buckle accents create striking contrast. His legs appear enormous in the foreground due to extreme foreshortening, gradually tapering to his torso and raised victory fist above. Flat vector illustration with bold solid color fills, hard edges, no gradients, no 3D rendering, no cartoonish style. Face rendered with simplified flat features, bold shadow mask creating minimal detail, expression conveyed entirely through confident body language and victorious pose. The pot of gold coins creates secondary visual weight, positioned at mid-level with individual coins caught mid-air around him. Clean solid #8D52DA purple background with no shadow or glow behind the character, suitable for instant cutout use. No drop shadows cast onto background, no decorative elements, no text or logos. Full body contained within frame with generous breathing room on all sides.",
+    "referenceInstructions": "Drawing from vault-illustrations-illustration-27 for bold solid color fills and clean vector aesthetic with energetic celebration poses. Using vault-illustrations-illustration-26 for flat illustration style with dynamic character positioning and vibrant color contrast approach."
+  },
+  "variantLabel": "A",
+  "referencePaths": {
+    "vault-illustrations-illustration-26": "assets/vault/illustrations/illustration-26.png",
+    "vault-illustrations-illustration-27": "assets/vault/illustrations/illustration-27.png"
+  },
+  "referencesUsed": [
+    "vault-illustrations-illustration-27"
+  ]
+}

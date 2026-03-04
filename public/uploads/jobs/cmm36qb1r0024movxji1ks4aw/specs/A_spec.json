@@ -1,0 +1,29 @@
+{
+  "id": "weekend_btc_bonus_a",
+  "copy": {
+    "cta": "Claim Now",
+    "subhead": "100% match on first BTC deposit up to 5 BTC",
+    "headline": "DOUBLE YOUR WEEKEND POWER",
+    "disclaimer": "New players only | 18+ | Gamble responsibly"
+  },
+  "template": "tpl-centered-hero",
+  "templateId": "tpl-centered-hero",
+  "artDirection": {
+    "mood": "energetic_weekend_celebration",
+    "style": "",
+    "palette": [
+      "#FF6B2F",
+      "#300931",
+      "#DFFD51",
+      "#FFFFFF",
+      "#000000"
+    ],
+    "backgroundPrompt": "Dynamic social media post with deep purple gradient background (#300931 to black) featuring bright orange (#FF6B2F) and electric yellow (#DFFD51) accent elements. Large bold headline 'DOUBLE YOUR WEEKEND POWER' in white Midnight Sans ST 48 Heavy ALL CAPS centered in upper third. Below it, smaller white Inter subhead '100% match on first BTC deposit up to 5 BTC'. Bright orange rounded button with white text 'Claim Now' centered in lower third. Small CB logo in top-right corner. Geometric Bitcoin-inspired hexagonal shapes in orange and yellow floating around the composition. Modern crypto aesthetic with high contrast and premium feel. Clean composition with plenty of negative space."
+  },
+  "influencedBy": [
+    "vault-previous-posts-slide-3-ig-new02",
+    "vault-illustrations-illustration-01"
+  ],
+  "variantLabel": "A",
+  "referencesUsed": []
+}
