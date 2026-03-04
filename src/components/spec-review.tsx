@@ -81,7 +81,14 @@ function extractSpec(variant: VariantData): VariantSpec {
     return {
       variantLabel: variant.label,
       copy: { headline: "", cta: "" },
-      artDirection: { palette: [], mood: "", style: "", backgroundPrompt: "" },
+      artDirection: {
+        palette: [],
+        mood: "",
+        style: "",
+        backgroundPrompt: "",
+        referenceInstructions: "",
+        solidBackground: "",
+      },
     };
   }
 
