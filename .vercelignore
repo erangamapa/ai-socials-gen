@@ -1,0 +1,5 @@
+# Exclude large local uploads — production uses Vercel Blob
+public/uploads
+
+# Exclude dev/db artifacts
+db-export.sql
