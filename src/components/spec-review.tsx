@@ -89,6 +89,7 @@ function extractSpec(variant: VariantData): VariantSpec {
         referenceInstructions: "",
         solidBackground: "",
       },
+      referencesUsed: [],
     };
   }
 
