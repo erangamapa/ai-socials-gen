@@ -50,3 +50,5 @@ src/generated/
 # !public/uploads/.gitkeep
 
 /src/generated/prisma
+.env*.local
+.env.vercel

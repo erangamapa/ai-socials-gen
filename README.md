@@ -22,355 +22,336 @@ Internal tool for generating on-brand social media and email assets from a short
 
 ---
 
-# Complete Deployment Guide (Step-by-Step)
+# Setup Guide: From Zero to Running
 
-This guide walks you through deploying this app to the cloud from scratch. No prior experience needed.
+This guide walks you through setting up the project **locally** and **on Vercel**, step by step. No prior experience needed.
 
-## What You'll Create
-
-| Service | What it does | Free tier |
-|---------|--------------|-----------|
-| **Neon** | Hosts your database | 0.5 GB storage |
-| **Vercel** | Hosts your app | 100 GB bandwidth |
-| **Vercel Blob** | Stores generated images | 1 GB |
-| **Inngest** | Runs background jobs | 5,000 runs/month |
+**TL;DR — Local (5 min):** `npm install` → `cp .env.example .env` → `npx prisma dev` (Terminal 1) → `npm run setup:local` (Terminal 2) → `npm run dev` (Terminal 2) → `npm run inngest:dev` (Terminal 3) → open http://localhost:3000
 
 ---
 
-## Part 1: Create Your Accounts
+## Prerequisites
 
-### 1.1 GitHub Account
-
-1. Go to [github.com](https://github.com) and sign up (or sign in).
-2. You need a GitHub account to connect your code to Vercel.
-
-### 1.2 Neon Account (Database)
-
-1. Go to [neon.tech](https://neon.tech).
-2. Click **Sign Up** (top right).
-3. Sign up with GitHub or email.
-4. You're in! Keep this tab open.
-
-### 1.3 Vercel Account (App Hosting)
-
-1. Go to [vercel.com](https://vercel.com).
-2. Click **Sign Up** (top right).
-3. Choose **Continue with GitHub**.
-4. Authorize Vercel to access your GitHub.
-5. You're in! Keep this tab open.
-
-### 1.4 Inngest Account (Background Jobs)
-
-1. Go to [inngest.com](https://www.inngest.com).
-2. Click **Sign Up**.
-3. Sign up with GitHub or email.
-4. You're in! Keep this tab open.
+- **Node.js 20+** — [Download](https://nodejs.org)
+- **Git** — [Download](https://git-scm.com)
+- **npm** — Comes with Node.js
 
 ---
 
-## Part 2: Set Up the Database (Neon)
+# Part 1: Run Locally (Fresh Checkout)
 
-### 2.1 Create a Neon Project
+## Step 1: Clone the Project
 
-1. In [Neon](https://console.neon.tech), click **New Project**.
-2. **Project name**: `ai-socials-gen` (or any name you like).
-3. **Region**: Pick one close to you (e.g. US East).
-4. Click **Create Project**.
+```bash
+git clone https://github.com/YOUR_ORG/ai-socials-gen.git
+cd ai-socials-gen
+```
 
-### 2.2 Get Your Connection String
-
-1. After the project is created, you'll see a **Connection string**.
-2. Click **Copy** next to it. It looks like:
-   ```
-   postgresql://neondb_owner:xxxxx@ep-xxx-xxx.aws.neon.tech/neondb?sslmode=require
-   ```
-3. **Save this somewhere safe** — you'll need it in Part 4.
-
-### 2.3 Run Migrations (Prepare the Database)
-
-1. Open your terminal.
-2. Go to your project folder:
-   ```bash
-   cd /path/to/ai-socials-gen
-   ```
-3. Run this command (replace `YOUR_NEON_URL` with the connection string you copied):
-   ```bash
-   DATABASE_URL="YOUR_NEON_URL" npm run db:deploy
-   ```
-4. You should see: `No pending migrations to apply` or similar success message.
-5. (Optional) Seed the database with sample data:
-   ```bash
-   DATABASE_URL="YOUR_NEON_URL" npm run db:seed
-   ```
-
----
-
-## Part 3: Push Your Code to GitHub
-
-### 3.1 Create a New Repository
-
-1. Go to [github.com/new](https://github.com/new).
-2. **Repository name**: `ai-socials-gen`.
-3. Choose **Public** or **Private**.
-4. Click **Create repository** (don't add README or .gitignore — the project already has them).
-
-### 3.2 Push Your Code
-
-1. In your terminal, from the project folder:
-   ```bash
-   git remote add origin https://github.com/YOUR_USERNAME/ai-socials-gen.git
-   git push -u origin main
-   ```
-2. Replace `YOUR_USERNAME` with your GitHub username.
-3. If prompted, sign in to GitHub.
-
----
-
-## Part 4: Deploy to Vercel
-
-### 4.1 Import the Project
-
-1. Go to [vercel.com/new](https://vercel.com/new).
-2. Under **Import Git Repository**, find `ai-socials-gen` and click **Import**.
-3. If you don't see it, click **Adjust GitHub App Permissions** and allow access to the repo.
-
-### 4.2 Add Environment Variables (Before First Deploy)
-
-1. On the import screen, expand **Environment Variables**.
-2. Add each variable below. For each one:
-   - **Key**: the variable name
-   - **Value**: the value (see table)
-   - **Environment**: Production (and Preview if you want)
-
-| Key | Value |
-|-----|-------|
-| `DATABASE_URL` | Your Neon connection string (from Part 2.2) |
-| `DIRECT_DATABASE_URL` | Same Neon connection string |
-| `BLOB_STORAGE_PROVIDER` | `vercel-blob` |
-| `BLOB_READ_WRITE_TOKEN` | Leave empty for now — you'll add it in Part 4.5 |
-| `ANTHROPIC_API_KEY` | Your Claude API key from [console.anthropic.com](https://console.anthropic.com) |
-| `NANO_BANANA_API_KEY` | Your Google AI key from [aistudio.google.com](https://aistudio.google.com/apikey) |
-| `RECRAFT_API_KEY` | Your Recraft key from [recraft.ai](https://recraft.ai) (optional for vectorize/remove-bg) |
-| `USE_MOCK_PROVIDERS` | `false` (use real AI) or `true` (use mocks, no API keys needed) |
-| `INNGEST_EVENT_KEY` | Leave empty for now — you'll add it in Part 5 |
-| `INNGEST_SIGNING_KEY` | Leave empty for now — you'll add it in Part 5 |
-
-3. Click **Deploy**.
-
-### 4.3 Wait for the Build
-
-1. The first build may take 2–3 minutes.
-2. If it fails with "DATABASE_URL is required", go to **Settings → Environment Variables** and add the missing variables, then **Redeploy**.
-
-### 4.4 Note Your App URL
-
-1. When the deploy finishes, you'll see a URL like `https://ai-socials-gen-xxx.vercel.app`.
-2. Your main URL is usually `https://ai-socials-gen.vercel.app` or similar.
-3. **Save this URL** — you need it for Inngest.
-
-### 4.5 Create Vercel Blob Storage
-
-1. In your Vercel project, go to the **Storage** tab.
-2. Click **Create Database** or **Create Store**.
-3. Choose **Blob**.
-4. Name it (e.g. `ai-socials-gen-assets`) and create it.
-5. When asked to link it to the project, choose **Yes** and select **Production**.
-6. Go to **Settings** in the Blob store and copy the **Read-Write Token**.
-7. Go to your project **Settings → Environment Variables**.
-8. Add or edit `BLOB_READ_WRITE_TOKEN` with the token you copied.
-9. **Redeploy** so the app picks it up.
-
----
-
-## Part 5: Connect Inngest (Background Jobs)
-
-### 5.1 Create an Inngest App
-
-1. Go to [app.inngest.com](https://app.inngest.com).
-2. Click **Create App** or **Add App**.
-3. If asked for a template, choose **Skip** or **Connect existing app** — you already have the code.
-
-### 5.2 Add Your App URL
-
-1. In the **App URL** or **Serve URL** field, enter:
-   ```
-   https://YOUR_APP.vercel.app/api/inngest
-   ```
-2. Replace `YOUR_APP` with your actual Vercel URL (e.g. `ai-socials-gen` or `ai-socials-gen-xxx`).
-3. Save.
-
-### 5.3 Get Your Inngest Keys
-
-1. In the Inngest dashboard, go to **API Keys** or **Manage Keys**.
-2. Copy the **Event Key** (sometimes called "Event key" or "Key").
-3. Copy the **Signing Key** (sometimes called "Signing secret").
-
-### 5.4 Add Keys to Vercel
-
-1. In Vercel, go to your project **Settings → Environment Variables**.
-2. Add `INNGEST_EVENT_KEY` with the Event Key value.
-3. Add `INNGEST_SIGNING_KEY` with the Signing Key value.
-4. **Redeploy** the project.
-
-### 5.5 Bypass Vercel Deployment Protection (If Inngest Can't Sync)
-
-If Inngest says "Vercel Deployment Protection might block syncing":
-
-1. In Vercel, go to **Settings → Deployment Protection**.
-2. Find **Protection Bypass for Automation**.
-3. Click **Create Secret** or **Add Secret**.
-4. Name it (e.g. `Inngest`).
-5. Copy the generated secret.
-6. In Inngest, when configuring the app, use the **Deployment protection key** option and paste the secret.
-7. Inngest will use this to access your `/api/inngest` endpoint.
-
----
-
-## Part 6: Verify Everything Works
-
-1. Open your app URL (e.g. `https://ai-socials-gen.vercel.app`).
-2. Create a new job with a short description.
-3. Wait for the variants to generate.
-4. If images appear and the job completes, you're done!
-
----
-
-## Troubleshooting
-
-### Build fails with "DATABASE_URL is required"
-
-- Add `DATABASE_URL` and `DIRECT_DATABASE_URL` in Vercel **Settings → Environment Variables**.
-- Both should be your Neon connection string.
-
-### Build fails with "Function size exceeds 300MB"
-
-- The project includes a `.vercelignore` that excludes large uploads. Make sure it's in your repo.
-- If the error persists, add `assets/vault` to `.vercelignore` (this may affect vault asset serving).
-
-### Inngest shows "App not synced"
-
-- Check that `INNGEST_EVENT_KEY` and `INNGEST_SIGNING_KEY` are set in Vercel.
-- If you use Vercel Deployment Protection, add the bypass key in Inngest (see Part 5.5).
-- Redeploy after adding any new env vars.
-
-### Jobs stay "queued" and never complete
-
-- Verify Inngest is connected: check the Inngest dashboard for your app and functions.
-- Ensure `INNGEST_EVENT_KEY` and `INNGEST_SIGNING_KEY` are correct.
-- Redeploy after adding them.
-
-### Images don't load / upload fails
-
-- Ensure `BLOB_STORAGE_PROVIDER` is `vercel-blob`.
-- Add `BLOB_READ_WRITE_TOKEN` from your Vercel Blob store.
-- Redeploy.
-
----
-
-## Quick Start (Local Development)
-
-### Prerequisites
-
-- Node.js 20+
-- PostgreSQL (local or Docker)
-
-### 1. Install dependencies
+## Step 2: Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 2. Configure environment
+## Step 3: Create Environment File
 
 ```bash
 cp .env.example .env
 ```
 
-Edit `.env` and set your `DATABASE_URL` (see `.env.example` for local options).
+Edit `.env` and set the database URLs. The `.env.example` includes defaults for Prisma's built-in Postgres. When you run `npx prisma dev` (Step 5), it will output the correct connection details — use those if the defaults don't work.
 
-### 3. Start local database
+### Optional: Add API Keys (or Use Mock Mode)
+
+| Variable | Where to Get It | Required? |
+|----------|-----------------|-----------|
+| `ANTHROPIC_API_KEY` | [console.anthropic.com/settings/keys](https://console.anthropic.com/settings/keys) | No — use `USE_MOCK_PROVIDERS=true` to skip |
+| `NANO_BANANA_API_KEY` | [aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey) | No — mock available |
+| `RECRAFT_API_KEY` | [app.recraft.ai](https://app.recraft.ai) → Profile → API | No — only for remove-bg & vectorize |
+
+**To run without any API keys**, set in `.env`:
+
+```env
+USE_MOCK_PROVIDERS=true
+```
+
+The app will use mock AI responses and placeholder images.
+
+## Step 4: Start the Database
+
+In **Terminal 1**, start Prisma's local Postgres:
 
 ```bash
 npx prisma dev
 ```
 
-### 4. Run migrations and seed
+Leave this running. It starts a local PostgreSQL instance. Copy the `api_key` shown and paste it into `DATABASE_URL` in `.env` if needed.
+
+## Step 5: Run Setup (Migrations + Seed)
+
+In **Terminal 2** (new terminal):
 
 ```bash
-npx prisma generate
-npx prisma migrate dev --name init
-npm run db:seed
+npm run setup:local
 ```
 
-### 5. Start development servers
+This will:
+- Generate the Prisma client
+- Apply all database migrations
+- Seed templates, vault items, and default rules
 
-Terminal 1:
+## Step 6: Start the App
+
+Keep **Terminal 1** running (`npx prisma dev`). In **Terminal 2**:
 
 ```bash
 npm run dev
 ```
 
-Terminal 2:
+In **Terminal 3** (for background jobs):
 
 ```bash
 npm run inngest:dev
 ```
 
-### 6. Open the app
+## Step 7: Open the App
 
 Visit [http://localhost:3000](http://localhost:3000)
 
+You're done! Create a job and watch it generate.
+
 ---
 
-## Project Structure
+# Part 2: Deploy to Vercel (Production)
 
-```
-├── assets/vault/           # Asset Vault (reference images + index.json)
-├── prisma/
-│   ├── schema.prisma       # Database schema
-│   └── seed.ts             # Seed templates + vault items
-├── src/
-│   ├── app/                # Next.js pages and API routes
-│   │   ├── create/         # Job creation page
-│   │   ├── jobs/[id]/      # Job review page
-│   │   ├── library/        # Job library page
-│   │   └── api/            # REST API routes
-│   ├── components/         # React components
-│   ├── hooks/              # Custom hooks (polling)
-│   └── lib/
-│       ├── ai/             # Claude planner + Nano Banana provider (with mocks)
-│       ├── compose/        # Image compositor + QA checks
-│       ├── inngest/        # Background workflow definitions
-│       ├── storage/        # Blob storage abstraction
-│       ├── templates/      # Layout template registry
-│       └── vault/          # Asset vault search/retrieval
+This section extends the local setup to run the app on Vercel with Neon, Blob storage, and Inngest.
+
+## Accounts You Need to Create
+
+| Service | What It Does | Sign Up | Free Tier |
+|---------|--------------|---------|-----------|
+| **GitHub** | Hosts your code | [github.com](https://github.com) | Free |
+| **Neon** | PostgreSQL database | [neon.tech](https://neon.tech) | 0.5 GB |
+| **Vercel** | Hosts the app | [vercel.com](https://vercel.com) | 100 GB bandwidth |
+| **Vercel Blob** | Stores generated images | Created inside Vercel project | 1 GB |
+| **Inngest** | Background job queue | [inngest.com](https://inngest.com) | 5,000 runs/month |
+| **Anthropic** | Claude API (planning) | [console.anthropic.com](https://console.anthropic.com) | Pay-as-you-go |
+| **Google AI** | Gemini API (images) | [aistudio.google.com](https://aistudio.google.com) | Free tier |
+| **Recraft** | Remove-bg, vectorize | [app.recraft.ai](https://app.recraft.ai) | Free tier |
+
+---
+
+## 2.1 Create a Neon Database
+
+1. Go to [console.neon.tech](https://console.neon.tech) and sign up.
+2. Click **New Project**.
+3. Name it (e.g. `ai-socials-gen`), pick a region, click **Create Project**.
+4. Copy the **Connection string** (looks like `postgresql://user:pass@ep-xxx.aws.neon.tech/neondb?sslmode=require`).
+5. Save it — you'll need it for Vercel and for running setup.
+
+---
+
+## 2.2 Push Code to GitHub
+
+1. Create a repo at [github.com/new](https://github.com/new) (e.g. `ai-socials-gen`).
+2. Push your code:
+
+```bash
+git remote add origin https://github.com/YOUR_USERNAME/ai-socials-gen.git
+git push -u origin main
 ```
 
-## Environment Variables Reference
+---
+
+## 2.3 Deploy to Vercel
+
+1. Go to [vercel.com/new](https://vercel.com/new).
+2. Import your GitHub repo.
+3. Before deploying, add **Environment Variables**:
+
+| Key | Value | Environment |
+|-----|-------|-------------|
+| `DATABASE_URL` | Your Neon connection string | Production |
+| `DIRECT_DATABASE_URL` | Same Neon connection string | Production |
+| `BLOB_STORAGE_PROVIDER` | `vercel-blob` | Production |
+| `BLOB_READ_WRITE_TOKEN` | Leave empty for now — add in 2.5 | Production |
+| `ANTHROPIC_API_KEY` | From [console.anthropic.com/settings/keys](https://console.anthropic.com/settings/keys) | Production |
+| `NANO_BANANA_API_KEY` | From [aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey) | Production |
+| `RECRAFT_API_KEY` | From [app.recraft.ai](https://app.recraft.ai) → Profile → API | Production |
+| `USE_MOCK_PROVIDERS` | `false` | Production |
+| `APP_PASSWORD` | A password to protect the app (e.g. `mysecret123`) | Production |
+| `INNGEST_EVENT_KEY` | Leave empty — add in 2.6 | Production |
+| `INNGEST_SIGNING_KEY` | Leave empty — add in 2.6 | Production |
+
+4. Click **Deploy**. Wait for the build to finish.
+5. Note your app URL (e.g. `https://ai-socials-gen-xxx.vercel.app`).
+
+---
+
+## 2.4 Run Production Setup (Migrations + Seed)
+
+After the first deploy, run the setup script **once** to apply migrations and seed the database:
+
+```bash
+DIRECT_DATABASE_URL="your-neon-connection-string" \
+DATABASE_URL="your-neon-connection-string" \
+npm run setup:prod
+```
+
+Or pull env vars from Vercel (`npx vercel env pull`), then run `npm run setup:prod` in a terminal where those vars are loaded.
+
+---
+
+## 2.5 Create Vercel Blob Storage
+
+1. In your Vercel project, go to the **Storage** tab.
+2. Click **Create Database** → choose **Blob**.
+3. Name it (e.g. `ai-socials-gen-assets`) and create.
+4. Link it to your project (Production).
+5. Go to the Blob store **Settings** and copy the **Read-Write Token**.
+6. In your project **Settings → Environment Variables**, add:
+   - Key: `BLOB_READ_WRITE_TOKEN`
+   - Value: the token you copied
+7. **Redeploy** the project.
+
+---
+
+## 2.6 Connect Inngest
+
+1. Go to [app.inngest.com](https://app.inngest.com) and sign up.
+2. Click **Create App** or **Add App**.
+3. Set **App URL** to: `https://YOUR_APP.vercel.app/api/inngest`
+4. Go to **API Keys** and copy:
+   - **Event Key**
+   - **Signing Key**
+5. In Vercel **Settings → Environment Variables**, add:
+   - `INNGEST_EVENT_KEY` = Event Key
+   - `INNGEST_SIGNING_KEY` = Signing Key
+6. **Redeploy**.
+
+### If Inngest Can't Sync (Vercel Deployment Protection)
+
+1. In Vercel **Settings → Deployment Protection**.
+2. Create a **Protection Bypass for Automation** secret.
+3. In Inngest, add this as the **Deployment protection key**.
+
+---
+
+## 2.7 Verify Production
+
+1. Open your app URL.
+2. Log in with `APP_PASSWORD` if set.
+3. Create a job and wait for variants to generate.
+4. Images should load from Vercel Blob.
+
+---
+
+# Part 3: Scripts Reference
+
+| Script | Description |
+|--------|-------------|
+| `npm run setup:local` | Run migrations + seed (local). Requires DB running (`npx prisma dev`). |
+| `npm run setup:prod` | Run migrations + seed (production). Requires `DATABASE_URL`. |
+| `npm run db:generate` | Generate Prisma client |
+| `npm run db:migrate` | Create/apply migrations (interactive, local dev) |
+| `npm run db:deploy` | Apply migrations (production, non-interactive) |
+| `npm run db:seed` | Seed templates, vault, rules |
+| `npm run db:reset` | Reset database (drops all data) |
+| `npm run vault:index` | Rebuild `assets/vault/index.json` from folder structure |
+| `npm run vault:analyze` | Analyze vault items (embeddings, etc.) |
+| `npm run assets:upload-to-blob` | Upload local `public/uploads/` to Vercel Blob and update DB URLs |
+| `npm run inngest:dev` | Start Inngest dev server (for local background jobs) |
+
+---
+
+# Part 4: Migrating Existing Data
+
+## Restore Jobs/Variants/Artifacts from Export
+
+If you have a `db-export.sql` from a previous database:
+
+```bash
+DIRECT_DATABASE_URL="your-neon-url" npx tsx scripts/restore-db-export.ts
+```
+
+## Migrate Local Assets to Vercel Blob
+
+If artifact URLs point to `/uploads/...` (local paths) and you've deployed to Vercel:
+
+1. Ensure `public/uploads/` exists locally with the asset files.
+2. Run:
+
+```bash
+BLOB_READ_WRITE_TOKEN="your-blob-token" \
+DIRECT_DATABASE_URL="your-neon-url" \
+npm run assets:upload-to-blob
+```
+
+This uploads all files to Blob and updates `Artifact`, `AssetVaultItem`, and `Job` URLs in the database.
+
+---
+
+# Troubleshooting
+
+| Problem | Solution |
+|---------|----------|
+| `DATABASE_URL is required` | Add `DATABASE_URL` and `DIRECT_DATABASE_URL` to `.env` or Vercel env vars |
+| `Connection refused` on setup | Start the database first: `npx prisma dev` |
+| Build fails with "Function size exceeds 300MB" | Ensure `.vercelignore` includes `public/uploads` and `db-export.sql` |
+| Inngest "App not synced" | Add `INNGEST_EVENT_KEY` and `INNGEST_SIGNING_KEY`, redeploy. Check deployment protection bypass. |
+| Jobs stay "queued" forever | Verify Inngest is connected; check dashboard for function registration |
+| Images don't load in production | Set `BLOB_STORAGE_PROVIDER=vercel-blob` and add `BLOB_READ_WRITE_TOKEN` |
+| Broken images after restore | Run `npm run assets:upload-to-blob` to migrate local paths to Blob URLs |
+
+---
+
+# Environment Variables
 
 | Variable | Required | Description |
 |----------|----------|-------------|
 | `DATABASE_URL` | Yes | PostgreSQL connection string |
-| `DIRECT_DATABASE_URL` | Prod | Same as DATABASE_URL for Neon |
+| `DIRECT_DATABASE_URL` | Yes (scripts) | Same as DATABASE_URL for Neon |
 | `BLOB_STORAGE_PROVIDER` | No | `local` (default) or `vercel-blob` |
 | `BLOB_READ_WRITE_TOKEN` | Prod | Vercel Blob token |
-| `LOCAL_BLOB_DIR` | No | Local upload directory (default: `./public/uploads`) |
+| `LOCAL_BLOB_DIR` | No | Local upload dir (default: `./public/uploads`) |
 | `ANTHROPIC_API_KEY` | No | Claude API key (mock available) |
 | `NANO_BANANA_API_KEY` | No | Google AI / Gemini key (mock available) |
-| `RECRAFT_API_KEY` | No | Recraft.ai (vectorize, remove-bg) |
-| `USE_MOCK_PROVIDERS` | No | `true` to use mock AI providers |
+| `RECRAFT_API_KEY` | No | Recraft (vectorize, remove-bg) |
+| `USE_MOCK_PROVIDERS` | No | `true` = mock AI, no keys needed |
+| `APP_PASSWORD` | No | If set, app requires login at `/login` |
 | `INNGEST_EVENT_KEY` | Prod | Inngest event key |
 | `INNGEST_SIGNING_KEY` | Prod | Inngest signing key |
 
-## MVP Mock Mode
+---
 
-Set `USE_MOCK_PROVIDERS=true` to run without any API keys:
+# Project Structure
 
-- **Mock Planner**: Returns realistic structured JSON creative specs
-- **Mock Image Provider**: Generates colored gradient placeholder images
-- **Local Storage**: Saves artifacts to `public/uploads/`
+```
+├── assets/vault/           # Asset Vault (reference images + index.json)
+├── prisma/
+│   ├── schema.prisma      # Database schema
+│   ├── seed.ts            # Seed templates + vault items
+│   └── migrations/        # SQL migrations
+├── scripts/
+│   ├── setup-local.ts     # Local setup (migrate + seed)
+│   ├── setup-prod.ts      # Production setup
+│   ├── upload-assets-to-blob.ts  # Migrate local assets to Blob
+│   ├── restore-db-export.ts      # Restore from db-export.sql
+│   └── index-vault.ts    # Rebuild vault index
+├── src/
+│   ├── app/               # Next.js pages and API routes
+│   ├── components/
+│   ├── hooks/
+│   └── lib/
+│       ├── ai/            # Claude + Gemini providers
+│       ├── inngest/       # Background workflows
+│       ├── storage/       # Blob abstraction
+│       └── vault/         # Asset vault search
+```
 
-## API Endpoints
+---
+
+# API Endpoints
 
 | Method | Path | Description |
 |--------|------|-------------|

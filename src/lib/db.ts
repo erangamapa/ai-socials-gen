@@ -15,10 +15,9 @@ function createClient(): PrismaClient {
 
   const pool = new pg.Pool({
     connectionString,
-    max: 5,
-    idleTimeoutMillis: 30_000,
-    connectionTimeoutMillis: 10_000,
-    allowExitOnIdle: true,
+    max: 2,
+    idleTimeoutMillis: 20_000,
+    connectionTimeoutMillis: 15_000,
   });
   pool.on("error", () => {});
   return new PrismaClient({ adapter: new PrismaPg(pool) });

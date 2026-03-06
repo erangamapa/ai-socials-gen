@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { CBBrandmark } from "@/components/cb-logo";
 
 const MAIN_NAV = [
@@ -13,6 +13,13 @@ const MAIN_NAV = [
 
 export function Nav() {
   const pathname = usePathname();
+  const router = useRouter();
+
+  async function handleSignOut() {
+    await fetch("/api/auth/logout", { method: "POST" });
+    router.push("/login");
+    router.refresh();
+  }
 
   const linkClass = (href: string) => {
     const isActive = pathname === href || pathname.startsWith(href + "/");
@@ -43,10 +50,20 @@ export function Nav() {
           ))}
         </div>
 
-        {/* Right: How It Works */}
-        <Link href="/how-it-works" className={`shrink-0 ${linkClass("/how-it-works")}`}>
-          How It Works
-        </Link>
+        {/* Right */}
+        <div className="flex items-center gap-1 shrink-0">
+          <Link href="/how-it-works" className={linkClass("/how-it-works")}>
+            How It Works
+          </Link>
+          {pathname !== "/login" && (
+            <button
+              onClick={handleSignOut}
+              className="px-3 py-1.5 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+            >
+              Sign out
+            </button>
+          )}
+        </div>
       </div>
 
       <div className="h-px bg-linear-to-r from-primary/40 via-secondary/40 to-transparent" />

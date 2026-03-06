@@ -20,6 +20,8 @@ const envSchema = z.object({
 
   INNGEST_EVENT_KEY: z.string().optional(),
   INNGEST_SIGNING_KEY: z.string().optional(),
+
+  APP_PASSWORD: z.string().optional(),
 });
 
 export type Env = z.infer<typeof envSchema>;
