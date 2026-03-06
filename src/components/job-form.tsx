@@ -125,6 +125,7 @@ export function JobForm({ fromVariantId, fromJobId }: { fromVariantId?: string; 
   const [subjectRefs, setSubjectRefs] = useState<SubjectReference[]>([]);
   const [isDragOver, setIsDragOver] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const descriptionRef = useRef<HTMLTextAreaElement>(null);
 
   // Angle reference upload state (single image, illustration mode only)
   const [angleRef, setAngleRef] = useState<AngleReference | null>(null);
@@ -380,7 +381,9 @@ export function JobForm({ fromVariantId, fromJobId }: { fromVariantId?: string; 
   const handleSubmit = async () => {
     setError(null);
 
-    if (!description.trim()) {
+    // Read from DOM to avoid stale state (e.g. after Enhance updates async)
+    const desc = (descriptionRef.current?.value ?? description).trim();
+    if (!desc) {
       setError("Please enter a description");
       return;
     }
@@ -397,7 +400,7 @@ export function JobForm({ fromVariantId, fromJobId }: { fromVariantId?: string; 
 
     try {
       const body: Record<string, unknown> = {
-        description,
+        description: desc,
         mode,
         visualType: (mode === "illustration" || mode === "pictogram") ? sizePreset : "background-only",
         channels: (mode === "illustration" || mode === "pictogram") ? [] : channels,
@@ -529,6 +532,7 @@ export function JobForm({ fromVariantId, fromJobId }: { fromVariantId?: string; 
             </div>
           </div>
           <Textarea
+            ref={descriptionRef}
             id="description"
             placeholder={
               mode === "illustration"
