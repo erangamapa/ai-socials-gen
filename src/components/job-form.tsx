@@ -254,6 +254,7 @@ export function JobForm({ fromVariantId, fromJobId }: { fromVariantId?: string; 
   };
 
   const handleModeChange = (newMode: Mode) => {
+    if (newMode === mode) return; // No-op if same mode — avoids clearing description on accidental re-click
     setMode(newMode);
     setDescription("");
     setError(null);
