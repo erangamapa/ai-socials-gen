@@ -30,6 +30,7 @@ Before running the project, you need accounts with the following services. Creat
 
 | Service | Purpose | Sign Up | What You Need |
 |---------|---------|---------|---------------|
+| **Prisma** | ORM + local dev database (`npx prisma dev` starts a managed Postgres) | [prisma.io](https://www.prisma.io/) | Prisma Platform API key — shown when you first run `npx prisma dev` and log in |
 | **Anthropic** | Claude AI — creative planning, prompt enhancement, rule synthesis | [console.anthropic.com](https://console.anthropic.com) | `ANTHROPIC_API_KEY` from [API Keys](https://console.anthropic.com/settings/keys) |
 | **Google AI Studio** | Gemini — image generation | [aistudio.google.com](https://aistudio.google.com) | `NANO_BANANA_API_KEY` from [API Keys](https://aistudio.google.com/apikey) |
 | **Inngest** | Background job queue (planning → generation → compositing pipeline) | [inngest.com](https://inngest.com) | `INNGEST_EVENT_KEY` and `INNGEST_SIGNING_KEY` from your app's API Keys page |
@@ -50,7 +51,7 @@ Before running the project, you need accounts with the following services. Creat
 
 ### Local Development Alternatives
 
-- **Database**: Prisma provides a built-in local Postgres — no Neon account needed. Run `npx prisma dev` to start it.
+- **Database**: `npx prisma dev` starts a managed local Postgres via the Prisma Platform (requires a free Prisma account). Alternatively, run your own local Postgres and set `DATABASE_URL` and `DIRECT_DATABASE_URL` to a standard `postgres://` connection string — no Prisma account needed.
 - **File Storage**: Generated images are stored in `public/uploads/` on your local filesystem. No Vercel Blob needed.
 - **Mock Mode**: Set `USE_MOCK_PROVIDERS=true` to skip all AI calls entirely. No Anthropic or Google AI keys needed. The app returns placeholder images and mock plans — useful for UI development.
 
@@ -100,13 +101,19 @@ INNGEST_EVENT_KEY=local
 
 ### Step 3: Start the Database
 
-In **Terminal 1**, start Prisma's local Postgres:
+In **Terminal 1**, start Prisma's managed local Postgres:
 
 ```bash
 npx prisma dev
 ```
 
-Leave this running. It will output a `api_key` — paste it into `DATABASE_URL` in `.env.local` if the default doesn't work.
+The first time you run this, it will ask you to log in to the Prisma Platform (free account). After login, it starts a local PostgreSQL instance and outputs an `api_key` — paste it into `DATABASE_URL` in `.env.local`:
+
+```env
+DATABASE_URL="prisma+postgres://localhost:51213/?api_key=THE_KEY_FROM_OUTPUT"
+```
+
+Leave this terminal running.
 
 ### Step 4: Run Setup (Migrations + Seed)
 
