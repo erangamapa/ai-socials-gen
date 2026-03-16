@@ -1,12 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getAuthToken, AUTH_COOKIE } from "@/lib/auth";
+import { getAuthToken, safeCompare, AUTH_COOKIE } from "@/lib/auth";
+import { loginLimiter } from "@/lib/rate-limit";
 
 export async function POST(req: NextRequest) {
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  const rl = loginLimiter.check(ip);
+  if (!rl.ok) {
+    return NextResponse.json(
+      { error: "Too many login attempts. Try again later." },
+      { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } },
+    );
+  }
+
   const appPassword = process.env.APP_PASSWORD?.trim();
   if (!appPassword) {
     return NextResponse.json(
       { error: "Password protection is not configured" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 
@@ -22,7 +32,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Password is required" }, { status: 400 });
   }
 
-  if (password !== appPassword) {
+  if (!safeCompare(password, appPassword)) {
     return NextResponse.json({ error: "Invalid password" }, { status: 401 });
   }
 
@@ -32,7 +42,7 @@ export async function POST(req: NextRequest) {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
-    maxAge: 60 * 60 * 24 * 7, // 7 days
+    maxAge: 60 * 60 * 24 * 7,
     path: "/",
   });
   return response;

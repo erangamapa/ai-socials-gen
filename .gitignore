@@ -52,3 +52,8 @@ src/generated/
 /src/generated/prisma
 .env*.local
 .env.vercel
+
+# database dumps — never commit these
+db-export.sql
+*.dump
+*.pgdump

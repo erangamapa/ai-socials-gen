@@ -22,6 +22,8 @@ const envSchema = z.object({
   INNGEST_SIGNING_KEY: z.string().optional(),
 
   APP_PASSWORD: z.string().optional(),
+
+  NODE_ENV: z.string().optional(),
 });
 
 export type Env = z.infer<typeof envSchema>;
@@ -42,5 +44,15 @@ export function getEnv(): Env {
   }
 
   _env = result.data;
+
+  if (_env.NODE_ENV === "production") {
+    if (!_env.INNGEST_SIGNING_KEY) {
+      console.warn("[SECURITY] INNGEST_SIGNING_KEY is not set in production — Inngest webhooks are unverified.");
+    }
+    if (!_env.APP_PASSWORD) {
+      console.warn("[SECURITY] APP_PASSWORD is not set in production — the app has no authentication.");
+    }
+  }
+
   return _env;
 }

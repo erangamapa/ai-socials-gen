@@ -10,6 +10,20 @@ const MIME: Record<string, string> = {
   ".gif": "image/gif",
 };
 
+const ALLOWED_REDIRECT_HOSTS = [
+  ".public.blob.vercel-storage.com",
+];
+
+function isAllowedRedirectUrl(urlStr: string): boolean {
+  try {
+    const parsed = new URL(urlStr);
+    if (parsed.protocol !== "https:") return false;
+    return ALLOWED_REDIRECT_HOSTS.some((h) => parsed.hostname.endsWith(h));
+  } catch {
+    return false;
+  }
+}
+
 /**
  * Serve vault asset files from assets/vault/ as images.
  *
@@ -22,24 +36,26 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "Missing path param" }, { status: 400 });
   }
 
-  // Auto-ingested vault items store a full Blob URL — redirect the browser directly to it.
-  // This is safe: these are always our own Vercel Blob public URLs.
   if (assetPath.startsWith("http://") || assetPath.startsWith("https://")) {
+    if (!isAllowedRedirectUrl(assetPath)) {
+      return NextResponse.json({ error: "Redirect target not allowed" }, { status: 403 });
+    }
     return NextResponse.redirect(assetPath, { status: 302 });
   }
 
-  // Security: reject any path traversal attempts
   const normalised = path.normalize(assetPath).replace(/\\/g, "/");
-  if (normalised.startsWith("..") || normalised.includes("/../")) {
-    return NextResponse.json({ error: "Invalid path" }, { status: 400 });
-  }
 
-  // Only allow serving files from assets/vault/ and assets/
   if (!normalised.startsWith("assets/") && !normalised.startsWith("vault/")) {
     return NextResponse.json({ error: "Access denied" }, { status: 403 });
   }
 
   const fullPath = path.resolve(process.cwd(), normalised);
+  const assetsRoot = path.resolve(process.cwd(), "assets");
+  const vaultRoot = path.resolve(process.cwd(), "vault");
+
+  if (!fullPath.startsWith(assetsRoot + path.sep) && !fullPath.startsWith(vaultRoot + path.sep)) {
+    return NextResponse.json({ error: "Access denied" }, { status: 403 });
+  }
 
   if (!fs.existsSync(fullPath)) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });

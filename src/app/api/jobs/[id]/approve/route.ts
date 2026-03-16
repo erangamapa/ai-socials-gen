@@ -12,7 +12,7 @@ const ApproveSchema = z.object({
         subhead: z.string().optional(),
         cta: z.string(),
         disclaimer: z.string().optional(),
-      }).passthrough(),
+      }),
       artDirection: z.object({
         palette: z.array(z.string()).default([]),
         mood: z.string().default(""),
@@ -20,7 +20,7 @@ const ApproveSchema = z.object({
         backgroundPrompt: z.string(),
         referenceInstructions: z.string().optional(),
         solidBackground: z.string().optional(),
-      }).passthrough(),
+      }),
       referencesUsed: z.array(z.string()).optional(),
     })
   ),

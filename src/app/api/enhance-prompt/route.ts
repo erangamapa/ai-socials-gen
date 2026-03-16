@@ -3,6 +3,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { z } from "zod";
 import { BRAND } from "@/lib/brand/guidelines";
 import { buildRulesBlock } from "@/lib/ai/promptBuilder";
+import { aiLimiter } from "@/lib/rate-limit";
 
 const EnhanceSchema = z.object({
   text: z.string().min(1).max(2000),
@@ -130,6 +131,12 @@ ${RULES_PREAMBLE}`,
 };
 
 export async function POST(req: NextRequest) {
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  const rl = aiLimiter.check(`enhance:${ip}`);
+  if (!rl.ok) {
+    return NextResponse.json({ error: "Rate limit exceeded" }, { status: 429 });
+  }
+
   try {
     const body = await req.json();
     const { text, mode, field } = EnhanceSchema.parse(body);
@@ -171,8 +178,8 @@ export async function POST(req: NextRequest) {
     }
     console.error("Enhance prompt failed:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Enhancement failed" },
-      { status: 500 }
+      { error: "Enhancement failed" },
+      { status: 500 },
     );
   }
 }

@@ -213,9 +213,6 @@ export async function GET() {
       system: {
         mockProviders: process.env.USE_MOCK_PROVIDERS === "true",
         storageProvider: process.env.BLOB_STORAGE_PROVIDER || "local",
-        hasAnthropicKey: !!process.env.ANTHROPIC_API_KEY,
-        hasNanoBananaKey: !!process.env.NANO_BANANA_API_KEY,
-        nodeVersion: process.version,
       },
       brand: {
         name: BRAND.name,
@@ -245,6 +242,6 @@ export async function GET() {
       }
     }
     console.error("Dev stats error:", msg);
-    return NextResponse.json({ error: "Failed to load stats: " + msg }, { status: 500 });
+    return NextResponse.json({ error: "Failed to load stats" }, { status: 500 });
   }
 }

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { prisma } from "@/lib/db";
 import { inngest } from "@/lib/inngest/client";
+import { jobLimiter } from "@/lib/rate-limit";
 
 const SubjectReferenceItem = z.object({
   url: z.string().min(1),
@@ -28,6 +29,12 @@ const CreateJobSchema = z.object({
 });
 
 export async function POST(req: NextRequest) {
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  const rl = jobLimiter.check(ip);
+  if (!rl.ok) {
+    return NextResponse.json({ error: "Rate limit exceeded" }, { status: 429 });
+  }
+
   try {
     const body = await req.json();
     const input = CreateJobSchema.parse(body);
