@@ -1,5 +1,3 @@
-import { timingSafeEqual } from "crypto";
-
 const AUTH_COOKIE = "cb_auth";
 const AUTH_SALT = "cb-forge-auth-v1";
 const PBKDF2_ITERATIONS = 100_000;
@@ -27,9 +25,17 @@ export async function getAuthToken(password: string): Promise<string> {
   return hashPassword(password);
 }
 
+/** Constant-time string comparison safe for Edge Runtime (no Node.js crypto dependency). */
 export function safeCompare(a: string, b: string): boolean {
   if (a.length !== b.length) return false;
-  return timingSafeEqual(Buffer.from(a), Buffer.from(b));
+  const encoder = new TextEncoder();
+  const bufA = encoder.encode(a);
+  const bufB = encoder.encode(b);
+  let diff = 0;
+  for (let i = 0; i < bufA.length; i++) {
+    diff |= bufA[i] ^ bufB[i];
+  }
+  return diff === 0;
 }
 
 export async function verifyAuthToken(
